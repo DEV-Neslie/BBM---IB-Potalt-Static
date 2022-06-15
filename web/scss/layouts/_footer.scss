@@ -1,0 +1,205 @@
+// FOOTER
+.footer {
+    display: none;
+}
+
+
+// LIQUID MOBILE - Footer
+@include mqMax($mq-max-mobile) {
+    .footer {
+        background-color: $white;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+        width: 100%;
+        box-shadow: 0px get-vw-mobile(5px) get-vw-mobile(30px) rgba(0, 0, 0, 0.25);
+        display: block;
+
+        &__nav {
+            height: get-vw-mobile(50px);
+            width: 100%;
+            @include dFlex(space-between);
+            align-items: center;
+            box-sizing: border-box;
+            padding: get-vw-mobile(10px) get-vw-mobile(21px);
+
+            &__item {
+
+                &-icon {
+                    display: inline-block;
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+
+                &--search {
+                    .footer__nav__item-icon {
+                        width: get-vw-mobile(15px);
+                        height: get-vw-mobile(15px);
+                        background-image: url('./../images/icons/footer/footer_nav-search.svg');
+                    }
+                }
+
+                &--referral {
+                    .footer__nav__item-icon {
+                        width: get-vw-mobile(30px);
+                        height: get-vw-mobile(30px);
+                        background-image: url('./../images/icons/footer/footer_nav-referral.svg');
+                    }
+                    &.active {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-referral--active.svg');
+                        }
+                    }
+                }
+
+                &--commision {
+                    .footer__nav__item-icon {
+                        width: get-vw-mobile(30px);
+                        height: get-vw-mobile(30px);
+                        background-image: url('./../images/icons/footer/footer_nav-commision.svg');
+                    }
+                    &.active {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-commision--active.svg');
+                        }
+                    }
+                }
+
+                &--home {
+                    .footer__nav__item-icon {
+                        width: get-vw-mobile(30px);
+                        height: get-vw-mobile(30px);
+                        background-image: url('./../images/icons/footer/footer_nav-home.svg');
+                    }
+                    &.active {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-home--active.svg');
+                        }
+                    }
+                }
+
+                &--notif {
+                    width: get-vw-mobile(15px);
+
+                    .notif {
+                        position: relative;
+
+                        &__counter {
+                            background-color: $red;
+                            position: absolute;
+                            top: 0;
+                            right: get-vw-mobile(-6px);
+                            height: get-vw-mobile(10px);
+                            width: get-vw-mobile(10px);
+                            @include dFlex(center);
+                            align-items: center;
+                            color: $white;
+                            border-radius: 50%;
+                            z-index: 1;
+                            font-family: $DM;
+                            font-size: get-vw-mobile(6px);
+                            font-weight: 700;
+                        }
+
+                        &__icon {
+                            display: inline-block;
+                            width: get-vw-mobile(20px);
+                            height: get-vw-mobile(18px);
+                            background: url('./../images/icons/footer/footer_nav-notif.svg') center/contain no-repeat;
+                        }
+                    }
+                }
+
+                &--account {
+                    width: get-vw-mobile(19px);
+                    height: get-vw-mobile(19px);
+                    margin-bottom: get-vw-mobile(6px);
+
+                    .account {
+                        width: get-vw-mobile(19px);
+                        height: get-vw-mobile(19px);
+                        overflow: hidden;
+                        border-radius: 50%;
+
+                        img {
+                            backface-visibility: hidden;
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    // DARK MODE
+    .dark-mode {
+        .footer {
+            background-color: $d_navy_2;
+            box-shadow: 0px get-vw-mobile(5px) get-vw-mobile(30px) rgba(0,0,0,0.8);
+
+            &__nav {
+                &__item {
+                    &--search {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-search--white.svg');
+                        }
+                    }
+                    &--referral {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-referral--white.svg');
+                        }
+                        &.active {
+                            .footer__nav__item-icon {
+                                background-image: url('./../images/icons/footer/footer_nav-referral--active.svg');
+                            }
+                        }
+                    }
+                    &--commision {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-commision--white.svg');
+                        }
+                        &.active {
+                            .footer__nav__item-icon {
+                                background-image: url('./../images/icons/footer/footer_nav-commision--active.svg');
+                            }
+                        }
+                    }
+                    &--fund {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-fund--white.svg');
+                        }
+                        &.active {
+                            .footer__nav__item-icon {
+                                background-image: url('./../images/icons/footer/footer_nav-fund--active.svg');
+                            }
+                        }
+                    }
+                    &--home {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-home--white.svg');
+                        }
+                        &.active {
+                            .footer__nav__item-icon {
+                                background-image: url('./../images/icons/footer/footer_nav-home--active.svg');
+                            }
+                        }
+                    }
+                    &--notif {
+                        .notif {
+                            &__icon {
+                                background: url('./../images/icons/footer/footer_nav-notif--white.svg') center/contain no-repeat;
+                            }
+                        }
+                    }
+                    &--account {
+                        .account {
+                            background-color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

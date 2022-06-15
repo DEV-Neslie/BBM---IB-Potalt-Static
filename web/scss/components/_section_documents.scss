@@ -1,0 +1,181 @@
+
+.documents {
+
+    &-content {
+        &__item {
+            .item__content {
+                padding: 0;
+            }
+        }
+    }
+
+    &__header {
+        padding: get-vw-desktop(28px) get-vw-desktop(92px) get-vw-desktop(25px) get-vw-desktop(54px);
+        @include displayFlex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__heading {
+        color: $purple;
+
+        &--name {
+            width: get-vw-desktop(798px);
+        }
+
+        &--action {
+            width: get-vw-desktop(94px);
+            text-align: center;
+        }
+    }
+
+    &__list {
+
+        &-item {
+            padding: get-vw-desktop(19px) get-vw-desktop(92px) get-vw-desktop(19px) get-vw-desktop(54px);
+            @include displayFlex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid $opac_navy;
+            }
+
+            &__info {
+                padding: 0 0 0 get-vw-desktop(42px);
+                position: relative;
+                width: get-vw-desktop(798px);
+
+                &-logo {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: get-vw-desktop(16px);
+                    height: get-vw-desktop(20px);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url('./../images/common/pdf-icon.svg');
+                }
+
+                &-name {
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+                }
+            }
+
+            &__dl-wrapper {
+                width: get-vw-desktop(94px);
+                text-align: center;
+
+                .btn--link {
+                    font-size: get-vw-desktop(10px);
+                    line-height: get-vw-desktop(15px);
+                }
+            }
+
+            &:hover {
+                background-color: #f6f6f6;
+            }
+        }
+    }
+}
+
+.dark-mode {
+    .documents {
+        &__header {
+            background: $opac_skyblue_3;
+        }
+
+        &__heading {
+            color: $white;
+        }
+
+        &__list {
+
+            &-item {
+
+                &:not(:last-of-type) {
+                    border-color: $opac_white;
+                }
+
+                &__dl-wrapper {    
+                    .btn--link {
+                        color: $white;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba(249, 249, 249, 0.05);
+                }
+            }
+        }
+    }
+}
+
+// LIQUID MOBILE - Documents
+@include mqMax($mq-max-mobile) {
+    .documents {
+        &-content {
+            &__item {
+                .item__content {
+                    padding: 0;
+                }
+            }
+        }
+    
+        &__header {
+            padding: get-vw-mobile(24px) get-vw-mobile(10px);
+        }
+    
+        &__heading {
+            font-size: get-vw-mobile(12px);
+            line-height: get-vw-mobile(15px);
+
+            &--name {
+                width: get-vw-mobile(206px);
+            }
+    
+            &--action {
+                width: get-vw-mobile(74px);
+            }
+        }
+    
+        &__list {
+    
+            &-item {
+                padding: get-vw-mobile(18px) get-vw-mobile(10px);
+    
+                &:not(:last-of-type) {
+                    border: none;
+                }
+    
+                &__info {
+                    padding: 0 get-vw-mobile(32px) 0;
+                    width: get-vw-mobile(206px);
+    
+                    &-logo {
+                        width: get-vw-mobile(16px);
+                        height: get-vw-mobile(20px);
+                    }
+    
+                    &-name {
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+                    }
+                }
+    
+                &__dl-wrapper {
+                    width: get-vw-mobile(74px);
+    
+                    .btn--link {
+                        font-size: get-vw-mobile(10px);
+                        line-height: get-vw-mobile(15px);
+                    }
+                }
+            }
+        }
+    }
+}

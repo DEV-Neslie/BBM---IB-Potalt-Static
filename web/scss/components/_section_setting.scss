@@ -1,0 +1,242 @@
+// Setting
+.setting {
+    font-size: get-vw-desktop(12px);
+    line-height: get-vw-desktop(18px);
+
+    p {
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    &__form {
+        margin: 0;
+
+        &-wrapper {
+            &:not(:first-of-type) {
+                margin: get-vw-desktop(50px) 0 0;
+            }
+        }
+
+        &-field {
+            width: 100%;
+
+            &:not(:first-of-type) {
+                margin: get-vw-desktop(16px) 0 0;
+            }
+            
+            .custom-checkbox__label-text {
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(18px);
+            }
+
+            &__header {
+                margin: 0 0 get-vw-desktop(22px);
+            }
+
+            &__wrapper {
+                display: block;
+                width: 100%;
+    
+                // 2 cols modifier
+                &--2cols {
+                    @include displayFlex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+    
+                    .setting__form-field {
+                        width: calc(50% - 0.8680555555555556vw); // 50% - 12.5px
+    
+                        &:not(:nth-child(2n)) {
+                            margin-right: get-vw-desktop(25px); 
+                        }
+    
+                        &:nth-child(n+3) {
+                            margin-top: get-vw-desktop(18px); 
+                        }
+                    }
+                }
+            }
+
+            // Modifier
+            &--button {
+                margin: get-vw-desktop(33px) 0 0;
+
+                .btn {
+                    min-width: get-vw-desktop(124px);
+                }
+            }
+
+            &--switch {
+                @include displayFlex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(20px);
+
+                .setting__form-field__text {
+                    margin: 0;
+                    display: inline-block;
+                    width: get-vw-desktop(648px);
+                    
+                }
+            }
+        }
+
+        &-label {
+            display: inline-block;
+            font-family: $Poppins;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+        }
+
+        &-input,
+        &-tel {
+            margin: get-vw-desktop(5px) 0 0;
+            padding: get-vw-desktop(10px) get-vw-desktop(19px) get-vw-desktop(9px);
+            width: 100%;
+            background: $white;
+            border: 1px solid $sky_blue;
+            box-sizing: border-box;
+            border-radius: get-vw-desktop(5px);
+            font-family: $Poppins;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+            color: $navy;
+
+            &:disabled {
+                font-weight: normal;
+                color: $opac_navy_2;
+            }
+
+            &::placeholder {
+                font-weight: normal;
+            }
+        }
+
+        &-tel {
+            padding: get-vw-desktop(10px) get-vw-desktop(8px) get-vw-desktop(9px) get-vw-desktop(48px);
+        }
+    }
+}
+
+
+@include mqMax($mq-max-mobile) {
+    .setting {
+        font-size: get-vw-mobile(12px);
+        line-height: get-vw-mobile(18px);
+
+        &__form {
+
+            &-wrapper {
+                &:not(:first-of-type) {
+                    margin: get-vw-mobile(40px) 0 0;
+                }
+            }
+    
+            &-field {
+                width: 100%;
+
+                &:not(:first-of-type) {
+                    margin: get-vw-mobile(16px) 0 0;
+                }
+
+                .custom-checkbox__label-text {
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                }
+
+                &__header {
+                    margin: 0 0 get-vw-mobile(15px);
+                }
+    
+                &__wrapper {
+                    display: block;
+                    width: 100%;
+        
+                    // 2 cols modifier
+                    &--2cols {
+                        @include displayFlex;
+                        flex-direction: column;
+                        flex-wrap: initial;
+        
+                        .setting__form-field {
+                            width: 100%;
+        
+                            &:not(:nth-child(2n)) {
+                                margin-right: initial; 
+                            }
+        
+                            &:nth-child(n+3) {
+                                margin-top: initial; 
+                            }
+
+                            &:not(:first-of-type) {
+                                margin: get-vw-mobile(22px) 0 0;
+                            }
+                        }
+                    }
+                }
+    
+                // Modifier
+                &--button {
+                    margin: get-vw-mobile(33px) 0 0;
+    
+                    .btn {
+                        min-width: get-vw-mobile(124px);
+                    }
+                }
+
+                &--switch {
+                    margin: 0 0 get-vw-mobile(33px);
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(20px);
+
+                    .toggle-switch {
+                        margin: get-vw-mobile(24px) 0 0;
+                    }
+
+                    .setting__form-field__text {
+                        width: 100%;
+                    }
+                }
+            }
+    
+            &-label {
+                display: inline-block;
+                font-family: $Poppins;
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+            }
+    
+            &-input,
+            &-tel {
+                margin: get-vw-mobile(5px) 0 0;
+                padding: get-vw-mobile(10px) get-vw-mobile(14px) get-vw-mobile(9px);
+                width: 100%;
+                background: $white;
+                border: 1px solid $sky_blue;
+                box-sizing: border-box;
+                border-radius: get-vw-mobile(5px);
+                font-family: $Poppins;
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+                color: $navy;
+    
+                &:disabled {
+                    font-weight: normal;
+                    color: $opac_navy_2;
+                }
+    
+                &::placeholder {
+                    font-weight: normal;
+                }
+            }
+    
+            &-tel {
+                padding: get-vw-mobile(10px) get-vw-mobile(14px) get-vw-mobile(9px);
+            }
+        }
+    }
+}

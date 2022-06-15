@@ -1,0 +1,157 @@
+// TABULAR
+.tabular {
+    width: 100%;
+
+    &__header {
+        width: 100%;
+        margin-bottom: get-vw-desktop(20px);
+    }
+
+    &__tab {
+        position: relative;
+        width: 100%;
+        margin-bottom: get-vw-desktop(38px);
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: get-vw-desktop(26px);
+            height: get-vw-desktop(2px);
+            width: 100%;
+            background-color: $white;
+        }
+
+        &-wrapper {
+            width: 100%;
+
+            &-slider {
+                width: 100%;
+                @include displayFlex;
+            }
+        }
+
+        &__item {
+            position: relative;
+            display: inline-block;
+            font-family: $Gilroy_r;
+            font-weight: 600;
+            font-size: get-vw-desktop(14px);
+            line-height: get-vw-desktop(17px);
+            margin-right: get-vw-desktop(40px);
+            padding-bottom: get-vw-desktop(10px);
+
+            &::after {
+                content: '';
+                background-color: $primary;
+                position: absolute;
+                bottom: get-vw-desktop(-1px);
+                left: 0;
+                height: get-vw-desktop(4px);
+                width: 100%;
+                border-radius: get-vw-desktop(10px);
+                z-index: 1;
+                display: none;
+            }
+
+            &:hover {
+                color: $primary;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.is-active {
+                color: $primary;
+
+                &::after {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &.js--tab {
+        .tabular {
+           
+            &__content-item {
+                display: none;
+
+                &.is-active {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .tabular {
+
+        &__header {
+            color: $white;
+        }
+    
+        &__tab {
+            &__item {
+                color: $white;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Tabular
+@include mqMax($mq-max-mobile) {
+    .tabular {
+
+        &__header {
+            margin-bottom: get-vw-mobile(20px);
+        }
+    
+        &__tab {
+            position: relative;
+            margin-bottom: get-vw-mobile(15px);
+            overflow-x: visible;
+
+            &::after {
+                top: get-vw-mobile(23px);
+                height: get-vw-mobile(2px);
+                width: calc(150% - 44.444vw);
+            }
+
+            &-wrapper {
+                overflow-x: auto;
+                width: 151vw;
+                padding-bottom: get-vw-mobile(20px);;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                    width: 0;
+                }
+                
+                &-slider {
+                    width: 180vw;
+                }
+            }
+    
+            &__item {
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(20px);
+                margin-right: get-vw-mobile(25px);
+                padding-bottom: get-vw-mobile(5px);
+    
+                &::after {
+                    bottom: get-vw-mobile(-1px);
+                    left: 0;
+                    height: get-vw-mobile(4px);
+                    width: 100%;
+                    border-radius: get-vw-mobile(10px);
+                }
+            }
+        }
+    }
+}

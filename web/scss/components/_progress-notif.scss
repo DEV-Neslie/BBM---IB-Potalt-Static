@@ -1,0 +1,71 @@
+
+.progress-notif {
+    display: none;
+    width: 100%;
+    text-align: center;
+
+    &.is-active {
+        display: block;
+    }
+
+    &__wrapper {
+        padding: get-vw-desktop(6px) get-vw-desktop(10px);
+        display: inline-block;
+        border: 2px solid $primary;
+        border-radius: 5px;
+    }
+
+    &__text {
+        font-family: $Gilroy_b;
+        font-size: get-vw-desktop(12px);
+        font-weight: 700;
+        line-height: get-vw-desktop(18px);
+        text-align: left;
+
+        &.onprogress-icon {
+            padding: 0 0 0 get-vw-desktop(15px);
+            position: relative;
+
+            &:before {
+                position: absolute;
+                content: '';
+                top: get-vw-desktop(-1px);
+                left: get-vw-desktop(-4px);;
+                width: get-vw-desktop(20px);
+                height: get-vw-desktop(20px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                background-image: url('./../images/common/Spinner-1s-200px.svg');
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Progress Notif
+@include mqMax($mq-max-mobile) {
+    .progress-notif {
+
+    
+        &__wrapper {
+            padding: get-vw-mobile(6px) get-vw-mobile(8px);
+        }
+    
+        &__text {
+            font-size: get-vw-mobile(12px);
+            line-height: get-vw-mobile(18px);
+    
+            &.onprogress-icon {
+                padding: 0 0 0 get-vw-mobile(20px);
+    
+                &:before {
+                    top: 0;
+                    left: get-vw-mobile(-2px);
+                    width: get-vw-mobile(20px);
+                    height: get-vw-mobile(20px);
+                }
+            }
+        }
+    }
+}

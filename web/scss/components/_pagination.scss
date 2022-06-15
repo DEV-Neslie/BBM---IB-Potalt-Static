@@ -1,0 +1,189 @@
+// PAGINATION
+.pagination {
+    display: block;
+    padding: get-vw-desktop(40px) 0;
+
+    ul {
+        @include displayFlex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+
+        li {
+            @include transitionAll;
+
+            a {
+                @include displayFlex;
+                justify-content: center;
+                align-items: center;
+                width: get-vw-desktop(25px);
+                height: get-vw-desktop(25px);
+                font-size: get-vw-desktop(12px);
+                line-height: 1;
+                color: $navy;
+                border: get-vw-desktop(1px) solid transparent;
+                border-radius: get-vw-desktop(5px);
+                @include transitionAll;
+    
+                &:hover {
+                    background-color: #f4f4f4;
+                }
+            }
+
+            &.active {
+                a {
+                    background-color: #FBFDFF;
+                    border-color: $sky_blue;
+                }
+            }
+
+            &:not(:last-of-type) {
+                margin-right: get-vw-desktop(9px);
+            }
+        }
+    }
+
+    .arrow-prev,
+    .arrow-next {
+        position: relative;
+        @include displayFlex;
+        justify-content: center;
+        align-items: center;
+        width: get-vw-desktop(25px);
+        height: get-vw-desktop(25px);
+        font-size: 0;
+        cursor: pointer;
+        @include transitionOpacity;
+
+        a {
+            font-size: 0;
+            border: none;
+            height: 100%;
+            width: 100%;
+
+            &:before {
+                margin: auto;
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: get-vw-desktop(25px);
+                height: get-vw-desktop(25px);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        &:hover {
+            background-color: transparent;
+            opacity: 0.8;
+        }
+    }
+
+    .arrow-prev a {
+        &:before {
+            background-image: url('./../images/common/pagination-arrow-left.svg');
+        }
+    }
+
+    .arrow-next a {
+        &:before {
+            background-image: url('./../images/common/pagination-arrow-right.svg');
+        }
+    }
+
+    .ellipses {
+        a,span {
+            font-size: get-vw-desktop(12px);
+            line-height: 1;
+            letter-spacing: get-vw-desktop(2px);
+            font-weight: 600;
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .pagination {
+    
+        ul {
+            li {
+                a {
+                    color: $white;
+    
+                    &:hover {
+                        background-color: rgba(249, 249, 249, 0.05);
+                    }
+                }
+
+                &.active {
+                    a {
+                        background-color: #FBFDFF;
+                        border-color: $sky_blue;
+                        color: $navy;
+                    }
+                }
+            }
+        }
+    
+        .arrow-prev a {
+            &:before {
+                background-image: url('./../images/common/pagination-arrow-left--white.svg');
+            }
+        }
+    
+        .arrow-next a {
+            &:before {
+                background-image: url('./../images/common/pagination-arrow-right--white.svg');
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Pagination
+@include mqMax($mq-max-mobile) {
+    .pagination {
+        padding: get-vw-mobile(20px) 0;
+
+        ul {
+
+            li {
+                &:not(:last-of-type) {
+                    margin-right: get-vw-mobile(10px);
+                }
+
+                a {
+                    width: get-vw-mobile(25px);
+                    height: get-vw-mobile(25px);
+                    font-family: $Gilroy_b;
+                    font-size: get-vw-mobile(12px);
+                    border-radius: get-vw-mobile(5px);
+                }
+            }
+        }
+
+        .arrow-prev,
+        .arrow-next {
+            width: get-vw-mobile(25px);
+            height: get-vw-mobile(25px);
+
+            a {
+                &:before {
+                    width: get-vw-mobile(25px);
+                    height: get-vw-mobile(25px);
+                }
+            }
+        }
+
+        .ellipses {
+            a,span {
+                font-size: get-vw-mobile(12px);
+                letter-spacing: get-vw-mobile(2px);
+            }
+        }
+    }
+}

@@ -1,0 +1,115 @@
+// CUSTOM RADIO BUTTON
+.custom-radio {
+    position: relative;
+    display: inline-block;
+    @include dFlex(flex-start);
+    align-items: center;
+    height: get-vw-desktop(37px);
+    
+    &__label {
+        position: relative;
+        padding-left: get-vw-desktop(23px);
+        font-size: get-vw-desktop(12px);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: block;
+        cursor: pointer;
+
+        // Hover
+        &:hover {
+            input ~ .custom-radio__label-mark {
+                border: get-vw-desktop(1px) solid $primary;
+            }
+        }
+
+        &:active {
+            input ~ .custom-radio__label-mark {
+                transform: scale(0.8) perspective(1px);
+            }
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked {
+                & ~ .custom-radio__label-mark{
+                    background-color: $primary;
+    
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &-mark {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            height: get-vw-desktop(15px);
+            width: get-vw-desktop(15px);
+            overflow: hidden;
+            background-color: #FBFDFF;
+            border: get-vw-desktop(1px) solid $sky_blue;
+            border-radius: 50%;
+            transform-origin: center;
+            transition: .2s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: get-vw-desktop(-10px);
+                left: get-vw-desktop(-10px);
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                width: get-vw-desktop(30px);
+                height: get-vw-desktop(30px);
+                border-radius: 50%;
+                background: $primary;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Custom Radio Button
+@include mqMax($mq-max-mobile) {
+    .custom-radio {
+        height: get-vw-mobile(37px);
+        
+        &__label {
+            padding-left: get-vw-mobile(25px);
+            font-size: get-vw-mobile(12px);
+    
+            &:hover {
+                input ~ .custom-radio__label-mark {
+                    border: 2px solid $primary;
+                }
+            }
+    
+            &:active {
+                input ~ .custom-radio__label-mark {
+                    transform: scale(0.6) perspective(1px);
+                }
+            }
+    
+            &-mark {
+                height: get-vw-mobile(15px);
+                width: get-vw-mobile(15px);
+                border: 1px solid $sky_blue;
+    
+                &::after {
+                    transform: scale(0) perspective(1px);
+                }
+            }
+        }
+    }
+}

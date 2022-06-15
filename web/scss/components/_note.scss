@@ -1,0 +1,22 @@
+// NOTES
+.note {
+    border: 1px solid $sky_blue;
+    padding: get-vw-desktop(14px) get-vw-desktop(14px) get-vw-desktop(13px);
+
+    &__text {
+        font-size: get-vw-desktop(10px);
+        line-height: get-vw-desktop(16px);
+    }
+}
+
+// LIQUID MOBILE - note
+@include mqMax($mq-max-mobile) {
+    .note {
+        padding: get-vw-mobile(13px) get-vw-mobile(12px) get-vw-mobile(12px);
+    
+        &__text {
+            font-size: get-vw-mobile(10px);
+            line-height: get-vw-mobile(15px);
+        }
+    }
+}

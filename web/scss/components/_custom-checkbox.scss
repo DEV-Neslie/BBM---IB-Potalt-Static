@@ -1,0 +1,209 @@
+// CUSTOM CHECKBOX
+.custom-checkbox {
+
+    &__label {
+        padding: 0 0 0 get-vw-desktop(30px);
+        display: block;
+        position: relative;
+        font-size: get-vw-desktop(10px);
+        line-height: get-vw-desktop(16px);
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &-text {
+            padding: get-vw-desktop(2px) 0 0;
+            display: block;
+        }
+
+        input {
+            position: absolute;
+            height: 0;
+            width: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        a {
+            color: $primary;
+        }
+
+        &:hover {
+            input ~ .custom-checkbox__mark {
+                background-color: $white;
+            }
+        }
+
+        input {
+            &:checked ~ .custom-checkbox__mark {
+                background-color: $primary;
+                border-color: $sky_blue;
+            }
+
+            &:checked ~ .custom-checkbox__mark:after {
+                display: block;
+            }
+        }
+    }
+
+    &__mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: get-vw-desktop(18px);
+        width: get-vw-desktop(18px);
+        background-color: $white;
+        border: get-vw-desktop(1px) solid $sky_blue;
+        border-radius: get-vw-desktop(4px);
+
+        &.has-error {
+            border-color: $red;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            top: get-vw-desktop(1px);
+            left: get-vw-desktop(5px);
+            width: get-vw-desktop(4px);
+            height: get-vw-desktop(10px);
+            border: solid white;
+            border-width: 0 get-vw-desktop(2px) get-vw-desktop(2px) 0;
+            @include transform(rotate(45deg));
+        }
+    }
+
+
+    // Circle Version
+    &--circle {
+        .custom-checkbox__label {
+            padding: 0 0 0 get-vw-desktop(20px);
+
+            &:hover {
+                input ~ .custom-checkbox__mark {
+                    background-color: $sky_blue3;
+                }
+            }
+
+            input {
+                &:checked ~ .custom-checkbox__mark {
+                    background-color: $primary;
+                }
+            }
+        }
+
+        .custom-checkbox__mark {
+            background-color: $sky_blue;
+            height: get-vw-desktop(15px);
+            width: get-vw-desktop(15px);
+            border-color: $primary;
+            border-radius: 50%;
+            top: get-vw-desktop(1px);
+
+            &:after {
+                top: get-vw-desktop(1.3px);
+                left: get-vw-desktop(4px);
+                width: get-vw-desktop(3.5px);
+                height: get-vw-desktop(7px);
+                border-width: 0 get-vw-desktop(1.5px) get-vw-desktop(1.5px) 0;
+            }
+        }
+    }
+
+}
+
+.dark-mode {
+    .custom-checkbox {
+        &__label {
+            a {
+                color: $white;
+            }
+
+            input {
+                &:checked ~ .custom-checkbox__mark {
+                    border-color: $primary;
+                }
+            }
+        }
+
+        // Circle Version
+        &--circle {
+            .custom-checkbox__label {
+                &:hover {
+                    input ~ .custom-checkbox__mark {
+                        background-color: $sky_blue3;
+                    }
+                }
+                input {
+                    &:checked ~ .custom-checkbox__mark {
+                        background-color: $primary;
+                    }
+                }
+            }
+
+            .custom-checkbox__mark {
+                background-color: $sky_blue;
+                border-color: $primary;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Custom Checkbox
+@include mqMax($mq-max-mobile) {
+    .custom-checkbox {
+
+        &__label {
+            padding: 0 0 0 get-vw-mobile(30px);
+            font-size: get-vw-mobile(10px);
+            line-height: get-vw-mobile(16px);
+    
+            &-text {
+                padding: get-vw-mobile(2px) 0 0;
+            }
+
+        }
+    
+        &__mark {
+            height: get-vw-mobile(18px);
+            width: get-vw-mobile(18px);
+            border: get-vw-mobile(1px) solid $sky_blue;
+            border-radius: get-vw-mobile(4px);
+    
+            &:after {
+                top: get-vw-mobile(1px);
+                left: get-vw-mobile(5px);
+                width: get-vw-mobile(4px);
+                height: get-vw-mobile(10px);
+                border-width: 0 get-vw-mobile(2px) get-vw-mobile(2px) 0;
+                @include transform(rotate(45deg));
+            }
+        }
+        
+
+        // Circle Version
+        &--circle {
+            .custom-checkbox__label {
+                padding: 0 0 0 get-vw-mobile(20px);
+            }
+
+            .custom-checkbox__mark {
+                height: get-vw-mobile(15px);
+                width: get-vw-mobile(15px);
+                top: get-vw-mobile(1px);
+
+                &:after {
+                    top: get-vw-mobile(1.3px);
+                    left: get-vw-mobile(4px);
+                    width: get-vw-mobile(3.5px);
+                    height: get-vw-mobile(7px);
+                    border-width: 0 get-vw-mobile(1.5px) get-vw-mobile(1.5px) 0;
+                }
+            }
+        }
+    }
+}

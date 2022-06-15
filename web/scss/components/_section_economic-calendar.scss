@@ -1,0 +1,172 @@
+// ECONOMC CALENDAR
+.economic-calendar {
+    transition: .2s ease all;
+
+    &__header {
+        &-link {
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+    
+    &__content {
+        padding: get-vw-desktop(24px) get-vw-desktop(10px) get-vw-desktop(24px) get-vw-desktop(10px);
+        height: get-vw-desktop(591px);
+        width: 100%;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: get-vw-desktop(5px);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            height: get-vw-desktop(44px);
+            background-color: $primary;
+            border-radius: get-vw-desktop(30px); 
+        }
+    }
+
+    &__table {
+
+        .th {
+            &-time {
+                width: get-vw-desktop(92px);
+            }
+
+            &-currency {
+                width: get-vw-desktop(92px);
+            }
+
+            &-event {
+                width: get-vw-desktop(176px);
+            }
+
+            &-actual {
+                width: get-vw-desktop(68px);
+            }
+
+            &-forecast {
+                width: get-vw-desktop(68px);
+            }
+
+            //472
+        }
+
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .flag {
+            display: inline-block;
+            margin: 0 get-vw-desktop(6px) 0 0;
+            width: get-vw-desktop(22px);
+            height: auto;
+            @include transform(translateY(get-vw-desktop(3px)))
+        }
+
+        .time-indicator {
+            margin: 0 get-vw-desktop(3px) 0 0;
+            width: get-vw-desktop(10px);
+            height: get-vw-desktop(10px);
+            background: $sky_blue;
+            border-radius: get-vw-desktop(2px);
+
+            &--green {
+                background: $green;
+            }
+
+            &--red {
+                background: $red;
+            }
+        }
+    }
+}
+
+// DARK MODE
+.dark-mode {
+    .economic-calendar {
+        color: $white;
+
+        &__content {
+            background-color: $opac_white;
+            box-shadow: get-vw-desktop(5px) get-vw-desktop(5px) get-vw-desktop(20px) $opac_skyblue;
+        }
+
+        &__table {
+            th,td {
+                color: $white;
+            }
+            tbody {
+                tr {
+                    &:nth-child(even) {
+                        background: rgba(251, 253, 255, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Economic Calendar
+@include mqMax($mq-max-mobile) {
+    .economic-calendar {
+        &__content {
+            padding: get-vw-mobile(16px) get-vw-mobile(5px) get-vw-mobile(16px) get-vw-mobile(8px);
+            height: get-vw-mobile(304px);
+
+            &::-webkit-scrollbar {
+                width: get-vw-mobile(3px);
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                height: get-vw-mobile(40px);
+                background-color: $primary;
+                border-radius: get-vw-mobile(30px); 
+            }
+        }
+
+        &__table {
+
+            .th {
+                &-time {
+                    width: get-vw-mobile(48px);
+                }
+    
+                &-currency {
+                    width: get-vw-mobile(46px);
+                }
+    
+                &-event {
+                    width: get-vw-mobile(105px);
+                }
+    
+                &-actual {
+                    width: get-vw-mobile(54px);
+                }
+    
+                &-forecast {
+                    width: get-vw-mobile(54px);
+                }
+            }
+    
+    
+            .flag {
+                margin: get-vw-mobile(2px) 0 0 0;
+                width: get-vw-mobile(22px);
+                @include transform(translateY(0))
+            }
+    
+            .time-indicator {
+                margin: get-vw-mobile(2px) 0 0 0;
+                width: get-vw-mobile(10px);
+                height: get-vw-mobile(10px);
+                border-radius: get-vw-mobile(2px);
+
+            }
+        }
+    }
+}

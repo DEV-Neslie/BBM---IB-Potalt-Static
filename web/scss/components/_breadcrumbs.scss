@@ -1,0 +1,111 @@
+// BREADCRUMBS
+.breadcrumbs {
+    margin: 0 auto;
+    width: 100%;
+    max-width: get-vw-desktop(1600px);
+    background: transparent;
+
+    &__list {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 0;
+        list-style: none;
+        text-align: left;
+        font-family: $Poppins;
+
+        li {
+            margin-right: get-vw-desktop(10px);
+            padding-right: get-vw-desktop(15px);
+            line-height: get-vw-desktop(19px);
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+
+            p, span, a, mark {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: get-vw-desktop(12px);
+                font-weight: 600;
+                line-height: get-vw-desktop(19px);
+                text-decoration: none;
+                color: $purple;
+                @include transitionAll;
+            }
+
+            a {
+                display: block;
+                text-decoration: underline;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            &:after {
+                content: '/';
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: inline-block;
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(19px);
+                color: $sky_blue;
+            }
+
+            &:last-of-type {
+                padding-right: 0;
+            }
+
+            &:last-of-type,
+            &.active {
+                margin-right: 0 !important;
+
+                &:after {
+                    padding: 0;
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__home {
+        width: get-vw-desktop(19px);
+        height: get-vw-desktop(16px);
+        background-image: url('./../images/common/svg/breadcrumbs-home-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+
+
+// LIQUID MOBILE - Breadcrumbs
+@include mqMax($mq-max-mobile) {
+    .breadcrumbs {
+        max-width: get-vw-mobile(1002px);
+        padding: 0 get-vw-mobile(25px);
+
+        &__list {
+
+            li {
+                margin-right: get-vw-mobile(10px);
+                padding-right: get-vw-mobile(15px);
+                line-height: get-vw-mobile(19px);
+
+                p, span, a, mark {
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(19px);
+                }
+
+                &:after {
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(19px);
+                }
+            }
+        }
+
+        &__home {
+            width: get-vw-mobile(19px);
+            height: get-vw-mobile(16px);
+        }
+    }
+}

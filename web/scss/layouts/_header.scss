@@ -1,0 +1,373 @@
+// HEADER
+.header {
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 20.139vw);
+    z-index: 300;
+    box-shadow: 0 get-vw-desktop(4px) get-vw-desktop(10px) rgba(0, 0, 0, 0.03);
+    transition: .2s ease all;
+    
+    &__wrapper {
+        padding: get-vw-desktop(19px) get-vw-desktop(44px) get-vw-desktop(19px) get-vw-desktop(46px);
+        @include displayFlex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: get-vw-desktop(78px);
+    }
+
+    &__left {
+        @include displayFlex;
+        align-items: center;
+
+        .btn {
+            box-shadow: 0 get-vw-desktop(5px) get-vw-desktop(10px) rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    &__right {
+        @include displayFlex;
+        align-items: center;
+    }   
+
+    &__search {
+        margin: 0 get-vw-desktop(20px) 0 0;
+    }
+
+    &__lang {
+        position: relative;
+
+        .language {
+            &__selected {
+                color: $d_navy_2;
+            }
+        }
+    }
+
+    &__mode {
+        margin: 0 get-vw-desktop(10px) 0 0;
+        cursor: pointer;
+    }
+
+    &__mode-btn {
+        display: block;
+        width: get-vw-desktop(30px);
+        height: get-vw-desktop(30px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('./../images/icons/common/mode-light.svg');
+        @include transitionOpacity;
+
+        &.theme_mode {
+            &--dark {
+                background-image: url('./../images/icons/common/mode-dark.svg');
+            }
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__notification {
+        position: relative;
+
+        &__count {
+            &-wrapper {
+                position: relative;
+                width: get-vw-desktop(24px);
+                height: get-vw-desktop(24px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url('./../images/sidebar/active-notification.svg');
+                cursor: pointer;
+                @include transitionOpacity;
+                z-index: 2;
+    
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            &-val {
+                position: absolute;
+                top: get-vw-desktop(2px);
+                right: 0;
+                margin: 0;
+                height: get-vw-desktop(12px);
+                width: get-vw-desktop(12px);
+                font-family: $DM;
+                font-size: get-vw-desktop(6px);
+                line-height: get-vw-desktop(12px);
+                font-weight: 700;
+                text-align: center;
+                background-color: $red;
+                color: $white;
+                border-radius: 50%;
+            }
+        }
+
+        &__content {
+            padding: get-vw-desktop(54px) 0 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: get-vw-desktop(300px);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+            @include transform(translateY(get-vw-desktop(-10px)));
+            transition: .2s ease .1s;
+
+            &-wrapper {
+                width: 100%;
+                background-color: $white;
+                border: 1px solid $opac_navy_6;
+                border-radius: 5px;
+                box-shadow: 0 get-vw-desktop(4px) get-vw-desktop(10px) $opac_black4;
+            }
+
+            &-header {
+                padding: get-vw-desktop(15px) get-vw-desktop(16px) get-vw-desktop(12px) get-vw-desktop(20px);
+                @include displayFlex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 get-vw-desktop(4px) get-vw-desktop(10px) $opac_black4;
+
+                .btn {
+                    font-size: get-vw-desktop(10px);
+                    line-height: get-vw-desktop(16px);
+                }
+            }
+        }
+
+        &__heading {
+            padding: 0 get-vw-desktop(20px) 0 0;
+            position: relative;
+
+            .notification-indicator {
+                margin: 0;
+                height: get-vw-desktop(16px);
+                width: get-vw-desktop(16px);
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-family: $DM;
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(17px);
+                font-weight: 700;
+                text-align: center;
+                background-color: $red;
+                color: $white;
+                border-radius: 50%;
+            }
+        }
+
+        &__list {
+            list-style-type: none;
+            height: get-vw-desktop(422px);
+            overflow-y: scroll;
+
+            &-item {
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(18px);
+                border-bottom: 1px solid $sky_blue;
+
+                p {
+                    font-size: inherit;
+                    line-height: inherit;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;  
+                    overflow: hidden;
+                }
+            }
+
+            &::-webkit-scrollbar {
+                width: get-vw-desktop(8px);
+                background-color: $sky_blue;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                height: get-vw-desktop(38px);
+                background: $white;
+                border: 1px solid $sky_blue;
+                border-radius: 60px;
+            }
+        }
+
+        &__link {
+            display: block;
+            padding: get-vw-desktop(12px) get-vw-desktop(20px);
+            @include transitionOpacity;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &__time {
+            margin: get-vw-desktop(5px) 0 0;
+            display: inline-block;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+        }
+
+        &__view-all {  
+            padding: get-vw-desktop(12px) get-vw-desktop(10px) get-vw-desktop(17px);
+            text-align: center;
+        }
+
+        &:hover {
+            .header__notification__content {
+                opacity: 1;
+                visibility: visible;
+                @include transform(translateY(0));
+            }
+        }
+
+    }
+
+    &__account {
+        margin: 0 0 0 get-vw-desktop(20px);
+        width: get-vw-desktop(36px);
+        height: get-vw-desktop(36px);
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &__logo {
+        display: none;
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .header {
+        background-color: #16213D;
+        box-shadow: 0 get-vw-desktop(4px) get-vw-desktop(12px) rgba(0, 0, 0, 0.2);
+
+        &__logo {
+            display: none !important;
+        }
+
+        &__lang {
+            position: relative;
+    
+            .language {
+                &__selected {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Header
+@include mqMax($mq-max-mobile) {
+    .header {
+        width: 100%;
+
+        &__wrapper {
+            min-height: get-vw-mobile(60px);
+            padding: get-vw-mobile(10px) get-vw-mobile(18px) get-vw-mobile(10px) get-vw-mobile(15px);
+            box-shadow: 0 get-vw-mobile(4px) get-vw-mobile(10px) rgb(0 0 0 / 3%);
+            background-color: $white;
+        }
+
+        &__search {
+            padding: 0 get-vw-mobile(20px);
+            position: absolute;
+            top: get-vw-mobile(-22px);
+            left: 0;
+            width: 100%;
+            height: get-vw-mobile(82px);
+            background: $white;
+            border-radius: 5px;
+            box-shadow: 0 get-vw-mobile(3px) get-vw-mobile(15px) $sky_blue;
+            z-index: -1;
+            opacity: 0;
+            transition: top .4s, opacity .2s linear;
+            -webkit-transition: top .4s, opacity .2s linear;
+            -o-transition: top .4s, opacity .2s linear;
+            
+
+            &.is-active {
+                opacity: 1;
+                top: 100%;
+            }
+
+            &-wrapper {
+                margin: get-vw-mobile(25px) 0 0;
+                @include displayFlex;
+                align-items: center;
+            }
+
+            &-cancel {
+                margin-left: get-vw-mobile(18px);
+                display: inline-block;
+                font-size: get-vw-mobile(12px);
+                line-height: 1.2;
+            }
+            
+        }
+
+        &__left .btn, 
+        &__notification,
+        &__account {
+            display: none;
+        }
+
+        &__logo {
+            display: block;
+            width: get-vw-mobile(190px);
+        }
+
+        &__lang {
+            order: 2;
+            .language.language--arrow {
+                margin-bottom: 0;
+            }
+        }
+
+        &__mode {
+            order: 1;
+            margin: 0 get-vw-mobile(10px) 0 0;
+        }
+    
+        &__mode-btn {
+            width: get-vw-mobile(25px);
+            height: get-vw-mobile(25px);
+        }
+        .menuToggler {
+            order: 3;
+        }
+    }
+
+    // DARK MODE
+    .dark-mode {
+        .header {
+            background-color: #16213D;
+            box-shadow: 0 get-vw-mobile(4px) get-vw-mobile(10px) rgba(0, 0, 0, 0.1);
+
+            &__wrapper {
+                background-color: #16213D;
+            }
+
+            &__logo {
+
+                &.light_mode {
+                    display: none !important;
+                }
+
+                &.dark_mode {
+                    display: block !important;
+                }
+            }
+        }
+    }
+}

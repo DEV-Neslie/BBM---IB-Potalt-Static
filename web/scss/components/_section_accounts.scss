@@ -1,0 +1,313 @@
+
+.accounts {
+
+    &-content__item {
+        .item__content {
+            padding: 0;
+            background-color: transparent;
+            border-radius: 0;
+        }
+    }
+
+    &__top {
+        &-header {
+            text-align: right;
+        }
+    }
+
+    &__wrapper {
+        margin: get-vw-desktop(18px) auto 0;
+        padding: get-vw-desktop(21px) get-vw-desktop(22px);
+        background: $white;
+        width: 100%;
+        @include displayFlex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: calc(33.33% - 0.6944444444444444vw); //33.33% - 10px
+        box-shadow: 0 get-vw-desktop(3px) get-vw-desktop(10px) $opac_navy;
+        border-radius: get-vw-desktop(5px);
+
+        &:not(:nth-child(3n)) {
+            margin-right: get-vw-desktop(15px);
+        }
+
+        &:nth-child(n+4) {
+            margin-top: get-vw-desktop(20px);
+        }
+
+        &-header {
+            padding: get-vw-desktop(24px) get-vw-desktop(22px) get-vw-desktop(16px);
+            @include displayFlex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            &__item {
+                &-label {
+                    font-size: get-vw-desktop(10px);
+                    line-height: get-vw-desktop(12px);
+                    color: $purple;
+                }
+
+                &-val {
+                    margin: get-vw-desktop(6px) 0 0;
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+                }
+            }
+        }
+
+        &-content {
+            padding: get-vw-desktop(22px) get-vw-desktop(22px) get-vw-desktop(20px);
+            position: relative;
+            @include displayFlex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background: $sky_blue;
+            border-radius: get-vw-desktop(5px);
+
+            &__info {
+                width: 100%;
+                // width: get-vw-desktop(178px);
+
+                &-row {
+                    &:not(:first-of-type) {
+                        margin: get-vw-desktop(16px) 0 0;
+                    }
+
+                    &--balance {
+                        padding: 0 get-vw-desktop(93px) 0 0;
+                    }
+                }
+
+                &-label {
+                    font-size: get-vw-desktop(10px);
+                    line-height: get-vw-desktop(12px);
+                    color: $purple;
+                }
+
+                &-name {
+                    margin: get-vw-desktop(6px) 0 0;
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+                }
+
+                &-balance {
+                    margin: get-vw-desktop(6px) 0 0;
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+                }
+
+                &-currency {
+                    margin:  0 get-vw-desktop(6px) 0 0;
+                    display: inline-block;
+                }
+
+                &-amount {
+                    display: inline-block;
+                    font-family: $Gilroy_b;
+                    font-weight: 700;
+                    font-size: get-vw-desktop(16px);
+                    line-height: get-vw-desktop(24px);
+
+                    small {
+                        display: inline-block;
+                        font-family: $Poppins;
+                        font-weight: 400;
+                        font-size: get-vw-desktop(12px);
+                        line-height: get-vw-desktop(18px);
+                    }
+                }
+            }
+
+            &__btn {
+                position: absolute;
+                right: get-vw-desktop(20px);
+                bottom: get-vw-desktop(22px);
+                width: get-vw-desktop(93px);
+
+                .btn {
+                    min-width: get-vw-desktop(93px);
+                    box-shadow: 0 get-vw-desktop(5px) get-vw-desktop(10px) $opac_black;
+                }
+            }
+
+            &__edit {
+                position: absolute;
+                content: '';
+                top: get-vw-desktop(15px);
+                right: get-vw-desktop(13px);
+                width: get-vw-desktop(13px);
+                height: get-vw-desktop(13px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url('./../images/common/edit-green-icon.svg');
+                cursor: pointer;
+                @include transitionAll;
+
+                &:hover {
+                    filter: brightness(120%)
+                }
+            }
+        }
+    }
+}
+
+.dark-mode {
+    .accounts {
+        &__wrapper {
+            background: $opac_white;
+        }
+
+        &__item {
+            background: $opac_white;
+            box-shadow: 0 get-vw-desktop(3px) get-vw-desktop(10px) $opac_navy;
+
+            &-header {
+                &__item {
+                    &-label {
+                        color: $sky_blue;
+                    }
+                }
+            }
+
+            &-content {
+                background: $navy;
+                color: $sky_blue;
+
+                &__info {
+                    &-label {
+                        color: $sky_blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// LIQUID MOBILE - Documents
+@include mqMax($mq-max-mobile) {
+    .accounts {
+    
+        &__top {
+            &-header {
+                text-align: left;
+            }
+        }
+    
+        &__wrapper {
+            margin: get-vw-mobile(18px) auto 0;
+            padding: get-vw-mobile(22px) get-vw-mobile(10px);
+            width: 100%;
+            flex-direction: column;
+            box-shadow: 0px get-vw-mobile(4px) get-vw-mobile(15px) $opac_skyblue;
+            border-radius: get-vw-mobile(5px);
+        }
+    
+        &__item {
+            width: 100%;
+            box-shadow: 0 get-vw-mobile(3px) get-vw-mobile(10px) $opac_navy;
+            border-radius: get-vw-mobile(5px);
+    
+            &:not(:nth-child(3n)) {
+                margin-right: 0;
+            }
+    
+            &:nth-child(n+4) {
+                margin-top: 0;
+            }
+
+            &:not(:first-of-type) {
+                margin: get-vw-mobile(14px) 0 0;
+            }
+    
+            &-header {
+                padding: get-vw-mobile(24px) get-vw-mobile(22px) get-vw-mobile(16px);
+    
+                &__item {
+                    &-label {
+                        font-size: get-vw-mobile(10px);
+                        line-height: get-vw-mobile(12px);
+                    }
+    
+                    &-val {
+                        margin: get-vw-mobile(6px) 0 0;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+                    }
+                }
+            }
+    
+            &-content {
+                padding: get-vw-mobile(22px) get-vw-mobile(22px) get-vw-mobile(20px);
+                border-radius: get-vw-mobile(5px);
+    
+                &__info {
+                    width: 100%;
+    
+                    &-row {
+                        &:not(:first-of-type) {
+                            margin: get-vw-mobile(16px) 0 0;
+                        }
+    
+                        &--balance {
+                            padding: 0 get-vw-mobile(93px) 0 0;
+                        }
+                    }
+    
+                    &-label {
+                        font-size: get-vw-mobile(10px);
+                        line-height: get-vw-mobile(12px);
+                    }
+    
+                    &-name {
+                        margin: get-vw-mobile(6px) 0 0;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+                    }
+    
+                    &-balance {
+                        margin: get-vw-mobile(6px) 0 0;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+                    }
+    
+                    &-currency {
+                        margin:  0 get-vw-mobile(6px) 0 0;
+                    }
+    
+                    &-amount {
+                        font-size: get-vw-mobile(16px);
+                        line-height: get-vw-mobile(24px);
+    
+                        small {
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(18px);
+                        }
+                    }
+                }
+    
+                &__btn {
+                    right: get-vw-mobile(20px);
+                    bottom: get-vw-mobile(22px);
+                    width: get-vw-mobile(93px);
+    
+                    .btn {
+                        min-width: get-vw-mobile(93px);
+                        box-shadow: 0 get-vw-mobile(5px) get-vw-mobile(10px) $opac_black;
+                    }
+                }
+    
+                &__edit {
+                    top: get-vw-mobile(15px);
+                    right: get-vw-mobile(13px);
+                    width: get-vw-mobile(13px);
+                    height: get-vw-mobile(13px);
+                }
+            }
+        }
+    }
+}

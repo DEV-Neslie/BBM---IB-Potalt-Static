@@ -1,0 +1,370 @@
+// IMAGE BOX
+.imgBox {
+    width: 100%;
+    @include dFlex(space-between);
+
+    &__item {
+        width: get-vw-desktop(330px);
+        min-height: get-vw-desktop(496px);
+        border-radius: get-vw-desktop(5px);
+        background-color: $white;
+        overflow: hidden;
+        padding: get-vw-desktop(15px) get-vw-desktop(15px) get-vw-desktop(30px);
+        text-align: center;
+        @include dFlex(center);
+        align-items: flex-start;
+        align-content: space-between;
+
+        &__thumbnail {
+            background-color: $sky_blue;
+            width: calc(100% - 0.694vw);
+            height: get-vw-desktop(164px);
+            border-radius: get-vw-desktop(5px);
+            padding: get-vw-desktop(15px);
+            margin-bottom: get-vw-desktop(24px);
+            @include dFlex(center);
+            align-items: center;
+            overflow: hidden;
+
+            img {
+                margin: auto;
+                backface-visibility: hidden;
+            }
+
+            &--mt5,
+            &--mt4 {
+                img {
+                    width: get-vw-desktop(235px);
+                }
+            }
+
+            &--platform {
+                img {
+                    width: get-vw-desktop(224px);
+                }
+            }
+
+            &--full {
+                padding: 0;
+            }
+        }
+
+        &__content {
+            width: 100%;
+            min-height: get-vw-desktop(165px);
+            margin-bottom: get-vw-desktop(30px);
+
+            &-title {
+                display: block;
+                font-family: $Gilroy_b;
+                font-weight: initial;
+                font-size: get-vw-desktop(16px);
+                line-height: get-vw-desktop(24px);
+                margin-bottom: get-vw-desktop(15px);
+            }
+
+            &-text {
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(18px);
+            }
+
+            &__list {
+                width: 100%;
+                padding-top: get-vw-desktop(15px);
+                text-align: left;
+                padding: get-vw-desktop(15px) 0 0 get-vw-desktop(10px);
+
+                &-item {
+                    position: relative;
+                    width: 100%;
+                    padding-left: get-vw-desktop(20px);
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+                    margin-bottom: get-vw-desktop(5px);
+                    list-style: none;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: get-vw-desktop(5px);
+                        left: get-vw-desktop(5px);
+                        width: get-vw-desktop(10px);
+                        height: get-vw-desktop(7px);
+                        background: url('./../images/common/list_arrow-left--blue.svg') center/contain no-repeat;
+                    }
+                }
+            }
+        }
+
+        &__cta {
+            width: 100%;
+            min-height: get-vw-desktop(80px);
+            @include dFlex(center);
+            align-items: flex-end;
+
+            .downloads {
+                width: 100%;
+                @include dFlex(space-between);
+                align-items: center;
+
+                &__title {
+                    display: block;
+                    width: 100%;
+                    font-family: $Gilroy_b;
+                    font-weight: initial;
+                    font-size: get-vw-desktop(14px);
+                    line-height: get-vw-desktop(20px);
+                    margin-bottom: get-vw-desktop(15px);
+                }
+
+                &__item {
+                    position: relative;
+                    width: get-vw-desktop(45px);
+
+                    &-icon {
+                        position: relative;
+                        height: get-vw-desktop(45px);
+                        width: get-vw-desktop(45px);
+                        
+                        img {
+                            position: relative;
+                            transform-origin: center;
+                            transition: .2s ease;
+                            z-index: 1;
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: get-vw-desktop(-1px);
+                            left: get-vw-desktop(-1px);
+                            right: 0;
+                            bottom: 0;
+                            margin: auto;
+                            height: 100%;
+                            width: 100%;
+                            border-radius: 50%;
+                            border: get-vw-desktop(1px) solid $green;
+                            opacity: 0;
+                            transform-origin: center;
+                            transform: scale(0.5) perspective(1px);
+                            transition: .3s ease;
+                        }
+                    }
+
+                    &-label {
+                        position: absolute;
+                        bottom: get-vw-desktop(-20px);
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        display: block;
+                        font-size: get-vw-desktop(10px);
+                        opacity: 0;
+                        transform: translateY(-5px) perspective(1px);
+                        transition: .4s ease;
+                        color: $green;
+                    }
+
+                    &:hover {
+                        .downloads__item-icon {
+                            img {
+                                transform: scale(0.8) perspective(1px);
+                            }
+                            &::before {
+                                opacity: 1;
+                                transform: scale(1) perspective(1px);
+                            }
+                        }
+                        .downloads__item-label {
+                            opacity: 1;
+                            transform: translateY(0) perspective(1px);
+                        }
+                    }
+                }
+            }
+
+            .btn {
+                min-width: get-vw-desktop(105px);
+                margin-bottom: get-vw-desktop(5px);
+            }
+        }
+    }
+
+    // Version
+    &--v2 {
+        min-height: get-vw-desktop(300px);
+        align-items: flex-start;
+        align-content: flex-start;
+
+        .imgBox__item {
+            &__content {
+                min-height: get-vw-desktop(180px);
+            }
+            &__cta {
+                min-height: auto;
+    
+                .btn {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .imgBox {
+        &__item {
+            background-color: $opac_white;
+            color: $white;
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Image Box
+@include mqMax($mq-max-mobile) {
+    .imgBox {
+    
+        &__item {
+            width: 100%;
+            min-height: auto;
+            border-radius: get-vw-mobile(5px);
+            padding: get-vw-mobile(25px) get-vw-mobile(33px) get-vw-mobile(35px);
+            margin-bottom: get-vw-mobile(15px);
+            align-content: flex-start;
+    
+            &__thumbnail {
+                width: get-vw-mobile(77px);
+                height: get-vw-mobile(77px);
+                border-radius: get-vw-mobile(5px);
+                padding: get-vw-mobile(5px);
+                margin-bottom: get-vw-mobile(15px);
+    
+                &--mt5,
+                &--mt4 {
+                    img {
+                        width: get-vw-mobile(58px);
+                    }
+                }
+    
+                &--platform {
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &--full {
+                    width: 100%;
+                    height: auto;
+                    padding: 0;
+                }
+            }
+    
+            &__content {
+                min-height: auto;
+                margin-bottom: get-vw-mobile(25px);
+    
+                &-title {
+                    font-size: get-vw-mobile(14px);
+                    line-height: get-vw-mobile(20px);
+                    margin-bottom: get-vw-mobile(20px);
+                }
+    
+                &-text {
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                }
+
+                &__list {
+                    padding-top: get-vw-mobile(15px);
+                    padding: get-vw-mobile(15px) 0 0 0;
+    
+                    &-item {
+                        padding-left: get-vw-mobile(20px);
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+                        margin-bottom: get-vw-mobile(5px);
+    
+                        &::before {
+                            top: get-vw-mobile(5px);
+                            left: get-vw-mobile(5px);
+                            width: get-vw-mobile(10px);
+                            height: get-vw-mobile(7px);
+                        }
+                    }
+                }
+            }
+    
+            &__cta {
+                min-height: auto;
+                align-items: flex-start;
+    
+                .downloads {
+                    justify-content: center;
+    
+                    &__title {
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(20px);
+                        margin-bottom: get-vw-mobile(15px);
+                    }
+    
+                    &__item {
+                        width: get-vw-mobile(42px);
+                        margin: 0 get-vw-mobile(6px);
+    
+                        &-icon {
+                            position: relative;
+                            height: get-vw-mobile(42px);
+                            width: get-vw-mobile(42px);
+    
+                            &::before {
+                                display: none;
+                            }
+                        }
+    
+                        &-label {
+                            bottom: get-vw-mobile(-16px);
+                            font-size: get-vw-mobile(8px);
+                            transform: translateY(-5px) perspective(1px);
+                            opacity: 1;
+                            transform: translateY(0) perspective(1px);
+                            color: $navy;
+                        }
+                    }
+                }
+    
+                .btn {
+                    min-width: get-vw-mobile(105px);
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        // Version
+        &--v2 {
+            min-height: auto;
+
+            .imgBox__item {
+                padding: get-vw-mobile(25px) get-vw-mobile(25px) get-vw-mobile(30px);
+            }
+        }
+    }
+
+    // DARK MODE
+    .dark-mode {
+        .imgBox {
+            .downloads__item-label {
+                color: $white;
+            }
+
+            &--v2 {
+                .imgBox__item__thumbnail {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

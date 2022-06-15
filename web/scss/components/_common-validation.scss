@@ -1,0 +1,60 @@
+
+.js--form-validation {
+    .form {
+        &__field-input {
+            &.has-error {
+                border-color: $red;
+
+                .custom-select {
+                    background-color: $sky_blue2;
+                }
+            }
+
+            &.checkbox-has-error {
+                .form__field-error {
+                    display: block;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.js--signup-validation {
+    .web-signup {
+        &__form {
+            &-row {
+                &.has-error {
+                    margin-bottom: get-vw-desktop(25px);
+                    position: relative;
+
+                    input {
+                        border-color: $red;
+                    }
+
+                    .form__field-error {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include mqMax($mq-max-mobile) {
+    .js--signup-validation {
+        .web-signup {
+            &__form {
+                &-row {
+                    &.has-error {
+                        margin-bottom: get-vw-mobile(25px);
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+}

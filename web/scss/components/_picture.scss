@@ -1,0 +1,310 @@
+// PICTURE
+.picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $white;
+    padding: get-vw-desktop(20px);
+    margin: auto;
+    text-align: center;
+    @include dFlex(center);
+    align-content: center;
+
+    &__logo {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: get-vw-desktop(30px);
+        margin: auto;
+        width: get-vw-desktop(200px);
+        height: get-vw-desktop(50px);
+        background: url('./../images/common/logo--dark.svg') center/ contain no-repeat;
+    }
+
+    &__header {
+        width: get-vw-desktop(800px);
+        margin-bottom: get-vw-desktop(20px);
+
+        &-title {
+            font-family: $Gilroy_b;
+            font-size: get-vw-desktop(30px);
+            line-height: 1.7;
+        }
+    }
+
+    &__body {
+        width: get-vw-desktop(800px);
+
+        &__initial, 
+        &__preview, 
+        &__status {
+            display: none;
+            width: 100%;
+
+            &.is-active {
+                display: block;
+            }
+
+            .btn {
+                box-shadow: 0 get-vw-desktop(5px) get-vw-desktop(10px) rgba(0, 0, 0, 0.15);
+            }
+        }
+
+
+        &__initial {
+            &__display {
+                position: relative;
+                height: get-vw-desktop(270px);
+                width: 100%;
+                border: get-vw-desktop(1px) solid $sky_blue;
+                border-radius: get-vw-desktop(5px);
+                margin-bottom: get-vw-desktop(20px);
+                opacity: 0;
+                animation: fadeInUp .6s ease .2s forwards;
+
+                &-icon {
+                    @include pCenter;
+                    background: url('./../images/pages/on-boarding/graphic-option--webcam_mobile.svg') center/contain no-repeat;
+                    height: get-vw-desktop(68px);
+                    width: get-vw-desktop(56px);
+                }
+            }
+
+            &-cta {
+                width: 100%;
+                opacity: 0;
+                animation: fadeInUp .6s ease .3s forwards;
+            }
+        }
+
+
+        &__preview {
+            &-display {
+                position: relative;
+                height: get-vw-desktop(270px);
+                width: 100%;
+                border: get-vw-desktop(1px) solid $sky_blue;
+                border-radius: get-vw-desktop(5px);
+                margin-bottom: get-vw-desktop(20px);
+                padding: get-vw-desktop(10px);
+                opacity: 0;
+                animation: fadeInUp .6s ease .2s forwards;
+
+                img {
+                    display: block;
+                    width: auto;
+                    height: auto;
+                    max-width: 100%;
+                    max-height: 100%;
+                    margin: auto;
+                    color: #fff;
+                }
+            }
+
+            &-cta {
+                width: 100%;
+                opacity: 0;
+                animation: fadeInUp .6s ease .3s forwards;
+
+                .btn {
+                    min-width: get-vw-desktop(120px);
+                    margin: 0 get-vw-desktop(5px);
+                }
+            }
+        }
+
+
+        &__status {
+            width: 100%;
+            min-height: auto;
+            padding-top: get-vw-desktop(20px);
+            
+            &__display {
+                display: none;
+                font-size: get-vw-desktop(16px);
+                line-height: 1.7;
+                opacity: 0;
+                animation: fadeInUp .6s ease .2s forwards;
+
+                &--success {
+                    .picture__body__status__display-icon {
+                        background: url('./../images/pages/on-boarding/check--green-big.svg') center/contain no-repeat;
+
+                        &::before {
+                            animation: pulseShadow_green 2s linear .5s infinite;
+                        }
+                    }
+                }
+
+                &--error {
+                    .picture__body__status__display-icon {
+                        background: url('./../images/pages/on-boarding/close-x-red--big.svg') center/contain $white no-repeat;
+                        height: get-vw-desktop(80px);
+                        width: get-vw-desktop(80px);
+                        border-radius: 50%;
+
+                        &::before {
+                            animation: pulseShadow_red 2s linear .5s infinite;
+                            height: 82%;
+                            width: 82%;
+                        }
+                    }
+                }
+
+                &-icon {
+                    display: inline-block;
+                    position: relative;
+                    height: get-vw-desktop(70px);
+                    width: get-vw-desktop(70px);
+                    margin: 0 auto get-vw-desktop(15px);
+                    opacity: 0;
+                    animation: zoomIn .6s ease .4s forwards;
+
+                    &::before {
+                        content: '';
+                        @include pCenter;
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 50%;
+                        z-index: -1;
+                    }
+                }
+
+                &-text {
+                    display: block;
+                    width: 100%;
+                    font-family: $Gilroy_r;
+                    font-weight: 700;
+                    font-size: get-vw-desktop(16px);
+                    line-height: get-vw-desktop(20px);
+                    margin-bottom: get-vw-desktop(46px);
+                }
+
+
+                &.is-active {
+                    display: block;
+                }
+            }
+
+            &.is-active {
+                @include dFlex(center);
+                align-items: center;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - PICTURE
+@include mqMax($mq-max-mobile) {
+    .picture {
+        padding: get-vw-mobile(20px);
+
+        &__logo {
+            top: get-vw-mobile(20px);
+            width: get-vw-mobile(200px);
+            height: get-vw-mobile(50px);
+        }
+
+        &__header {
+            margin-bottom: get-vw-mobile(20px);
+    
+            &-title {
+                font-size: get-vw-mobile(20px);
+            }
+        }
+    
+        &__body {
+            width: get-vw-mobile(270px);
+
+            &__initial, 
+            &__preview, 
+            &__status {
+                .btn {
+                    box-shadow: 0 get-vw-mobile(5px) get-vw-mobile(10px) rgba(0, 0, 0, 0.15);
+                }
+            }
+
+            &__initial {
+                &-icon {
+                    background: url('./../images/pages/on-boarding/graphic-option--webcam_mobile.svg') center/contain no-repeat;
+                    height: get-vw-mobile(100px);
+                    width: get-vw-mobile(100px);
+                    margin: 0 auto get-vw-mobile(40px);
+                }
+            }
+
+
+            &__initial {
+                &__display {
+                    height: get-vw-mobile(270px);
+                    border: get-vw-mobile(1px) solid $sky_blue;
+                    border-radius: get-vw-mobile(5px);
+                    margin-bottom: get-vw-mobile(20px);
+    
+                    &-icon {
+                        height: get-vw-mobile(68px);
+                        width: get-vw-mobile(56px);
+                    }
+                }
+            }
+
+
+            &__preview {
+                &-display {
+                    height: get-vw-mobile(270px);
+                    border: get-vw-mobile(1px) solid $sky_blue;
+                    border-radius: get-vw-mobile(5px);
+                    margin-bottom: get-vw-mobile(20px);
+                    padding: get-vw-mobile(30px);
+                }
+    
+                &-cta {
+                    .btn {
+                        min-width: get-vw-mobile(120px);
+                        margin: 0 get-vw-mobile(5px);
+                    }
+                }
+            }
+
+
+            &__status {
+                padding-top: get-vw-mobile(20px);
+                
+                &__display {
+                    font-size: get-vw-mobile(16px);
+    
+                    &--error {
+                        .picture__body__status__display-icon {
+                            height: get-vw-mobile(80px);
+                            width: get-vw-mobile(80px);
+    
+                            &::before {
+                                height: 82%;
+                                width: 82%;
+                            }
+                        }
+                    }
+    
+                    &-icon {
+                        height: get-vw-mobile(70px);
+                        width: get-vw-mobile(70px);
+                        margin: 0 auto get-vw-mobile(15px);
+                    }
+    
+                    &-text {
+                        font-size: get-vw-mobile(16px);
+                        line-height: get-vw-mobile(20px);
+                        margin-bottom: get-vw-mobile(46px);
+                    }
+
+                    .btn {
+                        min-width: get-vw-mobile(120px);
+                    }
+                }
+            }
+        }
+    }
+}

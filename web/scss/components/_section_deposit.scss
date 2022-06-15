@@ -1,0 +1,693 @@
+//Deposit
+
+.deposit {
+    &__wrapper {
+        @include displayFlex;
+        flex-direction: row;
+    }
+
+    &__method {
+        width: get-vw-desktop(230px);
+        background: $sky_blue4;
+        position: relative;
+
+        .certification {
+            display: none;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: $sky_blue;
+            filter: blur(get-vw-desktop(4px))
+        }
+
+        &-list {
+            list-style: none;
+        }
+
+        &-item {
+            cursor: pointer;
+            @include transitionAll;
+
+            &:not(:last-of-type) {
+                border-bottom: 1px solid $sky_blue;
+            }
+
+            &:hover,
+            &.is-active {
+                background: $white;
+                box-shadow: 0 get-vw-desktop(3px) get-vw-desktop(15px) $sky_blue;
+            }
+            
+            &__content {
+                padding: get-vw-desktop(8px) get-vw-desktop(6px) get-vw-desktop(8px) get-vw-desktop(13px);
+                @include displayFlex;
+                flex-direction: row;
+                align-content: center;
+            }
+
+            &__logo {
+                margin: 0 get-vw-desktop(9px) 0 0;
+                width: get-vw-desktop(42px);
+                height: auto;
+            }
+
+            &__text {
+                width: get-vw-desktop(160px);
+            }
+
+            &__title {
+                display: block;
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(18px);
+                color: $navy;
+            }
+
+            &__info {
+                display: block;
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(16px);
+                color: rgba(2, 25, 74, 0.8);
+            }
+        }
+    }
+
+    &__content {
+        padding: 0 0 get-vw-desktop(62px);
+        width: get-vw-desktop(743px);
+        min-height: get-vw-desktop(540px);
+        position: relative;
+
+        &__item {
+            padding: get-vw-desktop(23px) get-vw-desktop(50px);
+
+            &-header {
+                @include displayFlex;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            &-back {
+                padding: 0 0 0 get-vw-desktop(23px);
+                position: relative;
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(16px);
+                color: rgba(2, 25, 74, 0.8);
+                cursor: pointer;
+
+                &::before {
+                    margin: auto;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: get-vw-desktop(19px);
+                    height: get-vw-desktop(8px);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-image: url('./../images/common/arrow-back.svg');
+                }
+            }
+
+            &-logo {
+                margin: 0 get-vw-desktop(9px) 0 0;
+                width: get-vw-desktop(42px);
+                height: auto;
+            }
+
+            &-wrapper {
+                margin: get-vw-desktop(14px) auto 0;
+                @include displayFlex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                &.justify-center {
+                    justify-content: center;
+                }
+            }
+
+            // Modifier
+            &.has-form_error {
+                .warning {
+                    display: block;
+                    max-width: get-vw-desktop(600px);
+                    top: get-vw-desktop(50px);
+                }
+            }
+        }
+
+        .certification {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__amount-selection {
+        width: get-vw-desktop(253px);
+        @include displayFlex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        &__item {
+            position: relative;
+            width: get-vw-desktop(120px);
+
+            &:not(:nth-child(2n)) {
+                margin-right: get-vw-desktop(13px);
+            }
+
+            &:nth-child(n+3) {
+                margin-top: get-vw-desktop(9px);
+            }
+        }
+
+        &__label {
+            padding: get-vw-desktop(10px) get-vw-desktop(20px);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+            border: get-vw-desktop(1px) solid $sky_blue;
+            border-radius: get-vw-desktop(5px);
+            cursor: pointer;
+
+            &:after {
+                margin: auto;
+                content: '';
+                position: absolute;
+                top: 0;
+                right: get-vw-desktop(11px);
+                bottom: 0;
+                width: get-vw-desktop(15px);
+                height: get-vw-desktop(15px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url('./../images/common/circle-check-white.svg');
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &__radio {
+            position: absolute;
+            left: -9999px;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+
+            &:checked + label {
+                background: $primary;
+                color: $white;
+                border-color: $primary;
+
+                &:after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    &__confirm-amount {
+        padding: get-vw-desktop(43px) get-vw-desktop(55px) get-vw-desktop(38px);
+        width: get-vw-desktop(350px);
+        border: get-vw-desktop(2px) solid $sky_blue;
+        border-radius: get-vw-desktop(5px);
+
+        &__field {
+            &-row {
+                &--2cols {
+                    @include displayFlex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    .deposit__confirm-amount__field-col {
+                        &:nth-child(1) {
+                            width: get-vw-desktop(72px);
+                        }
+        
+                        &:nth-child(2) {
+                            width: get-vw-desktop(155px);
+                        }
+                    }
+                   
+                }
+            }
+
+            &-col {
+                @include displayFlex;
+                flex-direction: column; 
+            }
+
+        }
+
+        &__buttons {
+            margin: get-vw-desktop(27px) auto 0;
+            text-align: center;
+        }
+
+        .btn--link {
+            font-weight: 400;
+        }
+
+    }
+
+    &__input {
+        padding: get-vw-desktop(10px) get-vw-desktop(8px) get-vw-desktop(9px);
+        width: 100%;
+        background: $white;
+        border: 1px solid $sky_blue;
+        box-sizing: border-box;
+        border-radius: get-vw-desktop(5px);
+        font-size: get-vw-desktop(12px);
+        font-weight: 600;
+        line-height: get-vw-desktop(18px);
+        color: $navy;
+
+        &::placeholder {
+            font-weight: normal;
+        }
+
+        &--conversion {
+            padding-left: get-vw-desktop(35px);
+        }
+
+        &-wrapper {
+            position: relative;
+            width: 100%;
+
+            &:not(:first-of-type) {
+                margin: get-vw-desktop(5px) auto 0;
+            }
+
+            &.has-error {
+                input,
+                .custom-checkbox__mark {
+                    border-color: $red;
+                }
+            }
+        }
+
+        &-label {
+            margin: 0 0 get-vw-desktop(6px);
+            display: inline-block;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+        }
+
+        &-info-text {
+            margin: get-vw-desktop(2px) 0 0;
+            display: inline-block;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+            color: rgba(2, 25, 74, 0.7);
+        }
+
+        &-absolute-placeholder {
+            position: absolute;
+            display: inline-block;
+            top: get-vw-desktop(11px);
+            left: get-vw-desktop(8px);
+            font-size: get-vw-desktop(12px);
+            font-weight: 400;
+            line-height: get-vw-desktop(18px);
+            color: rgba(2, 25, 74, 0.7);
+        }
+    }
+
+    &__custom-select {
+        padding: 0;
+        width: 100%;
+        background: $sky_blue;
+
+        .select-selected {
+            padding: get-vw-desktop(10px) get-vw-desktop(21px) get-vw-desktop(9px) get-vw-desktop(14px);
+
+            &:after {
+                right: get-vw-desktop(12px);
+            }
+        }
+    }
+
+    &__custom-checkbox {
+        margin: get-vw-desktop(19px) auto 0;
+    }
+
+    &__proceed-btn {
+        box-shadow: 0 get-vw-desktop(5px) get-vw-desktop(10px) rgba(0, 0, 0, 0.15);
+    }
+
+    &__link {
+        margin: get-vw-desktop(20px) auto 0;
+    }
+
+}
+
+// DARK MODE
+.dark-mode {
+    .deposit {
+
+        &-main {
+            .item__content-box {
+                border: none;
+            }
+        }
+
+        &__method {
+            background: rgba(2, 25, 74, 0.8);
+            color: $white;
+    
+            &:after {
+                background-color: rgba(231, 242, 252, 0.5);
+                filter: blur(get-vw-desktop(10px));
+            }
+    
+            &-item {
+    
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid rgba(231, 242, 252, 0.2);
+                }
+    
+                &:hover,
+                &.is-active {
+                    background: $navy;
+                    box-shadow: none;
+                }
+    
+                &__title {
+                    color: $white;
+                }
+    
+                &__info {
+                    color: $sky_blue;
+                }
+            }
+        }
+
+        &__content {
+            background: $light_blue;
+
+            &__item {
+                &-back {
+                    color: $white;
+
+                    &::before {
+                        background-image: url('./../images/common/arrow-back-white.svg');
+                    }
+                }
+            }
+        }
+
+        &__confirm-amount {
+            background: $opac_white;
+            border: none;
+
+            .btn--link {
+                color: $white;
+            }
+        }
+
+        &__amount-selection {
+            &__label {
+                background: $opac_white;
+            }
+        }
+
+        &__input {
+            &-info-text {
+                color: $white;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Deposit
+@include mqMax($mq-max-mobile) {
+    .deposit {
+        &__method {
+            width: 100%;
+
+            .certification {
+                @include displayFlex;
+            }
+
+            &:after {
+                display: none;
+            }
+
+    
+            &-item {
+    
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid $sky_blue;
+                }
+    
+                &:hover,
+                &.is-active {
+                    box-shadow: 0 get-vw-mobile(3px) get-vw-mobile(15px) $sky_blue;
+                }
+                
+                &__content {
+                    padding: get-vw-mobile(8px) get-vw-mobile(27px) get-vw-mobile(8px) get-vw-mobile(35px);
+                    @include displayFlex;
+                    flex-direction: row;
+                    align-content: center;
+                }
+    
+                &__logo {
+                    margin: 0 get-vw-mobile(9px) 0 0;
+                    width: get-vw-mobile(42px);
+                    height: auto;
+                }
+    
+                &__text {
+                    width: get-vw-mobile(160px);
+                }
+    
+                &__title {
+                    display: block;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                    color: $navy;
+                }
+    
+                &__info {
+                    display: block;
+                    font-size: get-vw-mobile(10px);
+                    line-height: get-vw-mobile(16px);
+                }
+            }
+        }
+
+        &__content {
+            padding: 0;
+            width: 100%;
+            min-height: initial;
+
+            .certification {
+                position: initial;
+            }
+
+            &__item {
+                padding: 0 0 get-vw-mobile(43px);
+
+                &-header {
+                    padding: 0 get-vw-mobile(14px);
+                }
+    
+                &-back {
+                    padding: 0 0 0 get-vw-mobile(23px);
+                    font-size: get-vw-mobile(10px);
+                    line-height: get-vw-mobile(16px);
+                    color: rgba(2, 25, 74, 0.8);
+
+                    &::before {
+                        width: get-vw-mobile(19px);
+                        height: get-vw-mobile(8px);
+                    }
+
+                }
+    
+                &-logo {
+                    margin: 0 get-vw-mobile(6px) 0 0;
+                    width: get-vw-mobile(34px);
+
+                }
+    
+                &-wrapper {
+                    margin: get-vw-mobile(14px) auto 0;
+                }
+
+
+                // Modifier
+                &.has-form_error {
+                    .warning {
+                        max-width: get-vw-mobile(270px);
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        &__amount-selection {
+            display: none;
+        }
+
+        &__confirm-amount {
+            padding: 0;
+            width: 100%;
+            border: none;
+            border-radius: 0;
+    
+            &__field {
+                &-row {
+                    margin: 0 auto;
+                    width: get-vw-mobile(236px);
+
+                    &--2cols {
+                        .deposit__confirm-amount__field-col {
+                            &:nth-child(1) {
+                                width: get-vw-mobile(72px);
+                            }
+            
+                            &:nth-child(2) {
+                                width: get-vw-mobile(155px);
+                            }
+                        }
+                    }
+                }
+            }
+    
+            &__buttons {
+                margin: get-vw-mobile(27px) auto 0;
+                text-align: center;
+                @include displayFlex;
+                flex-direction: column;
+            }
+    
+        }
+
+        &__custom-select {
+            padding: 0;
+            .select-selected {
+                padding: get-vw-mobile(10px) get-vw-mobile(21px) get-vw-mobile(9px) get-vw-mobile(14px);
+    
+                &:after {
+                    right: get-vw-mobile(12px);
+                }
+            }
+        }
+
+        &__input {
+            padding: get-vw-mobile(10px) get-vw-mobile(8px) get-vw-mobile(9px);
+            background: $white;
+            border: 1px solid $sky_blue;
+            box-sizing: border-box;
+            border-radius: get-vw-mobile(5px);
+            font-size: get-vw-mobile(12px);
+            font-weight: 600;
+            line-height: get-vw-mobile(18px);
+            color: $navy;
+
+            &::placeholder {
+                font-weight: normal;
+            }
+
+            &--conversion {
+                padding-left: get-vw-mobile(35px);
+            }
+
+            &-wrapper {
+                &:not(:first-of-type) {
+                    margin: get-vw-mobile(8px) auto 0;
+                }
+            }
+
+            &-label {
+                margin: 0 0 get-vw-mobile(6px);
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+            }
+
+            &-info-text {
+                margin: get-vw-mobile(2px) 0 0;
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+            }
+
+            &-absolute-placeholder {
+                top: get-vw-mobile(11px);
+                left: get-vw-mobile(8px);
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+                color: rgba(2, 25, 74, 0.7);
+            }
+        }
+    
+        &__custom-checkbox {
+            margin: get-vw-mobile(19px) auto 0;
+        }
+
+        &__proceed-btn {
+            align-self: center;
+        }
+
+        &__link {
+            margin: get-vw-mobile(20px) auto 0;
+        }
+
+    }
+
+    // DARK MODE
+    .dark-mode {
+        .deposit {
+
+            &-main {
+                .item__content {
+                    box-shadow: 0px get-vw-mobile(4px) get-vw-mobile(15px) $opac_skyblue;
+                }
+
+                .item__content-box {
+                    box-shadow: none;
+                    border: none;
+                }
+            }
+
+            &__method {
+                background: transparent;
+
+                &-list {
+                    padding: 0 get-vw-mobile(19px) get-vw-mobile(20px);
+                    
+                }
+
+                &-item {
+                    background: rgba(2, 25, 74, 0.8);
+                }
+            }
+
+            &__content {
+                background: transparent;
+            }
+
+            &__confirm-amount {
+                background: transparent;
+            }
+
+        }
+    }
+
+}

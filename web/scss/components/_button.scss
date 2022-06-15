@@ -1,0 +1,326 @@
+// BUTTON
+.btn {
+    padding: get-vw-desktop(8px) get-vw-desktop(20px);
+    display: inline-block;
+    min-width: get-vw-desktop(160px);
+    font-family: $Poppins;
+    font-size: get-vw-desktop(12px);
+    font-weight: 600;
+    line-height: get-vw-desktop(18px);
+    border-radius: get-vw-desktop(30px);
+    border: 2px solid transparent;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: $navy;
+    background-color: $green;
+    @include transitionAll;
+    vertical-align: middle;
+
+    &:hover {
+        filter: brightness(120%);
+    }
+
+    &--small {
+        min-width: get-vw-desktop(100px);
+        padding: get-vw-desktop(4px) get-vw-desktop(15px);
+    }
+
+    &--outline {
+        background-color: transparent;
+        border-color: $green;
+        color: $white;
+
+        &:hover {
+            background-color: $green;
+        }
+    }
+
+    &--with-shadow {
+        box-shadow: 0 get-vw-desktop(5px) get-vw-desktop(10px) $opac_black;
+    }
+
+
+    // START Blue buttons
+    &--blue {
+        background-color: $purple;
+        border-color: $purple;
+        color: $white;
+    }
+    
+    &--blue-outline {
+        background-color: transparent;
+        border-color: $purple;
+        color: $purple;
+
+        &:hover {
+            background-color: $purple;
+            color: $white;
+        }
+    }
+    // End Blue buttons
+
+
+    // Start Link buttons
+    &--link {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        min-width: auto;
+        text-decoration: underline;
+        text-underline-position: under;
+        text-decoration-thickness: get-vw-desktop(2px);
+        -webkit-text-decoration-color: $green;
+        text-decoration-color: $green;
+    }
+    // End Link buttons
+
+
+    // Start - File buttons
+    &--file {
+        padding: get-vw-desktop(6px) get-vw-desktop(10px);
+        background-color: $sky_blue2;
+        border: 1px solid $sky_blue;
+        border-radius: get-vw-desktop(5px);
+        font-family: $Poppins;
+        font-weight: 400;
+        font-size: get-vw-desktop(10px);
+        line-height: get-vw-desktop(15px);
+        min-width: 75px;
+
+        &:hover {
+            background-color: $green;
+            border-color: $green;
+        }
+    }
+    // End - File buttons
+
+    // Start - Option buttons
+    &--option {
+        padding: get-vw-desktop(5px) get-vw-desktop(8px);
+        font-family: $Poppins;
+        font-size: get-vw-desktop(10px);
+        line-height: get-vw-desktop(15px);
+        color: $navy;
+        background-color: $sky_blue4;
+        min-width: get-vw-desktop(70px);
+        border: 1px solid $sky_blue;
+        border-radius: get-vw-desktop(5px);
+    }
+    // End - Option buttons
+
+    // Start Button icons
+    &__icon {
+        margin: 0 get-vw-desktop(10px) 0 0;
+        display: inline-block;
+        width: get-vw-desktop(15px);
+        height: get-vw-desktop(15px);
+        background-repeat: no-repeat;
+        background-size: contain;
+        vertical-align: middle;
+
+        &--fund {
+            background-image: url('./../images/common/funds.svg');
+        }
+        
+        &--add {
+            background-image: url('./../images/common/add-white.svg');
+            margin: 0 get-vw-desktop(10px) get-vw-desktop(1px) 0;
+        }
+
+        &--csv {
+            background-image: url('./../images/common/cloud-download.svg');
+            margin: 0 get-vw-desktop(4px) get-vw-desktop(1px) 0;
+        }
+
+        &--white-plus {
+            width: get-vw-desktop(10px);
+            height: get-vw-desktop(10px);
+            background-image: url('./../images/common/white-plus.svg');
+        }
+
+        &--calendar {
+            margin: 0 get-vw-desktop(5px) 0 0;
+            width: get-vw-desktop(16px);
+            height: get-vw-desktop(16px);
+            background-image: url('./../images/common/calendar-navy-icon.svg');
+        }
+
+        &--export {
+            margin: 0 get-vw-desktop(5px) 0 0;
+            width: get-vw-desktop(15px);
+            height: get-vw-desktop(14px);
+            background-image: url('./../images/common/export-navy-icon.svg');
+        }
+    }
+    // End Button icons
+
+    // Is Disabled
+    &.is-disabled {
+        border-color: gray;
+        background: gray;
+        pointer-events: none; 
+        cursor: not-allowed;
+        opacity: 0.4;
+
+        &.btn--outline,
+        &.btn--blue-outline {
+            background-color: transparent;
+            color: gray;
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .btn {
+    
+        // START Blue buttons
+        &--blue-outline {
+            color: $white;
+        }
+        // End Blue buttons
+    }
+}
+
+
+
+
+// LIQUID MOBILE - Button
+@include mqMax($mq-max-mobile) {
+    .btn {
+        padding: get-vw-mobile(8px) get-vw-mobile(15px);
+        min-width: get-vw-mobile(160px);
+        font-size: get-vw-mobile(12px);
+        line-height: get-vw-mobile(18px);
+        border-radius: get-vw-mobile(30px);
+        border: 2px solid transparent;
+
+        &--small {
+            min-width: get-vw-mobile(100px);
+            padding: get-vw-mobile(4px) get-vw-mobile(15px);
+        }
+
+        &--outline {
+            background-color: transparent;
+            border-color: $green;
+            color: $white;
+    
+            &:hover {
+                background-color: $green;
+            }
+        }
+
+        &--with-shadow {
+            box-shadow: 0 get-vw-mobile(5px) get-vw-mobile(10px) $opac_black;
+        }
+    
+        // START Blue buttons
+        &--blue {
+            background-color: $purple;
+            border-color: $purple;
+            color: $white;
+        }
+        
+        &--blue-outline {
+            background-color: transparent;
+            border-color: $purple;
+            color: $purple;
+    
+            &:hover {
+                background-color: $purple;
+                color: $white;
+            }
+        }
+        // End Blue buttons
+    
+        // Start Link buttons
+        &--link {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            min-width: auto;
+            text-decoration-thickness: get-vw-mobile(2px);
+            -webkit-text-decoration-color: $green;
+            text-decoration-color: $green;
+        }
+        // End Link buttons
+        
+        // Start - Option buttons
+        &--option {
+            padding: get-vw-mobile(5px) get-vw-mobile(8px);
+            font-size: get-vw-mobile(10px);
+            line-height: get-vw-mobile(15px);
+            min-width: get-vw-mobile(70px);
+            border: 1px solid $sky_blue;
+            border-radius: get-vw-mobile(5px);
+        }
+        // End - Option buttons
+
+        // Start Button icons
+        &__icon {
+            margin: 0 get-vw-mobile(8px) 0 0;
+            width: get-vw-mobile(15px);
+            height: get-vw-mobile(15px);
+
+            &--add {
+                margin: 0 get-vw-mobile(10px) 1px 0;
+            }
+
+            &--csv {
+                margin: 0 get-vw-mobile(4px) get-vw-mobile(1px) 0;
+            }
+
+            &--white-plus {
+                width: get-vw-mobile(10px);
+                height: get-vw-mobile(10px);
+            }
+
+            &--calendar {
+                margin: 0 get-vw-mobile(5px) 0 0;
+                width: get-vw-mobile(16px);
+                height: get-vw-mobile(16px);
+            }
+    
+            &--export {
+                margin: 0 get-vw-mobile(5px) 0 0;
+                width: get-vw-mobile(15px);
+                height: get-vw-mobile(14px);
+            }
+        }
+        // End Button icons
+
+
+        // Start - File buttons
+        &--file {
+            padding: get-vw-mobile(6px) get-vw-mobile(10px);
+            background-color: $sky_blue2;
+            border: 1px solid $sky_blue;
+            border-radius: get-vw-mobile(5px);
+            font-family: $Poppins;
+            font-weight: 400;
+            font-size: get-vw-mobile(10px);
+            line-height: get-vw-mobile(15px);
+            min-width: 75px;
+
+            &:hover {
+                background-color: $green;
+                border-color: $green;
+            }
+        }
+        // End - File buttons
+
+
+        // Small version
+        &--small {
+            min-width: get-vw-mobile(100px);
+
+            .btn__icon {
+                margin-right: 0;
+            }
+        }
+    }
+}

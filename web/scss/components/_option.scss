@@ -1,0 +1,472 @@
+// OPTION
+.option {
+    width: get-vw-desktop(470px);
+    margin: auto;
+
+    &__head {
+        width: 100%;
+        @include dFlex(space-between);
+        align-items: center;
+        margin-bottom: get-vw-desktop(15px);
+
+        &__item {
+            height: get-vw-desktop(120px);
+            width: get-vw-desktop(150px);
+            text-align: center;
+            padding: get-vw-desktop(30px) get-vw-desktop(5px) get-vw-desktop(5px);
+            border-radius: get-vw-desktop(5px);
+            border: get-vw-desktop(1px) solid transparent;
+            box-shadow: 0 get-vw-desktop(4px) get-vw-desktop(10px) rgba(231, 242, 252, 0.7);
+            cursor: pointer;
+            transition: .2s ease;
+    
+            &-icon {
+                height: get-vw-desktop(35px);
+                width: 100%;
+                margin-bottom: get-vw-desktop(20px);
+    
+                &--webcam {
+                    background: url('./../images/pages/on-boarding/icon_option--webcam.svg') center/ contain no-repeat;
+                }
+                &--qrcode {
+                    background: url('./../images/pages/on-boarding/icon_option--qrcode.svg') center/ contain no-repeat;
+                }
+                &--upload {
+                    background: url('./../images/pages/on-boarding/icon_option--upload.svg') center/ contain no-repeat;
+                }
+            }
+
+            &-label {
+                display: block;
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(20px);
+            }
+
+            &:hover {
+                background-color: #f6f6f6;
+            }
+
+            &.is-active, &:active {
+                background-color: $white;
+                border-color: $green;
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+
+        &__content {
+            width: 100%;
+            display: none;
+
+            .placeholder {
+                width: 100%;
+                height: get-vw-desktop(188px);
+                border-radius: get-vw-desktop(5px);
+                border: get-vw-desktop(1px) solid $sky_blue;
+                padding: get-vw-desktop(14px);
+                @include dFlex(center);
+                align-items: center;
+                text-align: center;
+
+                &__item {
+
+                    &-title {
+                        position: absolute;
+                        top: get-vw-desktop(-30px);
+                        left: 0;
+                        font-size: get-vw-desktop(12px);
+                        line-height: get-vw-desktop(20px);
+                    }
+
+                    &-img {
+                        display: block;
+                        height: auto;
+                        margin: 0 auto get-vw-desktop(4px);
+                        opacity: 0;
+                        animation: fadeInUp .6s ease .2s forwards;
+
+                        &--webcam {
+                            height: get-vw-desktop(85px);
+                            width: get-vw-desktop(85px);
+                            background: url('./../images/pages/on-boarding/graphic-option--webcam.svg') center/contain no-repeat;
+                        }
+                        &--qrcode, iframe {
+                            width: get-vw-desktop(80px);
+                            height: get-vw-desktop(80px);
+                            margin-bottom: get-vw-desktop(8px);
+                        }
+
+                        &--front, 
+                        &--back {
+                            height: get-vw-desktop(60px);
+                            width: get-vw-desktop(80px);
+                            margin-bottom: get-vw-desktop(12px);
+                        }
+
+                        &--front {
+                            background: url('./../images/pages/on-boarding/icon_id--front.svg') center/contain no-repeat;
+                        }
+                        &--back {
+                            background: url('./../images/pages/on-boarding/icon_id--back.svg') center/contain no-repeat;
+                        }
+                    }
+                    &-label {
+                        display: block;
+                        width: 100%;
+                        font-size: get-vw-desktop(10px);
+                        line-height: get-vw-desktop(16px);
+                        margin-bottom: get-vw-desktop(6px);
+                        opacity: 0;
+                        animation: fadeInUp .6s ease .3s forwards;
+                    }
+
+                    .btn {
+                        box-shadow: 0 get-vw-desktop(5px) get-vw-desktop(10px) rgba(0, 0, 0, 0.15);
+                        opacity: 0;
+                        animation: fadeInUp .6s ease .3s forwards;
+                    }
+                }
+
+                &__preview {
+                    position: relative;
+                    width: auto;
+                    height: 100%;
+                    display: none;
+                    opacity: 0;
+                    animation: fadeInRight .6s ease .2s forwards;
+
+                    &-close {
+                        position: absolute;
+                        background-color: $red;
+                        top: get-vw-desktop(-5px);
+                        right: get-vw-desktop(-5px);
+                        height: get-vw-desktop(12px);
+                        width: get-vw-desktop(12px);
+                        border-radius: 50%;
+                        z-index: 1;
+                        cursor: pointer;
+
+                        &::after {
+                            content: '';
+                            @include pCenter;
+                            height: get-vw-desktop(5.86px);
+                            width: get-vw-desktop(6.27px);
+                            background: url('./../images/pages/on-boarding/close-x.svg') center/contain no-repeat;
+                            z-index: 1;
+                        }
+                    }
+
+                    &-img {
+                        display: block;
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+
+
+                &--ID, 
+                &--qrcodes {
+                    height: get-vw-desktop(231px);
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    align-content: flex-start;
+                    border: none;
+                }
+
+
+                &--ID {
+                    padding: get-vw-desktop(30px) 0 0;
+
+                    .placeholder__item {
+                        position: relative;
+                        width: get-vw-desktop(230px);
+                        height: get-vw-desktop(180px);
+                        border-radius: get-vw-desktop(5px);
+                        border: get-vw-desktop(1px) solid $sky_blue;
+                        padding: get-vw-desktop(28px) get-vw-desktop(15px) get-vw-desktop(15px);
+                        opacity: 0;
+                        animation: fadeInUp .6s ease .2s forwards;
+                    }
+                    .placeholder__item-img {
+                        margin-bottom: get-vw-desktop(10px);
+                        animation: fadeInUp .6s ease .3s forwards;
+                    }
+                    .placeholder__item-label {
+                        margin-bottom: get-vw-desktop(10px);
+                    }
+
+                    .placeholder__item-label, 
+                    .btn {
+                        animation: fadeInUp .6s ease .3s forwards;
+                    }
+                }
+
+                &--qrcodes {
+                    padding: get-vw-desktop(30px) 0 0;
+
+                    .placeholder__item {
+                        position: relative;
+                        width: get-vw-desktop(230px);
+                        height: get-vw-desktop(150px);
+                        border-radius: get-vw-desktop(5px);
+                        border: get-vw-desktop(1px) dashed $navy;
+                        padding: get-vw-desktop(25px) get-vw-desktop(15px) get-vw-desktop(15px);
+                        opacity: 0;
+                        animation: fadeInUp .6s ease .2s forwards;
+                    }
+                    .placeholder__item-img {
+                        margin-bottom: get-vw-desktop(5px);
+                        animation: fadeInUp .6s ease .3s forwards;
+                    }
+                    .placeholder__item-label {
+                        margin-bottom: 0;
+                        animation: fadeInUp .6s ease .3s forwards;
+                    }
+                }
+
+
+                &.has-item {
+                    .placeholder__item {
+                        display: none;
+                    }
+                    .placeholder__preview {
+                        display: block;
+                    }
+                }
+            }
+
+
+            &.is-active {
+                display: block;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Uploads
+@include mqMax($mq-max-mobile) {
+    .option {
+        width: get-vw-mobile(270px);
+        margin: auto;
+    
+        &__head {
+            margin-bottom: get-vw-mobile(10px);
+    
+            &__item {
+                height: get-vw-mobile(50px);
+                width: 100%;
+                padding: get-vw-mobile(10px);
+                border-radius: get-vw-mobile(5px);
+                border: get-vw-mobile(1px) solid transparent;
+                box-shadow: 0 get-vw-mobile(4px) get-vw-mobile(10px) rgba(231, 242, 252, 0.7);
+                margin-bottom: get-vw-mobile(10px);
+                @include dFlex(center);
+                align-items: center;
+
+        
+                &-icon {
+                    display: inline-block;
+                    height: get-vw-mobile(20px);
+                    margin-bottom: 0;
+                    margin-right: get-vw-mobile(15px);
+        
+                    &--webcam {
+                        width: get-vw-mobile(24px);
+                    }
+                    &--qrcode {
+                        width: get-vw-mobile(24px);
+                    }
+                    &--upload {
+                        width: get-vw-mobile(20px);
+                    }
+                }
+    
+                &-label {
+                    display: inline-block;
+                    width: auto;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(20px);
+                }
+    
+                &:hover {
+                    background-color: #f6f6f6;
+                }
+    
+                &.is-active, &:active {
+                    background-color: $white;
+                    border-color: $green;
+                }
+            }
+        }
+    
+        &__body {
+            width: 100%;
+    
+            &__content {
+                width: 100%;
+                display: none;
+    
+                .placeholder {
+                    width: 100%;
+                    height: get-vw-mobile(229px);
+                    border-radius: get-vw-mobile(5px);
+                    border: get-vw-mobile(1px) solid $sky_blue;
+                    padding: get-vw-mobile(14px);
+                    @include dFlex(center);
+                    align-items: center;
+                    text-align: center;
+    
+                    &__item {
+
+                        &-title {
+                            top: get-vw-mobile(-25px);
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(20px);
+                        }
+
+
+                        &-img {
+                            display: block;
+                            height: auto;
+                            margin: 0 auto get-vw-mobile(10px);
+                            opacity: 0;
+                            animation: fadeInUp .6s ease .2s forwards;
+    
+                            &--webcam {
+                                height: get-vw-mobile(35px);
+                                width: get-vw-mobile(42px);
+                                background: url('./../images/pages/on-boarding/graphic-option--webcam_mobile.svg') center/contain no-repeat;
+                            }
+                            &--qrcode {
+                                width: get-vw-mobile(80px);
+                                margin-bottom: get-vw-mobile(10px);
+                            }
+
+                            &--front, 
+                            &--back {
+                                height: get-vw-mobile(60px);
+                                width: get-vw-mobile(80px);
+                                margin-bottom: get-vw-mobile(12px);
+                            }
+
+                        }
+                        &-label {
+                            display: block;
+                            width: 100%;
+                            font-size: get-vw-mobile(10px);
+                            line-height: get-vw-mobile(16px);
+                            margin-bottom: get-vw-mobile(6px);
+                            opacity: 0;
+                            animation: fadeInUp .6s ease .3s forwards;
+                        }
+                    }
+    
+                    &__preview {
+                        position: relative;
+                        width: auto;
+                        height: 100%;
+                        display: none;
+                        opacity: 0;
+                        animation: fadeInRight .6s ease .2s forwards;
+    
+                        &-close {
+                            position: absolute;
+                            background-color: $red;
+                            top: get-vw-mobile(-5px);
+                            right: get-vw-mobile(-5px);
+                            height: get-vw-mobile(12px);
+                            width: get-vw-mobile(12px);
+                            border-radius: 50%;
+                            z-index: 1;
+                            cursor: pointer;
+    
+                            &::after {
+                                content: '';
+                                @include pCenter;
+                                height: get-vw-mobile(5.86px);
+                                width: get-vw-mobile(6.27px);
+                                background: url('./../images/pages/on-boarding/close-x.svg') center/contain no-repeat;
+                                z-index: 1;
+                            }
+                        }
+    
+                        &-img {
+                            display: block;
+                            height: 100%;
+                            width: auto;
+                        }
+                    }
+
+
+                    &--ID, 
+                    &--qrcodes {
+                        height: auto;
+                        border: none;
+                    }
+
+
+                    &--ID {
+                        padding: get-vw-mobile(30px) 0 0;
+
+                        .placeholder__item {
+                            width: 100%;
+                            height: get-vw-mobile(180px);
+                            border-radius: get-vw-mobile(5px);
+                            border: get-vw-mobile(1px) solid $sky_blue;
+                            padding: get-vw-mobile(28px) get-vw-mobile(15px) get-vw-mobile(15px);
+                            margin-bottom: get-vw-mobile(40px);
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                        .placeholder__item-img {
+                            margin-bottom: get-vw-mobile(10px);
+                        }
+                        .placeholder__item-label {
+                            margin-bottom: get-vw-mobile(10px);
+                        }
+                    }
+
+                    &--qrcodes {
+                        padding: get-vw-mobile(30px) 0 0;
+
+                        .placeholder__item {
+                            width: 100%;;
+                            height: get-vw-mobile(135px);
+                            border-radius: get-vw-mobile(5px);
+                            border: get-vw-mobile(1px) dashed $navy;
+                            padding: get-vw-mobile(18px) get-vw-mobile(15px) get-vw-mobile(15px);
+                            margin-bottom: get-vw-mobile(40px);
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                        .placeholder__item-img {
+                            margin-bottom: get-vw-mobile(5px);
+                        }
+                    }
+    
+    
+                    &.has-item {
+                        .placeholder__item {
+                            display: none;
+                        }
+                        .placeholder__preview {
+                            display: block;
+                        }
+                    }
+                }
+    
+    
+                &.is-active {
+                    display: block;
+                }
+            }
+        }
+    }
+}

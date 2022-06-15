@@ -1,0 +1,1068 @@
+// SIDEBAR
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: get-vw-desktop(32px) 0 get-vw-desktop(28px) 0;
+    background: $d_navy_2;
+    width: get-vw-desktop(290px);
+    height: 100%;
+    transition: .2s ease;
+    z-index: 11;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: get-vw-desktop(96px);
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    &__logo {
+        position: relative;
+        margin: 0 0 0 get-vw-desktop(36px);
+        width: get-vw-desktop(190px);
+        height: get-vw-desktop(30px);
+        background: url('./../images/icons/common/logo--light.svg') left center no-repeat;
+        background-size: get-vw-desktop(190px) get-vw-desktop(30px);
+        @include transitionAll;
+        z-index: 1;
+    }
+
+    &__nav {
+        position: relative;
+        margin: get-vw-desktop(34px) 0 0;
+        padding-bottom: get-vw-desktop(60px);
+        height: 100%;
+        @include displayFlex;
+        flex-flow: row wrap;
+        align-content: space-between;
+        overflow-y: auto;
+        transition: .2s ease;
+
+        &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+
+        &-list {
+            width: 100%;
+            list-style: none;
+            padding-top: get-vw-desktop(20px);
+            
+            &:not(:first-of-type) {
+                margin: get-vw-desktop(8px) 0 0;
+            }
+
+            &-item {
+                padding: 0 get-vw-desktop(20px) 0 get-vw-desktop(36px);
+                position: relative;
+        
+                &:not(:first-of-type) {
+                    margin: get-vw-desktop(9px) 0 0;
+                }
+        
+                &.active {
+                    background: rgba(231,242,252, 0.05);
+                            
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        height: 100%;
+                        width: get-vw-desktop(5px);
+                        background: $green;
+                    }
+        
+                    .sidebar {
+                        &__nav-list-link, 
+                        &__nav-label {
+                            color: $green;
+                        }
+        
+                        &__nav-list--inner {
+        
+                            .sidebar__nav-label,
+                            .sidebar__nav-list-link {
+                                color: $white;
+        
+                                &.active {
+                                    color: $green;
+
+                                    .sidebar__nav-label {
+                                        color: $green;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                &.is-open {
+        
+                    .sidebar__nav-list-link--dropdown {
+                        &:after {
+                            @include transform(rotate(180deg));
+                        }
+                    }
+                }
+            }
+
+            &-link {
+                padding: get-vw-desktop(7px) 0;
+                position: relative;
+                @include dFlex(flex-start);
+                align-items: center;
+                font-family: $Poppins;
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(18px);
+                color: $white;
+                @include transitionOpacity;
+                cursor: pointer;
+                
+                &:hover {
+                    opacity: 0.8;
+                    text-decoration: none;
+                }
+        
+                &--dropdown {
+                    &:after {
+                        margin: auto;
+                        position: absolute;
+                        content: '';
+                        top: 0;
+                        right: get-vw-desktop(10px);
+                        bottom: 0;
+                        width: get-vw-desktop(10px);
+                        height: get-vw-desktop(6px);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-image: url('./../images/sidebar/sidebar-arrow-icon.svg');
+                        transform: rotate(-90deg) perspective(1px);
+                        @include transitionAll;
+                    }
+                }
+            }
+
+            &--inner {
+                margin: 0 0 0 get-vw-desktop(30px);
+                padding: 0 0 get-vw-desktop(5px);
+                display: none;
+    
+                .sidebar {
+                    &__nav-list-item {
+                        margin: get-vw-desktop(4px) 0 0;
+                        padding: 0;
+                    }
+    
+                    &__nav-list-link {
+                        padding: get-vw-desktop(2px) 0;
+                    }
+    
+                    &__nav-label {
+                        width: get-vw-desktop(172px);
+                    }
+                }
+            }
+        }
+
+        &-icon {
+            display: inline-block;
+            width: get-vw-desktop(25px);
+            height: get-vw-desktop(25px);
+            background-repeat: no-repeat;
+            background-size: get-vw-desktop(25px) get-vw-desktop(25px);
+    
+            &.is-active {
+                margin: 0;
+            }
+    
+            &--home {
+                background-image: url('./../images/sidebar/home.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-home.svg');
+                }
+            }
+    
+            &--referral {
+                background-image: url('./../images/sidebar/referral.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-referral.svg');
+                }
+            }
+    
+            &--commissions {
+                background-image: url('./../images/sidebar/commissions.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-commissions.svg');
+                }
+            }
+
+            &--marketing {
+                background-image: url('./../images/sidebar/marketing.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-marketing.svg');
+                }
+            }
+    
+            &--funds {
+                background-image: url('./../images/sidebar/funds.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-funds.svg');
+                }
+            }
+    
+            &--deposit {
+                background-image: url('./../images/sidebar/deposit.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-deposit.svg');                
+                }
+            }
+    
+    
+            &--withdrawal {
+                background-image: url('./../images/sidebar/withdrawal.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-withdrawal.svg');                
+                }
+            }
+
+            &--bbmlogo {
+                background-image: url('./../images/sidebar/bbm_logos.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-bbm_logos.svg');                
+                }
+            }
+
+            &--banner {
+                background-image: url('./../images/sidebar/banner.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-banner.svg');                
+                }
+            }
+
+            &--promotion {
+                background-image: url('./../images/sidebar/promotion.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-promotion.svg');                
+                }
+            }
+    
+            &--bank {
+                background-image: url('./../images/sidebar/bank.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-bank.svg');                
+                }
+            }
+    
+            &--history {
+                background-image: url('./../images/sidebar/history.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-history.svg');                
+                }
+            }
+    
+            &--my-accounts {
+                background-image: url('./../images/sidebar/accounts.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-accounts.svg');                
+                }
+            }
+    
+            &--new-account {
+                background-image: url('./../images/sidebar/new-account.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-new-account.svg');                
+                }
+            }
+    
+            &--demo {
+                background-image: url('./../images/sidebar/demo.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-demo.svg');                
+                }
+            }
+    
+            &--comparison {
+                background-image: url('./../images/sidebar/comparison.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-comparison.svg');                
+                }
+            }
+    
+            &--signal {
+                background-image: url('./../images/sidebar/signal.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-signal.svg');                
+                }
+            }
+    
+            &--performance {
+                background-image: url('./../images/sidebar/performance.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-performance.svg');                
+                }
+            }
+    
+            &--analysis {
+                background-image: url('./../images/sidebar/analysis.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-analysis.svg');                
+                }
+            }
+    
+            &--news {
+                background-image: url('./../images/sidebar/news.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-news.svg');                
+                }
+            }
+    
+            &--calendar {
+                background-image: url('./../images/sidebar/calendar.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-calendar.svg');                
+                }
+            }
+    
+            &--platforms {
+                background-image: url('./../images/sidebar/platforms.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-platforms.svg');                
+                }
+            }
+    
+            &--partnerships {
+                background-image: url('./../images/sidebar/partnerships.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-partnerships.svg');                
+                }
+            }
+    
+            &--refer {
+                background-image: url('./../images/sidebar/refer.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-refer.svg');                
+                }
+            }
+    
+            &--homepage {
+                background-image: url('./../images/sidebar/homepage.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-homepage.svg');                
+                }
+            }
+    
+            &--vps {
+                background-image: url('./../images/sidebar/vps.svg');
+    
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-vps.svg');                
+                }
+            }
+    
+            &--help {
+                background-image: url('./../images/sidebar/help.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-help.svg');                
+                }
+            }
+    
+            &--edit {
+                background-image: url('./../images/sidebar/edit.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-edit.svg');                
+                }
+            }
+    
+            &--notifications {
+                background-image: url('./../images/sidebar/notification.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-notification.svg');                
+                }
+            }
+    
+            &--legals {
+                background-image: url('./../images/sidebar/legals.svg');
+    
+                &.is-active {
+    
+                    background-image: url('./../images/sidebar/active-legals.svg');                
+                }
+            }
+    
+            &--logout {
+                background-image: url('./../images/sidebar/logout.svg');
+            
+                &.is-active {
+                    background-image: url('./../images/sidebar/active-logout.svg');                
+                }
+            }
+        }
+
+        &-label {
+            display: inline-block;
+            width: calc(100% - 1.7361111111111112vw); //100% - 25px
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: $Poppins;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+            color: $white;
+            cursor: pointer;
+            @include transitionAll;
+            @include transform(translateX(8px));
+    
+            &--logout {
+                width: 100%;
+            }
+    
+            // NOTICE
+            .notice {
+                position: relative;
+                display: inline-block;
+                padding-left: get-vw-desktop(25px);
+                transform: translateY(-0.104vw);
+    
+                &__icon {
+                    position: absolute;
+                    display: block;
+                    top: 0;
+                    left: get-vw-desktop(5px);
+                    bottom: 0;
+                    margin: auto;
+                    height: get-vw-desktop(14px);
+                    width: get-vw-desktop(15px);
+                    transform-origin: center;
+                    opacity: 0;
+                    transform: scale(0.5) perspective(1px);
+                    background: url('./../images/sidebar/icon_notice.svg') center/contain no-repeat;
+                }
+    
+                &__status {
+                    display: inline-block;
+                    font-family: $Poppins;
+                    font-size: get-vw-desktop(10px);
+                    line-height: get-vw-desktop(16px);
+                    background-color: $primary;
+                    border-radius: get-vw-desktop(20px);
+                    padding: 0 get-vw-desktop(8px);
+                    color: $white;
+                    opacity: 0;
+                    transform: translateX(-5px) perspective(1px);
+                    transition: .6s ease;
+                }
+    
+                &.is-active {
+                    .notice__icon {
+                        animation: pulseInOut 1s ease .4s forwards;
+                    }
+                    .notice__status {
+                        opacity: 1;
+                        transform: translateX(0px) perspective(1px);
+                        transition: .8s ease 1s;
+                    }
+                }
+            }
+        }
+
+        &-input {
+            display: block;
+            position: relative;
+            height: get-vw-desktop(35px);
+            width: get-vw-desktop(218px);
+            border: 2px solid $green;
+            border-radius: get-vw-desktop(10px);
+            margin: get-vw-desktop(8px) 0 get-vw-desktop(5px);
+    
+            input {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                padding: get-vw-desktop(9px) get-vw-desktop(12px);
+                background-color: transparent;
+                border: none;
+                color: $white;
+                font-size: get-vw-desktop(9px);
+                font-family: $Poppins;
+                line-height: get-vw-desktop(16px);
+            }
+        }
+
+        &-line {
+            display: none;
+        }
+    }
+
+    
+    &__close-btn {
+        margin: auto;
+        position: absolute;
+        display: inline-block;
+        content: '';
+        top: 0;
+        right: get-vw-desktop(-14px);
+        bottom: 0;
+        width: get-vw-desktop(30px);
+        height: get-vw-desktop(30px);
+        background-color: transparent;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+        @include transitionAll;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            transform: perspective(1px);
+            background: url('./../images/icons/common/icon_sidebar-arrow.svg') center/ contain no-repeat;
+            transition: 1s ease;
+        }
+    }
+
+
+    // Mobile
+    &__mode {
+        display: none;
+    }
+
+    &.is-close {
+        padding: get-vw-desktop(32px) 0 get-vw-desktop(28px) 0;
+        width: get-vw-desktop(100px);
+
+        .sidebar {
+
+            &__logo {
+                width: get-vw-desktop(32px);
+            }
+
+            &__close-btn {
+                &::after {
+                    transform: rotate(180deg) perspective(1px);
+                }
+            }
+
+            &__nav-list-link {
+                
+                &--dropdown {
+                    &:after {
+                        right: get-vw-desktop(-10px);
+                        @include transform(rotate(-90deg));
+                    }
+
+                }
+            }
+
+            &__nav-label {
+                width: 0;
+            }
+
+            &__nav-list {
+                &--inner {
+                    margin: 0;
+                    padding: get-vw-desktop(10px) get-vw-desktop(10px) get-vw-desktop(18px);
+                    position: absolute;
+                    top: 0;
+                    right: get-vw-desktop(-222px);
+                    width: get-vw-desktop(222px);
+                    background: $navy;
+                    z-index: 9999;
+                    
+                    .sidebar {
+                        &__nav-list-item {
+                            padding: 0;
+                        }
+
+                        &__nav-label {
+                            width: auto;
+                        }
+                    }
+                }
+            }
+
+            &__nav-list-item {
+                padding: 0 get-vw-desktop(39px) 0 get-vw-desktop(36px);
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .sidebar {
+        box-shadow: get-vw-desktop(5px) get-vw-desktop(5px) get-vw-desktop(30px) rgba(0,0,0,0.3);
+    }
+}
+
+
+
+// IF DEMO ACCOUNT
+.demo_account {
+    .sidebar {
+
+        &__nav {
+            &-list {
+                &-link {
+                    &.is-inactive {
+                        opacity: 0.5;
+                        pointer-events: none;
+                        cursor: not-allowed;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Sidebar
+@include mqMax($mq-max-mobile) {
+    .sidebar {
+        width: 100%;
+        z-index: 2000;
+        background-color: rgba(10, 21, 51, 0.8);
+        padding: get-vw-mobile(60px) 0 0 0;
+        visibility: hidden;
+        transition: .4s ease;
+    
+        &__logo {
+            display: none;
+        }
+    
+        &__nav {
+            background-color: $d_navy_2;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            max-height: get-vw-mobile(460px);
+            width: 100%;
+            margin: 0;
+            justify-content: flex-start;
+            border-radius: get-vw-mobile(5px) get-vw-mobile(5px) 0 0;
+            box-shadow: 0px -10px 20px rgba(2, 25, 74, 0.4);
+            padding: 20px 0;
+            opacity: 0;
+            transform: translateY(4.167vw) perspective(1px);
+            transition: .2s ease 0s;
+
+            &-line {
+                background-color: $green;
+                position: absolute;
+                height: get-vw-mobile(3px);
+                width: get-vw-mobile(36px);
+                top: get-vw-mobile(9px);
+                left: 0;
+                right: 0;
+                margin: auto;
+                border-radius: get-vw-mobile(30px);
+                display: block;
+            }
+
+            &-list {
+                border-bottom: get-vw-mobile(1px) solid $green;
+                padding-bottom: get-vw-mobile(20px);
+                margin-bottom: get-vw-mobile(20px);
+    
+                &:not(:first-of-type) {
+                    margin: 0;
+                }
+    
+                &:last-child {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom: 0;
+                }
+
+                &-item {
+                    padding: 0 get-vw-mobile(10px) 0 get-vw-mobile(17px);
+                    position: relative;
+            
+                    &:not(:first-of-type) {
+                        margin: get-vw-mobile(9px) 0 0;
+                    }
+            
+                    &.active {
+                                
+                        &:after {
+                            height: get-vw-mobile(32px);
+                            width: get-vw-mobile(5px);
+                        }
+                    }
+                }
+
+                &-link {
+                    padding: get-vw-mobile(4px) 0;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                    
+                    &--dropdown {
+                        &:after {
+                            right: get-vw-mobile(10px);
+                            width: get-vw-mobile(10px);
+                            height: get-vw-mobile(6px);
+                        }
+                    }
+                }
+
+                &--inner {
+                    margin: 0 0 0 get-vw-mobile(30px);
+    
+                    &:last-child {
+                        padding-bottom: get-vw-mobile(10px);
+                    }
+        
+                    .sidebar {
+                        &__nav-list-item {
+                            margin: get-vw-mobile(4px) 0 0;
+                        }
+        
+                        &__nav-list-link {
+                            padding: get-vw-mobile(2px) 0;
+                        }
+        
+                        &__nav-label {
+                            width: get-vw-mobile(172px);
+                        }
+                    }
+                }
+            }
+
+            &-icon {
+                display: inline-block;
+                width: get-vw-mobile(25px);
+                height: get-vw-mobile(25px);
+                background-repeat: no-repeat;
+                background-size: get-vw-mobile(25px) get-vw-mobile(25px);
+        
+                &.is-active {
+                    margin: 0;
+                }
+        
+                &--home {
+                    background-image: url('./../images/sidebar/home.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-home.svg');
+                    }
+                }
+        
+                &--funds {
+                    background-image: url('./../images/sidebar/funds.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-funds.svg');
+                    }
+                }
+        
+                &--deposit {
+                    background-image: url('./../images/sidebar/deposit.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-deposit.svg');                
+                    }
+                }
+        
+                &--transfer {
+                    background-image: url('./../images/sidebar/transfer.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-transfer.svg');                
+                    }
+                }
+        
+                &--withdrawal {
+                    background-image: url('./../images/sidebar/withdrawal.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-withdrawal.svg');                
+                    }
+                }
+        
+                &--bank {
+                    background-image: url('./../images/sidebar/bank.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-bank.svg');                
+                    }
+                }
+        
+                &--history {
+                    background-image: url('./../images/sidebar/history.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-history.svg');                
+                    }
+                }
+        
+                &--my-accounts {
+                    background-image: url('./../images/sidebar/my-accounts.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-my-accounts.svg');                
+                    }
+                }
+        
+                &--new-account {
+                    background-image: url('./../images/sidebar/new-account.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-new-account.svg');                
+                    }
+                }
+        
+                &--demo {
+                    background-image: url('./../images/sidebar/demo.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-demo.svg');                
+                    }
+                }
+        
+                &--comparison {
+                    background-image: url('./../images/sidebar/comparison.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-comparison.svg');                
+                    }
+                }
+        
+                &--signal {
+                    background-image: url('./../images/sidebar/signal.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-signal.svg');                
+                    }
+                }
+        
+                &--performance {
+                    background-image: url('./../images/sidebar/performance.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-performance.svg');                
+                    }
+                }
+        
+                &--analysis {
+                    background-image: url('./../images/sidebar/analysis.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-analysis.svg');                
+                    }
+                }
+        
+                &--news {
+                    background-image: url('./../images/sidebar/news.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-news.svg');                
+                    }
+                }
+        
+                &--calendar {
+                    background-image: url('./../images/sidebar/calendar.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-calendar.svg');                
+                    }
+                }
+        
+                &--platforms {
+                    background-image: url('./../images/sidebar/platforms.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-platforms.svg');                
+                    }
+                }
+        
+                &--partnerships {
+                    background-image: url('./../images/sidebar/partnerships.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-partnerships.svg');                
+                    }
+                }
+        
+                &--refer {
+                    background-image: url('./../images/sidebar/refer.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-refer.svg');                
+                    }
+                }
+        
+                &--homepage {
+                    background-image: url('./../images/sidebar/homepage.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-homepage.svg');                
+                    }
+                }
+        
+                &--vps {
+                    background-image: url('./../images/sidebar/vps.svg');
+        
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-vps.svg');                
+                    }
+                }
+        
+                &--help {
+                    background-image: url('./../images/sidebar/help.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-help.svg');                
+                    }
+                }
+        
+                &--edit {
+                    background-image: url('./../images/sidebar/edit.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-edit.svg');                
+                    }
+                }
+    
+                &--notifications {
+                    background-image: url('./../images/sidebar/notification.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-notification.svg');                
+                    }
+                }
+        
+                &--legals {
+                    background-image: url('./../images/sidebar/legals.svg');
+        
+                    &.is-active {
+        
+                        background-image: url('./../images/sidebar/active-legals.svg');                
+                    }
+                }
+        
+                &--logout {
+                    background-image: url('./../images/sidebar/logout.svg');
+                
+                    &.is-active {
+                        background-image: url('./../images/sidebar/active-logout.svg');                
+                    }
+                }
+            }
+
+            &-label {
+                display: inline-block;
+                width: calc(100% - 27.778vw); //100% - 25px
+                overflow: hidden;
+                white-space: nowrap;
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+                @include transitionAll;
+                @include transform(translateX(2.222vw));
+    
+                &--logout {
+                    width: 100%;
+                }
+    
+                // NOTICE
+                .notice {
+                    padding-left: get-vw-mobile(28px);
+                    transform: translateY(-0.556vw);
+    
+                    &__icon {
+                        left: get-vw-mobile(5px);
+                        height: get-vw-mobile(13px);
+                        width: get-vw-mobile(14px);
+                    }
+    
+                    &__status {
+                        font-size: get-vw-mobile(10px);
+                        line-height: get-vw-mobile(16px);
+                        border-radius: get-vw-mobile(20px);
+                        padding: 0 get-vw-mobile(8px);
+                        transform: translateX(-5px) perspective(1px);
+                    }
+                }
+            }
+        }
+
+        &__mode {
+            position: fixed;
+            bottom: get-vw-mobile(20px);
+            right: get-vw-mobile(20px);
+            height: get-vw-mobile(25px);
+            width: get-vw-mobile(25px);
+            background: url('./../images/common/mode-light.svg') center/contain no-repeat;
+            z-index: 100;
+            display: block;
+            opacity: 0;
+            transform: translateY(15px) perspective(1px);
+
+            &.is-active {
+                //opacity: 1;
+                transform: translateY(0) perspective(1px);
+            }
+
+            &.theme_mode {
+                &--dark {
+                    background-image: url('./../images/common/mode-dark.svg');
+                }
+            }
+        }
+    
+        &__close-btn {
+            display: none;
+        }
+    
+        &.is-active {
+            visibility: visible;
+
+            .sidebar__nav, 
+            .sidebar__mode {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0) perspective(1px);
+                transition: .4s ease .2s;
+            }
+        }
+    }
+}

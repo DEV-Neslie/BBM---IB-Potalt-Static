@@ -1,0 +1,211 @@
+// LANGUAGE PICKER
+.language {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 100;
+    text-transform: uppercase;
+
+    &__selected {
+        position: inherit;
+        font-size: get-vw-desktop(12px);
+        font-family: $Poppins;
+        font-weight: 600;
+        line-height: get-vw-desktop(18px);
+        color: $white;
+        @include dFlex(flex-end);
+        align-items: center;
+
+        &-id {
+            display: none;
+        }
+
+        &-name {
+            display: inline-block;
+        }
+
+        &-icon {
+            display: inline-block;
+            height: get-vw-desktop(15px);
+            width: get-vw-desktop(20px);
+            margin: 0 get-vw-desktop(5px) get-vw-desktop(2px) 0;
+            background: url('./../images/flags/global.svg') center/contain no-repeat;
+        }
+
+        &-arrow {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            display: inline-block;
+            height: get-vw-desktop(14px);
+            width: get-vw-desktop(14px);
+            background: url('./../images/header/language-picker-arrow.svg') center/contain no-repeat;
+            transition: .2s ease .1s;
+        }
+    }
+
+
+    &__options {
+        background-color: $white;
+        position: absolute;
+        width: get-vw-desktop(120px);
+        border-radius: get-vw-desktop(5px);
+        right: 0;
+        top: calc(100% + 0.347vw);
+        box-shadow: 0 get-vw-desktop(6px) get-vw-desktop(10px) rgba(0,0,0,0.2);
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-0.347vw) perspective(1px);
+        transition: .2s ease .1s;
+
+        &-item {
+            position: relative;
+            background-color: transparent;
+            display: block;
+            width: 100%;
+            color: $navy;
+            padding: get-vw-desktop(4px) get-vw-desktop(12px);
+            font-size: get-vw-desktop(8px);
+            transition: .2s ease;
+            text-align: right;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: get-vw-desktop(14px);
+                bottom: 0;
+                margin: auto;
+                height: get-vw-desktop(15px);
+                width: get-vw-desktop(20px);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+
+            &:first-child {
+                padding-top: get-vw-desktop(12px);
+            }
+            &:last-child {
+                padding-bottom: get-vw-desktop(12px);
+            }
+
+            &:hover {
+                background-color: #f4f4f4;
+            }
+
+            &.is-selected {
+                display: none;
+            }
+        }
+    }
+
+
+    &--arrow {
+        .language__selected {
+            margin-right: get-vw-desktop(15px);
+            padding-right: get-vw-desktop(20px);
+            
+            &-id {
+                display: block;
+            }
+        }
+        .language__options {
+            right: get-vw-desktop(15px);
+        }
+    }
+
+
+    &:hover {
+        .language__selected-arrow {
+            transform: rotate(180deg) perspective(1px);
+        }
+
+        .language__options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px) perspective(1px);
+        }
+    }
+}
+
+
+
+// LIQUID MOBILE - Language Picker
+@include mqMax($mq-max-mobile) {
+    .language {
+    
+        &__selected {
+            font-size: get-vw-mobile(14px);
+            line-height: get-vw-mobile(19px);
+    
+            &-id {
+                display: block;
+            }
+    
+            &-name {
+                display: none;
+            }
+    
+            &-icon {
+                height: get-vw-mobile(15px);
+                width: get-vw-mobile(20px);
+                margin: 0 get-vw-mobile(5px) get-vw-mobile(2px) 0;
+            }
+
+            &-arrow {
+                height: get-vw-mobile(14px);
+                width: get-vw-mobile(14px);
+            }
+        }
+    
+    
+        &__options {
+            width: get-vw-mobile(150px);
+            border-radius: get-vw-mobile(5px);
+            top: calc(100% + 0.347vw);
+            box-shadow: 0 get-vw-mobile(6px) get-vw-mobile(10px) rgba(0,0,0,0.4);
+            transform: translateY(-0.347vw) perspective(1px);
+    
+            &-item {
+                padding: get-vw-mobile(6px) get-vw-mobile(12px);
+                font-size: get-vw-mobile(10px);
+    
+                &::before {
+                    left: get-vw-mobile(14px);
+                    height: get-vw-mobile(15px);
+                    width: get-vw-mobile(20px);
+                }
+    
+                &:first-child {
+                    padding-top: get-vw-mobile(12px);
+                }
+                &:last-child {
+                    padding-bottom: get-vw-mobile(12px);
+                }
+            }
+        }
+
+
+        &--arrow {
+            margin-bottom: get-vw-mobile(5px);
+
+            .language__selected {
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(15px);
+                margin-right: get-vw-mobile(15px);
+                padding-right: get-vw-mobile(20px);
+                
+                &-id {
+                    display: block;
+                }
+            }
+            .language__options {
+                right: get-vw-mobile(15px);
+            }
+        }
+    }
+}

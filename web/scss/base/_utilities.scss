@@ -1,0 +1,200 @@
+// UTILITIES
+
+// Font Weight
+.fw-600 {
+    font-weight: 600;
+}
+
+// text alignments
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+
+.text-left {
+    text-align: left;
+}
+
+// text color
+.text-white {
+    color: $white;
+}
+.text-navy {
+    color: $navy;
+}
+.text-primary {
+    color: $primary;
+}
+.text-red {
+    color: $red;
+}
+.text-green {
+    color: $green;
+}
+.text--u-green {
+    border-bottom: get-vw-desktop(3px) solid $green;
+}
+.text-link-u-green {
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-thickness: get-vw-desktop(3px);
+    -webkit-text-decoration-color: $green;
+    text-decoration-color: $green;
+    
+    &.v2 {
+        text-decoration-thickness: get-vw-desktop(2px);
+    }
+    &.v3 {
+        text-decoration-thickness: get-vw-desktop(1px);
+    }
+}
+
+// Spacing
+.p-0 {
+    padding: 0 !important;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+// Display
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+
+// Display Flex - alignments
+.justify-space-between {
+    justify-content: space-between;
+}
+.no-wrap {
+    white-space: nowrap;
+}
+
+
+// Image alignment
+.img-center {
+    margin: 0 auto;
+    display: block;
+}
+
+// Image effects
+.u-zoom {
+    overflow: hidden;
+
+    img, .bg-zoom {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: 0.4s cubic-bezier(0.14, 0.79, 0.37, 0.95);
+        transition: 0.4s cubic-bezier(0.14, 0.79, 0.37, 0.95);
+    }
+
+    &:hover {
+        img, .bg-zoom {
+            @include transform(scale(1.08));
+        }
+    }
+}
+
+
+// Misc
+.clearfix::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+// Spacing
+.m-40 {
+    margin-bottom: get-vw-desktop(40px);
+}
+.m-20 {
+    margin-bottom: get-vw-desktop(20px);
+}
+
+
+// Country
+.au-hidden {
+    display: none;
+}
+
+.au-visible {
+    display: block;
+}
+
+
+// LIQUID MOBILE - Utilities
+@include mqMax($mq-max-mobile) {
+
+    // Font Color
+    .text-link-u-green {
+        text-decoration-thickness: get-vw-mobile(3px);
+        &.v2 {
+            text-decoration-thickness: get-vw-mobile(2px);
+        }
+    }
+    .text--u-green {
+        border-bottom: get-vw-mobile(2px) solid $green;
+    }
+
+    // Width
+    .w-sm-100 {
+        width: 100% !important;
+    }
+
+
+    // Display
+    .d-mobile-block {
+        display: block !important;
+    }
+
+    .d-mobile-none {
+        display: none !important;
+    }
+
+    // Spacing
+    .m-40 {
+        margin-bottom: get-vw-mobile(40px);
+    }
+    .m-20 {
+        margin-bottom: get-vw-mobile(20px);
+    }
+
+    .daterangepicker {
+        z-index: 9999 !important;
+    }
+
+
+    // ORDERS
+    .s-order-1 {
+        order: 1;
+    }
+    .s-order-2 {
+        order: 2;
+    }
+    .s-order-3 {
+        order: 3;
+    }
+    .s-order-4 {
+        order: 4;
+    }
+    .s-order-5 {
+        order: 5;
+    }
+}
+
+
+@include mqMinPc {
+    // Display
+    .d-desktop-block {
+        display: block !important;
+    }
+
+    .d-desktop-none {
+        display: none !important;
+    }
+}

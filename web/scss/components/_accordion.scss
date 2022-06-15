@@ -1,0 +1,94 @@
+// ACCORDION
+.accordion_field {
+    position: relative;
+    width: 100%;
+}
+
+.accordion {
+    padding: 65px 0 46px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid $purple;
+
+    &-head {
+        position: relative;
+        width: 100%;
+        min-height: 55px;
+        @include displayFlex;
+        align-items: center;
+        box-sizing: border-box;
+        padding-right: 55px;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: url('./../images/common/svg/arrow-down.svg') center/contain no-repeat;
+            width: 29px;
+            height: 14px;
+            top: 19px;
+            right: 15px;
+            transition: all .2s ease;
+            transform: perspective(1px);
+        }
+
+        &-title {
+            font-family: $Gilroy_b;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 35px;
+            letter-spacing: -0.5px;
+            color: $purple;
+        }
+    }
+    &-body {
+        position: relative;
+        width: 100%;
+        // font-family: $Poppins;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: -0.5px;
+        display: none;
+        box-sizing: border-box;
+        padding-right: 28px;
+
+        &-list {
+            box-sizing: border-box;
+            width: 100%;
+
+            li {
+                position: relative;
+                width: 100%;
+                list-style-type: disc;
+            }
+
+            // Versions
+            &.bulleted {
+                padding-left: 30px;
+            }
+
+            &.v-small {
+                font-size: 15px;
+            }
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    // OPENED
+    &.is-open {
+        .accordion-head {
+            &::after {
+                transform: rotate(180deg) perspective(1px);
+                top: 21px;
+            }
+        }
+    }
+}

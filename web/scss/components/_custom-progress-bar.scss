@@ -1,0 +1,32 @@
+// CUSTOM PROGRESS BAR
+.custom-progress-bar {
+    margin: get-vw-desktop(30px) auto;
+    width: get-vw-desktop(218px);
+    height: get-vw-desktop(7px);
+    background-color: $sky_blue;
+    border-radius: get-vw-desktop(30px);
+    @include transitionAllEase;
+
+    &__line {
+        height: 100%;
+        width: 0;
+        background-color: $primary;
+        border-radius: get-vw-mobile(30px);
+        transition: width 3s;
+    }
+}
+
+
+// LIQUID MOBILE - CUSTOM PROGRESS BAR
+@include mqMax($mq-max-mobile) {
+    .custom-progress-bar {
+        margin: get-vw-mobile(30px) auto;
+        width: get-vw-mobile(218px);
+        height: get-vw-mobile(7px);
+        border-radius: get-vw-mobile(30px);
+    
+        &__line {
+            border-radius: get-vw-mobile(30px);
+        }
+    }
+}

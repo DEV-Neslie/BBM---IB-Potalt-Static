@@ -1,0 +1,96 @@
+// BASE
+@import './base/mixin';
+@import './base/animation';
+@import './base/utilities';
+@import './base/base';
+
+
+// LAYOUTS
+@import './layouts/main';
+@import './layouts/header';
+@import './layouts/footer';
+@import './layouts/sidebar';
+@import './layouts/content';
+@import './layouts/onboarding';
+
+
+// COMPONENTS
+@import './components/accordion';
+@import './components/breadcrumbs';
+@import './components/button';
+@import './components/common-validation';
+@import './components/certification';
+@import './components/charts';
+@import './components/controls';
+@import './components/custom-calendar';
+@import './components/custom-checkbox';
+@import './components/custom-copy-link';
+@import './components/custom-select';
+@import './components/custom-progress-bar';
+@import './components/custom-radio';
+@import './components/custom-tool-tip';
+@import './components/custom-upload';
+@import './components/data';
+@import './components/form';
+@import './components/imgBox';
+@import './components/item';
+@import './components/language-picker';
+@import './components/list';
+@import './components/loader';
+@import './components/menu-toggler';
+@import './components/modal';
+@import './components/news';
+@import './components/note';
+@import './components/option';
+@import './components/page-modal';
+@import './components/pagination';
+@import './components/picture';
+@import './components/preloader';
+@import './components/progressbar';
+@import './components/search';
+@import './components/sns';
+@import './components/step-auth';
+@import './components/tabular';
+@import './components/tooltip';
+@import './components/tel-input';
+@import './components/tab-link';
+@import './components/toggle-switch';
+@import './components/upload';
+@import './components/warning';
+@import './components/loader-spinner';
+@import './components/search-results';
+@import './components/market-news';
+@import './components/progress-notif';
+@import './components/quick-links';
+
+ 
+// COMPONENT Sections
+@import './components/section_bbm-wallet';
+@import './components/section_economic-calendar';
+@import './components/section_trading-links';
+@import './components/section_transfer';
+@import './components/section_deposit';
+@import './components/section_card-form';
+@import './components/section_payment-gateway';
+@import './components/section_account-comparison';
+@import './components/section_accounts';
+@import './components/section_notification';
+@import './components/section-profile';
+@import './components/section_setting';
+@import './components/section_documents';
+@import './components/section_contact-dir';
+@import './components/section_inquiry';
+
+
+// LIBRARY
+@import './library/datepicker';
+
+
+// PAGES
+@import './pages/login';
+@import './pages/signup';
+@import './pages/signal-center';
+@import './pages/web-signup';
+@import './pages/need-help';
+@import './pages/notifications';
+@import './pages/questionnaire';

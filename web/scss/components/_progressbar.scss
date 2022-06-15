@@ -1,0 +1,62 @@
+// PROGRESS BAR  | Mobile display
+$circle-size: get-vw-mobile(25px); 
+$inset-size: get-vw-mobile(21px);
+
+// get-vw-mobile(12px)
+
+.progressBar {
+    position: relative;
+	margin: auto;
+	width:  $circle-size;
+	height: $circle-size;
+	background-color: $sky_blue;
+	border-radius: 50%;
+
+    &__slice, &__fill {
+        width: $circle-size;
+        height: $circle-size;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        transition: transform 1s .4s;
+        border-radius: 50%;
+    }
+    &__slice {
+        clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+    }
+
+    &__fill {
+        clip: rect(0px, $circle-size/2, $circle-size, 0px);
+        background-color: $primary;
+    }
+
+	&__overlay {
+		background-color: $sky_blue;
+		width: $inset-size;
+		height: $inset-size;
+		border-radius: 50%;
+        @include pCenter;
+	}
+
+    &__counter {
+        font-size: get-vw-mobile(10px);
+        line-height: get-vw-mobile(16px);
+        height: get-vw-mobile(16px);
+        width: 100%;
+        @include pCenter;
+        text-align: center;
+    }
+
+	$i: 0;
+	$increment: 180deg / 100;
+	@while $i <= 100 {
+		&[data-progress='#{$i}'] {
+            .progressBar__slice.full, .progressBar__fill {
+                transform: rotate($increment * $i);
+            }	
+            .progressBar__fill.active-bar {
+                transform: rotate($increment * $i * 2);
+            }
+            $i: $i + 1;
+		}
+	}
+}

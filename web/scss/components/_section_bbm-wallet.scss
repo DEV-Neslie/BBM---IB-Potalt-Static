@@ -1,0 +1,44 @@
+// BBM WALLET
+.blueberry-wallet {
+    transition: .2s ease all;
+
+    &__btn-container {
+        margin: get-vw-desktop(24px) auto 0;
+        text-align: center;
+
+        .btn {
+            min-width: get-vw-desktop(165px);
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .blueberry-wallet {
+        color: $white;
+        
+        &__content {
+            background-color: $opac_white;
+            box-shadow: get-vw-desktop(5px) get-vw-desktop(5px) get-vw-desktop(20px) $opac_skyblue;
+        }
+    }
+}
+
+
+// LIQUID MOBILE - BBM Wallet
+@include mqMax($mq-max-mobile) {
+    .blueberry-wallet {
+        &__content {
+            padding: get-vw-mobile(27px) get-vw-mobile(22px) get-vw-mobile(29px) get-vw-mobile(30px);
+        }
+
+        &__btn-container {
+            margin: get-vw-mobile(17px) auto 0;
+    
+            .btn {
+                min-width: get-vw-mobile(165px);
+            }
+        }
+    }
+}

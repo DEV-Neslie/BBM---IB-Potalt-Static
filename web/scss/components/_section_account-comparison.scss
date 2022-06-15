@@ -1,0 +1,236 @@
+
+
+.account-comparison {
+    text-align: center;
+
+    &__header {
+        &__info-text {
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+        }
+    }
+
+    &__content {
+        margin: get-vw-desktop(19px) auto 0;
+        @include displayFlex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+
+        &-item {
+            width: calc(50% - 0.6944444444444444vw); // 50% - 10px
+            background: $white;
+            border-radius: get-vw-desktop(5px);
+
+            &:not(:nth-child(2n)) {
+                margin-right: get-vw-desktop(20px); 
+            }
+    
+            &:nth-child(n+3) {
+                margin-top: get-vw-desktop(20px);
+            }
+
+            &__header {
+                padding: get-vw-desktop(24px) get-vw-desktop(20px) get-vw-desktop(18px);
+            }
+
+            &__heading {
+                margin: get-vw-desktop(8px) auto 0;
+            }
+
+            &__logo {
+                margin: 0 auto;
+                display: inline-block;
+                width: get-vw-desktop(21px);
+                height: get-vw-desktop(21px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                
+                &--direct {
+                    background-image: url('./../images/common/direct-account-icon.svg');
+                }
+
+                &--standard {
+                    background-image: url('./../images/common/standard-account-icon.svg');
+                }
+            }
+
+            &__deposit {
+                padding: get-vw-desktop(24px) get-vw-desktop(20px) get-vw-desktop(18px);
+                background: $sky_blue;
+
+                &-text {
+                    color: $purple;
+                }
+            }
+
+            &__info {
+                min-height: get-vw-desktop(94px);
+                @include displayFlex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &-text {
+                    width: get-vw-desktop(434px);
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+                }
+            }
+        }
+    }
+
+    &__list {
+        list-style: none;
+
+        &-item {
+            padding: get-vw-desktop(18px) get-vw-desktop(10px);
+            border-top: 1px solid $opac_navy;
+
+            &__title {
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(16px);
+                color: $purple;
+            }
+
+            &__text {
+                margin: get-vw-desktop(2px) auto 0;
+                font-size: get-vw-desktop(12px);
+                font-weight: bold;
+                line-height: get-vw-desktop(18px);
+            }
+        }
+    }
+}
+
+.dark-mode {
+
+    .account-comparison {
+
+        &__content {
+            &-item {
+                background: $opac_white;
+                box-shadow: 0 get-vw-desktop(4px) get-vw-desktop(15px) $opac_skyblue;
+
+                &__logo {                    
+                    &--direct {
+                        background-image: url('./../images/common/direct-account-white-icon.svg');
+                    }
+    
+                    &--standard {
+                        background-image: url('./../images/common/standard-account-white-icon.svg');
+                    }
+                }
+
+                &__deposit {
+                    background: $opac_skyblue;
+
+                    &-text {
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        &__list {
+            &-item {
+                border-color: $white;
+                
+                &__title {
+                    color: $white;
+                }
+            }
+        }
+        
+    }
+   
+}
+
+
+@include mqMax($mq-max-mobile) {
+    .account-comparison {
+        text-align: center;
+    
+        &__header {
+            &__info-text {
+                text-align: left;
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+            }
+        }
+    
+        &__content {
+            margin: get-vw-mobile(24px) auto 0;
+            
+    
+            &-item {
+                width: 100%;
+                border-radius: get-vw-mobile(5px);
+    
+                &:not(:nth-child(2n)) {
+                    margin-right: initial; 
+                }
+        
+                &:nth-child(n+3) {
+                    margin-top: initial;
+                }
+
+                &:not(:first-of-type) {
+                    margin: get-vw-mobile(25px) auto 0;
+                }
+    
+                &__header {
+                    padding: get-vw-mobile(24px) get-vw-mobile(20px) get-vw-mobile(18px);
+                }
+    
+                &__heading {
+                    margin: get-vw-mobile(8px) auto 0;
+                }
+    
+                &__logo {
+                    width: get-vw-mobile(21px);
+                    height: get-vw-mobile(21px);
+                }
+    
+                &__deposit {
+                    padding: get-vw-mobile(18px) get-vw-mobile(20px);
+
+                    &-text {
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(20px);
+                    }
+                }
+    
+                &__info {
+                    padding: get-vw-mobile(16px) get-vw-mobile(20px);
+                    min-height: initial;
+    
+                    &-text {
+                        width: 100%;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+                    }
+                }
+            }
+        }
+    
+        &__list {
+    
+            &-item {
+                padding: get-vw-mobile(12px) get-vw-mobile(10px);
+                border-top: 1px solid $opac_navy;
+    
+                &__title {
+                    font-size: get-vw-mobile(10px);
+                    line-height: get-vw-mobile(16px);
+                }
+    
+                &__text {
+                    margin: get-vw-mobile(2px) auto 0;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                }
+            }
+        }
+    }
+}

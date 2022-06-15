@@ -1,0 +1,509 @@
+// NOTIFICATIONS PAGE
+.notifications {
+
+    &__filter {
+        &-header {
+            @include displayFlex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &__left {
+                width: 50%;
+            }
+
+            &__right {
+                width: 50%;
+                @include displayFlex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+
+        &-content {
+            margin: get-vw-desktop(32px) 0 0;
+            padding: 0 0 get-vw-desktop(20px);
+            border-bottom: 2px solid $white;
+        }
+
+        &-form {
+            &__row {
+                @include displayFlex;
+            }
+
+            &__col {
+                width: get-vw-desktop(270px);
+
+                &:not(:last-of-type) {
+                    margin-right: get-vw-desktop(22px);
+                }
+            }
+
+            &__input-wrapper {
+                position: relative;
+            }
+
+            &__submit {
+                margin: auto;
+                position: absolute;
+                top: 0;
+                right: get-vw-desktop(11px);
+                bottom: 0;
+                width: get-vw-desktop(13px);
+                height: get-vw-desktop(14px);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url('./../images/common/search-icon-navy.svg');
+                cursor: pointer;
+            }
+        }
+
+        label {
+            margin: 0 0 get-vw-desktop(8px);
+            display: block;
+            font-size: get-vw-desktop(10px);
+            line-height: 1.2;
+        }
+
+        input {
+            padding: get-vw-desktop(10px) get-vw-desktop(14px);
+            font-family: $Poppins;
+            font-size: get-vw-desktop(10px);
+            line-height: 1.2;
+            background-color: $sky_blue4;
+            border: 1px solid $sky_blue;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        input[type="search"] {
+            padding: get-vw-desktop(10px) get-vw-desktop(32px) get-vw-desktop(10px) get-vw-desktop(14px);
+        }
+
+        .custom-select {
+            width: 100%;
+            border: 1px solid $sky_blue;
+            border-radius: 5px;
+
+            .select-selected {
+                padding: get-vw-desktop(10px) get-vw-desktop(32px) get-vw-desktop(10px) get-vw-desktop(14px);
+                font-size: get-vw-desktop(10px);
+                line-height: 1.2;
+                background-color: $sky_blue4;
+            }
+        }
+
+        .custom-calendar {
+            &__input {
+                padding: get-vw-desktop(10px) get-vw-desktop(34px) get-vw-desktop(10px) get-vw-desktop(42px);
+            }
+        }
+
+        ::placeholder,
+        ::-webkit-input-placeholder,
+        :-moz-placeholder,
+        ::-moz-placeholder,
+        :-ms-input-placeholder,
+        :-moz-placeholder {
+            font-size: get-vw-desktop(10px);
+            line-height: 1.2;
+            color: $opac_navy_2;
+        }
+    }
+
+    &__content {
+        padding: get-vw-desktop(30px) 0;
+        position: relative;
+
+        &-indicator {
+            position: absolute;
+            top: get-vw-desktop(36px);
+            right: 0;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+        }
+    }
+
+    .fave-icon {
+        display: inline-block;
+        width: get-vw-desktop(13px);
+        height: get-vw-desktop(13px);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/notif-fave-blue-icon.svg');
+        cursor: pointer;
+
+        &.is-active {
+            background-image: url('./../images/common/notif-fave-blue-solid-icon.svg');
+        }
+    }
+    
+    .view-icon {
+        display: inline-block;
+        margin: 0 0 0 get-vw-desktop(6px);
+        width: get-vw-desktop(18px);
+        height: get-vw-desktop(13px);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/notif-view-blue-icon.svg');
+        cursor: pointer;
+
+        &.hidden {
+            background-image: url('./../images/common/notif-view-blue-icon-slash.svg');
+        }
+    }
+
+    &__item {
+        @include displayFlex;
+        flex-direction: row;
+
+        &:last-of-type {
+            .notifications__date {
+                &::before {
+                    height: calc(100% - 3.4722222222222223vw); //100% - 50px
+                }
+            }
+        }
+    }
+
+    &__date {
+        position: relative;
+
+        &-val {
+            position: relative;
+            padding: get-vw-desktop(11px) get-vw-desktop(8px);
+            width: get-vw-desktop(117px);
+            font-size: get-vw-desktop(10px);
+            line-height: 1.2;
+            text-align: center;
+            color: $white;
+            background-color: $primary;
+            border-radius: get-vw-desktop(10px);
+        }
+
+        &::before {
+            margin: auto;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background-color: $white;
+        }
+
+    }
+
+    &__inner {
+        margin: 0 0 0 get-vw-desktop(18px);
+        padding: get-vw-desktop(50px) 0 get-vw-desktop(20px);
+        //width: get-vw-desktop(923px);
+        width: calc(100% - 8.125vw); //100% - 117px
+        color: $navy;
+
+        &-header {
+            @include displayFlex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &__left {
+                width: 50%;
+            }
+
+            &__right {
+                width: 50%;
+                @include displayFlex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+
+        &-item {
+            padding: get-vw-desktop(10px) get-vw-desktop(14px) get-vw-desktop(10px) get-vw-desktop(20px);
+            position: relative;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+            background-color: $sky_blue;
+            border: 1px solid $white;
+            border-radius: get-vw-desktop(8px);
+
+            // &:not(:first-of-type) {
+            //     margin: get-vw-desktop(18px) 0 0;
+            // }
+
+            &:before {
+                margin: auto;
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: get-vw-desktop(-89px);
+                width: get-vw-desktop(23px);
+                height: get-vw-desktop(20px);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url('./../images/common/notif-red-eye.svg');
+                background-color: $light_grey;
+            }
+
+            &.viewed {
+                background-color: $white;
+
+                &::before {
+                    background-image: url('./../images/common/notif-green-eye.svg');
+                }
+            }
+        }
+
+        &-date {
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+        }
+
+        &-status {
+            margin: 0 0 0 get-vw-desktop(6px);
+            padding: 0 0 0 get-vw-desktop(10px);
+            display: inline-block;
+            position: relative;
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+
+            &:before {
+                margin: auto;
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: get-vw-desktop(7px);
+                height: get-vw-desktop(8px);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url('./../images/common/notif-check-status-icon.svg');
+            }
+        }
+
+        &-user {
+            margin: get-vw-desktop(5px) 0 0;
+            font-size: get-vw-desktop(12px);
+            font-weight: 600;
+            line-height: get-vw-desktop(18px);
+            color: inherit;
+        }
+
+        &-desc {
+            margin: get-vw-desktop(3px) 0 0;
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+        }
+    }
+}
+
+
+.dark-mode {
+    .notifications {
+        &__inner {
+            &-item {
+                &:before {
+                    background-color: $navy;
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - NOTIFICATIONS PAGE
+@include mqMax($mq-max-mobile) {
+    .notifications {
+        &__filter {
+            &-header {
+                &__left {
+                    .btn {
+                        font-size: get-vw-mobile(10px);
+                    }
+                }
+            }
+    
+            &-content {
+                margin: get-vw-mobile(24px) 0 0;
+                padding: 0 0 get-vw-mobile(14px);
+                border-bottom: none;
+            }
+    
+            &-form {
+                &__row {
+                    flex-direction: column;
+                }
+    
+                &__col {
+                    width: 100%;
+    
+                    &:not(:last-of-type) {
+                        margin: 0 0 get-vw-mobile(12px);
+                    }
+                }
+    
+                &__submit {
+                    right: get-vw-mobile(12px);
+                    width: get-vw-mobile(13px);
+                    height: get-vw-mobile(14px);
+                }
+            }
+    
+            label {
+                margin: 0 0 get-vw-mobile(8px);
+                font-size: get-vw-mobile(10px);
+            }
+    
+            input {
+                padding: get-vw-mobile(10px) get-vw-mobile(14px);
+                font-size: get-vw-mobile(10px);
+            }
+    
+            input[type="search"] {
+                padding: get-vw-mobile(10px) get-vw-mobile(32px) get-vw-mobile(10px) get-vw-mobile(14px);
+            }
+    
+            .custom-select {
+    
+                .select-selected {
+                    padding: get-vw-mobile(10px) get-vw-mobile(32px) get-vw-mobile(10px) get-vw-mobile(14px);
+                    font-size: get-vw-mobile(10px);
+                    line-height: 1.2;
+                    background-color: $sky_blue4;
+                }
+            }
+    
+            .custom-calendar {
+                &__input {
+                    padding: get-vw-mobile(10px) get-vw-mobile(34px) get-vw-mobile(10px) get-vw-mobile(42px);
+                }
+            }
+    
+            ::placeholder,
+            ::-webkit-input-placeholder,
+            :-moz-placeholder,
+            ::-moz-placeholder,
+            :-ms-input-placeholder,
+            :-moz-placeholder {
+                font-size: get-vw-mobile(10px);
+                line-height: 1.2;
+                color: $opac_navy_2;
+            }
+        }
+    
+        &__content {
+            padding: get-vw-mobile(14px) 0;
+    
+            &-indicator {
+                display: none;
+            }
+        }
+    
+        .fave-icon {
+            width: get-vw-mobile(10px);
+            height: get-vw-mobile(10px);
+        }
+        
+        .view-icon {
+            margin: 0 0 0 get-vw-mobile(5px);
+            width: get-vw-mobile(14px);
+            height: get-vw-mobile(9px);
+        }
+    
+        &__item {
+            @include displayFlex;
+            flex-direction: row;
+    
+            &:last-of-type {
+                .notifications__date {
+                    &::before {
+                        height: calc(100% - 16.666666666666664vw); //100% - 60px
+                    }
+                }
+            }
+        }
+    
+        &__date {
+            width: get-vw-mobile(85px);
+    
+            &-val {
+                padding: get-vw-mobile(11px) get-vw-mobile(8px);
+                width: get-vw-mobile(117px);
+                font-size: get-vw-mobile(10px);
+                line-height: 1.2;
+                border-radius: get-vw-mobile(10px);
+            }
+    
+        }
+    
+        &__inner {
+            margin: 0;
+            padding: get-vw-mobile(50px) 0 get-vw-mobile(20px);
+            width: get-vw-mobile(235px);
+            color: $navy;
+    
+            &-item {
+                padding: get-vw-mobile(10px) get-vw-mobile(12px);
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+                border-radius: get-vw-mobile(5px);
+    
+                // &:not(:first-of-type) {
+                //     margin: get-vw-mobile(16px) 0 0;
+                // }
+    
+                &:before {
+                    left: get-vw-mobile(-55px);
+                    width: get-vw-mobile(23px);
+                    height: get-vw-mobile(20px);
+                }
+            }
+    
+            &-date {
+                font-size: inherit;
+                line-height: inherit;
+                color: inherit;
+            }
+    
+            &-status {
+                margin: 0 0 0 get-vw-mobile(6px);
+                padding: 0 0 0 get-vw-mobile(10px);
+                font-size: get-vw-mobile(8px);
+    
+                &:before {
+                    width: get-vw-mobile(6px);
+                    height: get-vw-mobile(7px);
+                }
+            }
+    
+            &-user {
+                margin: get-vw-mobile(5px) 0 0;
+                font-size: get-vw-mobile(12px);
+                font-weight: 600;
+                line-height: get-vw-mobile(18px);
+                color: inherit;
+            }
+    
+            &-desc {
+                margin: get-vw-mobile(3px) 0 0;
+                font-size: inherit;
+                line-height: inherit;
+                color: inherit;
+            }
+        }
+    }
+}

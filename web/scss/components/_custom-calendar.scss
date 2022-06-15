@@ -1,0 +1,61 @@
+
+.custom-calendar {
+    position: relative;
+
+    &:before {
+        margin: auto;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: get-vw-desktop(16px);
+        bottom: 0;
+        width: get-vw-desktop(16px);
+        height: get-vw-desktop(16px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/calendar-navy-icon.svg');
+    }
+
+    &:after {
+        margin: auto;
+        position: absolute;
+        content: "";
+        top: 0;
+        right: get-vw-desktop(16px);
+        bottom: 0;
+        width: get-vw-desktop(11px);
+        height: get-vw-desktop(6px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/custom-select-arrow.svg');
+        @include transitionAll;
+        
+    }
+
+    &__input {
+        padding: get-vw-desktop(10px) get-vw-desktop(34px) get-vw-desktop(10px) get-vw-desktop(42px);
+    }
+}
+
+
+// LIQUID MOBILE - CUSTOM CALENDAR
+@include mqMax($mq-max-mobile) {
+    .custom-calendar {
+    
+        &:before {
+            left: get-vw-mobile(16px);
+            width: get-vw-mobile(16px);
+            height: get-vw-mobile(16px);
+        }
+    
+        &:after {
+            right: get-vw-mobile(16px);
+            width: get-vw-mobile(11px);
+            height: get-vw-mobile(6px);
+        }
+    
+        &__input {
+            padding: get-vw-mobile(10px) get-vw-mobile(34px) get-vw-mobile(10px) get-vw-mobile(42px);
+        }
+    }
+}

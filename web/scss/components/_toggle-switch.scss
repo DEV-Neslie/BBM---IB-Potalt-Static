@@ -1,0 +1,83 @@
+// TOGGLE SWITCH
+.toggle-switch {
+    display: inline-block;
+    position: relative;
+    width: get-vw-desktop(38px);
+    height: get-vw-desktop(20px); 
+    cursor: pointer;
+    overflow: hidden;
+    
+    &__slider {
+        display: block;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        border: get-vw-desktop(1px) solid $sky_blue;
+        border-radius: get-vw-desktop(60px);
+        background-color: $sky_blue;
+        -webkit-transition: .4s;
+        transition: .4s;
+        
+
+        &:before {
+            margin: auto;
+            position: absolute;
+            content: "";
+            height: get-vw-desktop(18px);
+            width: get-vw-desktop(18px);
+            top: 0;
+            left: get-vw-desktop(1px);
+            bottom: 0;
+            background-color: $white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+    }
+
+    input[type="checkbox"] { 
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        cursor: pointer;
+
+        &:checked + .toggle-switch__slider {
+            background-color: $green;
+            border-color: $green;
+        }
+
+        &:checked + .toggle-switch__slider:before {
+            @include transform(translateX(get-vw-desktop(17px)));
+        }
+    }
+}
+
+
+@include mqMax($mq-max-mobile) {
+    .toggle-switch {
+        width: get-vw-mobile(38px);
+        height: get-vw-mobile(20px);
+        
+        &__slider {
+            border: get-vw-mobile(1px) solid $sky_blue;
+            border-radius: get-vw-mobile(60px);
+            
+    
+            &:before {
+                height: get-vw-mobile(18px);
+                width: get-vw-mobile(18px);
+                left: get-vw-mobile(1px);
+            }
+        }
+    
+        input[type="checkbox"] { 
+            &:checked + .toggle-switch__slider:before {
+                @include transform(translateX(get-vw-mobile(17px)));
+            }
+        }
+    }
+}

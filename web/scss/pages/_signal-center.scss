@@ -1,0 +1,3118 @@
+// SIGNAL CENTER
+.signalcenter {
+
+    // Container
+    .SignalCentre__mainContainer__vfJBS {
+        transition: .2s ease;
+        background-color: transparent !important;
+
+        &.SignalCentre__mainContainerLight__2xsV8 {
+            background: transparent !important;
+        }
+
+        &.SignalCentre__mainContainerDark__2KLmD {
+            background-color: $sky_blue !important;
+        }
+
+        .DetailsPage__mainWrapper__DxtGJ {
+            background: $light_grey !important;
+            transition: .2s ease;
+        }
+    }
+
+
+    // Controller
+    .SignalCentre__topBar__hEL6J { 
+        padding: 0 !important;
+        margin-bottom: get-vw-desktop(20px);
+        display: flex;
+        flex-flow: row wrap !important;
+        justify-content: space-between !important;
+
+        // left
+        .TopMenus__logoSelectorCtn__rXBih {
+            order: 2;
+            justify-content: flex-end;
+            width: get-vw-desktop(50px);
+            min-width: 0;
+
+            // platform Logo
+            .TopMenus__logoCtn__27lQT {
+                display: none;
+            }
+
+            // Display Mode
+            .DisplaySelector__switchContainer__3Ny18 {
+                width: get-vw-desktop(45px);
+                margin: 0;
+                justify-content: space-between;
+
+                // Button Wrapper
+                .DisplaySelector__selectorElement__3KvWE {
+
+                    // Column Icon
+                    .DisplaySelector__tabsIco__KDtcw, 
+                    .DisplaySelector__tabsIco__KDtcw.DisplaySelector__active__22hsi, 
+                    .DisplaySelector__listIco__h9KT6 {
+                        width: get-vw-desktop(15px);
+                        height: get-vw-desktop(15px);
+                    }
+
+                    // Column Icon
+                    .DisplaySelector__tabsIco__KDtcw {
+                        background-image: url('./../images/pages/signal-center/filter_column.svg');
+
+                        &.DisplaySelector__active__22hsi {
+                            background-image: url('./../images/pages/signal-center/filter_column--active.svg');
+                        }
+                    }
+
+                    // List Icon
+                    .DisplaySelector__listIco__h9KT6 {
+                        background-image: url('./../images/pages/signal-center/filter_list.svg');
+
+                        &.DisplaySelector__active__22hsi {
+                            background-image: url('./../images/pages/signal-center/filter_list--active.svg');
+                        }
+                    }
+                }
+            }
+        }
+
+
+        // Right
+        .TopMenus__extremeCtn__2kXDi {
+            order: 1;
+            flex-direction: row;
+            width: get-vw-desktop(600px) !important;
+
+            // Inner wrapper
+            .TopMenus__filterMenus__1UIMq {
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+
+                // Range Filter
+                .IntervalSlider__sliderContainer__1z2gy {
+                    justify-content: space-between;
+                    max-width: get-vw-desktop(210px);
+                    width: 100%;
+                    height: auto;
+                    padding: 0;
+                    
+                    .IntervalSlider__label__aFOMS, 
+                    .IntervalSlider__currentValue__2NY4U,
+                    .IntervalSlider__currentValue__2NY4U {
+                        color: $navy;
+                        font-family: $Poppins;
+                        font-size: get-vw-desktop(10px);
+                        font-weight: 400;
+                        line-height: get-vw-desktop(16px);
+                        margin: 0;
+                        padding: 0;
+                        min-width: 0;
+                    }
+
+                    // Conference - label
+                    .IntervalSlider__label__aFOMS {
+
+                    }
+
+                    // Range line
+                    .IntervalSlider__sliderBody__1iy84 {
+
+                        // Lines
+                        .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-0, 
+                        .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-1, 
+                        .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-2 {
+                            height: get-vw-desktop(1px) !important;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                        }
+
+                        .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-1 {
+                            height: get-vw-desktop(3px) !important;
+                        }
+
+                        // Circle
+                        .IntervalSlider__selectorthumb__1-qzV.IntervalSlider__selectorthumb__1-qzV-0, 
+                        .IntervalSlider__selectorthumb__1-qzV.IntervalSlider__selectorthumb__1-qzV-1 {
+                            top: get-vw-desktop(-1.5px);
+                            height: get-vw-desktop(10px);
+                            width: get-vw-desktop(10px);
+                        } 
+
+                    }
+                }
+
+                // Custom Select
+                .TopMenuElement__menuWrapper__iUB3q {
+                    width: get-vw-desktop(150px);
+                    height: get-vw-desktop(28px);
+                    border-radius: get-vw-desktop(5px);
+                    margin: 0;
+
+                    // Select
+                    .TopMenuElement__topMenuContainer__1Kyp5 {
+                        background-color: $white;
+                        border-radius: get-vw-desktop(5px);
+                        color: $navy;
+                        height: 100%;
+                        font-family: $Poppins;
+                        font-size: get-vw-desktop(10px);
+                        font-weight: 400;
+                        line-height: get-vw-desktop(16px);
+
+                        .TopMenuElement__openMenu__3dDU4 {
+                            height: 100%;
+                            padding: get-vw-desktop(10px) get-vw-desktop(16px);
+                            justify-content: space-between;
+
+                            // Arrow
+                            .TopMenuElement__filterArrow__2lFaQ {
+                                width: get-vw-desktop(8px);
+                                height: get-vw-desktop(13px);
+                                margin: 0;
+                                background-image: url("./../images/common/custom-select-arrow.svg");
+                            }
+                        }
+
+                        // Dropdown
+                        .TopMenuElement__flexContainer__26u9g {
+                            background-color: $white;
+                            border-radius: get-vw-desktop(5px);
+                            top: calc(100% + 0.347vw);
+                            box-shadow: 0 get-vw-desktop(6px) get-vw-desktop(10px) rgba(0,0,0,0.2);
+                            z-index: 1;
+                        }
+                    }
+                }
+
+                // Language Filter
+                .TopMenuElement__menuWrapper__iUB3q.TopMenuElement__reduced__3p_hP {
+                    display: none;
+                }
+
+                // COLLAPSE VERSION
+                .TopMenus__menuContainer__2lAXR {
+                    position: relative;
+                    top: initial;
+                    left: initial;
+                    width: 100%;
+                    @include dFlex(space-between);
+                    align-items: center;
+
+                    // Collapse Button
+                    .TopMenus__menuButton__1plMg {
+                        display: none
+                    }
+
+                    .TopMenus__menuFlap__1KLiG.TopMenus__hidden__3hm1y {
+                        @include dFlex(space-between);
+                        align-items: center;
+                        font-size: get-vw-desktop(10px);
+                        line-height: get-vw-desktop(16px);
+                        padding: 0;
+
+                        // Ranger
+                        .IntervalSlider__sliderContainer__1z2gy {
+                            @include displayFlex;
+
+                            .IntervalSlider__confidenceBar__3AymR {
+                                width: get-vw-desktop(135px);
+
+                                // Line
+                                .IntervalSlider__sliderBody__1iy84 {
+                                    width: get-vw-desktop(80px);
+                                    height: get-vw-desktop(8px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .SignalCentre__mainWrapper__1lejx > div {
+        width: 100%;
+    }
+
+    .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk > div {
+        width: calc(25% - 1.042vw);
+    }
+
+    // COLUMN VIEW
+    .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+        justify-content: space-between;
+
+        // Card item
+        .TradingElementSingleTab__detailsTile__3XAgx {
+            background-color: transparent;
+            margin: 0 0 get-vw-desktop(20px);
+            width: 100%;
+            height: get-vw-desktop(280px);
+            border-radius: get-vw-desktop(5px);
+
+            // Green Cards
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFade__uMgHK {
+                background: url(https://prodstorage.azureedge.net/Widgets/lib/@1.0.0/af19e2ef3969884139d89620ff76e38e.svg) 10% 56%/62% auto no-repeat, linear-gradient(0deg, #20ac69 0, #48485f 10.417vw);
+            }
+
+
+            // Red Cards
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFade__WGD3O {
+                background: url(https://prodstorage.azureedge.net/Widgets/lib/@1.0.0/af19e2ef3969884139d89620ff76e38e.svg) 10% 56%/62% auto no-repeat, linear-gradient(0deg, #eb3d52 0, #48485f 10.417vw);
+            }
+
+
+            // EXPIRED - Green Cards
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFadeExpiry__2q-4O {
+                opacity: 0.4;
+                background: url(https://prodstorage.azureedge.net/Widgets/lib/@1.0.0/af19e2ef3969884139d89620ff76e38e.svg) 10% 56%/62% auto no-repeat, linear-gradient(0deg, #20ac69 0, #48485f 10.417vw);
+            }
+
+
+            // EXPIRED - Red Cards
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFadeExpiry__nY7vW {
+                opacity: 0.4;
+                background: url(https://prodstorage.azureedge.net/Widgets/lib/@1.0.0/af19e2ef3969884139d89620ff76e38e.svg) 10% 56%/62% auto no-repeat, linear-gradient(0deg, #eb3d52 0, #48485f 10.417vw);
+            }
+
+
+
+
+            // Content Wrapper
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFadeExpiry__nY7vW, 
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFadeExpiry__2q-4O, 
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFade__WGD3O, 
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFade__uMgHK {
+                @include dFlex(center);
+                align-content: flex-start;
+                height: 100%;
+                border-radius: 0 !important;
+
+
+                // Card docker
+                .TradingElementSingleTab__titleHeadline__2xBYW {
+                    width: 100%;
+                    padding: get-vw-desktop(20px) get-vw-desktop(20px) 0;
+
+                    // Limits - text
+                    .TradingElementSingleTab__itemInfo2__1TgGZ {
+                        width: get-vw-desktop(220px);
+                        font-size: get-vw-desktop(12px) !important;
+                        line-height: get-vw-desktop(18px) !important;
+
+                        // Live
+                        .TradingElementSingleTab__itemStatusBallActive__1OO1I {
+                            margin-top: get-vw-desktop(5px);
+                            height: get-vw-desktop(7px);
+                            width: get-vw-desktop(7px);
+                            margin-left: 0;
+                            margin-right: get-vw-desktop(5px);
+                            border-radius: get-vw-desktop(20px);
+                            background-color: $primary;
+                        }
+                    }
+
+
+                    // LAPTOP - TABLET
+                    .TradingElementSingleTab__itemInfo__1JpFA {
+                        width: get-vw-desktop(320px);
+
+                        // Icons
+                        .TradingElementSingleTab__itemIcon__1xfu4 {
+                            height: get-vw-desktop(16px);
+                            width: get-vw-desktop(16px);
+                        }
+
+                        // Version - Tablet | Mobile
+                        .TradingElementSingleTab__itemNameMobile__3i9vW {
+                            display: none !important;
+                        }
+                    }
+                }
+
+                // Name - Desktop
+                .TradingElementSingleTab__itemName__1C_wx {
+                    width: 100%;
+                    font-family: $Gilroy_b;
+                    font-weight: initial;
+                    font-size: get-vw-desktop(16px);
+                    line-height: get-vw-desktop(24px);
+                    margin: get-vw-desktop(5px) 0 get-vw-desktop(10px);
+                    padding: 0 get-vw-desktop(20px);
+                    display: block !important;
+                }
+
+                // Label
+                .TradingElementSingleTab__confidenceCtn__2POq6 {
+                    width: 100%;
+                    margin: 0 0 get-vw-desktop(10px);
+                    color: inherit;
+
+                    .TradingElementSingleTab__confidenceLabel__1RpS8, 
+                    .TradingElementSingleTab__confidenceValue__tqBrC {
+                        display: block;
+                        font-family: $Poppins;
+                        font-size: get-vw-desktop(12px);
+                        line-height: get-vw-desktop(18px);
+                    }
+
+
+                    // Label - text
+                    .TradingElementSingleTab__confidenceLabel__1RpS8 {
+                        width: 65%;
+                        text-align: right;
+                        padding: 0 get-vw-desktop(15px) 0 0;
+                    }
+
+                    // Label - value
+                    .TradingElementSingleTab__confidenceValue__tqBrC {
+                        font-weight: 600;
+                        width: 35%;
+                        min-width: auto;
+                        margin: 0;
+                        padding-left: get-vw-desktop(20px);
+                    }
+                }
+
+                // Content - Tablet | mobile
+                .TradingElementSingleTab__onlyMobile__1XOVs {
+                    display: none !important;
+                }
+
+                // Content - Desktop
+                .TradingElementSingleTab__onlyDesktop__OPMSQ {
+                    display: block !important;
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    min-height: get-vw-desktop(150px);
+                    padding: 0;
+                    margin: 0;
+
+                    // Entity Wrapper
+                    .TradingElementSingleTab__displayFlexRow__2jMf3 {
+                        width: 100%;
+                        height: get-vw-desktop(25px);
+                        @include dFlex(space-between);
+                        align-items: flex-start;
+
+                        &:first-child {
+                            height: get-vw-desktop(35px);
+
+                            .TradingElementSingleTab__deskNumber__vA4Py.TradingElementSingleTab__deskConceptStop__3wrL2, 
+                            .TradingElementSingleTab__deskConcept__2-vdB.TradingElementSingleTab__deskConceptStop__3wrL2 {
+                                font-weight: 600;
+                            }
+                        }
+
+                        .TradingElementSingleTab__deskConcept__2-vdB.TradingElementSingleTab__deskConceptStop__3wrL2, 
+                        .TradingElementSingleTab__deskNumber__vA4Py.TradingElementSingleTab__deskConceptStop__3wrL2 {
+                            font-family: $Poppins;
+                            font-size: get-vw-desktop(12px);
+                            line-height: get-vw-desktop(18px);
+                        }
+
+                        // Entity
+                        .TradingElementSingleTab__deskConcept__2-vdB, 
+                        .TradingElementSingleTab__deskConcept__2-vdB.TradingElementSingleTab__deskConceptStop__3wrL2 {
+                            position: relative;
+                            width: 65%;
+                            height: auto;
+                            padding: 0 6% 0 0;
+                            text-align: right;
+                            font-family: $Poppins;
+                            font-size: get-vw-desktop(12px);
+                            line-height: get-vw-desktop(18px);
+                        }
+
+                        // Separator
+                        .TradingElementSingleTab__deskBorder__2qcNE {
+                            width: 1%;
+                            height: 100%;
+                            border-right: get-vw-desktop(1px) solid $white;
+                            border-color: inherit;
+                        }
+
+                        // Entity Value
+                        .TradingElementSingleTab__deskNumber__vA4Py, 
+                        .TradingElementSingleTab__deskNumber__vA4Py.TradingElementSingleTab__deskConceptStop__3wrL2 {
+                            position: relative;
+                            width: 34%;
+                            height: auto;
+                            font-weight: 600;
+                            text-align: left;
+                            padding: 0 0 0 8% !important;
+
+                            span {
+                                display: block;
+                                width: 100%;
+                                padding: 0;
+                                font-family: $Poppins;
+                                font-size: get-vw-desktop(12px);
+                                line-height: get-vw-desktop(18px);
+                            }
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: 0;
+                                margin: auto;
+                                background-color: $white;
+                                height: get-vw-desktop(1px);
+                                width: get-vw-desktop(6px);
+                                transform: perspective(1px);
+                            }
+                        }
+                    }
+
+                    // Card button 
+                    .TradingElementSingleTab__opBottonDesk__1qclI {
+                        position: absolute;
+                        height: get-vw-desktop(40px);
+                        width: get-vw-desktop(95px);
+                        @include dFlex(center);
+                        align-items: center;
+                        border: get-vw-desktop(1px) solid $white;
+                        border-color: inherit;
+                        border-radius: get-vw-desktop(100px);
+                        font-size: get-vw-desktop(12px);
+                        line-height: get-vw-desktop(18px);
+                        margin: auto;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        padding: 0;
+                    }
+                }
+            }
+
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFadeExpiry__nY7vW, 
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFadeExpiry__2q-4O {
+                .TradingElementSingleTab__onlyDesktop__OPMSQ {
+
+                    // Entity Wrapper
+                    .TradingElementSingleTab__displayFlexRow__2jMf3 {
+
+                        // Entity Value
+                        .TradingElementSingleTab__deskNumber__vA4Py, 
+                        .TradingElementSingleTab__deskNumber__vA4Py.TradingElementSingleTab__deskConceptStop__3wrL2 {
+                            &::before {
+                                opacity: 0.4;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFade__WGD3O {
+
+                // Content
+                .TradingElementSingleTab__onlyDesktop__OPMSQ {
+
+                    // Entity Wrapper
+                    .TradingElementSingleTab__displayFlexRow__2jMf3 {
+                        height: get-vw-desktop(25px);
+
+                        &:first-child {
+                            height: get-vw-desktop(25px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // LIST VIEW
+    .SignalCentre__mainWrapper__1lejx {
+        border-radius: get-vw-desktop(5px);
+        overflow: hidden;
+        display: flex !important;
+        flex-flow: row wrap !important;
+        justify-content: space-between !important;
+        width: 100%;
+
+        // List header
+        .TradingElementSingle__headerContainer__KMLRU {
+            background-color: #F3F9FE;
+            max-width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: get-vw-desktop(60px);
+            font-family: $Gilroy_b;
+            font-weight: initial;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(20px);
+            color: $purple !important;
+            border-radius: 0;
+
+
+            // Icon
+            .TradingElementSingle__groupLogo__200bT {
+                width: get-vw-desktop(16px);
+            }
+            
+            // Status, Arrow
+            .TradingElementSingle__sentimentDot__2K0vs, 
+            .TradingElementSingle__detailsButton__EQUXN {
+                width: get-vw-desktop(10px);
+            }
+
+            // Market
+            .TradingElementSingle__product__1sG_S {
+                width: get-vw-desktop(80px);
+            }
+
+            // Entity, Target, Stop
+            .TradingElementSingle__scoreClass__3ovYt {
+                width: get-vw-desktop(70px);
+            }
+
+            // Direction
+            .TradingElementSingle__recomendation__2SelU {
+                width: get-vw-desktop(90px);
+            }
+
+            // Duration, Sell limit
+            .TradingElementSingle__durationClass__2oEne, 
+            .TradingElementSingle__status__1MFWM {
+                width: get-vw-desktop(100px);
+            }
+
+            // Confidence
+            .TradingElementSingle__confidenceClass__1piwR {
+                width: get-vw-desktop(120px);
+            }
+        }
+
+        // List item
+        .TradingElementSingle__mainContainer__1XJ3i {
+            background-color: $white;
+            max-width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: get-vw-desktop(58px);
+            font-family: $Poppins;
+            font-size: get-vw-desktop(10px) !important;
+            font-weight: 400;
+            line-height: get-vw-desktop(16px);
+            border-radius: 0;
+            border-top: 1px solid $opac_navy;
+            color: $navy;
+            transition: .2s ease;
+
+            &:hover {
+                background-color: #f6f6f6;
+            }
+
+            // List item - Icons
+            .TradingElementSingle__groupLogo__200bT {
+                height: get-vw-desktop(16px);
+                width: get-vw-desktop(16px);
+
+                // FX Icon
+                &.TradingElementSingle__fxMajorsGroupLogo__3VBQs {
+                    background-image: url('./../images/pages/signal-center/icon_fx--active.svg');
+                }
+
+                // Commodities Icon
+                &.TradingElementSingle__commoditiesGroupLogo__UpBiL {
+                    background-image: url('./../images/pages/signal-center/icon_commodities--active.svg');
+                }
+
+                // Indices Icon
+                &.TradingElementSingle__indexesGroupLogo__1kuxv {
+                    background-image: url('./../images/pages/signal-center/icon_indices--active.svg');
+                }
+
+                // Crypto Icon
+                &.TradingElementSingle__cryptoGroupLogo__1EyeQ {
+                    background-image: url('./../images/pages/signal-center/icon_crypto--active.svg');
+                }
+            }
+
+            // List item - Status
+            .TradingElementSingle__sentimentDot__2K0vs {
+                height: get-vw-desktop(10px);
+                width: get-vw-desktop(10px);
+                border-radius: get-vw-desktop(2px);
+            }
+
+            // List item - Market
+            .TradingElementSingle__product__1sG_S {
+                width: get-vw-desktop(80px);
+            }
+
+            // List item - Entity, Target, Stop
+            .TradingElementSingle__scoreClass__3ovYt {
+                width: get-vw-desktop(70px);
+            }
+
+            // List item - Direction
+            .TradingElementSingle__recomendation__2SelU {
+                width: get-vw-desktop(90px);
+                height: get-vw-desktop(34px);
+                color: $white;
+                border-radius: get-vw-desktop(100px);
+            }
+
+            // List item - Duration, Sell limit
+            .TradingElementSingle__durationClass__2oEne, 
+            .TradingElementSingle__status__1MFWM {
+                width: get-vw-desktop(100px);
+            }
+
+            // List item - Confidence
+            .TradingElementSingle__confidenceClass__1piwR {
+                width: get-vw-desktop(120px);
+            }
+
+            // List item - Arrow
+            .TradingElementSingle__detailsButton__EQUXN {
+                width: get-vw-desktop(10px);
+                height: get-vw-desktop(14px);
+                background-image: url('./../images/pages/signal-center/list_arrow-right--blue.svg');
+            }
+
+
+
+            // EXPIRED
+            &.TradingElementSingle__expiredRow__2PmWy {
+                opacity: 0.4;
+            }
+        }
+    }
+    
+
+
+    // MODAL
+    .SignalCentre__mainWrapper__1lejx, 
+    .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+
+        .DetailsPage__mainContainer__2oCfz {
+            max-width: 100% !important;
+    
+            // Modal Docker - Back to list
+            .DetailsPage__backButton__IbvNo {
+                padding: 0;
+                margin: 0 0 get-vw-desktop(15px);
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(16px);
+                color: $navy;
+                text-decoration: none;
+    
+                // Arrow
+                .DetailsPage__backBtnArrow__1hCDK {
+                    background-image: url('./../images/pages/signal-center/back_arrow.svg');
+                    height: get-vw-desktop(10px);
+                    width: get-vw-desktop(25px);
+                    margin: 0 get-vw-desktop(3px) 0 0;
+                }
+            }
+    
+            // Header Content
+            .DetailsPage__topBar__3do22 {
+                position: relative;
+                background-color: transparent;
+                max-width: 100% !important;
+                width: 100%;
+                height: get-vw-desktop(150px);
+                padding: 0;
+                @include dFlex(space-between);
+                align-items: center;
+                margin-bottom: get-vw-desktop(20px);
+
+                .DetailsPage__productDataMainCont__2HKMv, 
+                .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__sellTop__1_7SN, 
+                .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__buyTop__2ZtmU, 
+                .DetailsPage__targetConfidenceCont__1sWO9 {
+                    position: relative;
+                    z-index: 10;
+                }
+    
+                // Left item
+                .DetailsPage__productDataMainCont__2HKMv {
+                    background-color: transparent;
+                    border-radius: get-vw-desktop(5px);
+                    width: get-vw-desktop(450px);
+                    min-width: 0;
+                    height: 100%;
+                    padding: get-vw-desktop(25px);
+                    margin-right: get-vw-desktop(15px);
+                    color: $navy;
+
+                    // Details
+                    .DetailsPage__productDataCont__3hG18 {
+                        height: 100%;
+
+                        // Icon Wrapper
+                        .DetailsPage__topBarLogos__3sRpk {
+                            height: 100%;
+
+                            .DetailsPage__groupLogo__W9muL {
+                                margin-top: get-vw-desktop(5px);
+                                width: get-vw-desktop(16px);
+                                height: get-vw-desktop(16px);
+
+                                // FX Icon
+                                &.DetailsPage__fxMajorsGroupLogo__1fDYF {
+                                    background-image: url('./../images/pages/signal-center/icon_fx--active.svg');
+                                }
+
+                                // Commodities Icon
+                                &.DetailsPage__commoditiesGroupLogo__1eKXZ {
+                                    background-image: url('./../images/pages/signal-center/icon_commodities--active.svg');
+                                }
+
+                                // Indices Icon
+                                &.DetailsPage__indexesGroupLogo__3ZLMv {
+                                    background-image: url('./../images/pages/signal-center/icon_indices--active.svg');
+                                }
+
+                                // Crypto Icon
+                                &.DetailsPage__cryptoGroupLogo__3v5aX {
+                                    background-image: url('./../images/pages/signal-center/icon_crypto--active.svg');
+                                }
+                            }
+                        }
+
+                        // Text Wrapper
+                        .DetailsPage__topBarProduct__G8s4m {
+                            padding: 0 0 0 get-vw-desktop(14px);
+                            min-width: get-vw-desktop(100px);
+
+                            // label - 1
+                            .DetailsPage__topBarProductName__1_tib {
+                                display: block;
+                                font-family: $Gilroy_b;
+                                font-weight: initial;
+                                font-size: get-vw-desktop(16px);
+                                line-height: get-vw-desktop(24px);
+                                margin-bottom: get-vw-desktop(5px);
+                                height: auto;
+                            }
+                            // Label - 2
+                            .DetailsPage__topBarProductDesc__10Phr {
+                                display: block;
+                                font-family: $Poppins;
+                                font-weight: 400;
+                                font-size: get-vw-desktop(12px);
+                                line-height: get-vw-desktop(18px);
+                                margin-bottom: get-vw-desktop(15px);
+                            }
+                            // Value
+                            .DetailsPage__topBarEntryNum__OIeLZ {
+                                display: block;
+                                font-family: $Gilroy_b;
+                                font-weight: initial;
+                                font-size: get-vw-desktop(30px);
+                                line-height: get-vw-desktop(40px);
+                            }
+                        }
+                    }
+
+
+                    // Circle Graph
+                    .SentimentGauge__flexContainer__39_qD {
+                        width: get-vw-desktop(120px);
+                        direction: ltr !important;
+
+                        // Graph
+                        .SentimentGauge__sentimentGaugeWrapper__1B_8V {
+
+                            // SVG
+                            .SentimentGauge__sentimentGauge__39zON {
+                                height: get-vw-desktop(110px);
+                                width: get-vw-desktop(110px);
+
+                                path {
+                                    stroke-width: 7px !important;
+                                    stroke-linejoin: round;
+                                    stroke-linecap: round;
+                                }
+                            }
+
+                            // Text
+                            .SentimentGauge__sentimentGaugeValue__3v6xu {
+                                font-family: $Poppins;
+                                font-size: get-vw-desktop(20px);
+                                font-weight: 500;
+                                line-height: get-vw-desktop(40px);
+                            }
+                        }
+
+                        // info
+                        .SentimentGauge__gaugeInfoButton__yR0Mh {
+                            height: get-vw-desktop(10px);
+                            width: get-vw-desktop(10px);
+                            background-image: url('./../images/pages/signal-center/icon_info.svg');
+                            color: $white;
+                        }
+                    }
+                }
+
+                // Right Item
+                .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__sellTop__1_7SN, 
+                .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__buyTop__2ZtmU {
+                    border-radius: get-vw-desktop(5px) 0 0 get-vw-desktop(5px);
+                    background: transparent;
+                    margin: 0;
+                    @include dFlex(flex-start);
+                    align-items: center;
+                    padding: 0 0 0 get-vw-desktop(35px);
+                    width: get-vw-desktop(120px);
+                    height: get-vw-desktop(150px);
+
+                    .DetailsPage__actionPhraseCtn__1Vh8S {
+                        margin: 0 0 get-vw-desktop(2px);
+                        width: 100%;
+
+                        // Label
+                        .DetailsPage__actionPhrase__JWEXs {
+                            display: block;
+                            font-family: $Gilroy_r;
+                            font-size: get-vw-desktop(16px);
+                            font-weight: 600;
+                            line-height: get-vw-desktop(23px);
+                            color: $purple;
+                            margin-bottom: get-vw-desktop(15px);
+                        }
+                        // Value
+                        .DetailsPage__actionEntry__1VwNZ {
+                            font-family: $Gilroy_b;
+                            font-weight: initial;
+                            font-size: get-vw-desktop(18px);
+                            line-height: get-vw-desktop(26px);
+                            color: $navy;
+                        }
+                    }
+                }
+                .DetailsPage__targetConfidenceCont__1sWO9 {
+                    border-radius: 0 get-vw-desktop(5px) get-vw-desktop(5px) 0;
+                    padding: 0 get-vw-desktop(25px) 0 get-vw-desktop(5px);
+                    background: transparent;
+                    width: get-vw-desktop(440px);
+                    height: get-vw-desktop(150px);
+                    margin: 0;
+
+                    // Texts
+                    .DetailsPage__topBarElement__ZiBZ4 {
+                        justify-content: center;
+                        padding-bottom: 0;
+
+                        // Label
+                        .DetailsPage__titleMiniContainer__d3W_a {
+                            display: block;
+                            font-family: $Gilroy_r;
+                            font-size: get-vw-desktop(12px);
+                            font-weight: 600;
+                            line-height: get-vw-desktop(20px);
+                            color: $purple;
+                            margin-bottom: get-vw-desktop(16px);
+                        }
+                        // Value
+                        .DetailsPage__topBarNum__UYij4 {
+                            font-family: $Gilroy_b;
+                            font-weight: initial;
+                            font-size: get-vw-desktop(18px);
+                            line-height: get-vw-desktop(26px);
+                            color: $navy;
+                        }
+                    }
+
+                    // Levels
+                    .DetailsPage__confidenceDeskContainer__1Xs7M {
+                        width: get-vw-desktop(120px);
+                        padding: 0;
+                        justify-content: center;
+
+                        // Label
+                        .DetailsPage__titleMiniContainer__d3W_a {
+                            display: block;
+                            font-family: $Gilroy_r;
+                            font-size: get-vw-desktop(12px);
+                            font-weight: 600;
+                            line-height: get-vw-desktop(20px);
+                            color: $purple;
+                            margin-bottom: get-vw-desktop(15px);
+                        }
+
+                        // Levels
+                        .ConfidenceBattery__confidenceBarContainer__2UPfu {
+                            background-color: transparent;
+                            height: get-vw-desktop(5px);
+
+                            .ConfidenceBattery__confBattItem__30MIB {
+                                border-radius: get-vw-desktop(5px);
+                                width: calc(20% - 0.139vw);
+                                margin: 0;
+
+                                &.ConfidenceBattery__itemGreen__1V4Mh {
+                                    background: $green;
+                                }
+                                &.ConfidenceBattery__itemGray__13pVn {
+                                    background: #C4C4C4;
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                &::before, &::after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    border-radius: get-vw-desktop(5px);
+                    background-color: $white;
+                }
+
+                &::before {
+                    width: get-vw-desktop(450px);
+                    left: 0;
+                }
+
+                &::after {
+                    right: 0;
+                    width: calc(100% - 32.639vw);
+                }
+            }
+
+            // Main Content
+            .DetailsPage__centerContainer__2UhcA {
+                background-color: $white;
+                padding: get-vw-desktop(25px) get-vw-desktop(40px) get-vw-desktop(40px);
+                width: 100%;
+                height: auto;
+                border-radius: get-vw-desktop(5px);
+                @include dFlex(space-between);
+
+                // Graph
+                .DetailsPage__chartContainer__3R1Zp {
+                    width: 57%;
+
+                    // Title
+                    .DetailsPage__topBarTitle__2pH8H {
+                        display: block;
+                        font-family: $Gilroy_b;
+                        font-size: get-vw-desktop(18px);
+                        line-height: get-vw-desktop(26px);
+                        margin-bottom: get-vw-desktop(20px);
+                        color: $navy;
+                    }
+
+                    // Label
+                    .label__text {
+                        display: block;
+                        font-family: $Poppins;
+                        font-size: 10px;
+                        font-weight: 400;
+                        line-height: 16px;
+                        margin-bottom: 6px;
+                        color: $navy;
+                        fill: $navy;
+                    }
+
+                    .label__value {
+                        font-family: $Poppins;
+                        font-size: 10px;
+                        font-weight: 400;
+                        line-height: 16px;
+                        padding: get-vw-desktop(4px) get-vw-desktop(2px);
+                    }
+
+                    // Bottom labels
+                    .CandlestickChart__axis__2qCxP {
+                        text {
+                            font-family: $Poppins;
+                            font-size: 10px;
+                            font-weight: 400;
+                            line-height: 16px;
+                            color: $navy;
+                        }
+                    }
+
+                    // Graph lines
+                    .CandlestickChart__candlestickOc__2JrKG {
+                        stroke-width: 5px;
+                        stroke-opacity: 0.15;
+                        stroke-linecap: square;
+                    }
+                }
+
+                // Contents
+                .DetailsPage__tradeContainer__3yy2x {
+                    width: 43%;
+                    color: $navy;
+                    font-family: $Poppins;
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+
+                    // Top Content
+                    .DetailsPage__tradeIdeaBlock__1vkdh {
+
+                        // 1st Details
+                        .DetailsPage__topBarTitle__2pH8H {
+                            margin-bottom: get-vw-desktop(30px);
+
+                            // Docker
+                            .DetailsPage__titleAndStatus__1RUgf {
+                                margin-bottom: get-vw-desktop(20px);
+
+                                // Title
+                                .DetailsPage__topBarTitleReduced__99q9z {
+                                    font-family: $Gilroy_b;
+                                    font-size: get-vw-desktop(18px);
+                                    line-height: get-vw-desktop(26px);
+                                }
+
+                                // Limits
+                                .DetailsPage__tradeIdeaLogo__2Zh8h {
+                                    font-family: $Gilroy_b;
+                                    font-size: get-vw-desktop(14px);
+                                    line-height: get-vw-desktop(20px);
+
+                                    // Live
+                                    .DetailsPage__ideaStatusBullet__2Aat9 {
+                                        height: get-vw-desktop(7px);
+                                        width: get-vw-desktop(7px);
+                                        margin: 0 get-vw-desktop(5px) get-vw-desktop(1.5px) 0;
+                                    }
+                                }
+                            }
+
+                            // Dates
+                            .DetailsPage__datesContainer__3m4UI {
+                                .StatusDates__statusDateLabel__pXf4_, 
+                                .StatusDates__statusDateValue__xO706 {
+                                    display: inline-block;
+                                    font-family: $Poppins;
+                                    font-size: get-vw-desktop(12px);
+                                    line-height: get-vw-desktop(18px);
+                                    font-weight: 400;
+                                }
+                            }
+
+                        }
+
+                        // 2nd Details
+                        .DetailsPage__tabletMarginCtn__1D7-g {
+                            margin-bottom: get-vw-desktop(30px);
+
+                            .DetailsPage__topBarTitle__2pH8H {
+                                font-family: $Gilroy_b;
+                                font-size: get-vw-desktop(18px);
+                                line-height: get-vw-desktop(26px);
+                            }
+                        }
+                        .DetailsPage__tabletMarginCtn__1D7-g > div {
+                            height: get-vw-desktop(120px) !important;
+                            margin: 0;
+                            
+                            &.DetailsPage__phrasesContainer__cSYLM, 
+                            &.VolatilityEvents__noEvents__1bgP_, 
+                            &.DetailsPage__topBarTitle__2pH8H, 
+                            &.VolatilityEvents__eventContainer__2Y3z8 {
+                                height: auto !important;
+                            }
+                        }
+
+                        .VolatilityEvents__eventContainer__2Y3z8 > div {
+                            // max-height: get-vw-desktop(120px) !important;
+                            // height: auto;
+                        }
+
+                        .VolatilityEvents__eventContainer__2Y3z8 {
+                            margin-bottom: 0;
+                        }
+
+                        .DetailsPage__tabletMarginCtn__1D7-g {
+                            height: auto;
+
+                            .DetailsPage__phrase__20b7N {
+                                display: block;
+                                font-family: $Poppins;
+                                font-size: get-vw-desktop(12px);
+                                line-height: get-vw-desktop(18px);
+                                font-weight: 400;
+                                margin: 0;
+                            }
+                        }
+
+                        .DetailsPage__topBarTitle__2pH8H {
+                            font-family: $Gilroy_b;
+                            font-size: get-vw-desktop(18px);
+                            font-weight: initial;
+                            line-height: get-vw-desktop(26px);
+                        }
+                    }
+
+                    // Bottom Content
+                    .DetailsPage__tradeIdeaBlock__1vkdh {
+                        padding-top: get-vw-desktop(10px);
+
+                        // list
+                        .DetailsPage__sRelnumberContainer__1mcp4 {
+                            margin: 0 0 get-vw-desktop(15px);
+                            height: auto;
+
+                            .DetailsPage__srAbsContainerSup__1aEPW, 
+                            .DetailsPage__srAbsContainerRes__13e8K {
+
+                                // V-line
+                                .DetailsPage__supFirst__ALhZK, 
+                                .DetailsPage__resFirst__wyIfX {
+                                    width: get-vw-desktop(5px);
+                                    height: get-vw-desktop(41px);
+                                    border-radius: 0;
+                                }
+
+                                // items
+                                .DetailsPage__sRnumberContainer__3Jrxm {
+                                    justify-content: space-between;
+                                    padding-left: get-vw-desktop(10px);
+                                  
+                                    .DetailsPage__sRnumberSub__23n0e {
+                                        width: 30%;
+                                        font-family: $Poppins;
+                                        font-weight: 400;
+                                        font-size: get-vw-desktop(12px);
+                                        line-height: get-vw-desktop(18px);
+                                        color: $purple;
+                                        text-align: left;
+
+                                        .DetailsPage__sRnumberNumber__1PtL8 {
+                                            display: block;
+                                            width: 100%;
+                                            margin-top: get-vw-desktop(5px);
+                                            font-family: $Gilroy_b;
+                                            font-weight: initial;
+                                            font-size: get-vw-desktop(18px);
+                                            line-height: get-vw-desktop(26px);
+                                            color: $navy;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    &--home {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: transparent;
+            z-index: 1;
+        }
+
+        .SignalCentre__topBar__hEL6J {
+            display: none !important;
+        }
+
+        .SignalCentre__mainContainer__vfJBS.SignalCentre__mainContainerLight__2xsV8 {
+            min-height: auto !important;
+        }
+
+        .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk > div {
+            width: calc(50% - 0.625vw); // 50% - 9px
+            display: none;
+
+            &:nth-of-type(-n+2) {
+                display: block;
+            }
+
+            .TradingElementSingleTab__detailsTile__3XAgx {
+                margin: 0 !important;
+            }
+        }
+    }
+}
+
+// Home page - Signal Center
+.signalcenter-home {
+    width: 100%;
+
+    &__header {
+        width: 100%;
+        @include dFlex(space-between);
+        align-items: flex-end;
+        margin-bottom: get-vw-desktop(13px);
+
+        &-title {
+            position: relative;
+            font-family: $Gilroy_b;
+            font-size: get-vw-desktop(18px);
+            font-weight: initial;
+            line-height: get-vw-desktop(26px);
+            padding-left: get-vw-desktop(31px);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+                height: get-vw-desktop(23px);
+                width: get-vw-desktop(31px);
+                background: url('./../images/pages/home/icon-signalcenter.svg') center/contain no-repeat;
+            }
+        }
+
+        &-link {
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+            transition: .2s ease;
+            color: $opac_navy_7;
+
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+    }
+}
+
+// DARK MODE
+.dark-mode {
+    .signalcenter {
+
+        // Container
+        .SignalCentre__mainContainer__vfJBS {
+            .DetailsPage__mainWrapper__DxtGJ, 
+            &.SignalCentre__mainContainerDark__2KLmD {
+                background-color: #041843 !important;
+            }
+        }
+
+        // Controller
+        .SignalCentre__topBar__hEL6J { 
+
+            // Left
+            .TopMenus__logoSelectorCtn__rXBih {
+                // Display Mode
+                .DisplaySelector__switchContainer__3Ny18 {
+                    // Button Wrapper
+                    .DisplaySelector__selectorElement__3KvWE {
+                        // Column Icon
+                        .DisplaySelector__tabsIco__KDtcw {
+                            background-image: url('./../images/pages/signal-center/filter_column--white.svg');
+
+                            &.DisplaySelector__active__22hsi {
+                                background-image: url('./../images/pages/signal-center/filter_column--active.svg');
+                            }
+                        }
+                        // List Icon
+                        .DisplaySelector__listIco__h9KT6 {
+                            background-image: url('./../images/pages/signal-center/filter_list--white.svg');
+
+                            &.DisplaySelector__active__22hsi {
+                                background-image: url('./../images/pages/signal-center/filter_list--active.svg');
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Right
+            .TopMenus__extremeCtn__2kXDi {
+
+                // Inner wrapper
+                .TopMenus__filterMenus__1UIMq {
+
+                    // Range Filter
+                    .IntervalSlider__sliderContainer__1z2gy {
+                        
+                        .IntervalSlider__label__aFOMS, 
+                        .IntervalSlider__currentValue__2NY4U,
+                        .IntervalSlider__currentValue__2NY4U {
+                            color: $white;
+                        }
+
+                        // Range line
+                        .IntervalSlider__sliderBody__1iy84 {
+                            .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-2 {
+                                background-color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // LIST VIEW
+        .SignalCentre__mainWrapper__1lejx {
+            background-color: $opac_white;
+
+            // List header
+            .TradingElementSingle__headerContainer__KMLRU {
+                background-color: $opac_skyblue;
+                color: $white !important;
+            }
+
+            // List item
+            .TradingElementSingle__mainContainer__1XJ3i {
+                background-color: transparent;
+                border-color: $opac_skyblue;
+                color: $white;
+
+                &:hover {
+                    background-color: rgba(249, 249, 249, 0.05);
+                }
+
+                // List item - Icons
+                .TradingElementSingle__groupLogo__200bT {
+                    
+                    // FX Icon
+                    &.TradingElementSingle__fxMajorsGroupLogo__3VBQs {
+                        background-image: url('./../images/pages/signal-center/icon_fx--white.svg');
+                    }
+
+                    // Commodities Icon
+                    &.TradingElementSingle__commoditiesGroupLogo__UpBiL {
+                        background-image: url('./../images/pages/signal-center/icon_commodities--white.svg');
+                    }
+
+                    // Indices Icon
+                    &.TradingElementSingle__indexesGroupLogo__1kuxv {
+                        background-image: url('./../images/pages/signal-center/icon_indices--white.svg');
+                    }
+
+                    // Crypto Icon
+                    &.TradingElementSingle__cryptoGroupLogo__1EyeQ {
+                        background-image: url('./../images/pages/signal-center/icon_crypto--white.svg');
+                    }
+                }
+            }
+        }
+
+        // Column View
+        .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+            background-color: transparent;
+        }
+
+        // MODAL
+        .SignalCentre__mainWrapper__1lejx, 
+        .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+
+            .DetailsPage__mainContainer__2oCfz {
+        
+                // Modal Docker - Back to list
+                .DetailsPage__backButton__IbvNo {
+                    color: $white;
+        
+                    // Arrow
+                    .DetailsPage__backBtnArrow__1hCDK {
+                        background-image: url('./../images/pages/signal-center/back_arrow--white.svg');
+                    }
+                }
+        
+                // Header Content
+                .DetailsPage__topBar__3do22 {
+        
+                    // Left item
+                    .DetailsPage__productDataMainCont__2HKMv {
+                        color: $white;
+
+                        // Details
+                        .DetailsPage__productDataCont__3hG18 {
+                            height: 100%;
+
+                            // Icon Wrapper
+                            .DetailsPage__topBarLogos__3sRpk {
+                                .DetailsPage__groupLogo__W9muL {
+                                   
+                                    // FX Icon
+                                    &.DetailsPage__fxMajorsGroupLogo__1fDYF {
+                                        background-image: url('./../images/pages/signal-center/icon_fx--white.svg');
+                                    }
+
+                                    // Commodities Icon
+                                    &.DetailsPage__commoditiesGroupLogo__1eKXZ {
+                                        background-image: url('./../images/pages/signal-center/icon_commodities--white.svg');
+                                    }
+
+                                    // Indices Icon
+                                    &.DetailsPage__indexesGroupLogo__3ZLMv {
+                                        background-image: url('./../images/pages/signal-center/icon_indices--white.svg');
+                                    }
+
+                                    // Crypto Icon
+                                    &.DetailsPage__cryptoGroupLogo__3v5aX {
+                                        background-image: url('./../images/pages/signal-center/icon_crypto--white.svg');
+                                    }
+                                }
+                            }
+                        }
+
+                        // Circle Graph
+                        .SentimentGauge__flexContainer__39_qD {
+
+                            // info
+                            .SentimentGauge__gaugeInfoButton__yR0Mh {
+                                background-image: url('./../images/pages/signal-center/icon_info--white.svg');
+                            }
+                        }
+                    }
+
+                    // Right Item
+                    .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__sellTop__1_7SN, 
+                    .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__buyTop__2ZtmU {
+                        .DetailsPage__actionPhraseCtn__1Vh8S {
+
+                            // Label & value
+                            .DetailsPage__actionPhrase__JWEXs, 
+                            .DetailsPage__actionEntry__1VwNZ {
+                                color: $white;
+                            }
+                        }
+                    }
+                    .DetailsPage__targetConfidenceCont__1sWO9 {
+
+                        // Texts
+                        .DetailsPage__topBarElement__ZiBZ4 {
+
+                            // Label & Value
+                            .DetailsPage__titleMiniContainer__d3W_a, 
+                            .DetailsPage__topBarNum__UYij4 {
+                                color: $white;
+                            }
+                        }
+
+                        // Levels
+                        .DetailsPage__confidenceDeskContainer__1Xs7M {
+                            // Label
+                            .DetailsPage__titleMiniContainer__d3W_a {
+                                color: $white;
+                            }
+                        }
+                    }
+
+
+                    &::before, &::after {
+                        background-color: $opac_white;
+                    }
+                }
+
+                // Main Content
+                .DetailsPage__centerContainer__2UhcA {
+                    background-color: $opac_white;
+
+                    // Graph
+                    .DetailsPage__chartContainer__3R1Zp {
+                        .DetailsPage__topBarTitle__2pH8H, 
+                        .label__text, 
+                        .label__value {
+                            color: $white;
+                        }
+
+                        .label__text {
+                            fill: $white;
+                        }
+
+                        // Bottom labels
+                        .CandlestickChart__axis__2qCxP {
+                            text {
+                                color: $white;
+                            }
+                        }
+                    }
+
+                    // Contents
+                    .DetailsPage__tradeContainer__3yy2x {
+                        color: $white;
+                        
+                        // Bottom Content
+                        .DetailsPage__tradeIdeaBlock__1vkdh {
+
+                            // list
+                            .DetailsPage__sRelnumberContainer__1mcp4 {
+                                
+                                .DetailsPage__srAbsContainerSup__1aEPW, 
+                                .DetailsPage__srAbsContainerRes__13e8K {
+
+                                    // items
+                                    .DetailsPage__sRnumberContainer__3Jrxm {
+                                        .DetailsPage__sRnumberSub__23n0e {
+                                            color: $white;
+
+                                            .DetailsPage__sRnumberNumber__1PtL8 {
+                                                color: $white;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Home page - Signal Center
+    .signalcenter-home {
+        &__header {
+            &-title {
+                color: $white;
+            }
+            &-link {
+                color: $opac_white_2;
+
+                &:hover {
+                    color: $green;
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID - 1000px
+@include mqMax(1000px) {
+    .signalcenter {
+
+        // MODAL
+        .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+            .DetailsPage__mainContainer__2oCfz {
+                z-index: 200;
+        
+                // Main Content
+                .DetailsPage__centerContainer__2UhcA {
+                    padding: get-vw-desktop(25px) get-vw-desktop(40px) get-vw-desktop(40px);
+
+                    // Graph
+                    .DetailsPage__chartContainer__3R1Zp {
+                        width: 100%;
+                    }
+
+                    // Contents
+                    .DetailsPage__tradeContainer__3yy2x {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// LIQUID MOBILE (767px) - Signal Center
+@include mqMax($mq-max-mobile) {
+    .signalcenter {
+
+        // Container
+        .SignalCentre__mainContainer__vfJBS {
+            background-color: transparent !important;
+    
+            &.SignalCentre__mainContainerLight__2xsV8 {
+                background: transparent !important;
+            }
+    
+            &.SignalCentre__mainContainerDark__2KLmD {
+                background-color: transparent !important;
+            }
+    
+            .DetailsPage__mainWrapper__DxtGJ {
+                background: $light_grey !important;
+            }
+        }
+    
+    
+        // Controller
+        .SignalCentre__topBar__hEL6J { 
+            position: relative;
+            margin-bottom: 0;
+    
+            // left
+            .TopMenus__logoSelectorCtn__rXBih {
+                position: absolute;
+                top: get-vw-mobile(5px);
+                right: 0;
+                width: get-vw-mobile(50px);
+                z-index: 100;
+    
+                // platform Logo
+                .TopMenus__logoCtn__27lQT {
+                    display: none;
+                }
+
+                // Display Mode
+                .DisplaySelector__switchContainer__3Ny18 {
+                    width: get-vw-mobile(45px);
+    
+                    // Button Wrapper
+                    .DisplaySelector__selectorElement__3KvWE {
+    
+                        // Column Icon
+                        .DisplaySelector__tabsIco__KDtcw, 
+                        .DisplaySelector__tabsIco__KDtcw.DisplaySelector__active__22hsi, 
+                        .DisplaySelector__listIco__h9KT6 {
+                            width: get-vw-mobile(15px);
+                            height: get-vw-mobile(15px);
+                        }
+                    }
+                }
+            }
+    
+    
+            // Right
+            .TopMenus__extremeCtn__2kXDi {
+                order: 1;
+                flex-direction: row;
+                width: get-vw-mobile(600px) !important;
+    
+                // Inner wrapper
+                .TopMenus__filterMenus__1UIMq {
+                    max-width: 100%;
+                    width: 100%;
+                    height: auto;
+    
+                    // Range Filter
+                    .IntervalSlider__sliderContainer__1z2gy {
+                        max-width: get-vw-mobile(210px);
+                        margin-bottom: get-vw-mobile(18px);
+                        
+                        .IntervalSlider__label__aFOMS, 
+                        .IntervalSlider__currentValue__2NY4U,
+                        .IntervalSlider__currentValue__2NY4U {
+                            font-size: get-vw-mobile(10px);
+                            line-height: get-vw-mobile(16px);
+                        }
+    
+                        // Range line
+                        .IntervalSlider__sliderBody__1iy84 {
+    
+                            // Lines
+                            .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-0, 
+                            .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-1, 
+                            .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-2 {
+                                height: get-vw-mobile(1px) !important;
+                            }
+    
+                            .IntervalSlider__track__3-7iH.IntervalSlider__track__3-7iH-1 {
+                                height: get-vw-mobile(3px) !important;
+                            }
+    
+                            // Circle
+                            .IntervalSlider__selectorthumb__1-qzV.IntervalSlider__selectorthumb__1-qzV-0, 
+                            .IntervalSlider__selectorthumb__1-qzV.IntervalSlider__selectorthumb__1-qzV-1 {
+                                top: get-vw-mobile(-1.5px);
+                                height: get-vw-mobile(10px);
+                                width: get-vw-mobile(10px);
+                            } 
+    
+                        }
+                    }
+    
+                    // Custom Select
+                    .TopMenuElement__menuWrapper__iUB3q {
+                        width: get-vw-mobile(150px);
+                        height: get-vw-mobile(28px);
+                        border-radius: get-vw-mobile(5px);
+                        margin: 0;
+    
+                        // Select
+                        .TopMenuElement__topMenuContainer__1Kyp5 {
+                            border-radius: get-vw-mobile(5px);
+                            font-size: get-vw-mobile(10px);
+                            line-height: get-vw-mobile(16px);
+    
+                            .TopMenuElement__openMenu__3dDU4 {
+                                padding: get-vw-mobile(10px) get-vw-mobile(16px);
+    
+                                // Arrow
+                                .TopMenuElement__filterArrow__2lFaQ {
+                                    width: get-vw-mobile(8px);
+                                    height: get-vw-mobile(13px);
+                                }
+                            }
+    
+                            // Dropdown
+                            .TopMenuElement__flexContainer__26u9g {
+                                position: absolute;
+                                border-radius: get-vw-mobile(5px);
+                                top: calc(100% + 0.347vw);
+                                box-shadow: 0 get-vw-mobile(6px) get-vw-mobile(10px) rgba(0,0,0,0.2);
+                            }
+                        }
+                    }
+    
+                    // COLLAPSE VERSION
+                    .TopMenus__menuContainer__2lAXR {
+    
+                        .TopMenus__menuFlap__1KLiG.TopMenus__hidden__3hm1y {
+                            @include dFlex(space-between);
+                            align-items: center;
+                            font-size: get-vw-mobile(10px);
+                            line-height: get-vw-mobile(16px);
+                            padding: 0;
+    
+                            // Ranger
+                            .IntervalSlider__sliderContainer__1z2gy {
+                                @include displayFlex;
+    
+                                .IntervalSlider__confidenceBar__3AymR {
+                                    width: get-vw-mobile(135px);
+    
+                                    // Line
+                                    .IntervalSlider__sliderBody__1iy84 {
+                                        width: get-vw-mobile(80px);
+                                        height: get-vw-mobile(8px);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .SignalCentre__mainWrapper__1lejx > div {
+            width: 100%;
+        }
+    
+        .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk > div {
+            width: 100%;
+        }
+    
+        // COLUMN VIEW
+        .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+            justify-content: space-between;
+            margin-top: 0;
+    
+            // Card item
+            .TradingElementSingleTab__detailsTile__3XAgx {
+                background-color: transparent;
+                margin: get-vw-mobile(20px) 0 0;
+                width: 100%;
+                height: get-vw-mobile(220px);
+                border-radius: get-vw-mobile(5px);
+
+                // Green Cards
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFade__uMgHK {
+                    background: none;
+                    background-image: linear-gradient(0deg, #20ac69 0, #48485f 40vw);
+                }
+
+
+                // Red Cards
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFade__WGD3O {
+                    background: none;
+                    background-image: linear-gradient(0deg, #eb3d52 0, #48485f 40vw);
+                }
+
+
+                // EXPIRED - Green Cards
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFadeExpiry__2q-4O {
+                    background: none;
+                    background-image: linear-gradient(0deg, #20ac69 0, #48485f 40vw);
+                }
+
+
+                // EXPIRED - Red Cards
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFadeExpiry__nY7vW {
+                    background: none;
+                    background-image: linear-gradient(0deg, #eb3d52 0, #48485f 40vw);
+                }
+    
+    
+                // Content Wrapper
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFadeExpiry__nY7vW, 
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFadeExpiry__2q-4O, 
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFade__WGD3O, 
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__buyFade__uMgHK {
+                    @include dFlex(center);
+                    align-content: flex-start;
+                    height: 100%;
+                    border-radius: 0 !important;
+    
+                    // Card docker
+                    .TradingElementSingleTab__titleHeadline__2xBYW {
+                        width: 100%;
+                        padding: get-vw-mobile(20px) get-vw-mobile(20px) 0;
+                        margin-bottom: get-vw-mobile(10px);
+    
+                        // Limits - text
+                        .TradingElementSingleTab__itemInfo2__1TgGZ {
+                            width: get-vw-mobile(120px);
+                            font-size: get-vw-mobile(12px) !important;
+                            line-height: get-vw-mobile(18px) !important;
+                            align-items: center;
+
+                            // Live
+                            .TradingElementSingleTab__itemStatusBallActive__1OO1I {
+                                height: get-vw-mobile(7px);
+                                width: get-vw-mobile(7px);
+                                margin: 0 get-vw-mobile(5px) 0 0;
+                            }
+                        }
+    
+                        // LAPTOP - TABLET
+                        .TradingElementSingleTab__itemInfo__1JpFA {
+                            width: get-vw-mobile(320px);
+                            align-items: center;
+    
+                            // Icons
+                            .TradingElementSingleTab__itemIcon__1xfu4 {
+                                height: get-vw-mobile(16px);
+                                width: get-vw-mobile(16px);
+                            }
+    
+                            // Version - Tablet | Mobile
+                            .TradingElementSingleTab__itemNameMobile__3i9vW {
+                                display: block !important;
+                                font-family: $Gilroy_b;
+                                font-weight: initial;
+                                font-size: get-vw-mobile(18px);
+                                line-height: get-vw-mobile(26px);
+                                margin-left: get-vw-mobile(10px);
+                            }
+                        }
+                    }
+    
+                    // Name - Desktop
+                    .TradingElementSingleTab__itemName__1C_wx {
+                        display: none !important;
+                    }
+    
+                    // Label
+                    .TradingElementSingleTab__confidenceCtn__2POq6 {
+                        width: 100%;
+                        margin: 0 0 get-vw-mobile(15px);
+                        padding: 0 get-vw-mobile(20px);
+                        color: inherit;
+    
+                        .TradingElementSingleTab__confidenceLabel__1RpS8, 
+                        .TradingElementSingleTab__confidenceValue__tqBrC {
+                            display: block;
+                            font-family: $Poppins;
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(18px);
+                        }
+    
+    
+                        // Label - text
+                        .TradingElementSingleTab__confidenceLabel__1RpS8 {
+                            width: 85%;
+                            padding: 0 get-vw-mobile(2px) 0 0;
+                        }
+    
+                        // Label - value
+                        .TradingElementSingleTab__confidenceValue__tqBrC {
+                            width: 15%;
+                            padding-left: 0;
+                            text-align: right;
+                        }
+                    }
+    
+                    // Content - Tablet | mobile
+                    .TradingElementSingleTab__onlyMobile__1XOVs {
+                        display: block !important;
+                        width: 100%;
+
+                        // list
+                        .TradingElementSingleTab__numberContainer__T9SEx {
+                            width: 100%;
+                            padding: 0 get-vw-mobile(20px) get-vw-mobile(10px);
+
+                            // Item
+                            .TradingElementSingleTab__numberSub__3lIKv {
+                                width: 32%;
+                                text-align: center;
+                                font-family: $Poppins;
+                                font-weight: 400;
+                                font-size: get-vw-mobile(12px);
+                                line-height: get-vw-mobile(18px);
+
+                                // Value
+                                .TradingElementSingleTab__numberNumber__3QkV3 {
+                                    font-weight: 600;
+                                }
+
+                                &:first-child {
+                                    text-align: left;
+                                }
+
+                                &:last-child {
+                                    text-align: right;
+                                }
+                            }
+                        }
+
+                        // CTA
+                        .TradingElementSingleTab__visible__1sRJl {
+                            padding: get-vw-mobile(10px) get-vw-mobile(20px);
+                            margin: 0;
+                            align-items: center;
+
+                            // Button
+                            .TradingElementSingleTab__showDetailsBotton__1VaxG.TradingElementSingleTab__buttonOp__2N8OW {
+                                height: get-vw-mobile(40px);
+                                width: get-vw-mobile(95px);
+                                @include dFlex(center);
+                                align-items: center;
+                                border: get-vw-mobile(1px) solid $white;
+                                border-color: inherit;
+                                border-radius: get-vw-mobile(100px);
+                                font-family: $Poppins;
+                                font-weight: 400;
+                                font-size: get-vw-mobile(12px);
+                                line-height: get-vw-mobile(18px);
+                            }
+
+                            // Text
+                            .TradingElementSingleTab__showDetailsBotton__1VaxG {
+                                font-family: $Poppins;
+                                font-weight: 400;
+                                font-size: get-vw-mobile(12px);
+                                line-height: get-vw-mobile(18px);
+                                height: auto;
+                            }
+
+                            div {
+                                align-items: flex-start;
+
+                                .TradingElementSingleTab__opDescription__1k0E9 {
+                                    font-family: $Gilroy_b;
+                                    font-weight: initial;
+                                    font-size: get-vw-mobile(14px);
+                                    line-height: get-vw-mobile(20px);
+                                }
+                                .TradingElementSingleTab__opPhrase__2ZMVC {
+                                    font-family: $Poppins;
+                                    font-weight: 400;
+                                    font-size: get-vw-mobile(12px);
+                                    line-height: get-vw-mobile(18px);
+                                }
+
+                                .TradingElementSingleTab__entryNumber__2BLd4 {
+                                    font-family: $Gilroy_b;
+                                    font-weight: initial;
+                                    font-size: get-vw-mobile(14px);
+                                    line-height: get-vw-mobile(20px);
+                                }
+                            }
+                        }
+                    }
+    
+                    // Content - Desktop
+                    .TradingElementSingleTab__onlyDesktop__OPMSQ {
+                        display: none !important;
+                    }
+                }
+    
+    
+                .TradingElementSingleTab__detailsSmall__3hXI0.TradingElementSingleTab__sellFade__WGD3O {
+    
+                    // Content
+                    .TradingElementSingleTab__onlyDesktop__OPMSQ {
+    
+                        // Entity Wrapper
+                        .TradingElementSingleTab__displayFlexRow__2jMf3 {
+                            height: get-vw-mobile(25px);
+    
+                            &:first-child {
+                                height: get-vw-mobile(25px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        // LIST VIEW
+        .SignalCentre__mainWrapper__1lejx {
+            border-radius: get-vw-mobile(5px);
+            overflow: hidden;
+            display: flex !important;
+            flex-flow: row wrap !important;
+            justify-content: space-between !important;
+            width: 100%;
+            margin-top: get-vw-mobile(20px);
+    
+            // List header
+            .TradingElementSingle__headerContainer__KMLRU {
+                background-color: #F3F9FE;
+                height: get-vw-mobile(40px);
+                font-size: get-vw-mobile(6px);
+                line-height: get-vw-mobile(16px);
+                border-radius: 0;
+    
+    
+                // Market
+                .TradingElementSingle__product__1sG_S {
+                    width: 13%;
+                }
+    
+                // Entity, Target, Stop
+                .TradingElementSingle__scoreClass__3ovYt {
+                    width: 10%;
+                }
+    
+                // Direction
+                .TradingElementSingle__recomendation__2SelU {
+                    width: 10%;
+                }
+    
+                // Duration, Sell limit
+                .TradingElementSingle__durationClass__2oEne, 
+                .TradingElementSingle__status__1MFWM {
+                    width: 13%;
+                }
+    
+                // Confidence
+                .TradingElementSingle__confidenceClass__1piwR {
+                    width: 11%;
+                }
+            }
+    
+            // List item
+            .TradingElementSingle__mainContainer__1XJ3i {
+                background-color: $white;
+                height: get-vw-mobile(35px);
+                font-size: get-vw-mobile(7px) !important;
+                line-height: get-vw-mobile(16px);
+                border-radius: 0;
+                border-top: 1px solid $opac_navy;
+                color: $navy;
+                justify-content: space-between;
+                transition: .2s ease;
+    
+                // List item - Icon, Status
+                .TradingElementSingle__groupLogo__200bT, 
+                .TradingElementSingle__sentimentDot__2K0vs, 
+                .TradingElementSingle__detailsButton__EQUXN {
+                    display: none;
+                }
+    
+                // List item - Market
+                .TradingElementSingle__product__1sG_S {
+                    width: 13%;
+                    justify-content: flex-start;
+                    padding-left: get-vw-mobile(5px);
+                }
+    
+                // List item - Entity, Target, Stop
+                .TradingElementSingle__scoreClass__3ovYt {
+                    width: 10%;
+                }
+    
+                // List item - Direction
+                .TradingElementSingle__recomendation__2SelU {
+                    width: get-vw-mobile(25px);
+                    height: get-vw-mobile(12px);
+                    font-size: get-vw-mobile(6px) !important;
+                    border-radius: get-vw-mobile(100px);
+                }
+    
+                // List item - Duration, Sell limit
+                .TradingElementSingle__durationClass__2oEne, 
+                .TradingElementSingle__status__1MFWM {
+                    width: 13%;
+                }
+
+                // limits
+                .TradingElementSingle__status__1MFWM {
+                    justify-content: flex-end;
+                    padding-right: get-vw-mobile(5px);
+                }
+    
+                // List item - Confidence
+                .TradingElementSingle__confidenceClass__1piwR {
+                    width: 11%;
+                }
+            }
+        }
+        
+    
+    
+        // MODAL
+        .SignalCentre__mainWrapper__1lejx, 
+        .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+
+            .DetailsPage__mainWrapper__DxtGJ {
+                z-index: 200;
+            }
+    
+            .DetailsPage__mainContainer__2oCfz {
+                max-width: 100% !important;
+        
+                // Modal Docker - Back to list
+                .DetailsPage__backButton__IbvNo {
+                    padding: 0;
+                    margin: 0 0 get-vw-mobile(15px);
+                    font-size: get-vw-mobile(10px);
+                    line-height: get-vw-mobile(16px);
+                    color: $navy;
+                    text-decoration: none;
+        
+                    // Arrow
+                    .DetailsPage__backBtnArrow__1hCDK {
+                        background-image: url('./../images/pages/signal-center/back_arrow.svg');
+                        height: get-vw-mobile(10px);
+                        width: get-vw-mobile(25px);
+                        margin: 0 get-vw-mobile(3px) 0 0;
+                    }
+                }
+        
+                // Header Content
+                .DetailsPage__topBar__3do22 {
+                    position: relative;
+                    background-color: transparent;
+                    max-width: 100% !important;
+                    width: 100%;
+                    height: auto;
+                    padding: 0;
+                    @include dFlex(space-between);
+                    align-items: center;
+                    margin-bottom: get-vw-mobile(5px);
+    
+                    .DetailsPage__productDataMainCont__2HKMv, 
+                    .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__buyTop__2ZtmU, 
+                    .DetailsPage__targetConfidenceCont__1sWO9 {
+                        position: relative;
+                        z-index: 10;
+                    }
+        
+                    // Left item
+                    .DetailsPage__productDataMainCont__2HKMv {
+                        background-color: $white;
+                        border-radius: get-vw-mobile(5px);
+                        width: get-vw-mobile(450px);
+                        height: 100%;
+                        padding: get-vw-mobile(15px) get-vw-mobile(25px) get-vw-mobile(10px);
+                        margin: 0 0 get-vw-mobile(5px);
+                        color: $navy;
+    
+                        // Details
+                        .DetailsPage__productDataCont__3hG18 {
+    
+                            // Icon Wrapper
+                            .DetailsPage__topBarLogos__3sRpk {
+                                padding-right: get-vw-mobile(5px);
+    
+                                .DetailsPage__groupLogo__W9muL {
+                                    margin-top: get-vw-mobile(5px);
+                                    width: get-vw-mobile(14px);
+                                    height: get-vw-mobile(14px);
+    
+                                    // FX Icon
+                                    &.DetailsPage__fxMajorsGroupLogo__1fDYF {
+                                        background-image: url('./../images/pages/signal-center/icon_fx--active.svg');
+                                    }
+    
+                                    // Commodities Icon
+                                    &.DetailsPage__commoditiesGroupLogo__1eKXZ {
+                                        background-image: url('./../images/pages/signal-center/icon_commodities--active.svg');
+                                    }
+    
+                                    // Indices Icon
+                                    &.DetailsPage__indexesGroupLogo__3ZLMv {
+                                        background-image: url('./../images/pages/signal-center/icon_indices--active.svg');
+                                    }
+    
+                                    // Crypto Icon
+                                    &.DetailsPage__cryptoGroupLogo__3v5aX {
+                                        background-image: url('./../images/pages/signal-center/icon_crypto--active.svg');
+                                    }
+                                }
+                            }
+    
+                            // Text Wrapper
+                            .DetailsPage__topBarProduct__G8s4m {
+    
+                                // label - 1
+                                .DetailsPage__topBarProductName__1_tib {
+                                    display: block;
+                                    font-family: $Gilroy_b;
+                                    font-weight: initial;
+                                    font-size: get-vw-mobile(16px);
+                                    line-height: get-vw-mobile(24px);
+                                    margin-bottom: get-vw-mobile(5px);
+                                    height: auto;
+                                }
+                                // Label - 2
+                                .DetailsPage__topBarProductDesc__10Phr {
+                                    display: block;
+                                    font-family: $Poppins;
+                                    font-weight: 400;
+                                    font-size: get-vw-mobile(12px);
+                                    line-height: get-vw-mobile(18px);
+                                    margin-bottom: get-vw-mobile(15px);
+                                }
+                                // Value
+                                .DetailsPage__topBarEntryNum__OIeLZ {
+                                    display: block;
+                                    font-family: $Gilroy_b;
+                                    font-weight: initial;
+                                    font-size: get-vw-mobile(30px);
+                                    line-height: get-vw-mobile(40px);
+                                }
+                            }
+                        }
+    
+    
+                        // Circle Graph
+                        .SentimentGauge__flexContainer__39_qD {
+                            width: get-vw-mobile(90px);
+    
+                            // Graph
+                            .SentimentGauge__sentimentGaugeWrapper__1B_8V {
+    
+                                // SVG
+                                .SentimentGauge__sentimentGauge__39zON {
+                                    height: get-vw-mobile(80px);
+                                    width: get-vw-mobile(80px);
+    
+                                    path {
+                                        stroke-width: get-vw-mobile(3px) !important;
+                                        stroke-linejoin: round;
+                                        stroke-linecap: round;
+                                    }
+                                }
+    
+                                // Text
+                                .SentimentGauge__sentimentGaugeValue__3v6xu {
+                                    font-family: $Poppins;
+                                    font-size: get-vw-mobile(20px);
+                                    font-weight: 500;
+                                    line-height: get-vw-mobile(40px);
+                                }
+                            }
+    
+                            // info
+                            .SentimentGauge__gaugeInfoButton__yR0Mh {
+                                height: get-vw-mobile(10px);
+                                width: get-vw-mobile(10px);
+                                background-image: url('./../images/pages/signal-center/icon_info.svg');
+                            }
+                        }
+                    }
+    
+                    // Right Item
+                    .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__sellTop__1_7SN, 
+                    .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__buyTop__2ZtmU {
+                        border-radius: get-vw-mobile(5px);
+                        background: $white;
+                        margin: 0 0 get-vw-mobile(5px);
+                        padding: 0 get-vw-mobile(25px);
+                        width: 100%;
+                        height: get-vw-mobile(70px);
+    
+                        .DetailsPage__actionPhraseCtn__1Vh8S {
+                            margin: 0;
+    
+                            // Label
+                            .DetailsPage__actionPhrase__JWEXs {
+                                display: block;
+                                font-family: $Gilroy_r;
+                                font-size: get-vw-mobile(14px);
+                                font-weight: 600;
+                                line-height: get-vw-mobile(24px);
+                                color: $purple;
+                                margin-bottom: get-vw-mobile(5px);
+                            }
+                            // Value
+                            .DetailsPage__actionEntry__1VwNZ {
+                                font-family: $Gilroy_b;
+                                font-weight: initial;
+                                font-size: get-vw-mobile(14px);
+                                line-height: get-vw-mobile(20px);
+                                color: $navy;
+                            }
+                        }
+                    }
+                    .DetailsPage__targetConfidenceCont__1sWO9 {
+                        border-radius: get-vw-mobile(5px);
+                        padding: 0 get-vw-mobile(25px);
+                        background: $white;
+                        width: 100%;
+                        height: get-vw-mobile(70px);
+                        margin: 0;
+    
+                        // Texts
+                        .DetailsPage__topBarElement__ZiBZ4 {
+                            justify-content: center;
+                            padding-bottom: 0;
+    
+                            // Label
+                            .DetailsPage__titleMiniContainer__d3W_a {
+                                font-size: get-vw-mobile(8px);
+                                line-height: get-vw-mobile(16px);
+                                color: $purple;
+                                margin-bottom: get-vw-mobile(4px);
+                            }
+                            // Value
+                            .DetailsPage__topBarNum__UYij4 {
+                                font-size: get-vw-mobile(14px);
+                                line-height: get-vw-mobile(20px);
+                                color: $navy;
+                            }
+                        }
+    
+                        // Levels
+                        .DetailsPage__confidenceDeskContainer__1Xs7M {
+                            width: get-vw-mobile(90px);
+                            padding: 0;
+                            justify-content: center;
+    
+                            // Label
+                            .DetailsPage__titleMiniContainer__d3W_a {
+                                display: block;
+                                font-size: get-vw-mobile(10px);
+                                line-height: get-vw-mobile(16px);
+                                margin-bottom: get-vw-mobile(5px);
+                            }
+    
+                            // Levels
+                            .ConfidenceBattery__confidenceBarContainer__2UPfu {
+                                height: get-vw-mobile(4px);
+    
+                                .ConfidenceBattery__confBattItem__30MIB {
+                                    border-radius: get-vw-mobile(5px);
+                                    width: calc(20% - 0.694vw);
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+    
+                    &::before, &::after {
+                        display: none;
+                    }
+                }
+    
+                // Main Content
+                .DetailsPage__centerContainer__2UhcA {
+                    background-color: $white;
+                    padding: get-vw-mobile(25px);
+                    margin: 0;
+                    width: 100%;
+                    height: auto;
+                    border-radius: get-vw-mobile(5px);
+                    @include dFlex(space-between);
+    
+                    // Graph
+                    .DetailsPage__chartContainer__3R1Zp {
+                        width: 100%;
+                        padding: 0;
+                        margin-bottom: get-vw-mobile(20px);
+
+                        .DetailsPage__topBarTitle__2pH8H {
+                            font-family: $Gilroy_b;
+                            font-weight: initial;
+                            font-size: get-vw-mobile(14px);
+                            line-height: get-vw-mobile(20px);
+                        }
+                    }
+    
+                    // Contents
+                    .DetailsPage__tradeContainer__3yy2x {
+                        width: 100%;
+                        color: $navy;
+                        font-family: $Poppins;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+    
+                        // Top Content
+                        .DetailsPage__tradeIdeaBlock__1vkdh {
+    
+                            // 1st Details
+                            .DetailsPage__topBarTitle__2pH8H {
+                                margin-bottom: get-vw-mobile(30px);
+    
+                                // Docker
+                                .DetailsPage__titleAndStatus__1RUgf {
+                                    margin-bottom: get-vw-mobile(20px);
+    
+                                    // Title
+                                    .DetailsPage__topBarTitleReduced__99q9z {
+                                        font-family: $Gilroy_b;
+                                        font-size: get-vw-mobile(18px);
+                                        line-height: get-vw-mobile(26px);
+                                    }
+    
+                                    // Limits
+                                    .DetailsPage__tradeIdeaLogo__2Zh8h {
+                                        font-family: $Gilroy_b;
+                                        font-size: get-vw-mobile(14px);
+                                        line-height: get-vw-mobile(20px);
+
+                                        // Live
+                                        .DetailsPage__ideaStatusBullet__2Aat9 {
+                                            height: get-vw-mobile(7px);
+                                            width: get-vw-mobile(7px);
+                                            margin: 0 get-vw-mobile(5px) get-vw-mobile(1.5px) 0;
+                                        }
+                                    }
+                                }
+    
+                                // Dates
+                                .DetailsPage__datesContainer__3m4UI {
+                                    .StatusDates__statusDateLabel__pXf4_, 
+                                    .StatusDates__statusDateValue__xO706 {
+                                        display: inline-block;
+                                        font-family: $Poppins;
+                                        font-size: get-vw-mobile(12px);
+                                        line-height: get-vw-mobile(18px);
+                                        font-weight: 400;
+                                    }
+                                }
+    
+                            }
+    
+                            // 2nd Details
+                            .DetailsPage__tabletMarginCtn__1D7-g {
+                                margin-bottom: get-vw-mobile(30px);
+    
+                                .DetailsPage__topBarTitle__2pH8H {
+                                    font-family: $Gilroy_b;
+                                    font-size: get-vw-mobile(18px);
+                                    line-height: get-vw-mobile(26px);
+                                }
+                            }
+                            .DetailsPage__tabletMarginCtn__1D7-g > div {
+                                height: auto !important;
+                                margin: 0;
+                                
+                                &.DetailsPage__topBarTitle__2pH8H, 
+                                &.VolatilityEvents__eventContainer__2Y3z8 {
+                                    height: auto !important;
+                                }
+                            }
+    
+                            .VolatilityEvents__eventContainer__2Y3z8 > div {
+                                height: auto !important;
+                            }
+    
+                            .VolatilityEvents__eventContainer__2Y3z8 {
+                                margin-bottom: 0;
+                            }
+    
+                            .DetailsPage__tabletMarginCtn__1D7-g {
+                                height: auto;
+    
+                                .DetailsPage__phrase__20b7N {
+                                    display: block;
+                                    font-family: $Poppins;
+                                    font-size: get-vw-mobile(12px);
+                                    line-height: get-vw-mobile(18px);
+                                    font-weight: 400;
+                                    margin: 0;
+                                }
+                            }
+                        }
+    
+                        // Bottom Content
+                        .DetailsPage__tradeIdeaBlock__1vkdh {
+                            padding-top: get-vw-mobile(10px);
+
+                            // list
+                            .DetailsPage__sRelnumberContainer__1mcp4 {
+                                margin: 0 0 get-vw-mobile(15px);
+                                height: auto;
+
+                                .DetailsPage__srAbsContainerSup__1aEPW, 
+                                .DetailsPage__srAbsContainerRes__13e8K {
+
+                                    // V-line
+                                    .DetailsPage__supFirst__ALhZK, 
+                                    .DetailsPage__resFirst__wyIfX {
+                                        width: get-vw-mobile(5px);
+                                        height: get-vw-mobile(41px);
+                                    }
+
+                                    // items
+                                    .DetailsPage__sRnumberContainer__3Jrxm {
+                                        padding-left: get-vw-mobile(10px);
+                                    
+                                        .DetailsPage__sRnumberSub__23n0e {
+                                            width: 30%;
+                                            font-size: get-vw-mobile(10px);
+                                            line-height: get-vw-mobile(16px);
+
+                                            .DetailsPage__sRnumberNumber__1PtL8 {
+                                                margin-top: get-vw-mobile(5px);
+                                                font-size: get-vw-mobile(14px);
+                                                line-height: get-vw-mobile(20px);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+
+    // DARK MODE
+    .dark-mode {
+        .signalcenter {
+
+
+            // MODAL
+            .SignalCentre__mainWrapper__1lejx, 
+            .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+
+                .DetailsPage__mainContainer__2oCfz {
+            
+                    // Modal Docker - Back to list
+                    .DetailsPage__backButton__IbvNo {
+                        color: $white;
+            
+                        // Arrow
+                        .DetailsPage__backBtnArrow__1hCDK {
+                            background-image: url('./../images/pages/signal-center/back_arrow--white.svg');
+                        }
+                    }
+            
+                    // Header Content
+                    .DetailsPage__topBar__3do22 {
+            
+                        // Left item
+                        .DetailsPage__productDataMainCont__2HKMv {
+                            background-color: $opac_white;
+                        }
+
+                        // Right Item
+                        .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__sellTop__1_7SN, 
+                        .DetailsPage__topBarGradient__2LOat.DetailsPage__topBarPhrase__13B7D.DetailsPage__buyTop__2ZtmU {
+                            background-color: $opac_white;
+                        }
+                        .DetailsPage__targetConfidenceCont__1sWO9 {
+                            background-color: $opac_white;
+                        }
+                    }
+
+                    // Main Content
+                    .DetailsPage__centerContainer__2UhcA {
+                        background-color: $opac_white;
+
+                        // Graph
+                        .DetailsPage__chartContainer__3R1Zp {
+                            .DetailsPage__topBarTitle__2pH8H, 
+                            .label__text, 
+                            .label__value {
+                                color: $white;
+                            }
+
+                            .label__text {
+                                fill: $white;
+                            }
+
+                            // Bottom labels
+                            .CandlestickChart__axis__2qCxP {
+                                text {
+                                    color: $white;
+                                }
+                            }
+                        }
+
+                        // Contents
+                        .DetailsPage__tradeContainer__3yy2x {
+                            color: $white;
+                            
+                            // Bottom Content
+                            .DetailsPage__tradeIdeaBlock__1vkdh {
+
+                                // list
+                                .DetailsPage__sRelnumberContainer__1mcp4 {
+                                    
+                                    .DetailsPage__srAbsContainerSup__1aEPW, 
+                                    .DetailsPage__srAbsContainerRes__13e8K {
+
+                                        // items
+                                        .DetailsPage__sRnumberContainer__3Jrxm {
+                                            .DetailsPage__sRnumberSub__23n0e {
+                                                color: $white;
+
+                                                .DetailsPage__sRnumberNumber__1PtL8 {
+                                                    color: $white;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE (539px) - Signal Center
+@include mqMax(539px) {
+    .signalcenter {
+
+        // MODAL - Mobile | 360
+        .DetailsPageMobile__detailsMobile__2nJTK  {
+            width: 100% !important;
+            margin: get-vw-mobile(-5px) auto 0 !important;
+            padding: get-vw-mobile(25px) get-vw-mobile(20px) get-vw-mobile(30px);
+            color: $navy !important;
+            font-family: $Poppins;
+            font-size: get-vw-mobile(12px);
+            line-height: get-vw-mobile(18px);
+
+            &.DetailsPageMobile__buyFade__2AgFB, 
+            &.DetailsPageMobile__sellFade__3v6rO {
+                background: none;
+                background-color: $white;
+                padding: get-vw-mobile(25px) get-vw-mobile(20px) get-vw-mobile(30px);
+            }
+
+
+            // Docker
+            .DetailsPageMobile__sentimentAnalysisCont__37Qj9 {
+                @include dFlex(space-between);
+                margin-bottom: get-vw-mobile(30px);
+
+                div {
+
+                    // Title
+                    .DetailsPageMobile__sentimentConcept__3zS4s {
+                        font-family: $Gilroy_b;
+                        font-weight: initial;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(20px);
+                        margin-bottom: get-vw-mobile(6px);
+                        text-align: left;
+                    }
+
+                    // Graph
+                    .DetailsPageMobile__sentimentGaugeWrapperMobile__3p0l5 {
+                        width: get-vw-mobile(90px);
+                        margin: 0;
+
+                        .SentimentGauge__flexContainer__39_qD {
+                            width: 100%;
+
+                            // SVG
+                            .SentimentGauge__sentimentGaugeWrapper__1B_8V {
+                                svg {
+                                    width: get-vw-mobile(80px);
+                                    height: get-vw-mobile(80px);
+
+                                    path {
+                                        stroke-width: 7px !important;
+                                        stroke-linecap: round;
+                                    }
+                                }
+
+                                // text percent
+                                .SentimentGauge__sentimentGaugeValue__3v6xu {
+                                    font-family: $Poppins;
+                                    font-size: get-vw-mobile(16px);
+                                    font-weight: 400;
+                                }
+                            }
+
+                            // Info Icon
+                            .SentimentGauge__gaugeInfoButton__yR0Mh {
+                                height: get-vw-mobile(10px);
+                                width: get-vw-mobile(10px);
+                                background-image: url('./../images/pages/signal-center/icon_info.svg');
+                            }
+                        }
+                    }
+
+
+                    // Confidence
+                    .DetailsPageMobile__confidenceContainer__1EYnc {
+                        background: linear-gradient(0deg, #20ac69 0%, rgba(32,172,105,0.3) 20%, rgba(72,72,95,0) 35%);
+                        height: 100%;
+
+                        // Percent
+                        .DetailsPageMobile__sentimentConfidence__3Uqth {
+                            font-family: $Gilroy_b;
+                            font-weight: initial;
+                            font-size: get-vw-mobile(16px);
+                            line-height: get-vw-mobile(24px);
+                            justify-content: flex-start;
+                        }
+                    }
+                }
+            }
+            .DetailsPageMobile__sentimentAnalysisCont__37Qj9 > div {
+                width: 50%;
+            }
+
+
+            // Graph Wrapper
+            div {
+
+                // title
+                .DetailsPageMobile__communTitle__1gpln {
+                    font-family: $Gilroy_b;
+                    font-weight: initial;
+                    font-size: get-vw-mobile(18px);
+                    line-height: get-vw-mobile(26px);
+                    margin: 0 0 get-vw-mobile(20px);
+                }
+
+                // Graph
+                .PricesChart__wrapper__2NV71 {
+                    margin-bottom: get-vw-mobile(30px);
+
+                    .PricesChart__chartContainer__2M05N.CandlestickChart__candlestickChart__1ANex {
+                        // height: get-vw-mobile(250px);
+
+                        // label
+                        .label__text {
+                            fill: $navy
+                        }
+                        // Value box
+                        .label__text, 
+                        .label__value-rect, 
+                        .label__value {
+                            font-family: $Poppins;
+                            font-weight: 400;
+                        }
+
+                        .tick {
+                            text {
+                                font-family: $Poppins;
+                                font-weight: 400;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            // Next Volatility
+            .DetailsPageMobile__topBarTitle__2OkdO {
+                font-family: $Gilroy_b;
+                font-weight: initial;
+                font-size: get-vw-mobile(14px);
+                line-height: get-vw-mobile(20px);
+                margin: 0 0 get-vw-mobile(10px);
+            }
+
+            .VolatilityEvents__noEvents__1bgP_ {
+                font-family: $Poppins;
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+                margin: 0 0 get-vw-mobile(30px);
+            }
+            .VolatilityEvents__eventContainer__2Y3z8 {
+                margin: 0 0 get-vw-mobile(30px);
+
+                // List
+                div {
+
+                    // List item
+                    .VolatilityEvents__eventItem__3ypa8 {
+
+                        // Icon
+                        .VolatilityEvents__eventIcon__2ffzz  {
+
+                        }
+
+                        // Text
+                        .VolatilityEvents__eventDesc__1KPZv {
+                            font-family: $Poppins !important;
+
+                            div {
+                                .VolatilityEvents__eventDate__13DSI {
+                                    font-size: get-vw-mobile(8px);
+                                    line-height: get-vw-mobile(12px);
+                                }
+                            }
+                            .VolatilityEvents__eventExpired__2sRNG {
+                                font-size: get-vw-mobile(12px);
+                                line-height: get-vw-mobile(18px);
+                            }
+                        }
+                    } 
+                    
+                }
+            }
+
+
+            // Resistance
+            .DetailsPageMobile__sRelnumberContainer__3seY0 {
+                margin: 0 0 get-vw-mobile(30px);
+
+                .DetailsPageMobile__srAbsContainerRes__1AkyA, 
+                .DetailsPageMobile__srAbsContainerSup__3bTfG {
+                    position: relative;
+                    left: initial;
+                    margin-bottom: get-vw-mobile(10px);
+
+                    // line
+                    .DetailsPageMobile__supFirst__bgWcD, 
+                    .DetailsPageMobile__resFirst__A1CNX {
+                        height: get-vw-mobile(41px);
+                        width: get-vw-mobile(5px);
+                        border-radius: 0;
+                        position: relative;
+                        top: get-vw-mobile(-2px);
+                    }
+
+                    // List
+                    .DetailsPageMobile__sRnumberContainer__3V7OZ {
+                        width: calc(100% - 2.778vw);
+                        @include dFlex(flex-start);
+
+
+                        // List item
+                        .DetailsPageMobile__sRnumberSub__vJDr- {
+                            font-family: $Poppins;
+                            font-weight: 400;
+                            font-size: get-vw-mobile(10px);
+                            line-height: get-vw-mobile(16px);
+                            color: $purple;
+                            padding-left: get-vw-mobile(10px);
+                            width: 32%;
+                            text-align: left;
+
+                            // Value
+                            .DetailsPageMobile__sRnumberNumber__15uVu {
+                                font-family: $Gilroy_b;
+                                font-weight: initial;
+                                font-size: get-vw-mobile(14px);
+                                line-height: get-vw-mobile(20px);
+                                color: $navy;
+                                margin-top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            // Published date
+            .DetailsPageMobile__datesPubExpCont__2TDVy {
+                margin: 0 0 get-vw-mobile(30px);
+
+                div {
+                    width: 100%;
+                    @include dFlex(flex-start);
+                    align-items: center;
+                    margin-bottom: get-vw-mobile(2px);
+
+                    .StatusDates__statusDateLabel__pXf4_, 
+                    .StatusDates__statusDateValue__xO706 {
+                        font-family: $Poppins;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+                        margin: 0;
+                    }
+
+                    .StatusDates__statusDateLabel__pXf4_ {
+                        width: get-vw-mobile(80px);
+                    }
+                    .StatusDates__statusDateValue__xO706 {
+                        width: calc(100% - 22.222vw);
+                    }
+                }
+            }
+
+
+            // Trade Idea
+            .DetailsPageMobile__communTitle__1gpln {
+                font-family: $Gilroy_b;
+                font-weight: initial;
+                font-size: get-vw-mobile(18px);
+                line-height: get-vw-mobile(26px);
+                margin: 0 0 get-vw-mobile(15px);
+            }
+            div {
+                .DetailsPageMobile__tradePhrase__3TrEM {
+                    display: block;
+                    font-family: $Poppins;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                    margin-bottom: get-vw-mobile(15px);
+                }
+            }
+
+
+            // Updates
+            .DetailsPageMobile__topBarTitle__2OkdO {
+                font-family: $Gilroy_b;
+                font-weight: initial;
+                font-size: get-vw-mobile(18px);
+                line-height: get-vw-mobile(26px);
+                margin: get-vw-mobile(30px) 0 get-vw-mobile(15px);
+            }
+
+
+            // CTA
+            .DetailsPageMobile__buttonContainerCollapse__3FRHf {
+                margin-top: get-vw-mobile(40px);
+                width: 100%;
+                @include dFlex(space-between);
+                align-items: center;
+
+                // Button
+                .DetailsPageMobile__showDetailsBotton__13ZSu {
+                    font-family: $Poppins;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                    
+                    // Button
+                    &.DetailsPageMobile__buttonOp__1zWwA {
+                        font-weight: bold;
+                        width: get-vw-mobile(120px);
+                        height: get-vw-mobile(40px);
+                        @include dFlex(center);
+                        align-items: center;
+                        border: 1px solid $primary;
+                        border-radius: get-vw-mobile(100px);
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+
+        &--home {
+            .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk {
+                padding-bottom: 0 !important;
+            }
+            .SignalCentre__mainWrapper__1lejx.SignalCentre__mainWrapperFlex__3Dvxk > div {
+                width: 100%;
+                display: none;
+    
+                &:nth-of-type(-n+2) {
+                    display: none;
+                }
+
+                &:first-child {
+                    display: block;
+                }
+    
+                .TradingElementSingleTab__detailsTile__3XAgx {
+                    margin: 0 !important;
+                }
+            }
+        }
+    }
+
+    // Home page - Signal Center
+    .signalcenter-home {
+        &__header {
+            margin-bottom: get-vw-mobile(10px);
+
+            &-title {
+                font-size: get-vw-mobile(14px);
+                line-height: get-vw-mobile(20px);
+                padding-left: get-vw-mobile(31px);
+
+                &::before {
+                    height: get-vw-mobile(23px);
+                    width: get-vw-mobile(31px);
+                }
+            }
+
+            &-link {
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+            }
+        }
+    }
+
+    // DARK MODE
+    .dark-mode {
+        .signalcenter {
+
+            // MODAL - Mobile | 360
+            .DetailsPageMobile__detailsMobile__2nJTK  {
+                color: $white !important;
+    
+                &.DetailsPageMobile__buyFade__2AgFB, 
+                &.DetailsPageMobile__sellFade__3v6rO {
+                    background-color: #364668;
+                }
+    
+    
+                // Docker
+                .DetailsPageMobile__sentimentAnalysisCont__37Qj9 {
+                    div {
+                        // Graph
+                        .DetailsPageMobile__sentimentGaugeWrapperMobile__3p0l5 {
+                            .SentimentGauge__flexContainer__39_qD {
+                                // Info Icon
+                                .SentimentGauge__gaugeInfoButton__yR0Mh {
+                                    background-image: url('./../images/pages/signal-center/icon_info--white.svg');
+                                }
+                            }
+                        }
+                    }
+                }
+    
+                // Graph Wrapper
+                div {
+                    // Graph
+                    .PricesChart__wrapper__2NV71 {
+                        .PricesChart__chartContainer__2M05N.CandlestickChart__candlestickChart__1ANex {
+                            // label
+                            .label__text {
+                                fill: $white
+                            }
+                        }
+                    }
+                }
+    
+                // Resistance
+                .DetailsPageMobile__sRelnumberContainer__3seY0 {
+                    .DetailsPageMobile__srAbsContainerRes__1AkyA, 
+                    .DetailsPageMobile__srAbsContainerSup__3bTfG {
+                        // List
+                        .DetailsPageMobile__sRnumberContainer__3V7OZ {
+                            // List item
+                            .DetailsPageMobile__sRnumberSub__vJDr- {
+                                color: $sky_blue;
+                                // Value
+                                .DetailsPageMobile__sRnumberNumber__15uVu {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                }
+    
+    
+                // CTA
+                .DetailsPageMobile__buttonContainerCollapse__3FRHf {
+                    // Button
+                    .DetailsPageMobile__showDetailsBotton__13ZSu {
+                        // Button
+                        &.DetailsPageMobile__buttonOp__1zWwA {
+                            border-color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

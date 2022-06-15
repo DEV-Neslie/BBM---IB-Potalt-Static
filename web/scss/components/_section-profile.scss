@@ -1,0 +1,894 @@
+// Profile
+.profile {
+    @include displayFlex;
+    background: $white;
+    overflow: hidden;
+
+    &__mobile-top {
+        display: none;
+    }
+
+    &__nav {
+        width: get-vw-desktop(230px);
+        background: $sky_blue4;
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1px;
+            height: 100%;
+            background: $sky_blue;
+            filter: blur(4px);
+        }
+
+
+        &-list {
+            list-style: none;
+
+            &__item {
+                border-bottom: 2px solid $sky_blue;
+
+                &-icon {
+                    margin: auto;
+                    content: '';
+                    display: inline-block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: get-vw-desktop(22px);
+                    width: get-vw-desktop(17px);
+                    height: get-vw-desktop(17px);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+
+                    &--edit {
+                        background-image: url('./../images/profile/edit-navy-icon.svg');
+                    }
+
+                    &--bank {
+                        background-image: url('./../images/profile/bank-navy-icon.svg');
+                    }
+
+                    &--notification {
+                        background-image: url('./../images/profile/notification-bell-navy-icon.svg');
+                    }
+
+                    &--authorization {
+                        background-image: url('./../images/profile/authorization-navy-icon.svg');
+                    }
+
+                    &--factor-auth {
+                        background-image: url('./../images/profile/factor-auth-navy-icon.svg');
+                    }
+
+                    &--legals {
+                        background-image: url('./../images/profile/legals-navy-icon.svg');
+                    }
+                }
+                
+                &-link {
+                    padding: get-vw-desktop(14px) get-vw-desktop(28px) get-vw-desktop(16px) get-vw-desktop(44px) ;
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    @include transitionAll;
+
+                    &:after {
+                        margin: auto;
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: get-vw-desktop(18px);
+                        bottom: 0;
+                        width: get-vw-desktop(7px);
+                        height: get-vw-desktop(11px);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-image: url('./../images/common/greater-than-blue-icon.svg');
+                    }
+
+                    &.is-active {
+                        background: $white;
+
+                        .profile__nav-list__item-icon {
+                            &--edit {
+                                background-image: url('./../images/profile/edit-green-icon.svg');
+                            }
+        
+                            &--bank {
+                                background-image: url('./../images/profile/bank-green-icon.svg');
+                            }
+        
+                            &--notification {
+                                background-image: url('./../images/profile/notification-bell-green-icon.svg');
+                            }
+        
+                            &--authorization {
+                                background-image: url('./../images/profile/authorization-green-icon.svg');
+                            }
+
+                            &--factor-auth {
+                                background-image: url('./../images/profile/factor-auth-green-icon.svg');
+                            }
+
+                            &--legals {
+                                background-image: url('./../images/sidebar/active-legals.svg');
+                            }
+                        }
+                    }
+
+                }
+
+                &-title {
+                    display: inline-block;
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+                }
+            }
+        }
+    }
+
+    &__mobile-nav {
+        display: none;
+    }
+
+    &__content {
+        padding: get-vw-desktop(28px) get-vw-desktop(48px) get-vw-desktop(28px) get-vw-desktop(50px);
+        width: calc(100% - 15.972222222222221vw); //100% - 230px
+    }
+
+    &__header {
+        &-info {
+            margin: get-vw-desktop(26px) 0 0;
+            @include displayFlex;
+            justify-content: space-between;
+
+            &__item {
+                max-width: get-vw-desktop(132px);
+
+                &-label {
+                    font-size: get-vw-desktop(10px);
+                    line-height: get-vw-desktop(12px);
+                    color: $purple;
+                }
+
+                &-value {
+                    margin: get-vw-desktop(5px) 0 0;
+                    position: relative;
+                    font-size: get-vw-desktop(14px);
+                    line-height: get-vw-desktop(21px);
+
+                    &--verified {
+                        padding: get-vw-desktop(3px) get-vw-desktop(6px) get-vw-desktop(3px) get-vw-desktop(26px);
+                        font-size: get-vw-desktop(12px);
+                        line-height: get-vw-desktop(18px);
+                        background: $sky_blue;
+                        border-radius: get-vw-desktop(60px);
+
+                        &:before {
+                            margin: auto;
+                            content: '';
+                            position: absolute;
+                            width: get-vw-desktop(16px);
+                            height: get-vw-desktop(16px);
+                            top: 0;
+                            bottom: 0;
+                            left: get-vw-desktop(5px);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-image: url('./../images/profile/verified-icon.svg');
+                        }
+                    }
+
+                    &--unverified {
+                        padding: get-vw-desktop(3px) get-vw-desktop(6px) get-vw-desktop(3px) get-vw-desktop(26px);
+                        font-size: get-vw-desktop(12px);
+                        line-height: get-vw-desktop(18px);
+                        background: $light_grey3;
+                        border-radius: get-vw-desktop(60px);
+
+                        &:before {
+                            margin: auto;
+                            content: '';
+                            position: absolute;
+                            width: get-vw-desktop(16px);
+                            height: get-vw-desktop(16px);
+                            top: 0;
+                            bottom: 0;
+                            left: 5px;
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-image: url('./../images/profile/unverified-icon.svg');
+                        }
+                    }
+                }
+
+                // Modifier
+                &--username {
+                    padding: 0 0 0 get-vw-desktop(80px);
+                    position: relative;
+                    min-width: get-vw-desktop(88px);
+                    max-width: get-vw-desktop(212px);
+
+                    img {
+                        margin: auto;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        width: get-vw-desktop(56px);
+                        height: get-vw-desktop(56px);
+                        border-radius: 50%;
+                        overflow: hidden;
+                    }
+                }
+
+                &--status {
+                    max-width: initial;
+                }
+            }
+        }
+    }
+
+    &__detail {
+        margin: get-vw-desktop(46px) 0 0;
+    }
+
+    &__form {
+        margin: get-vw-desktop(17px) 0;
+
+        &-field {
+            width: 100%;
+
+            &__wrapper {
+                display: block;
+                width: 100%;
+    
+                // 2 cols modifier
+                &--2cols {
+                    @include displayFlex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+    
+                    .profile__form-field {
+                        width: calc(50% - 0.8680555555555556vw); // 50% - 12.5px
+    
+                        &:not(:nth-child(2n)) {
+                            margin-right: get-vw-desktop(25px); 
+                        }
+    
+                        &:nth-child(n+3) {
+                            margin-top: get-vw-desktop(18px); 
+                        }
+                    }
+                }
+            }
+
+            // Modifier
+            &--button {
+                margin: get-vw-desktop(33px) 0 0;
+                text-align: center;
+
+                .btn {
+                    min-width: get-vw-desktop(124px);
+                }
+            }
+        }
+
+        &-label {
+            display: inline-block;
+            font-family: $Poppins;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+        }
+
+        &-input,
+        &-tel {
+            margin: get-vw-desktop(5px) 0 0;
+            padding: get-vw-desktop(10px) get-vw-desktop(19px) get-vw-desktop(9px);
+            width: 100%;
+            background: $white;
+            border: 1px solid $sky_blue;
+            box-sizing: border-box;
+            border-radius: get-vw-desktop(5px);
+            font-family: $Poppins;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+            color: $navy;
+
+            &:disabled {
+                font-weight: normal;
+                color: $opac_navy_2;
+            }
+
+            &::placeholder {
+                font-weight: normal;
+            }
+        }
+
+        &-tel {
+            padding: get-vw-desktop(10px) get-vw-desktop(8px) get-vw-desktop(9px) get-vw-desktop(48px);
+        }
+    }
+
+    &__note {
+        margin: get-vw-desktop(12px) 0 0;
+        font-size: get-vw-desktop(10px);
+        line-height: get-vw-desktop(16px);
+
+        a {
+            font-size: inherit;
+            line-height: inherit;
+        }
+    }
+
+    &__statement {
+        margin: get-vw-desktop(55px) 0 0;
+
+        &__content {
+            margin: get-vw-desktop(8px) 0 0;
+            @include displayFlex;
+            justify-content: space-between;
+            flex-direction: row;
+
+            &-text {
+                max-width: get-vw-desktop(700px);
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(18px);
+            }
+        }
+
+        &__option {
+            font-size: 0;
+
+            .btn--option {
+                &:not(:last-of-type) {
+                    margin: 0 get-vw-desktop(8px) 0 0;
+                }
+            }
+        }
+    }
+
+    .data--profile {
+        margin: get-vw-desktop(45px) auto 0;
+    }
+
+    &--legals {
+        .item__content {
+            padding: 0;
+        }
+    }
+}
+
+
+.dark-mode {
+    .profile {
+        background: $opac_white;
+
+        &__nav {
+            color: $opac_white_3;
+            background: $opac_navy_3;
+
+            &:after {
+                background: $opac_skyblue_5;
+                filter: blur(10px);
+            }
+
+            &-list {
+                &__item {
+
+                    &-icon {
+                        &--edit {
+                            background-image: url('./../images/profile/edit-white-icon.svg');
+                        }
+    
+                        &--notification {
+                            background-image: url('./../images/profile/notification-bell-white-icon.svg');
+                        }
+    
+                        &--authorization {
+                            background-image: url('./../images/profile/authorization-white-icon.svg');
+                        }
+
+                        &--factor-auth {
+                            background-image: url('./../images/profile/factor-auth-white-icon.svg');
+                        }
+
+                        &--legals {
+                            background-image: url('./../images/profile/legals-white-icon.svg');
+                        }
+                    }
+
+                    &-link {
+                        border-color: $opac_skyblue_3;
+
+                        &:after {
+                            background-image: url('./../images/common/greater-than-white-icon.svg');
+                        }
+
+                        &.is-active {
+                            color: $white;
+                            background: $navy;
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        &__content {
+            color: $white;
+        }
+
+        &__header {
+            &-info {
+                &__item {
+                    &-label {
+                        color: $sky_blue;
+                    }
+
+                    &-value {
+                        &--verified,
+                        &--unverified {
+                            background: $navy;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__form {
+
+            &-input,
+            &-tel {
+                background: $sky_blue4;
+                color: $navy;
+
+                &:disabled {
+                    color: $navy;
+                }
+            }
+
+            &-input {
+                opacity: 0.8;
+
+                &--bday,
+                &--country,
+                &--citizenship {
+                    opacity: 0.5;
+                }
+            }
+
+            &-tel {
+                opacity: 0.8;
+            }
+        }
+
+        &__note {
+            a {
+                color: $white;
+            }
+        }
+    }
+}
+
+@include mqMax($mq-max-mobile) {
+    .profile {
+        display: block;
+        border-radius: 5px;
+        
+        &__mobile-top {
+            padding: get-vw-mobile(35px) get-vw-mobile(26px) get-vw-mobile(30px);
+            display: block;
+            border-bottom: 1px solid $sky_blue;
+
+            &__item {
+                position: relative;
+
+                &-label {
+                    margin: get-vw-mobile(2px) 0 0;
+                    font-size: get-vw-mobile(10px);
+                    line-height: get-vw-mobile(12px);
+                    color: $purple;
+                }
+
+                &-value {
+                    position: relative;
+                    font-size: get-vw-mobile(14px);
+                    line-height: get-vw-mobile(21px);
+
+                    // Modifier
+                    &--verified {
+                        padding: get-vw-mobile(3px) get-vw-mobile(5px) get-vw-mobile(3px) get-vw-mobile(26px);
+                        display: inline-block;
+                        font-size: get-vw-mobile(10px);
+                        line-height: get-vw-mobile(16px);
+                        background: $sky_blue;
+                        border-radius: get-vw-mobile(60px);
+
+                        &:before {
+                            margin: auto;
+                            content: '';
+                            position: absolute;
+                            width: get-vw-mobile(16px);
+                            height: get-vw-mobile(16px);
+                            top: 0;
+                            bottom: 0;
+                            left: get-vw-mobile(5px);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-image: url('./../images/profile/verified-icon.svg');
+                        }
+                    }
+
+                    &--unverified {
+                        padding: get-vw-mobile(3px) get-vw-mobile(5px) get-vw-mobile(3px) get-vw-mobile(26px);
+                        display: inline-block;
+                        font-size: get-vw-mobile(10px);
+                        line-height: get-vw-mobile(16px);
+                        background: $light_grey3;
+                        border-radius: get-vw-mobile(60px);
+
+                        &:before {
+                            margin: auto;
+                            content: '';
+                            position: absolute;
+                            width: get-vw-mobile(16px);
+                            height: get-vw-mobile(16px);
+                            top: 0;
+                            bottom: 0;
+                            left: get-vw-mobile(5px);
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-image: url('./../images/profile/unverified-icon.svg');
+                        }
+                    }
+                }
+
+                // Modifier
+                &--username {
+                    img {
+                        margin: auto;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        width: get-vw-mobile(56px);
+                        height: get-vw-mobile(56px);
+                        border-radius: 50%;
+                        overflow: hidden;
+                    }
+                }
+
+                &--status {
+                    margin: get-vw-mobile(14px) 0 0;
+                }
+            }
+        }
+
+        &__nav {
+            display: none;
+            width: 100%;
+            background: $sky_blue4;
+            position: relative;
+    
+            &:after {
+                display: none;
+            }
+    
+    
+            &-list {
+    
+                &__item {
+                    border-bottom: 0;
+    
+                    &-icon {
+                        left: get-vw-mobile(22px);
+                        width: get-vw-mobile(17px);
+                        height: get-vw-mobile(17px);
+                    }
+                    
+                    &-link {
+                        padding: get-vw-mobile(20px) get-vw-mobile(35px) get-vw-mobile(20px) get-vw-mobile(44px) ;
+    
+                        &:after {
+                            right: get-vw-mobile(18px);
+                            width: get-vw-mobile(7px);
+                            height: get-vw-mobile(11px);
+                            @include transitionAll;
+                        }
+
+                        &.is-active {
+                            box-shadow: 0 get-vw-mobile(3px) get-vw-mobile(15px) $sky_blue;
+
+                            &:after {
+                                @include transform(rotate(90deg));
+                            }
+                        }
+                    }
+    
+                    &-title {
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+                    }
+                }
+            }
+        }
+
+        &__mobile-nav {
+            display: block;
+        }
+    
+        &__content {
+            margin: get-vw-mobile(20px) 0 0;
+            padding: 0;
+            width: 100%;
+
+            &-item {
+                
+                &__wrapper {
+                    padding: get-vw-mobile(28px) get-vw-mobile(26px);
+                }
+            }
+        }
+    
+        &__header {
+            &-info {
+                margin: 0;
+                flex-wrap: wrap;
+                justify-content: initial;
+    
+                &__item {
+                    width: 50%;
+                    max-width: initial;
+
+                    &:nth-child(n+3) {
+                        margin-top: get-vw-mobile(16px); 
+                    }
+
+                    &:nth-child(even) {
+                        padding: 0 0 0 get-vw-mobile(5px);
+                    }
+
+                    &:nth-child(odd) {
+                        padding: 0 get-vw-mobile(5px) 0 0;
+                    }
+    
+                    &-label {
+                        font-size: get-vw-mobile(10px);
+                        line-height: get-vw-mobile(12px);
+                    }
+    
+                    &-value {
+                        margin: get-vw-mobile(5px) 0 0;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(18px);
+    
+                        &--verified,
+                        &--unverified {
+                            padding: 0;
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(18px);
+                            background: none;
+                            border-radius: 0;
+    
+                            &:before {
+                                background-image: none;
+                            }
+                        }
+                    }
+    
+                    // Modifier
+                    &--username {
+                        padding: 0;
+                        position: relative;
+                        min-width: get-vw-mobile(88px);
+                        max-width: initial;
+    
+                        img {
+                            margin: auto;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            width: get-vw-mobile(56px);
+                            height: get-vw-mobile(56px);
+                            border-radius: 50%;
+                            overflow: hidden;
+                        }
+                    }
+                }
+            }
+        }
+    
+        &__detail {
+            margin: get-vw-mobile(32px) 0 0;
+        }
+    
+        &__form {
+            margin: get-vw-mobile(18px) 0;
+    
+            &-field {
+                width: 100%;
+
+                &:not(:first-of-type) {
+                    margin: get-vw-mobile(22px) 0 0;
+                }
+    
+                &__wrapper {
+                    display: block;
+                    width: 100%;
+        
+                    // 2 cols modifier
+                    &--2cols {
+                        @include displayFlex;
+                        flex-direction: column;
+                        flex-wrap: initial;
+        
+                        .profile__form-field {
+                            width: 100%;
+        
+                            &:not(:nth-child(2n)) {
+                                margin-right: initial; 
+                            }
+        
+                            &:nth-child(n+3) {
+                                margin-top: initial; 
+                            }
+
+                            &:not(:first-of-type) {
+                                margin: get-vw-mobile(22px) 0 0;
+                            }
+                        }
+                    }
+                }
+    
+                // Modifier
+                &--button {
+                    margin: get-vw-mobile(33px) 0 0;
+                    text-align: center;
+    
+                    .btn {
+                        min-width: get-vw-mobile(124px);
+                    }
+                }
+            }
+    
+            &-label {
+                display: inline-block;
+                font-family: $Poppins;
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+            }
+    
+            &-input,
+            &-tel {
+                margin: get-vw-mobile(5px) 0 0;
+                padding: get-vw-mobile(10px) get-vw-mobile(14px) get-vw-mobile(9px);
+                width: 100%;
+                background: $white;
+                border: 1px solid $sky_blue;
+                box-sizing: border-box;
+                border-radius: get-vw-mobile(5px);
+                font-family: $Poppins;
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+                color: $navy;
+    
+                &:disabled {
+                    font-weight: normal;
+                    color: $opac_navy_2;
+                }
+    
+                &::placeholder {
+                    font-weight: normal;
+                }
+            }
+    
+            &-tel {
+                padding: get-vw-mobile(10px) get-vw-mobile(14px) get-vw-mobile(9px);
+            }
+        }
+    
+        &__note {
+            margin: get-vw-mobile(42px) 0 0;
+            font-size: get-vw-mobile(10px);
+            line-height: get-vw-mobile(14px);
+    
+            a {
+                font-size: inherit;
+                line-height: inherit;
+            }
+        }
+    
+        &__statement {
+            margin: get-vw-mobile(34px) 0 0;
+    
+            &__content {
+                margin: get-vw-mobile(8px) 0 0;
+                @include displayFlex;
+                justify-content: initial;
+                flex-direction: column;
+    
+                &-text {
+                    width: 100%;
+                    max-width: initial;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                }
+            }
+    
+            &__option {
+                margin: get-vw-mobile(18px) 0 0;
+                font-size: 0;
+    
+                .btn--option {
+                    &:not(:last-of-type) {
+                        margin: 0 get-vw-mobile(8px) 0 0;
+                    }
+                }
+            }
+        }
+
+        .data--profile {
+            margin: get-vw-mobile(45px) auto 0;
+        }
+    
+    }
+
+    .dark-mode {
+        .profile {
+            
+            &__mobile-top {
+                color: $white;
+    
+                &__item {
+    
+                    &-label {
+                        color: $white;
+                    }
+    
+                    &-value {
+                        position: relative;
+                        font-size: get-vw-mobile(14px);
+                        line-height: get-vw-mobile(21px);
+    
+                        // Modifier
+                        &--verified,
+                        &--unverified {
+                            background: $navy;
+                        }
+                    }
+                }
+            }
+    
+            &__nav {
+                &-list {
+                    &__item {                        
+                        &-link {
+                            &.is-active {
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+        
+            &__header {
+                &-info {
+                    &__item {
+                        &-value {
+                            &--verified,
+                            &--unverified {
+                                background: transparent;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

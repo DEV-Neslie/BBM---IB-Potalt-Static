@@ -1,0 +1,295 @@
+// MIXIN
+$bigscreen-vw-viewport: 1600;
+$highres-vw-viewport: 1440;
+$laptop-vw-viewport: 1200;
+$mobile-vw-viewport: 360;
+
+$laptop-con-size: 1100px;
+
+$mq-max-laptop: 1440px;
+$mq-max-mobile: 768px;
+
+$mq-min-pc-size: 769px;
+$mq-max-sp-size: 768px;
+
+$minW: min-width;
+$maxW: max-width;
+
+
+
+//Colors
+$primary: #0E80E1;
+$white: #fff;
+$black: #000;
+$grey: #C1C1C1;
+$grey2: #AFAFAF;
+$d_gray: #272835;
+$light_grey: #EEF1F7;
+$light_grey2: #EFEBEB;
+$light_grey3: #EBEBEB;
+$yellow: #fff000;
+$red: #FF0000;
+$red2: #CC242B;
+$red3: #E90111;
+$peach: #f1d5d5;
+$blue: #1877F2;
+$light_blue: #495777;
+$sky_blue: #E7F2FC;
+$sky_blue2: #FAFDFF;
+$sky_blue3: #DDEEFD;
+$sky_blue4: #FBFDFF;
+$purple: #3949A7;
+$navy: #02194A;
+$d_navy: #031742;
+$d_navy_2: #0A1533;
+$p_navy: #354568;
+$green: #00CF80;
+$opac_white: rgba(255, 255, 255, 0.2);
+$opac_white_2: rgba(255, 255, 255, 0.5);
+$opac_white_3: rgba(255, 255, 255, 0.8);
+$opac_white_4: rgba(255, 255, 255, 0.05);
+$opac_skyblue: rgba(231, 242, 252, 0.1);
+$opac_skyblue_2: rgba(231, 242, 252, 0.5);
+$opac_skyblue_3: rgba(251, 253, 255, 0.1);
+$opac_skyblue_4: rgba(251, 253, 255, 0.02);
+$opac_skyblue_5: rgba(251, 253, 255, 0.3);
+$opac_skyblue_6: rgba(231, 242, 252, 0.2);
+$opac_navy: rgba(2, 25, 74, 0.1);
+$opac_navy_2: rgba(2, 25, 74, 0.8);
+$opac_navy_3: rgba(2, 25, 74, 0.7);
+$opac_navy_4: rgba(2, 25, 74, 0.06);
+$opac_navy_5: rgba(2, 17, 51, 0.6);
+$opac_navy_6: rgba(2, 17, 51, 0.5);
+$opac_navy_7: rgba(2, 25, 74, 0.5);
+$opac_navy_8: rgba(2, 25, 74, 0.3);
+$opac_black: rgba(0, 0, 0, 0.15);
+$opac_black2: rgba(0, 0, 0, 0.1);
+$opac_black3: rgba(0, 0, 0, 0.54);
+$opac_black4: rgba(0, 0, 0, 0.03);
+
+
+
+// mediaquery for PC
+@mixin mqMinPc($minW:$mq-min-pc-size) {
+  @media print,screen and (min-width: $minW) {
+    @content;
+  }
+}
+
+// mediaquery for SP
+@mixin mqMaxSp($maxW:$mq-max-sp-size) {
+  @media print,screen and (max-width: $maxW) {
+    @content;
+  }
+}
+
+// mediaquery range
+@mixin mqMaxMin($property01,$property02) {
+	@media print,screen and (max-width: $property01) and (min-width: $property02) {
+	  @content;
+	}
+}
+
+// mediaquery Min
+@mixin mqMin($mqMin) {
+  @media print,screen and (min-width: $mqMin) {
+    @content;
+  }
+}
+
+// mediaquery Max
+@mixin mqMax($mqMax) {
+  @media print,screen and (max-width: $mqMax) {
+    @content;
+  }
+}
+
+@mixin letter-spacing($spacing) {
+	letter-spacing: ($spacing / 1000) * 1em;
+}
+
+@mixin transitionAll {
+	transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+	-o-transition: all .2s linear;
+}
+
+@mixin transitionOpacity {
+	transition: opacity .2s linear;
+	-webkit-transition: opacity .2s linear;
+	-o-transition: opacity .2s linear;
+}
+
+@mixin transitionColor {
+	transition: color .2s linear;
+	-webkit-transition: color .2s linear;
+	-o-transition: color .2s linear;
+}
+
+@mixin transitionVisibility {
+	transition: visibility .2s linear, opacity .2s linear, transform .2s linear;
+	-webkit-transition: visibility .2s linear, opacity .2s linear, transform .2s linear;
+	-o-transition: visibility .2s linear, opacity .2s linear, transform .2s linear;
+}
+
+@mixin transitionBg {
+	transition: background-color .2s linear, color .2s linear;
+	-webkit-transition: background-color .2s linear, color .2s linear;
+	-o-transition: background-color .2s linear, color .2s linear;
+}
+
+@mixin transitionSlide {
+	transition: all .4s linear;
+	-webkit-transition: all .4s linear;
+	-o-transition: all .4s linear;
+}
+
+@mixin transitionAllThumb {
+	transition: all .25s linear;
+	-webkit-transition: all .25s linear;
+	-o-transition: all .25s linear;
+}
+
+@mixin transitionVisibilityThumb {
+	transition: visibility .25s linear, opacity .25s linear, transform .25s linear;
+	-webkit-transition: visibility .25s linear, opacity .25s linear, transform .25s linear;
+	-o-transition: visibility .25s linear, opacity .25s linear, transform .25s linear;
+}
+
+@mixin transitionAllEase {
+	transition: all .6s ease;
+	-webkit-transition: all .6s ease;
+	-o-transition: all .6s ease;
+}
+
+@mixin displayFlex{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin transform($property) {
+	-webkit-transform: $property;
+	-ms-transform: $property;
+	transform: $property;
+}
+
+@mixin transition($property) {
+	-webkit-transition: $property;
+	-moz-transition: $property;
+	-ms-transition: $property;
+	-o-transition: $property;
+	transition: $property;
+}
+
+
+@mixin background-image($property) {
+	background: url($property) no-repeat;
+}
+
+@mixin gradient01 {
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(252,235,226,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 30%,rgba(252,235,226,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 30%,rgba(252,235,226,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fcebe2',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin shadow01 {
+	-webkit-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.16);
+	-moz-box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.16);
+	box-shadow: 1px 1px 22px 1px rgba(0,0,0,0.16);
+}
+
+@function decimal-round($number, $digits: 0, $mode: round) {
+    $n: 1;
+    // $number must be a number
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    // $digits must be a unitless number
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
+
+@function decimal-floor($number, $digits: 0) {
+    @return decimal-round($number, $digits, floor);
+}
+
+
+@function get-vw-bigScreen($font) {
+	$vw-context: $bigscreen-vw-viewport * 0.01 * 1px;
+	$vw-val: $font / $vw-context * 1vw;
+	@return $vw-val;
+}
+
+@function get-vw-desktop($font) {
+	$vw-context: $highres-vw-viewport * 0.01 * 1px;
+	$vw-val: $font / $vw-context * 1vw;
+	@return $vw-val;
+}
+
+@function get-vw-laptop($font) {
+	$vw-context: $laptop-vw-viewport * 0.01 * 1px;
+	$vw-val: $font / $vw-context * 1vw;
+	@return $vw-val;
+}
+
+@function get-vw-mobile($font) {
+	$vw-context: $mobile-vw-viewport * 0.01 * 1px;
+	$vw-val: $font / $vw-context * 1vw;
+	@return $vw-val;
+}
+
+@function line-height($lh, $font) {
+	$lh-val : $lh / $font;
+	@return $vw-val;
+}
+
+/*-- Display flex --*/
+@mixin dFlex($justify) {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  	flex-flow: row wrap;
+  	justify-content: $justify;
+}
+
+// Text ellipsis
+@mixin ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin pCenter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}

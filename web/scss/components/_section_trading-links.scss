@@ -1,0 +1,77 @@
+// TRADING LINKS
+.trading-link {
+    transition: .2s ease all;
+
+    &__logo {
+        width: get-vw-desktop(115px);
+    }
+
+    &__btn-container {
+        margin: get-vw-desktop(12px) auto 0;
+        text-align: center;
+
+        .btn {
+            &:not(:first-of-type) {
+                margin: get-vw-desktop(14px) auto 0;
+            }
+
+            &:nth-child(1) {
+                width: get-vw-desktop(140px);
+                min-width: initial;
+            }
+
+            &:nth-child(2) {
+                width: get-vw-desktop(184px);
+                min-width: initial;
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .trading-link {
+        color: $white;
+        
+        &__content {
+            background-color: $opac_white;
+            box-shadow: get-vw-desktop(5px) get-vw-desktop(5px) get-vw-desktop(20px) $opac_skyblue;
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Trading Links
+@include mqMax($mq-max-mobile) {
+    .trading-link {
+        &__content {
+            padding: get-vw-mobile(27px) get-vw-mobile(12px) get-vw-mobile(27px) get-vw-mobile(20px);
+            @include displayFlex;
+        }
+
+        &__logo {
+            width: get-vw-mobile(96px);
+        }
+    
+        &__btn-container {
+            margin: 0 auto;
+    
+            .btn {
+                &:not(:first-of-type) {
+                    margin: get-vw-mobile(5px) auto 0;
+                }
+    
+                &:nth-child(1) {
+                    width: get-vw-mobile(140px);
+                    min-width: initial;
+                }
+    
+                &:nth-child(2) {
+                    width: get-vw-mobile(184px);
+                    min-width: initial;
+                }
+            }
+        }
+    }
+}

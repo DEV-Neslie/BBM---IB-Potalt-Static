@@ -1,0 +1,218 @@
+// INQUIRY
+.inquiry {
+    margin: get-vw-desktop(22px) auto 0;
+    padding: get-vw-desktop(22px) 0;
+
+    &__text {
+        font-size: get-vw-desktop(14px);
+        line-height: get-vw-desktop(21px);
+    }
+
+    &__field {
+        &-input {
+            width: 100%;
+
+            &--textarea {
+                height: get-vw-desktop(117px);
+            }
+        }
+    }
+
+    &__form {
+        margin: get-vw-desktop(26px) 0 0;
+
+        &-row {
+            margin: 0 0 get-vw-desktop(24px);
+            width: 100%;
+
+            // Two columns
+            &--2-cols {
+                @include displayFlex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .inquiry__form {
+                    &-col {
+                        width: get-vw-desktop(440px);
+
+                        &:not(:last-of-type) {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            &--agree {
+                text-align: center;
+            }
+
+            &--submit {
+                margin: get-vw-desktop(10px) 0;
+                text-align: center;
+            }
+        }
+
+        &-col {
+            &:not(:last-of-type) {
+                margin: 0 0 get-vw-desktop(24px);
+            }
+        }
+
+        &-label {
+            margin: 0 0 get-vw-desktop(8px);
+            display: block;
+            font-size: get-vw-desktop(10px);
+            line-height: 1.2;
+
+            .required {
+                color: $red;
+            }
+        }
+
+        &-input {
+            padding: get-vw-desktop(10px) get-vw-desktop(14px);
+            font-family: $Poppins;
+            font-size: get-vw-desktop(12px);
+            line-height: 1.2;
+            //background-color: $sky_blue4;
+            //border: 1px solid $sky_blue;
+            //border-radius: 5px;
+            width: 100%;
+        }
+
+        textarea {
+            padding: get-vw-desktop(10px) get-vw-desktop(14px);
+            width: 100%;
+            height: 100%;
+            font-family: $Poppins;
+            font-size: get-vw-desktop(12px);
+            line-height: 1.2;
+            // background-color: $sky_blue4;
+            // border: 1px solid $sky_blue;
+            // border-radius: 5px;
+        }
+
+        ::placeholder,
+        ::-webkit-input-placeholder,
+        :-moz-placeholder,
+        ::-moz-placeholder,
+        :-ms-input-placeholder,
+        :-moz-placeholder {
+            font-size: get-vw-desktop(12px);
+            line-height: 1.2;
+            color: $opac_navy_2;
+        }
+
+        &-submit {
+            padding: get-vw-desktop(11px) get-vw-desktop(20px);
+        }
+
+        .custom-checkbox {
+           display: inline-block;
+        }
+
+        .custom-select {
+            width: 100%;
+            // border: 1px solid $sky_blue;
+            // border-radius: 5px;
+
+            .select-selected {
+                padding: get-vw-desktop(10px) get-vw-desktop(32px) get-vw-desktop(10px) get-vw-desktop(14px);
+                font-size: get-vw-desktop(12px);
+                line-height: 1.2;
+                //background-color: $sky_blue4;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - INQUIRY
+@include mqMax($mq-max-mobile) {
+    .inquiry {
+        margin: get-vw-mobile(32px) auto 0;
+        padding: get-vw-mobile(28px) get-vw-mobile(22px) get-vw-mobile(32px);
+        border-top: 2px solid $sky_blue;
+
+        &__text {
+            font-size: get-vw-mobile(14px);
+            line-height: get-vw-mobile(21px);
+        }
+
+        &__form {
+            margin: get-vw-mobile(26px) 0 0;
+
+            &-row {
+                margin: 0 0 get-vw-mobile(24px);
+
+                // Two columns
+                &--2-cols {
+                    @include displayFlex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+
+                    .inquiry__form {
+                        &-col {
+                            width: 100%;
+
+                            &:not(:last-of-type) {
+                                margin: 0 0 get-vw-mobile(18px);
+                            }
+                        }
+                    }
+                }
+
+                &--submit {
+                    margin: get-vw-mobile(10px) 0;
+                }
+            }
+
+            &-col {
+                &:not(:last-of-type) {
+                    margin: 0 0 get-vw-mobile(18px);
+                }
+            }
+
+            &-label {
+                margin: 0 0 get-vw-mobile(8px);
+                font-size: get-vw-mobile(10px);
+                line-height: 1.2;
+            }
+
+            &-input {
+                padding: get-vw-mobile(10px) get-vw-mobile(14px);
+                font-size: get-vw-mobile(12px);
+                line-height: 1.2;
+            }
+
+            textarea {
+                padding: get-vw-mobile(10px) get-vw-mobile(14px);
+                height: get-vw-mobile(73px);
+                font-size: get-vw-mobile(12px);
+                line-height: 1.2;
+            }
+
+            ::placeholder,
+            ::-webkit-input-placeholder,
+            :-moz-placeholder,
+            ::-moz-placeholder,
+            :-ms-input-placeholder,
+            :-moz-placeholder {
+                font-size: get-vw-mobile(12px);
+                line-height: 1.2;
+            }
+
+            &-submit {
+                padding: get-vw-mobile(11px) get-vw-mobile(20px);
+            }
+
+            .custom-select {
+                .select-selected {
+                    padding: get-vw-mobile(10px) get-vw-mobile(32px) get-vw-mobile(10px) get-vw-mobile(14px);
+                    font-size: get-vw-mobile(12px);
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+}

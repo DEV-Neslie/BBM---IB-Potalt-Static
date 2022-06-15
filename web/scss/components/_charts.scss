@@ -1,0 +1,294 @@
+// CHARTS
+.charts {
+    height: get-vw-desktop(333px);
+    width: 100%;
+    background-color: $white;
+    border-radius: get-vw-desktop(5px);
+    margin-bottom: get-vw-desktop(15px);
+    padding: get-vw-desktop(18px) get-vw-desktop(19px);
+
+    &__header {
+        width: 100%;
+        @include dFlex(space-between);
+        align-items: center;
+        margin-bottom: get-vw-desktop(20px);
+
+        &__title {
+            font-family: $Gilroy_b;
+            font-size: get-vw-desktop(16px);
+            line-height: get-vw-desktop(24px);
+        }
+
+        &__legends {
+            width: auto;
+
+            &-item {
+                position: relative;
+                float: left;
+                padding-left: get-vw-desktop(13px);
+                margin-left: get-vw-desktop(10px);
+                font-family: $Poppins;
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(16px);
+                list-style: none;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    height: get-vw-desktop(8px);
+                    width: get-vw-desktop(8px);
+                    border-radius: 50%;
+                    background-color: #999;
+                }
+
+
+                // COLORS
+                &.v-red {
+                    &::before {
+                        background-color: $red;
+                    }
+                }
+
+                &.v-navy {
+                    &::before {
+                        background-color: $d_navy_2;
+                    }
+                }
+
+                &.v-green {
+                    &::before {
+                        background-color: $green;
+                    }
+                }
+
+                &.v-purple {
+                    &::before {
+                        background-color: $purple;
+                    }
+                }
+
+                &.v-blue {
+                    &::before {
+                        background-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+
+        &__box {
+            position: relative;
+            height: get-vw-desktop(250px);
+            width: 100%;
+
+            canvas {
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &__legend {
+            width: get-vw-desktop(80px);
+            height: get-vw-desktop(250px);
+            overflow-y: auto;
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: get-vw-desktop(6px);
+            }
+            
+            /* Track */
+            &::-webkit-scrollbar-track {
+                border-radius: get-vw-desktop(10px);
+            }
+            
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                border-radius: get-vw-desktop(10px);
+                background-color: $sky_blue;
+            }
+
+            &-item {
+                position: relative;
+                padding-left: get-vw-desktop(13px);
+                font-family: $Poppins;
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(16px);
+                list-style: none;
+                width: 100%;
+                margin-bottom: get-vw-desktop(2px);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    height: get-vw-desktop(8px);
+                    width: get-vw-desktop(8px);
+                    border-radius: 50%;
+                    background-color: #999;
+                }
+
+
+                // COLORS
+                &.v-red {
+                    &::before {
+                        background-color: $red;
+                    }
+                }
+
+                &.v-navy {
+                    &::before {
+                        background-color: $d_navy_2;
+                    }
+                }
+
+                &.v-green {
+                    &::before {
+                        background-color: $green;
+                    }
+                }
+
+                &.v-purple {
+                    &::before {
+                        background-color: $purple;
+                    }
+                }
+
+                &.v-blue {
+                    &::before {
+                        background-color: $primary;
+                    }
+                }
+
+                &.v-skyblue {
+                    &::before {
+                        background-color: $sky_blue;
+                    }
+                }
+            }
+        }
+
+
+        &__wrapper {
+            @include dFlex(space-between);
+
+            .charts__body__box {
+                width: get-vw-desktop(260px);
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .charts {
+        background-color: $opac_white_4;
+        color: $white;
+
+        &__header {
+            &__legends {
+                &-item {
+    
+                    // COLORS
+                    &.v-navy {
+                        &::before {
+                            background-color: $sky_blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Charts
+@include mqMax($mq-max-mobile) {
+    .charts {
+        height: auto;
+        border-radius: get-vw-mobile(5px);
+        margin-bottom: get-vw-mobile(15px);
+        padding: get-vw-mobile(18px) get-vw-mobile(19px);
+    
+        &__header {
+            margin-bottom: get-vw-mobile(20px);
+    
+            &__title {
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(14px);
+            }
+    
+            &__legends {
+                &-item {
+                    padding-left: get-vw-mobile(8px);
+                    margin-left: get-vw-mobile(8px);
+                    font-size: get-vw-mobile(8px);
+                    line-height: get-vw-mobile(16px);
+    
+                    &::before {
+                        height: get-vw-mobile(5px);
+                        width: get-vw-mobile(5px);
+                    }
+                }
+            }
+        }
+    
+        &__body {
+    
+            &__box {
+                height: get-vw-mobile(200px);
+            }
+    
+            &__legend {
+                width: get-vw-mobile(50px);
+                height: get-vw-mobile(200px);
+    
+                /* width */
+                &::-webkit-scrollbar {
+                    width: get-vw-mobile(6px);
+                }
+                
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    border-radius: get-vw-mobile(10px);
+                }
+                
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    border-radius: get-vw-mobile(10px);
+                }
+    
+                &-item {
+                    padding-left: get-vw-mobile(8px);
+                    font-size: get-vw-mobile(8px);
+                    line-height: get-vw-mobile(16px);
+                    margin-bottom: get-vw-mobile(2px);
+    
+                    &::before {
+                        height: get-vw-mobile(5px);
+                        width: get-vw-mobile(5px);
+                    }
+                }
+            }
+    
+    
+            &__wrapper {
+                .charts__body__box {
+                    width: get-vw-mobile(190px);
+                }
+            }
+        }
+    }
+}

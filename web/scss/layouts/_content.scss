@@ -1,0 +1,250 @@
+// CONTENT
+.content {
+    &__wrapper {
+        padding: get-vw-desktop(36px) get-vw-desktop(46px) get-vw-desktop(20px);
+        min-height: calc(100vh - 12.222vw); // 100% - 176px
+    }
+
+    // START Top item columns
+    &__item {
+       display: block;
+       width: 100%;
+
+        &-col {
+            @include displayFlex;
+            flex-direction: column;
+
+            &__header {
+                width: 100%;
+                @include displayFlex;
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: space-between;
+            }
+
+            &__header-link {
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(16px);
+                color: rgba(2, 25, 74, 0.5);
+            }
+    
+            &__content {
+                margin: get-vw-desktop(13px) auto 0;
+                padding: get-vw-desktop(32px) get-vw-desktop(22px) get-vw-desktop(32px) get-vw-desktop(24px);
+                background: $white;
+                border-radius: get-vw-desktop(5px);
+                box-shadow: 0 get-vw-desktop(3px) get-vw-desktop(15px) $sky_blue;
+            }
+        }
+
+        // 2 columns modifier
+        &--2cols {
+            @include dFlex(space-between);
+
+            .content {
+                &__item-col {
+                    width: calc(50% - 0.625vw); //50% - 9px
+                }
+            }
+        }
+    }
+    // END Top item columns
+
+
+    // START Inner item columns
+    &__inner-item {
+        display: block;
+        width: 100%;
+
+        &-col {
+            &__header {
+                width: 100%;
+                @include displayFlex;
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: space-between;
+            }
+    
+            &__content {
+                margin: get-vw-desktop(13px) auto 0;
+                padding: get-vw-desktop(32px) get-vw-desktop(22px) get-vw-desktop(11px) get-vw-desktop(24px);
+                min-height: get-vw-desktop(230px);
+                background: $white;
+                border-radius: get-vw-desktop(5px);
+                box-shadow: 0 get-vw-desktop(3px) get-vw-desktop(20px) rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        // column modifiers
+        &--2cols {
+            @include displayFlex;
+            flex-wrap: wrap;
+
+            .content {
+                &__inner-item-col {
+                    width: calc(50% - 0.625vw); //50% - 9px
+    
+                    &:not(:nth-child(2n)) {
+                        margin-right: get-vw-desktop(18px);
+                    }
+            
+                    &:nth-child(n+3) {
+                        margin-top: get-vw-desktop(18px);
+                    }
+                }
+            }
+        }
+    }
+    // END Inner item columns
+
+    &__footer {
+        padding: get-vw-desktop(28px) get-vw-desktop(44px);
+        background: $white;
+        
+        p {
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(14px);
+        }
+    }
+}
+
+.dark-mode {
+    .content {
+        &__item {
+            &-col {
+                &__header-link {
+                    color: $opac_white_2;
+                }
+            }
+        }
+
+        &__footer {
+            background: $navy;
+            color: $white;
+
+            p {
+                color: $white;
+            }
+        }
+    }
+}
+
+// LIQUID MOBILE - Utilities
+@include mqMax($mq-max-mobile) {
+    .content {
+        overflow-x: hidden;
+        padding-bottom: get-vw-mobile(30px);
+        
+        &__wrapper {
+            padding: get-vw-mobile(25px) get-vw-mobile(20px);
+            min-height: auto;
+        }
+    
+        // START Top item columns
+        &__item {
+
+            &-col {
+                &__header-link {
+                    font-size: get-vw-mobile(10px);
+                    line-height: get-vw-mobile(16px);
+                }
+        
+                &__content {
+                    margin: get-vw-mobile(5px) auto 0;
+                    padding: get-vw-mobile(26px) get-vw-mobile(16px) get-vw-mobile(26px) get-vw-mobile(18px);
+                    border-radius: get-vw-mobile(5px);
+                    box-shadow: 0 get-vw-mobile(3px) get-vw-mobile(15px) $sky_blue;
+                }
+            }
+    
+            // 2 columns modifier
+            &--2cols {
+                .content {
+                    &__item-col {
+                        width: 100%;
+    
+                        &:not(:nth-child(2n)) {
+                            margin-right: unset;
+                        }
+                
+                        &:nth-child(n+3) {
+                            margin-top: unset;
+                        }
+                    }
+                }
+            }
+
+            // reverse flex-direction
+            &--sm-reverse-direction {
+                flex-direction: column-reverse;
+
+                &.content__item {
+                    &:first-of-type {
+                        margin: get-vw-mobile(30px) auto 0;
+                    }
+
+                    &:last-of-type {
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+        // END Top item columns
+    
+    
+        // START Inner item columns
+        &__inner-item {
+            width: 100%;
+            @include displayFlex;
+            flex-wrap: wrap;
+
+            &-col {
+                &__content {
+                    margin: get-vw-mobile(5px) auto 0;
+                    padding: get-vw-mobile(26px) get-vw-mobile(16px) get-vw-mobile(26px) get-vw-mobile(18px);
+                    min-height: initial;
+                    border-radius: get-vw-mobile(5px);
+                    box-shadow: 0 get-vw-mobile(3px) get-vw-mobile(15px) $sky_blue;
+                }
+            }
+    
+            // column modifiers
+            &--2cols {
+                .content {
+                    &__inner-item-col {
+                        width: 100%;
+        
+                        &:not(:nth-child(2n)) {
+                            margin-right: unset;
+                        }
+                
+                        &:nth-child(n+3) {
+                            margin-top: unset;
+                        }
+                    }
+                }
+            }
+        }
+        // END Inner item columns
+
+        &__footer {
+            padding: get-vw-mobile(20px) get-vw-mobile(22px);
+            
+            p {
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+            }
+        }
+
+        // Modifiers
+        &--search-results {
+            .content {
+                &__wrapper {
+                    padding: get-vw-mobile(25px) 0;
+                }
+            }
+        }
+    }
+}
+
+

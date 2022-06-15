@@ -1,0 +1,75 @@
+// LIST
+.list-icon {
+    transition: .2s ease all;
+
+    // green check bullet
+    &-v1 {
+        list-style: none;
+
+        li {
+            padding: 0 0 0 get-vw-desktop(25px);
+            position: relative;
+            font-size: get-vw-desktop(12px);
+            font-weight: 600;
+            line-height: get-vw-desktop(18px);
+            color: $navy;
+
+            &:not(:first-of-type) {
+                margin: get-vw-desktop(18px) 0 0;
+            }
+            
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: get-vw-desktop(15px);
+                height: get-vw-desktop(15px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url('./../images/common/bullet-icon-green-check.svg');
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .list-icon {
+        color: $white;
+
+        // green check bullet
+        &-v1 {
+    
+            li {
+                color: $white;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - List
+@include mqMax($mq-max-mobile) {
+    .list-icon {
+
+        // green check bullet
+        &-v1 {
+            li {
+                padding: 0 0 0 get-vw-mobile(23px);
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(15px);
+        
+                &:not(:first-of-type) {
+                    margin: get-vw-mobile(12px) 0 0;
+                }
+                
+                &:before {
+                    width: get-vw-mobile(15px);
+                    height: get-vw-mobile(15px);
+                }
+            }
+        }
+    }
+}

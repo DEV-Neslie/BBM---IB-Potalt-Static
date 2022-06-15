@@ -1,0 +1,94 @@
+// PLATFORM
+.platform {
+    width: 100%;
+    margin: 0 auto get-vw-desktop(25px);
+    border-radius: get-vw-desktop(5px);
+    border: get-vw-desktop(1px) solid $primary;
+    padding: get-vw-desktop(14px);
+
+    &__title {
+        display: block;
+        font-size: get-vw-desktop(12px);
+        font-weight: 600;
+        line-height: get-vw-desktop(18px);
+        margin-bottom: get-vw-desktop(5px);
+    }
+
+    &__list {
+        width: 100%;
+        @include dFlex(center);
+
+        &__item {
+            width: get-vw-desktop(100px);
+            margin: 0 get-vw-desktop(5px);
+            border-radius: get-vw-desktop(5px);
+
+            &-icon {
+                display: block;
+                width: get-vw-desktop(60px);
+                height: get-vw-desktop(60px);
+                margin: 0 auto;
+                transform-origin: center;
+                transition: .2s ease;
+
+                &--windows {
+                    background: url('./../images/pages/on-boarding/icon_platform--window.svg') center/contain no-repeat;
+                }
+
+                &--mac {
+                    background: url('./../images/pages/on-boarding/icon_platform--mac.svg') center/contain no-repeat;
+                }
+            }
+
+            &-label {
+                display: block;
+                font-size: get-vw-desktop(10px);
+                line-height: get-vw-desktop(16px);
+            }
+
+            &:hover {
+                .platform__list__item-icon {
+                    transform: scale(1.2) perspective(1px);
+                }
+                .platform__list__item-label {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Platform
+@include mqMax($mq-max-mobile) {
+    .platform {
+        margin: 0 auto get-vw-mobile(25px);
+        border-radius: get-vw-mobile(5px);
+        border: get-vw-mobile(1px) solid $primary;
+        padding: get-vw-mobile(14px);
+    
+        &__title {
+            font-size: get-vw-mobile(12px);
+            line-height: get-vw-mobile(18px);
+            margin-bottom: get-vw-mobile(5px);
+        }
+    
+        &__list {
+            &__item {
+                width: get-vw-mobile(100px);
+                margin: 0 get-vw-mobile(5px);
+                border-radius: get-vw-mobile(5px);
+    
+                &-icon {
+                    width: get-vw-mobile(60px);
+                    height: get-vw-mobile(60px);
+                }
+    
+                &-label {
+                    font-size: get-vw-mobile(10px);
+                    line-height: get-vw-mobile(16px);
+                }
+            }
+        }
+    }
+}

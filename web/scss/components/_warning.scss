@@ -1,0 +1,62 @@
+// WARNING
+.warning {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    background-color: $red;
+    color: $white;
+    padding: get-vw-desktop(4px) get-vw-desktop(15px);
+    border-radius: get-vw-desktop(5px);
+    display: none;
+
+    &-msg {
+        position: relative;
+        display: block;
+        font-size: get-vw-desktop(12px);
+        line-height: get-vw-desktop(20px);
+        padding-left: get-vw-desktop(20px);
+
+        &::before {
+            content: '';
+            background: url('./../images/common/warning-icon.svg') center/contain no-repeat;
+            position: absolute;
+            top: get-vw-desktop(-3px);
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            width: get-vw-desktop(16px);
+            height: get-vw-desktop(15px);
+        }
+    }
+}
+
+
+
+// LIQUID MOBILE - Warning
+@include mqMax($mq-max-mobile) {
+    .warning {
+        position: relative;
+        padding: get-vw-mobile(6px) get-vw-mobile(10px) get-vw-mobile(6px) get-vw-mobile(15px);
+        border-radius: get-vw-mobile(5px);
+        margin-bottom: get-vw-mobile(10px);
+        display: none;
+    
+        &-msg {
+            font-size: get-vw-mobile(10px);
+            line-height: get-vw-mobile(16px);
+            padding-left: get-vw-mobile(25px);
+
+            &::before {
+                top: get-vw-mobile(2px);
+                bottom: initial;
+                width: get-vw-mobile(16px);
+                height: get-vw-mobile(15px);
+            }
+        }
+    }
+}
+
+

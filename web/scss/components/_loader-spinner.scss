@@ -1,0 +1,70 @@
+$offset: 187;
+$duration: 1.4s;
+
+.loader {
+    &__wrapper {
+        background-color: $opac_navy_5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 100000;
+        display: none;
+        overflow: hidden;
+
+        &.is-active {
+            @include dFlex(center);
+            align-items: center;
+        }
+    }
+
+    &__spinner {
+        width: get-vw-desktop(65px);
+        height: get-vw-desktop(65px);
+        animation: spinner-rotator $duration linear infinite;
+
+        &-path {
+            stroke-dasharray: $offset;
+            stroke-dashoffset: 0;
+            transform-origin: center;
+            animation:
+                spinner-dash $duration ease-in-out infinite, 
+                spinner-colors ($duration*4) ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes spinner-rotator {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(270deg); }
+}
+
+@keyframes spinner-colors {
+    0% { stroke: $navy; }
+    25% { stroke: $primary; }
+    50% { stroke: $sky_blue; }
+    75% { stroke: $green; }
+    100% { stroke: $white; }
+}
+
+@keyframes spinner-dash {
+    0% { stroke-dashoffset: $offset; }
+    50% {
+    stroke-dashoffset: $offset/4;
+    transform:rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: $offset;
+        transform:rotate(450deg);
+    }
+}
+
+@include mqMax($mq-max-mobile) {
+    .loader {
+        &__spinner {
+            width: get-vw-mobile(65px);
+            height: get-vw-mobile(65px);
+        }
+    }
+}

@@ -1,0 +1,64 @@
+// CERTIFICATION
+.certification {
+    background-color: $sky_blue;
+    width: 100%;
+    padding: get-vw-desktop(10px) 0;
+    @include dFlex(center);
+    align-items: center;
+
+    &__item {
+        margin: 0 get-vw-desktop(45px);
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        img {
+            width: get-vw-desktop(93px);
+        }
+    }
+}
+
+
+.dark-mode {
+    .certification {
+        background-color: $navy;
+        border-width: 0 1px;
+        border-style: solid;
+        border-color: $light_blue;
+    }
+}
+
+
+// LIQUID MOBILE - Certification
+@include mqMax($mq-max-mobile) {
+    .certification {
+        padding: get-vw-mobile(12px) get-vw-mobile(15px);
+    
+        &__item {
+            margin: 0 get-vw-mobile(5px) get-vw-mobile(12px);
+    
+            &:first-child {
+                margin-left: get-vw-mobile(5px);
+            }
+    
+            &:last-child {
+                margin-right: get-vw-mobile(5px);
+            }
+
+            img {
+                width: get-vw-mobile(93px);;
+            }
+        }
+    }
+
+    .dark-mode {
+        .certification {
+            border: none;
+        }
+    }
+}

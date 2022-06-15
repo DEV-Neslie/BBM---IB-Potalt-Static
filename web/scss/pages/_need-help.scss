@@ -1,0 +1,14 @@
+// NEED HELP
+.need-help {
+    background-color: $white;
+    min-height: get-vw-desktop(725px);
+}
+
+
+// LIQUID MOBILE - NEED HELP
+@include mqMax($mq-max-mobile) {
+    .need-help {
+        background-color: $white;
+        min-height: initial;
+    }
+}

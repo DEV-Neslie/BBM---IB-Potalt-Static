@@ -1,0 +1,169 @@
+// THUMB LINK
+.tab-link {
+    margin: 0 auto;
+    padding: get-vw-desktop(62px) 0 0;
+    width: 100%;
+    max-width: get-vw-desktop(896px);
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__nav {
+        margin: get-vw-desktop(30px) auto get-vw-desktop(24px);
+        @include displayFlex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &-item {
+            @include displayFlex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            width: calc(25% - 0.78125vw); //25% - 11.25px;
+            min-height: get-vw-desktop(177px);
+            box-shadow: 0 get-vw-desktop(5px) get-vw-desktop(20px) $sky_blue;
+            border-radius: get-vw-desktop(10px);
+            text-align: center;
+            @include transitionOpacity;
+
+            &:hover {
+                opacity: 0.8;
+            }
+    
+            &:not(:nth-child(4n)) {
+                margin-right: get-vw-desktop(15px);
+            }
+    
+            &:nth-child(n+5) {
+                margin-top: get-vw-desktop(15px);
+            }
+    
+            &__icon {
+                margin: 0 auto;
+                width: get-vw-desktop(75px);
+                height: get-vw-desktop(55px);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                &.hc-icon {
+                    background-image: url('./../images/common/hc-icon.svg');
+                }
+
+                &.chat-icon {
+                    background-image: url('./../images/common/chat-icon.svg');
+                }
+
+                &.call-us-icon {
+                    background-image: url('./../images/common/call-us-icon.svg');
+                }
+
+                &.envelope-icon {
+                    background-image: url('./../images/common/envelope-icon.svg');
+                }
+            }
+    
+            &__title {
+                margin: get-vw-desktop(8px) auto 0;
+                font-size: get-vw-desktop(14px);
+                line-height: get-vw-desktop(20px);
+            }
+
+            &.is-active {
+                background-color: $primary;
+                color: $white;
+
+                .tab-link__nav-item__icon {
+    
+                    &.hc-icon {
+                        background-image: url('./../images/common/hc-white-icon.svg');
+                    }
+    
+                    &.chat-icon {
+                        background-image: url('./../images/common/chat-white-icon.svg');
+                    }
+    
+                    &.call-us-icon {
+                        background-image: url('./../images/common/call-us-white-icon.svg');
+                    }
+    
+                    &.envelope-icon {
+                        background-image: url('./../images/common/envelope-white-icon.svg');
+                    }
+                }
+            }
+        }
+    }
+
+    &__content {
+        &-item {
+            display: none;
+
+            &.is-active {
+                display: block;
+            }
+        }
+    }
+
+    
+}
+
+// LIQUID MOBILE - THUMB LINK
+@include mqMax($mq-max-mobile) {
+    .tab-link {
+        margin: 0 auto;
+        padding: get-vw-mobile(30px) 0 0;
+        width: 100%;
+        max-width: initial;
+
+        &__heading {
+            font-size: get-vw-mobile(14px);
+            line-height: get-vw-mobile(20px);
+        }
+
+        &__nav {
+            margin: get-vw-mobile(16px) auto get-vw-mobile(16px);
+            padding: 0 get-vw-mobile(22px);
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            &-item {
+                min-height: get-vw-mobile(60px);
+                box-shadow: 0 get-vw-mobile(5px) get-vw-mobile(20px) $sky_blue;
+                border-radius: get-vw-mobile(10px);
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+    
+                &:not(:nth-child(4n)) {
+                    margin-right: initial;
+                }
+    
+                &:nth-child(n+5) {
+                    margin-top: initial;
+                }
+
+                &:not(:last-of-type) {
+                    margin: 0 0 get-vw-mobile(10px);
+                }
+    
+                &__icon {
+                    margin: 0 get-vw-mobile(16px) 0 0;
+                    width: get-vw-mobile(50px);
+                    height: get-vw-mobile(35px);
+                }
+    
+                &__title {
+                    margin: 0;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(20px);
+                    width: get-vw-mobile(138px);
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

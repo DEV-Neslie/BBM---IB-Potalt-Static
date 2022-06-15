@@ -1,0 +1,34 @@
+.tool-tip {
+    display: inline-block;
+    position: relative;
+    width: get-vw-desktop(8px);
+    height: get-vw-desktop(8px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include transform(translateY(get-vw-desktop(-2px)));
+    cursor: pointer;
+
+    &__icon {
+        &-info {
+            background-image: url('./../images/common/info-icon.svg');
+        }
+    }
+}
+
+.dark-mode {
+    .tool-tip {
+        &__icon {
+            &-info {
+                background-image: url('./../images/common/info-icon-white.svg');
+            }
+        }
+    }
+}
+
+@include mqMax($mq-max-mobile) {
+    .tool-tip {
+        width: get-vw-mobile(8px);
+        height: get-vw-mobile(8px);
+        @include transform(translateY(get-vw-mobile(-2px)));
+    }
+}

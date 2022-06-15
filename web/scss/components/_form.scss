@@ -1,0 +1,721 @@
+// FORMS
+.form {
+    position: relative;
+    width: 100%;
+    @include dFlex(space-between);
+
+    .warning {
+        top: get-vw-desktop(-36px);
+    }
+
+    &__title {
+        display: block;
+        width: 100%;
+        font-family: $Gilroy_b;
+        font-size: get-vw-desktop(18px);
+        line-height: get-vw-desktop(26px);
+        margin-bottom: get-vw-desktop(15px);
+    }
+
+    &__divider {
+        width: 100%;
+        height: get-vw-desktop(1px);
+        background-color: $sky_blue;
+        margin-bottom: get-vw-desktop(25px);
+    }
+
+    &__field {
+        width: 100%;
+        margin-bottom: get-vw-desktop(25px);
+        position: relative;
+
+        &--full {
+            width: 100%;
+        }
+
+        &-label {
+            display: block;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+            margin-bottom: get-vw-desktop(8px);
+
+            &--bold {
+                font-size: get-vw-desktop(12px);
+                font-weight: bold;
+                line-height: get-vw-desktop(18px);
+            }
+        }
+
+        &-input, &-textarea {
+            position: relative;
+            background-color: $sky_blue2;
+            border: get-vw-desktop(1px) solid $sky_blue;
+            border-radius: get-vw-desktop(5px);
+            width: get-vw-desktop(270px);
+
+            input, textarea {
+                display: block;
+                background-color: transparent;
+                font-family: $Poppins;
+                font-size: get-vw-desktop(12px);
+                font-weight: 400;
+                line-height: get-vw-desktop(18px);
+                padding: get-vw-desktop(11px) get-vw-desktop(18px);
+                width: 100%;
+                color: $navy;
+            }
+            
+            .custom-select {
+                border: none;
+                background-color: $sky_blue2;
+            }
+
+            &--intelinput {
+                .iti__flag-container {
+                    left: get-vw-desktop(5px) !important;
+
+                    &:hover {
+                        .iti__selected-flag {
+                            background-color: transparent !important;
+                        }
+                    }
+                }
+                input {
+                    padding: get-vw-desktop(11px) get-vw-desktop(30px) get-vw-desktop(11px) get-vw-desktop(18px) !important;
+                    padding-left: calc(0.556vw + 60px) !important;
+                }
+            }
+
+            &--otp {
+
+                &::after {
+                    content: '';
+                    background: url('./../images/pages/on-boarding/check--white.svg') center/contain no-repeat;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: get-vw-desktop(13px);
+                    margin: auto;
+                    height: get-vw-desktop(20px);
+                    width: get-vw-desktop(20px);
+                    transform-origin: center;
+                    animation: pulseInOut .6s ease;
+                    display: none;
+                }
+
+                input {
+                    padding: get-vw-desktop(11px) get-vw-desktop(30px);
+                    font-size: get-vw-desktop(14px);
+                    font-weight: 600;
+                    line-height: get-vw-desktop(21px);
+                    text-transform: uppercase;
+
+                    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                        font-size: get-vw-desktop(12px);
+                        font-weight: 400;
+                        line-height: get-vw-desktop(18px);
+                        text-transform: initial;
+                    }
+                    &::-moz-placeholder { /* Firefox 19+ */
+                        font-size: get-vw-desktop(12px);
+                        font-weight: 400;
+                        line-height: get-vw-desktop(18px);
+                        text-transform: initial;
+                    }
+                    &:-ms-input-placeholder { /* IE 10+ */
+                        font-size: get-vw-desktop(12px);
+                        font-weight: 400;
+                        line-height: get-vw-desktop(18px);
+                        text-transform: initial;
+                    }
+                    &:-moz-placeholder { /* Firefox 18- */
+                        font-size: get-vw-desktop(12px);
+                        font-weight: 400;
+                        line-height: get-vw-desktop(18px);
+                        text-transform: initial;
+                    }
+                }
+
+                &.is-verified {
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+
+            &--focused, 
+            &--active, 
+            &--fixed {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    z-index: 1;
+                    background-color: transparent;
+                }
+            }
+
+            &--focused {
+                background-color: $sky_blue;
+            }
+
+            &--active, 
+            &--fixed {
+                background-color: transparent;
+            }
+
+            &--fixed {
+                cursor: not-allowed;
+                opacity: 0.5;
+            }
+
+
+            .error-msg {
+                position: absolute;
+                left: 0;
+                bottom: get-vw-desktop(-20px);
+                font-size: get-vw-desktop(10px);
+                color: $red;
+                opacity: 0;
+                transform: translateX(15px) perspective(1px);
+                transition: .4s ease .2s;
+            }
+
+
+            &.is-retrieved {
+                background-color: $sky_blue;
+            }
+
+            &.has-error {
+                border-color: $red;
+
+                .error-msg {
+                    opacity: 1;
+                    transform: translateX(0) perspective(1px);
+                }
+
+                .form__field-error {
+                    display: block;
+                }
+            }
+
+            &.no-border {
+                border: none;
+            }
+        }
+
+        &-error {
+            padding: get-vw-desktop(4px) 0 0;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            font-family: $Gilroy_r;
+            font-weight: 400;
+            font-size: get-vw-desktop(10px);
+            line-height: 1.2;
+            color: $red;
+        }
+
+        &__group {
+            width: 100%;
+            @include dFlex(flex-start);
+
+            &-item {
+                position: relative;
+                width: 45%;
+            }
+
+            &--email_otp {
+                justify-content: space-between;
+                align-items: center;
+
+                .form__field-input {
+                    width: get-vw-desktop(200px);
+                }
+                
+                .otp-status {
+                    padding-right: get-vw-desktop(5px);
+
+                    &__text {
+                        position: relative;
+                        font-family: $Poppins;
+                        font-size: get-vw-desktop(10px);
+                        font-weight: 600;
+                        line-height: get-vw-desktop(14px);
+                        padding-left: get-vw-desktop(20px);
+                        opacity: 0;
+                        animation: fadeInRight 1s forwards .2s;
+                        display: none;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: get-vw-desktop(-2px);
+                            bottom: 0;
+                            margin: auto;
+                            background: url('./../images/pages/on-boarding/check--green.svg') center/contain no-repeat;
+                            height: get-vw-desktop(15px);
+                            width: get-vw-desktop(15px);
+                        }
+                    }
+
+                    .btn {
+                        font-family: $Poppins;
+                        font-size: get-vw-desktop(10px);
+                        font-weight: 600;
+                        min-width: 0;
+                    }
+
+                    &.is-verified {
+                        .btn {
+                            display: none;
+                        }
+                        .otp-status__text {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            &--date {
+                justify-content: space-between;
+
+                .custom-select {
+                    &--day {
+                        width: get-vw-desktop(60px);
+                    }
+                    &--month {
+                        width: get-vw-desktop(120px);
+                    }
+                    &--year {
+                        width: get-vw-desktop(75px);
+                    }
+
+                    .select-selected {
+                        padding: get-vw-desktop(11px) get-vw-desktop(30px) get-vw-desktop(11px) get-vw-desktop(11px);
+                    }
+
+                    .select-items div {
+                        padding: get-vw-desktop(10px);
+                    }
+                }
+            }
+
+            &--country {
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                .custom-select, 
+                .form__field-input {
+                    width: get-vw-desktop(300px);
+                }
+            }
+        }
+    }
+
+    &__cta {
+        padding: get-vw-desktop(10px) get-vw-desktop(10px) get-vw-desktop(20px);
+        text-align: center;
+        width: 100%;
+
+        .btn {
+            margin: 0 get-vw-desktop(3px);
+        }
+
+        &__status {
+            position: relative;
+            display: inline-block;
+            
+            &-icon {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                right: get-vw-desktop(-30px);
+                background: url('./../images/pages/on-boarding/check--green.svg') center/contain no-repeat;
+                height: get-vw-desktop(25px);
+                width: get-vw-desktop(25px);
+                border-radius: 50%;
+                overflow: hidden;
+                transform-origin: center;
+                display: none;
+                animation: pulseInOut .6s ease;
+            }
+        }
+    }
+
+    &__error {
+        background-color: $sky_blue;
+        padding: get-vw-desktop(5px) get-vw-desktop(10px);
+        width: 100%;
+        border-radius: get-vw-desktop(3px);
+        text-align: center;
+        display: none;
+        animation: fadeInUp .6s ease;
+
+        &-text {
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+            color: $navy;
+        }
+    }
+
+    // Modifiers
+    &--authorised-form {
+        display: block;
+        width: 100%;
+
+        .form {
+            &__cta {
+                .btn {
+                    min-width: get-vw-desktop(102px);
+                }
+            }
+        }
+    }
+
+    &--request-vps {
+        margin: get-vw-desktop(20px) 0 0;
+
+        .form {
+            &__field {
+                &-input {
+                    width: 100%;
+                }
+            }
+        }
+
+        input,
+        .custom-select {
+            width: 100%;
+        }
+
+        .custom-checkbox {
+            margin: 0 auto;
+            text-align: center;
+
+            &__label {
+                display: inline-block;
+            }
+        }
+    }
+
+    &--create-account {
+        .custom-select {
+            border: none;
+            background-color: $sky_blue2;
+        }
+
+        .has-error {
+            .custom-select {
+                background-color: $sky_blue2;
+            }
+        }
+    }
+
+    &.has-form_error {
+        .warning {
+            display: block;
+        }
+    }
+}
+
+// Modal Form
+.modal {
+    .form {
+        &__field {
+            width: calc(50% - 1.25vw); // 50% - 18px
+
+            &--full {
+                width: 100%;
+            }
+
+            .custom-select, 
+            &-input {
+                width: 100%;
+            }
+        }
+
+        &__field-wrapper {
+            margin: get-vw-desktop(15px) 0 0;
+            
+            &--3cols {
+                @include displayFlex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                .form {
+                    &__field {
+                        width: calc(33.33% - 0.5555555555555556vw); //33.33% - 8px;
+    
+                        &:not(:nth-child(3n)) {
+                            margin-right: get-vw-desktop(12px);
+                        }
+    
+                        &:nth-child(n+4) {
+                            margin-top: get-vw-desktop(24px);
+                        }
+
+                        &-input {
+                            input {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - Forms
+@include mqMax($mq-max-mobile) {
+    .form {
+        .warning {
+            top: 0;
+        }
+
+        &__title {
+            font-size: get-vw-mobile(16px);
+            line-height: get-vw-mobile(24px);
+            margin-bottom: get-vw-mobile(10px);
+        }
+
+        &__divider {
+            height: get-vw-mobile(1px);
+            margin-bottom: get-vw-mobile(15px);
+        }
+
+        &__field {
+            margin-bottom: get-vw-mobile(20px);
+
+            &-label {
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+                margin-bottom: get-vw-mobile(5px);
+            }
+
+            &-input, &-textarea {
+                border-radius: get-vw-mobile(5px);
+                width: 100%;
+    
+                input, textarea {
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(16px);
+                    padding: get-vw-mobile(11px) get-vw-mobile(18px);
+                }
+
+                &--intelinput {
+                    .iti__flag-container {
+                        left: get-vw-mobile(18px) !important;
+
+                        .iti__selected-flag {
+                            padding: 0 !important;
+                        }
+                    }
+
+                    input {
+                        padding: get-vw-mobile(11px) get-vw-mobile(30px) get-vw-mobile(11px) get-vw-mobile(18px) !important;
+                        padding-left: calc(6.389vw + 35px) !important; // 23px + 35px
+                    }
+                }
+
+                &--otp {
+                    &::after {
+                        right: get-vw-mobile(13px);
+                        height: get-vw-mobile(20px);
+                        width: get-vw-mobile(20px);
+                    }
+    
+                    input {
+                        padding: get-vw-mobile(11px) get-vw-mobile(30px);
+                        font-size: get-vw-mobile(14px);
+                        line-height: get-vw-mobile(21px);
+    
+                        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(18px);
+                        }
+                        &::-moz-placeholder { /* Firefox 19+ */
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(18px);
+                        }
+                        &:-ms-input-placeholder { /* IE 10+ */
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(18px);
+                        }
+                        &:-moz-placeholder { /* Firefox 18- */
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(18px);
+                        }
+                    }
+                }
+
+                .error-msg {
+                    bottom: get-vw-mobile(-20px);
+                    font-size: get-vw-mobile(10px);
+                }
+            }
+
+            &-error {
+                padding: get-vw-mobile(4px) 0 0;
+                font-size: get-vw-mobile(10px);
+            }
+
+            &__group {
+                &--email_otp {
+                    .form__field-input {
+                        width: get-vw-mobile(195px);
+                    }
+                    
+                    .otp-status {
+                        padding-right: 0;
+    
+                        &__text {
+                            font-size: get-vw-mobile(10px);
+                            line-height: get-vw-mobile(14px);
+                            padding-left: get-vw-mobile(20px);
+    
+                            &::before {
+                                top: get-vw-mobile(-2px);
+                                height: get-vw-mobile(15px);
+                                width: get-vw-mobile(15px);
+                            }
+                        }
+    
+                        .btn {
+                            font-size: get-vw-mobile(10px);
+                        }
+                    }
+                }
+    
+                &--date {
+                    .custom-select {
+                        &--day {
+                            width: get-vw-mobile(60px);
+                        }
+                        &--month {
+                            width: get-vw-mobile(120px);
+                        }
+                        &--year {
+                            width: get-vw-mobile(75px);
+                        }
+    
+                        .select-selected {
+                            padding: get-vw-mobile(11px) get-vw-mobile(30px) get-vw-mobile(11px) get-vw-mobile(11px);
+                        }
+    
+                        .select-items div {
+                            padding: get-vw-mobile(10px);
+                        }
+                    }
+                }
+
+                &--country {
+                    .custom-select, 
+                    .form__field-input {
+                        width: get-vw-mobile(210px);
+                    }
+                }
+            }
+        }
+
+        &__cta {
+            padding: get-vw-mobile(10px) get-vw-mobile(10px) get-vw-mobile(20px);
+    
+            .btn {
+                margin: 0 get-vw-mobile(3px);
+                min-width: get-vw-mobile(85px);
+            }
+
+            &__status {
+                
+                &-icon {
+                    right: get-vw-mobile(-30px);
+                    height: get-vw-mobile(25px);
+                    width: get-vw-mobile(25px);
+                }
+            }
+        }
+
+        &__error {
+            padding: get-vw-mobile(10px);
+            border-radius: get-vw-mobile(3px);
+    
+            &-text {
+                display: block;
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(20px);
+            }
+        }
+
+        // Modifiers
+        &--authorised-form {
+            display: block;
+            width: 100%;
+    
+            .form {
+                &__cta {
+                    .btn {
+                        min-width: get-vw-mobile(84px);
+                    }
+                }
+            }
+        }
+
+        &--request-vps {
+            margin: get-vw-mobile(24px) 0 0;
+
+            .form {
+                &__field {
+                    &--agree {
+                        margin: 0 0 get-vw-mobile(20px);
+                    }
+                }
+
+                &__cta {
+                    padding: 0;
+                }
+            }
+        }
+
+    }
+
+    // Modal Form
+    .modal {
+        .form {
+            &__field {
+                width: 100%;
+            }
+
+            &__field-wrapper {
+                margin: get-vw-mobile(10px) 0 0;
+                &--3cols {
+                    flex-direction: column;
+                    flex-wrap: initial;
+    
+                    .form {
+                        &__field {
+                            width: 100%;
+        
+                            &:not(:nth-child(3n)) {
+                                margin-right: initial;
+                            }
+        
+                            &:nth-child(n+4) {
+                                margin-top: initial;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

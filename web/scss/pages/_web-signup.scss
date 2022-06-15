@@ -1,0 +1,758 @@
+// LIQUID BIGGER SCREEN - WEB SIGNUP
+.web-signup {
+    position: relative;
+
+    &__wrapper {
+        position: relative;
+        @include displayFlex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 100vh;
+    }
+
+    &__left-content,
+    &__right-content {
+        width: 50%;
+        @include displayFlex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    // left container
+    &__left-content {
+        padding: get-vw-bigScreen(18px) get-vw-bigScreen(38px) get-vw-bigScreen(18px) get-vw-bigScreen(92px);
+        background-color: $navy;
+        position: relative;
+    }
+
+    // right container
+    &__right-content {
+        //padding: get-vw-bigScreen(78px) get-vw-bigScreen(38px);
+        background-color: $white;
+        position: relative;
+    }
+
+    &__lang {
+        text-align: right;
+        position: absolute;
+        top: get-vw-bigScreen(18px);
+        right: get-vw-bigScreen(42px);
+
+        &-selected {
+            padding: 0 0 0 get-vw-bigScreen(23px);
+            position: relative;
+            display: inline-block;
+            font-size: get-vw-bigScreen(14px);
+            line-height: 1.2;
+            color: $white;
+            cursor: pointer;
+
+            // &:before {
+            //     margin: auto;
+            //     position: absolute;
+            //     content: '';
+            //     top: 0;
+            //     bottom: 0;
+            //     left: 0;
+            //     width: get-vw-bigScreen(15px);
+            //     height: get-vw-bigScreen(15px);
+            //     background-position: center;
+            //     background-size: contain;
+            //     background-repeat: no-repeat;
+            //     background-image: url('./../images/flags/global.svg');
+            // }
+        }
+    }
+
+    &__logo {
+        margin: get-vw-bigScreen(22px) auto 0;
+        width: get-vw-bigScreen(220px);
+    }
+
+    &__step {
+        margin: get-vw-bigScreen(58px) auto 0;
+
+        &-item {
+            @include displayFlex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: relative;
+
+            &__num {
+                margin: 0;
+                position: relative;
+                @include displayFlex;
+                align-items: center;
+                justify-content: center;
+                width: get-vw-bigScreen(72px);
+                height: auto;
+                border-radius: 100%;
+                background-color: $navy;
+
+                span {
+                    @include displayFlex;
+                    align-items: center;
+                    justify-content: center;
+                    width: get-vw-bigScreen(50px);
+                    height: get-vw-bigScreen(50px);
+                    border-radius: 100%;
+                    border: 2px solid $green;
+                    font-family: $Gilroy_b;
+                    font-size: get-vw-bigScreen(18px);
+                    line-height: 1.2;
+                    text-align: center;
+                    color: $green;
+                }
+            }
+
+            &__line {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: get-vw-bigScreen(36px);
+                width: get-vw-bigScreen(3px);
+                height: calc(100% - 3.125vw); //100% - 50px
+                border-left: 1px dashed $green;
+            }
+
+            &__info {
+                padding: 0 0 0 get-vw-bigScreen(43px);
+                width: get-vw-bigScreen(492px);
+                color: $opac_white_3;
+            }
+
+            &__heading {
+                font-size: get-vw-bigScreen(24px);
+                line-height: get-vw-bigScreen(29px);
+            }
+
+            &__text {
+                font-size: get-vw-bigScreen(14px);
+                line-height: get-vw-bigScreen(21px);
+            }
+
+            &:not(:last-of-type) {
+                padding: 0 0 get-vw-bigScreen(66px);
+            }
+
+            &.is-active {
+                .web-signup__step-item__num {
+                    border: 2px solid $green;
+                    height: get-vw-bigScreen(72px);
+
+                    span {
+                        width: get-vw-bigScreen(62px);
+                        height: get-vw-bigScreen(62px);
+                        font-size: get-vw-bigScreen(25px);
+                        background-color: $green;
+                        color: $navy;
+                    }
+                }
+
+                .web-signup__step-item__info {
+                    color: $white;
+                }
+
+                .web-signup__step-item__line {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: get-vw-bigScreen(36px);
+                    width: get-vw-bigScreen(2px);
+                    height: calc(100% - 3.875vw); //100% - 62px
+                    background-color: $green;
+                    border-left: 0;
+                }
+            }
+        }
+    }
+
+    &__form {
+        margin: get-vw-bigScreen(18px) auto 0;
+        width: 100%;
+        
+        &-wrapper {
+            margin: 0 auto;
+            width: get-vw-bigScreen(478px);
+        }
+
+        &-heading {
+            font-size: get-vw-bigScreen(24px);
+            line-height: get-vw-bigScreen(35px);
+            text-align: center;
+        }
+
+        input {
+            padding: get-vw-bigScreen(13px) get-vw-bigScreen(22px);
+            width: 100%;
+            font-size: get-vw-bigScreen(14px);
+            line-height: 1.2;
+            color: $navy;
+            background-color: $sky_blue4;
+            border: 1px solid $sky_blue;
+            border-radius: 5px;
+
+            &.password-input {
+                padding: get-vw-bigScreen(13px) get-vw-bigScreen(52px) get-vw-bigScreen(13px) get-vw-bigScreen(22px);
+            }
+        }
+
+        ::placeholder,
+        ::-webkit-input-placeholder,
+        :-moz-placeholder,
+        ::-moz-placeholder,
+        :-ms-input-placeholder,
+        :-moz-placeholder {
+            font-size: get-vw-bigScreen(14px);
+            line-height: 1.2;
+            color: $opac_navy_2;
+        }
+
+        &-row {
+            margin: 0 0 get-vw-bigScreen(8px);
+        }
+
+        &-note {
+            padding: get-vw-bigScreen(10px) 0;
+            font-size: get-vw-bigScreen(12px);
+            line-height: get-vw-bigScreen(18px);
+            text-align: center;
+
+            a {
+                font-size: inherit;
+                line-height: inherit;
+                vertical-align: inherit;
+            }
+        }
+
+        &-footnote {
+            margin: get-vw-bigScreen(44px) auto 0;
+            font-size: get-vw-bigScreen(14px);
+            line-height: 1.2;
+            font-weight: 400;
+            text-align: center;
+
+            .btn {
+                font-size: inherit;
+                line-height: inherit;
+                font-weight: 600;
+                vertical-align: inherit;
+            }
+        }
+
+        &-submit {
+            padding: get-vw-bigScreen(12px) get-vw-bigScreen(15px);
+            font-size: get-vw-bigScreen(15px);
+            line-height: 1.2;
+            width: get-vw-bigScreen(478px);
+        }
+
+        &-divider {
+            padding: get-vw-bigScreen(18px) 0;
+            position: relative;
+            font-size: 0;
+            text-align: center;
+
+            span {
+                padding: 0 get-vw-bigScreen(11px);
+                display: inline-block;
+                position: relative;
+                font-size: get-vw-bigScreen(12px);
+                line-height: 1.2;
+                background-color: $white;
+            }
+
+            &:before {
+                margin: auto;
+                position: absolute;
+                content: '';
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                width: get-vw-bigScreen(254px);
+                height: 1px;
+                background-color: $navy;
+            }
+        }
+
+        .submit-row {
+            text-align: center;
+        }
+        
+    }
+
+    &__social {
+        margin: get-vw-bigScreen(8px) auto 0;
+
+        &-item {
+            padding: get-vw-bigScreen(10px);
+            @include displayFlex;
+            align-items: center;
+            justify-content: center;
+            max-width: get-vw-bigScreen(478px);
+            text-align: center;
+            border: 1px solid;
+            border-radius: 10px;
+            box-shadow: 0 get-vw-bigScreen(4px) get-vw-bigScreen(10px) $opac_black2;
+            @include transitionAll;
+
+            &:hover {
+                filter: brightness(120%)
+            }
+
+            &:not(:first-of-type) {
+                margin: get-vw-bigScreen(15px) 0 0;
+            }
+
+            &.fb-social-btn {
+                background-color: $blue;
+                border-color: $blue;
+                color: $white;
+            }
+
+            &.google-social-btn {
+                background-color: $white;
+                border-color: $blue;
+                color: $opac_black3;
+            }
+
+            &.apple-social-btn {
+                background-color: $black;
+                border-color: $black;
+                color: $white;
+            }
+        }
+
+        &-icon {
+            margin: 0 get-vw-bigScreen(15px) 0 0;
+            width: get-vw-bigScreen(24px);
+            height: get-vw-bigScreen(24px);
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            &.fb-social-icon {
+                background-image: url('./../images/common/fb-logo-social-btn.svg');
+            }
+
+            &.google-social-icon {
+                background-image: url('./../images/common/google-logo-social-btn.svg');
+            }
+
+            &.apple-social-icon {
+                background-image: url('./../images/common/apple-logo-social-btn.svg');
+            }
+        }
+
+        &-title {
+            font-size: get-vw-bigScreen(16px);
+            line-height: 1.2;
+        }
+    }
+
+    // Password Visibility Toogle
+    .password-row {
+        position: relative;
+    }
+
+    .password-vis-toggle {
+        margin: auto;
+        position: absolute;
+        content: '';
+        top: 0;
+        right: get-vw-bigScreen(15px);
+        bottom: 0;
+        display: inline-block;
+        width: get-vw-bigScreen(23px);
+        height: get-vw-bigScreen(20px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/privacy-eye-off-navy.svg');
+        cursor: pointer;
+
+        &.is-active {
+            background-image: url('./../images/common/privacy-eye-on-navy.svg');
+        }
+    }
+
+    // BG Element
+    .bg-element {
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+}
+
+// LIQUID LAPTOP - WEB SIGNUP
+@include mqMax($mq-max-laptop) {
+    .web-signup {
+    
+        // left container
+        &__left-content {
+            padding: get-vw-desktop(18px) get-vw-desktop(38px) get-vw-desktop(18px) get-vw-desktop(92px);
+        }
+    
+        &__lang {
+            top: get-vw-desktop(18px);
+            right: get-vw-desktop(42px);
+    
+            &-selected {
+                padding: 0 0 0 get-vw-desktop(23px);
+                font-size: get-vw-desktop(14px);
+    
+                // &:before {
+                //     width: get-vw-desktop(15px);
+                //     height: get-vw-desktop(15px);
+                // }
+            }
+        }
+    
+        &__logo {
+            margin: get-vw-desktop(22px) auto 0;
+            width: get-vw-desktop(220px);
+        }
+    
+        &__step {
+            margin: get-vw-desktop(58px) auto 0;
+    
+            &-item {
+    
+                &__num {
+                    width: get-vw-desktop(72px);
+    
+                    span {
+                        width: get-vw-desktop(50px);
+                        height: get-vw-desktop(50px);
+                        font-size: get-vw-desktop(18px);
+                    }
+                }
+    
+                &__line {
+                    left: get-vw-desktop(36px);
+                    width: get-vw-desktop(3px);
+                    height: calc(100% - 3.4722222222222223vw); //100% - 50px
+                }
+    
+                &__info {
+                    padding: 0 0 0 get-vw-desktop(43px);
+                    width: get-vw-desktop(492px);
+                }
+    
+                &__heading {
+                    font-size: get-vw-desktop(24px);
+                    line-height: get-vw-desktop(29px);
+                }
+    
+                &__text {
+                    font-size: get-vw-desktop(14px);
+                    line-height: get-vw-desktop(21px);
+                }
+    
+                &:not(:last-of-type) {
+                    padding: 0 0 get-vw-desktop(66px);
+                }
+    
+                &.is-active {
+                    .web-signup__step-item__num {
+                        height: get-vw-desktop(72px);
+    
+                        span {
+                            width: get-vw-desktop(62px);
+                            height: get-vw-desktop(62px);
+                            font-size: get-vw-desktop(25px);
+                        }
+                    }
+    
+                    .web-signup__step-item__info {
+                        color: $white;
+                    }
+    
+                    .web-signup__step-item__line {
+                        left: get-vw-desktop(36px);
+                        width: get-vw-desktop(2px);
+                        height: calc(100% - 4.305555555555555vw); //100% - 62px
+                    }
+                }
+            }
+        }
+    
+        &__form {
+            margin: get-vw-desktop(18px) auto 0;
+            
+            &-wrapper {
+                width: get-vw-desktop(478px);
+            }
+    
+            &-heading {
+                font-size: get-vw-desktop(24px);
+                line-height: get-vw-desktop(35px);
+            }
+    
+            input {
+                padding: get-vw-desktop(13px) get-vw-desktop(22px);
+                font-size: get-vw-desktop(14px);
+    
+                &.password-input {
+                    padding: get-vw-desktop(13px) get-vw-desktop(52px) get-vw-desktop(13px) get-vw-desktop(22px);
+                }
+            }
+    
+            ::placeholder,
+            ::-webkit-input-placeholder,
+            :-moz-placeholder,
+            ::-moz-placeholder,
+            :-ms-input-placeholder,
+            :-moz-placeholder {
+                font-size: get-vw-desktop(14px);
+            }
+    
+            &-row {
+                margin: 0 0 get-vw-desktop(8px);
+            }
+    
+            &-note {
+                padding: get-vw-desktop(10px) 0;
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(18px);
+            }
+    
+            &-footnote {
+                margin: get-vw-desktop(44px) auto 0;
+                font-size: get-vw-desktop(14px);
+            }
+    
+            &-submit {
+                padding: get-vw-desktop(12px) get-vw-desktop(15px);
+                font-size: get-vw-desktop(15px);
+                width: get-vw-desktop(478px);
+            }
+    
+            &-divider {
+                padding: get-vw-desktop(18px) 0;
+    
+                span {
+                    padding: 0 get-vw-desktop(11px);
+                    font-size: get-vw-desktop(12px);
+                }
+
+                &:before {
+                    width: get-vw-desktop(254px);
+                }
+            }
+            
+        }
+    
+        &__social {
+            margin: get-vw-desktop(8px) auto 0;
+    
+            &-item {
+                padding: get-vw-desktop(10px);
+                max-width: get-vw-desktop(478px);
+                box-shadow: 0 get-vw-desktop(4px) get-vw-desktop(10px) $opac_black2;
+    
+                &:not(:first-of-type) {
+                    margin: get-vw-desktop(15px) 0 0;
+                }
+            }
+    
+            &-icon {
+                margin: 0 get-vw-desktop(15px) 0 0;
+                width: get-vw-desktop(24px);
+                height: get-vw-desktop(24px);
+            }
+    
+            &-title {
+                font-size: get-vw-desktop(16px);
+            }
+        }
+    
+        // Password Visibility Toogle
+        .password-vis-toggle {
+            right: get-vw-desktop(15px);
+            width: get-vw-desktop(23px);
+            height: get-vw-desktop(20px);
+        }
+
+    }
+}
+
+
+// LIQUID MOBILE - WEB SIGNUP
+@include mqMax($mq-max-mobile) {
+    .web-signup {
+        &__wrapper {
+            flex-direction: column;
+            background-color: $white;
+        }
+
+        &__left-content,
+        &__right-content {
+            width: 100%;
+        }
+
+        &__left-content {
+            padding: get-vw-mobile(24px) get-vw-mobile(20px) get-vw-mobile(10px);
+            background-color: $white;
+        }
+
+        &__right-content {
+            padding: get-vw-mobile(10px) get-vw-mobile(20px) get-vw-mobile(64px);
+            justify-content: flex-start;
+        }
+
+        &__lang {
+            position: relative;
+    
+            &-selected {
+                padding: 0 0 0 get-vw-mobile(19px);
+                font-size: get-vw-mobile(14px);
+                color: $navy;
+    
+                // &:before {
+                //     width: get-vw-mobile(15px);
+                //     height: get-vw-mobile(15px);
+                //     background-image: url('./../images/common/language-globe-blue.svg');
+                // }
+            }
+        }
+
+        &__logo,
+        &__step {
+            display: none;
+        }
+
+        &__form {
+            margin: get-vw-mobile(28px) auto 0;
+            width: 100%;
+            
+            &-wrapper {
+                margin: 0 auto;
+                width: 100%;
+            }
+    
+            &-heading {
+                font-size: get-vw-mobile(18px);
+                line-height: get-vw-mobile(26px);
+            }
+    
+            input {
+                padding: get-vw-mobile(13px) get-vw-mobile(22px);
+                width: 100%;
+                font-size: get-vw-mobile(14px);
+                line-height: 1.2;
+                border: 1px solid $sky_blue;
+                border-radius: 5px;
+    
+                &.password-input {
+                    padding: get-vw-mobile(13px) get-vw-mobile(52px) get-vw-mobile(13px) get-vw-mobile(22px);
+                }
+            }
+    
+            ::placeholder,
+            ::-webkit-input-placeholder,
+            :-moz-placeholder,
+            ::-moz-placeholder,
+            :-ms-input-placeholder,
+            :-moz-placeholder {
+                font-size: get-vw-mobile(14px);
+                line-height: 1.2;
+            }
+    
+            &-row {
+                margin: 0 0 get-vw-mobile(13px);
+
+                &.submit-row {
+                    margin: get-vw-mobile(28px) 0 get-vw-mobile(16px);
+                }
+            }
+    
+            &-note {
+                padding: get-vw-mobile(5px) 0;
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+            }
+    
+            &-footnote {
+                margin: get-vw-mobile(34px) auto 0;
+                font-size: get-vw-mobile(14px);
+                line-height: 1.2;
+            }
+    
+            &-submit {
+                padding: get-vw-mobile(13px) get-vw-mobile(15px);
+                font-size: get-vw-mobile(15px);
+                line-height: 1.2;
+                width: 100%;
+            }
+    
+            &-divider {
+                padding: get-vw-mobile(16px) 0;
+    
+                span {
+                    padding: 0 get-vw-mobile(11px);
+                    font-size: get-vw-mobile(12px);
+                    line-height: 1.2;
+                }
+    
+                &:before {
+                    width: 100%;
+                    height: 1px;
+                }
+            }
+            
+        }
+
+        // Social Btns
+        &__social {
+            margin: get-vw-mobile(16px) auto 0;
+
+            &-item {
+                padding: get-vw-mobile(10px);
+                width: get-vw-mobile(320px);
+                max-width: initial;
+                border: 1px solid;
+                border-radius: 10px;
+                box-shadow: 0 get-vw-mobile(4px) get-vw-mobile(10px) $opac_black2;
+
+                &:not(:first-of-type) {
+                    margin: get-vw-mobile(15px) 0 0;
+                }
+            }
+
+            &-icon {
+                margin: 0 get-vw-mobile(15px) 0 0;
+                width: get-vw-mobile(24px);
+                height: get-vw-mobile(24px);
+            }
+
+            &-title {
+                font-size: get-vw-mobile(16px);
+                line-height: 1.2;
+            }
+        }
+
+        // Password Visibility Toogle
+        .password-vis-toggle {
+            right: get-vw-mobile(15px);
+            width: get-vw-mobile(23px);
+            height: get-vw-mobile(20px);
+        }
+
+        // BG Element
+        .bg-element {
+            width: 100%;
+        }
+
+        .language__selected {
+            &-id {
+                color: $primary;
+            }
+
+            &-icon {
+                background-image: url('./../images/common/language-globe-blue.svg');
+            }
+        }
+    }
+}

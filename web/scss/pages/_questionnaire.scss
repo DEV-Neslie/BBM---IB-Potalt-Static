@@ -1,0 +1,441 @@
+
+.questionnaire {
+    padding: get-vw-desktop(20px) 0 get-vw-desktop(40px);
+    background-color: rgba(2, 17, 51, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2000;
+    @include dFlex(center);
+    align-items: center;
+    overflow-y: auto;
+    transition: .6s ease all;
+
+    &__wrapper {
+        width: get-vw-desktop(600px);
+        min-height: get-vw-desktop(384px);
+        background-color: $white;
+        border-radius: get-vw-desktop(5px);
+        z-index: 1;
+        transition: .6s ease all;
+    }
+
+    &__header {
+        padding: get-vw-desktop(20px);
+        background-color: $primary;
+    }
+
+    &__heading {
+        font-weight: 700;
+        font-size: get-vw-desktop(17px);
+        line-height: get-vw-desktop(26px);
+        color: $white;
+        text-align: center;
+    }
+
+    &__body {
+        padding: get-vw-desktop(35px) get-vw-desktop(25px);
+        width: 100%;
+        height: 100%;
+    }
+
+    &__warning {
+        margin-bottom: get-vw-desktop(10px);
+        text-align: right;
+        transform: translateY(-12px);
+        display: none;
+        visibility: hidden;
+        
+        &-text {
+            padding: 0 0 0 get-vw-desktop(18px);
+            display: inline-block;
+            position: relative;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+            color: $red3;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: get-vw-desktop(15px);
+                height: get-vw-desktop(14px);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                background-image: url('./../images/common/red-warning-icon.svg');
+            }
+        }
+
+        &-remaining {
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        &.is-active {
+            display: block;
+            visibility: visible;
+        }
+    }
+
+    &__loader {
+        width: 100%;
+        height: get-vw-desktop(20px);
+        border: get-vw-desktop(1px) solid $green;
+        background-color: $sky_blue;
+        display: none;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: get-vw-desktop(30px);
+        -moz-border-radius: get-vw-desktop(30px);
+        -webkit-border-radius: get-vw-desktop(30px);
+
+        &.is-active {
+            @include displayFlex;
+        }
+
+        &-progress {
+            display: block;
+            width: 25%;
+            height: 100%;
+            border: get-vw-desktop(1px) solid $sky_blue;
+            background-color: $green;
+            border-radius: get-vw-desktop(30px);
+            -moz-border-radius: get-vw-desktop(30px);
+            -webkit-border-radius: get-vw-desktop(30px);
+            -webkit-transition : width .5s ease;
+            -moz-transition : width .5s ease;
+            -o-transition : width .5s ease;
+            transition : width .5s ease;
+        }
+    }
+
+    &__group {
+        display: none;
+        visibility: hidden;
+
+        &.is-active {
+            display: block;
+            visibility: visible;
+        }
+    }
+
+    &__list {
+        margin: get-vw-desktop(28px) 0 0;
+        display: none;
+        visibility: hidden;
+
+        &.is-active {
+            display: block;
+            visibility: visible;
+        }
+    }
+
+    &__error-msg {
+        display: none;
+        position: absolute;
+        left: get-vw-desktop(25px);
+        bottom: get-vw-desktop(6px);
+        font-size: get-vw-desktop(10px);
+        color: $red3;
+        transition: .4s ease .2s;
+    }
+
+    &__item {
+        padding: get-vw-desktop(10px) get-vw-desktop(25px) get-vw-desktop(25px);
+        position: relative;
+        min-height: get-vw-desktop(120px);
+        @include displayFlex;
+        align-items: center;
+        border: 1px solid $sky_blue;
+        border-radius: 5px;
+
+        &-wrapper {
+            width: 100%;
+        }
+
+        &-question {
+            margin: 0 0 get-vw-desktop(15px);
+            display: block;
+            font-family: $Poppins;
+            font-weight: 600;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+        }
+
+        &:not(:nth-child(1)) {
+            margin: get-vw-desktop(10px) 0 0;
+        }
+
+        &.error {
+            border-color: $red3;
+
+            .questionnaire__error-msg {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__input {
+        &-wrapper {
+
+            // Modifier
+            &.d-flex-row-radio {
+                @include displayFlex;
+                justify-content: flex-start;
+
+                .custom-radio {
+                    &:not(:last-of-type) {
+                        margin: 0 get-vw-desktop(32px) 0 0;
+                    }
+                }
+            }
+
+            .custom-select {
+                width: 100%;
+            }
+
+            .custom-radio {
+                &__label-mark {
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+
+    &__result {
+        display: none;
+        visibility: hidden;
+        text-align: center;
+
+        &-icon {
+            margin-bottom: get-vw-desktop(10px);
+            display: inline-block;
+            width: get-vw-desktop(37px);
+            height: get-vw-desktop(37px);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            &.passed {
+                background-image: url('./../images/common/passed-icon.svg');
+            }
+
+            &.failed {
+                background-image: url('./../images/common/failed-icon.svg');
+            }
+        }
+        
+        &-heading {
+            font-size: get-vw-desktop(12px);
+            font-weight: 600;
+            line-height: get-vw-desktop(18px);
+        }
+
+        &-text {
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(20px);
+        }
+
+        &-cta {
+            margin: get-vw-desktop(30px) 0 0;
+            text-align: center;
+
+            .btn {
+                width: get-vw-desktop(120px);
+                min-width: initial;
+            }
+        }
+
+        .questionnaire__warning-text {
+            margin: get-vw-desktop(20px) 0 0;
+            color: $navy;
+        }
+
+        &.is-active {
+            display: block;
+            visibility: visible;
+        }
+    }
+
+    &__cta {
+        margin: get-vw-desktop(30px) 0 0;
+        text-align: center;
+
+        &.d-flex-center {
+            @include displayFlex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            display: none;
+            visibility: hidden;
+
+            &.is-active {
+                display: inline-block;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__btn {
+
+        &-next,
+        &-submit {
+            width: get-vw-desktop(104px);
+            min-width: initial;
+        }
+    }
+
+}
+
+@include mqMax($mq-max-mobile) {
+    .questionnaire {
+        &__wrapper {
+            width: get-vw-mobile(315px);
+            min-height: get-vw-mobile(380px);
+            border-radius: get-vw-mobile(5px);
+        }
+
+        &__header {
+            padding: get-vw-mobile(17px) get-vw-mobile(12px);
+        }
+    
+        &__heading {
+            font-size: get-vw-mobile(16px);
+            line-height: get-vw-mobile(24px);
+        }
+
+        &__body {
+            padding: get-vw-mobile(24px) get-vw-mobile(12px) get-vw-mobile(35px);
+        }
+
+        &__warning {
+            margin-bottom: get-vw-mobile(8px);
+            transform: translateY(-10px);
+            
+            &-text {
+                padding: 0 0 0 get-vw-mobile(18px);
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+    
+                &:before {
+                    width: get-vw-mobile(15px);
+                    height: get-vw-mobile(14px);
+                }
+            }
+    
+            &-remaining {
+                display: inline-block;
+                font-weight: 600;
+            }
+        }
+
+        &__loader {
+            height: get-vw-mobile(20px);
+            border: get-vw-mobile(1px) solid $green;
+            border-radius: get-vw-mobile(30px);
+            -moz-border-radius: get-vw-mobile(30px);
+            -webkit-border-radius: get-vw-mobile(30px);
+    
+            &-progress {
+                border: get-vw-mobile(1px) solid $sky_blue;
+                border-radius: get-vw-mobile(30px);
+                -moz-border-radius: get-vw-mobile(30px);
+                -webkit-border-radius: get-vw-mobile(30px);
+            }
+        }
+
+        &__list {
+            margin: get-vw-mobile(28px) 0 0;
+        }
+
+        &__error-msg {
+            font-size: get-vw-mobile(10px);
+            left: get-vw-mobile(10px);
+            bottom: get-vw-mobile(5px);
+        }
+
+        &__item {
+            padding: get-vw-mobile(20px) get-vw-mobile(10px) get-vw-mobile(25px);
+            min-height: get-vw-mobile(100px);
+    
+            &-question {
+                margin: 0 0 get-vw-mobile(20px);
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+            }
+    
+            &:not(:nth-child(1)) {
+                margin: get-vw-mobile(10px) 0 0;
+            }
+        }
+
+        &__input {
+            &-wrapper {
+    
+                // Modifier
+                &.d-flex-row-radio {
+                    flex-direction: column;
+    
+                    .custom-radio {
+                        height: auto;
+
+                        &:not(:last-of-type) {
+                            margin: 0 0 get-vw-mobile(15px);
+                        }
+                    }
+                }
+            }
+        }
+
+        &__result {
+            margin: get-vw-mobile(36px) auto 0;
+            width: get-vw-mobile(230px);
+    
+            &-icon {
+                margin-bottom: get-vw-mobile(15px);
+                width: get-vw-mobile(37px);
+                height: get-vw-mobile(37px);
+            }
+            
+            &-heading {
+                font-size: get-vw-mobile(14px);
+                line-height: get-vw-mobile(18px);
+            }
+    
+            &-text {
+                margin: get-vw-mobile(4px) 0 0;
+                font-size: get-vw-mobile(14px);
+                line-height: get-vw-mobile(20px);
+            }
+    
+            &-cta {
+                margin: get-vw-mobile(30px) 0 0;
+    
+                .btn {
+                    width: get-vw-mobile(120px);
+                }
+            }
+
+            .questionnaire__warning-text {
+                margin: get-vw-mobile(20px) 0 0;
+            }
+        }
+    
+        &__cta {
+            margin: get-vw-mobile(35px) 0 0;
+        }
+    
+        &__btn {
+            &-next,
+            &-submit {
+                width: get-vw-mobile(104px);
+            }
+        }
+    }
+}

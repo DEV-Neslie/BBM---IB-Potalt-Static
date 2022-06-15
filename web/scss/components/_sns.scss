@@ -1,0 +1,88 @@
+// SNS
+.sns {
+    margin: get-vw-desktop(35px) 0 0;
+    width: 100%;
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__list {
+        margin: get-vw-desktop(10px) auto 0;
+        width: get-vw-desktop(285px);
+        @include displayFlex;
+        align-content: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: inline-block;
+        width: get-vw-desktop(45px);
+        height: get-vw-desktop(45px);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include transitionOpacity;
+
+        &:not(:nth-child(5n)) {
+            margin-right: get-vw-desktop(15px);
+        }
+
+        &:nth-child(n+6) {
+            margin-top: get-vw-desktop(15px);
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &--whatsapp {
+            background-image: url('./../images/common/sns-whatsapp.svg');
+        }
+
+        &--twitter {
+            background-image: url('./../images/common/sns-twitter.svg');
+        }
+
+        &--fb {
+            background-image: url('./../images/common/sns-fb.svg');
+        }
+
+        &--mail {
+            background-image: url('./../images/common/sns-mail.svg');
+        }
+
+        &--telegram {
+            background-image: url('./../images/common/sns-telegram.svg');
+        }
+    }
+
+}
+
+
+// LIQUID MOBILE - SNS
+@include mqMax($mq-max-mobile) {
+    .sns {
+        margin: get-vw-mobile(30px) 0 0;
+    
+        &__list {
+            margin: get-vw-mobile(10px) auto 0;
+            width: get-vw-mobile(285px);
+        }
+    
+        &__item {
+            width: get-vw-mobile(45px);
+            height: get-vw-mobile(45px);
+    
+            &:not(:nth-child(5n)) {
+                margin-right: get-vw-mobile(15px);
+            }
+    
+            &:nth-child(n+6) {
+                margin-top: get-vw-mobile(15px);
+            }
+        }
+    
+    }
+}

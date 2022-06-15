@@ -1,0 +1,238 @@
+// CONTACT DIRECTORY
+.contact-dir {
+    margin: get-vw-desktop(88px) auto get-vw-desktop(40px);
+    padding: get-vw-desktop(88px) 0 get-vw-desktop(20px);
+    width: 100%;
+    border-top: 1px solid $sky_blue;
+
+    &__heading {
+        font-size: get-vw-desktop(18px);
+        line-height: get-vw-desktop(26px);
+        text-align: center;
+    }
+
+    &__content {
+        margin: get-vw-desktop(38px) auto 0;
+        width: 100%;
+        max-width: get-vw-desktop(658px);
+        @include displayFlex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: get-vw-desktop(328px);
+        position: relative;
+
+        &:nth-child(odd) {
+            padding: 0 get-vw-desktop(66px) 0 0;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: get-vw-desktop(-2px);
+                width: get-vw-desktop(2px);
+                height: 100%;
+                background-color: $sky_blue;
+            }
+        }
+
+        &:nth-child(even) {
+            padding: 0 0 0 get-vw-desktop(66px);
+        }
+
+        &-heading {
+            color: $purple;
+        }
+    }
+
+    &__list {
+        margin: get-vw-desktop(19px) 0 0;
+        list-style-type: none;
+        color: $navy;
+
+        li {
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+
+            &:not(:last-of-type) {
+                margin: 0 0 get-vw-desktop(5px);
+            }
+        }
+    }
+
+    // VERSIONS
+    &--v2 {
+        margin: get-vw-desktop(20px) auto;
+        padding: get-vw-desktop(20px) 0;
+        border-top: none;
+
+        .contact-dir {
+            &__content {
+                margin: 0 auto;
+                max-width: initial;
+            }
+
+            &__item {
+                width: 50%;
+
+                &-heading {
+                    color: $navy;
+                }
+            }
+
+            &__list {
+                margin: get-vw-desktop(32px) 0 0;
+
+                li {
+                    padding: 0 0 0 get-vw-desktop(32px);
+                    font-size: get-vw-desktop(14px);
+                    line-height: get-vw-desktop(21px);
+                    position: relative;
+        
+                    &:not(:last-of-type) {
+                        margin: 0 0 get-vw-desktop(24px);
+                    }
+
+                    &:before {
+                        position: absolute;
+                        content: '';
+                        top: get-vw-desktop(1px);
+                        left: 0;
+                        width: get-vw-desktop(15px);
+                        height: get-vw-desktop(16px);
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+
+                    &.email-icon {
+                        &:before {
+                            background-image: url('./../images/common/mail-navy-icon.png');
+                        }
+                    }
+
+                    &.call-icon {
+                        &:before {
+                            background-image: url('./../images/common/phone-navy-icon.png');
+                        }
+                    }
+
+                    &.address-icon {
+                        &:before {
+                            background-image: url('./../images/common/pin-navy-icon.png');
+                        }
+                    }
+                }
+
+                &-item {
+                    &__title {
+                        margin: 0 0 get-vw-desktop(8px);
+                        color: $purple;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - CONTACT DIRECTORY
+@include mqMax($mq-max-mobile) {
+    .contact-dir {
+        margin: get-vw-mobile(32px) auto 0;
+        padding: get-vw-mobile(28px) 0 get-vw-mobile(32px);
+        border-top: 2px solid $sky_blue;
+
+        &__heading {
+            padding: 0 get-vw-mobile(22px);
+            font-size: get-vw-mobile(14px);
+            line-height: get-vw-mobile(20px);
+        }
+    
+        &__content {
+            margin: get-vw-mobile(22px) auto 0;
+            padding: 0 get-vw-mobile(22px) 0 get-vw-mobile(32px);
+            width: 100%;
+            max-width: initial;
+            @include displayFlex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    
+        &__item {
+            width: 100%;
+    
+            &:nth-child(odd) {
+                padding: initial;
+    
+                &:after {
+                    display: none;
+                }
+            }
+    
+            &:nth-child(even) {
+                padding: initial;
+            }
+
+            &:not(:first-of-type) {
+                margin: 30px auto 0;
+            }
+        }
+
+        &__list {
+            margin: get-vw-mobile(19px) 0 0;
+
+            li {
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+
+                &:not(:last-of-type) {
+                    margin: 0 0 get-vw-mobile(5px);
+                }
+            }
+        }
+
+        // VERSIONS
+        &--v2 {
+            margin: get-vw-mobile(32px) auto 0;
+            padding: get-vw-mobile(28px) 0 get-vw-mobile(32px);
+            border-top: 2px solid $sky_blue;
+
+            .contact-dir {
+                &__item {
+                    width: 100%;
+                }
+
+                &__list {
+                    margin: get-vw-mobile(20px) 0 0;
+
+                    li {
+                        padding: 0 0 0 get-vw-mobile(32px);
+                        font-size: get-vw-mobile(14px);
+                        line-height: get-vw-mobile(21px);
+            
+                        &:not(:last-of-type) {
+                            margin: 0 0 get-vw-mobile(20px);
+                        }
+
+                        &:before {
+                            top: get-vw-mobile(1px);
+                            width: get-vw-mobile(15px);
+                            height: get-vw-mobile(16px);
+                        }
+                    }
+
+                    &-item {
+                        &__title {
+                            margin: 0 0 get-vw-mobile(8px);
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(20px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

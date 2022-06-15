@@ -1,0 +1,72 @@
+// LOADER
+.loader {
+    width: auto;
+    margin: auto;
+    padding: get-vw-desktop(10px) 0;
+
+    &__box {
+        height: 30px;
+        width: 70px;
+        margin: auto;
+        @include dFlex(space-between);
+        align-items: center;
+
+        &-circle {
+            position: relative;
+            height: 7px;
+            width: 7px;
+            border-radius: 50%;
+            background-color: $green;
+            transform-origin: center;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                border: 1px solid $green;
+                transform-origin: center;
+                transform: scale(1.2) perspective(1px);
+            }
+            
+            &:nth-child(1) {
+                animation: pulse .4s ease 0s infinite alternate;
+
+                &::after {
+                    animation: pulseOut .4s ease 0s infinite alternate;
+                }
+            }
+            &:nth-child(2) {
+                animation: pulse .4s ease .2s infinite alternate;
+                
+                &::after {
+                    animation: pulseOut .4s ease .2s infinite alternate;
+                }
+            }
+            &:nth-child(3) {
+                animation: pulse .4s ease .4s infinite alternate;
+
+                &::after {
+                    animation: pulseOut .4s ease .4s infinite alternate;
+                }
+            }
+        }
+    }
+}
+
+// LIQUID MOBILE - Loader
+@include mqMax($mq-max-mobile) {
+    .loader {
+        &__box {
+            width: 50px;
+    
+            &-circle {
+                height: 5px;
+                width: 5px;
+            }
+        }
+    }
+}

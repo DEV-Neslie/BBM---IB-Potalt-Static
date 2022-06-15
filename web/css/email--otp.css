@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:ital,wght@0,100;0,300;1,100&display=swap");
+.emailTemplate {
+  width: 100%;
+  max-width: 720px;
+  min-height: 600px;
+  margin: 100px auto;
+  font-family: "Poppins", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 60px;
+}
+.emailTemplate__header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 35px 0 30px;
+  border-bottom: 1px solid #E7F2FC;
+}
+.emailTemplate__header-logo {
+  display: block;
+  width: 258px;
+}
+.emailTemplate__header-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.emailTemplate__header-btn {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 12px 20px;
+  font-size: 15px;
+  line-height: 19px;
+  color: #fff;
+  background-color: #3949A7;
+  border-radius: 80px;
+  text-decoration: none;
+}
+.emailTemplate__body {
+  width: 100%;
+  padding: 10px 0;
+}
+.emailTemplate__body p {
+  font-size: 15px;
+  line-height: 20px;
+}
+.emailTemplate__footer {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+}
+.emailTemplate__footer-logo {
+  display: block;
+  width: 149px;
+  margin: 20px auto;
+}
+.emailTemplate__footer-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.emailTemplate__footer__notice, .emailTemplate__footer__copyrights {
+  font-size: 10px;
+  line-height: 15px;
+  color: #808285;
+}
+.emailTemplate__footer__notice {
+  margin-bottom: 30px;
+  text-align: justify;
+}
+.emailTemplate__footer .contacts {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+.emailTemplate__footer .contacts__item {
+  margin: 0 40px;
+}
+.emailTemplate__footer .contacts__item-icon {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 36px;
+  margin: 0 auto 5px;
+}
+.emailTemplate__footer .contacts__item-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.emailTemplate__footer .contacts__item-icon--livechat {
+  max-width: 38px;
+}
+.emailTemplate__footer .contacts__item-icon--email {
+  max-width: 30px;
+}
+.emailTemplate__footer .contacts__item-icon--call {
+  max-width: 34px;
+}
+.emailTemplate__footer .contacts__item-label {
+  display: block;
+  font-size: 15px;
+  line-height: 22px;
+}
+.emailTemplate__footer .sns {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.emailTemplate__footer .sns__item {
+  margin: 0 7px;
+  display: block;
+  text-decoration: none;
+}
+.emailTemplate__footer .sns__item-icon {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.emailTemplate__footer .sns__item-icon--fb {
+  max-width: 7px;
+}
+.emailTemplate__footer .sns__item-icon--twitter {
+  max-width: 14px;
+}
+.emailTemplate__footer .sns__item-icon--instagram, .emailTemplate__footer .sns__item-icon--linkedin {
+  max-width: 13px;
+}
+.emailTemplate__footer .sns__item-icon--yt, .emailTemplate__footer .sns__item-icon--telegram {
+  max-width: 16px;
+}
+/*# sourceMappingURL=email--otp.css.map */

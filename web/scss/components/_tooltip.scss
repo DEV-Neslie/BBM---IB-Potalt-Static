@@ -1,0 +1,71 @@
+// TOOLTIP
+.tooltip {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+
+    .tooltiptext {
+        visibility: hidden;
+        width: get-vw-desktop(100px);
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: get-vw-desktop(6px);
+        padding: get-vw-desktop(4px);
+        position: absolute;
+        font-family: $Poppins;
+        font-weight: 400;
+        font-size: get-vw-desktop(18px);
+        line-height: get-vw-desktop(29px);
+        letter-spacing: get-vw-desktop(-0.5px);
+        z-index: 1;
+        top: get-vw-desktop(-45px);
+        right: get-vw-desktop(-18px);
+        @include transitionOpacity;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: get-vw-desktop(-5px);
+            border-width: get-vw-desktop(5px);
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        &.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    // &:hover {
+    //     .tooltiptext {
+    //         visibility: visible;
+    //         opacity: 1;
+    //     }
+    // }
+}
+
+
+// LIQUID MOBILE - ToolTip
+@include mqMax($mq-max-mobile) {
+    .tooltip {  
+        .tooltiptext {
+            width: get-vw-mobile(100px);
+            padding: get-vw-mobile(4px);
+            font-size: get-vw-mobile(15px);
+            line-height: get-vw-mobile(24px);
+            letter-spacing: get-vw-mobile(-0.5px);
+            border-radius: get-vw-mobile(6px);
+            top: get-vw-mobile(-45px);
+            right: get-vw-mobile(-18px);
+    
+            &:after {
+                margin-left: get-vw-mobile(-5px);
+                border-width: get-vw-mobile(5px);
+            }
+        }
+    }
+}

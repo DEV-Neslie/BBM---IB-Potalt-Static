@@ -1,0 +1,191 @@
+// PAGE MODAL
+.page-modal {
+    background-color: rgba(2, 17, 51, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2000;
+    @include dFlex(center);
+    align-items: center;
+    overflow-y: auto;
+    padding: get-vw-desktop(20px) 0 get-vw-desktop(40px);
+    visibility: hidden;
+    opacity: 0;
+    transition: .6s ease all;
+
+    &__box {
+        width: get-vw-desktop(400px);
+        background-color: $white;
+        border-radius: get-vw-desktop(5px);
+        overflow: hidden;
+        z-index: 1;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(1.042vw) perspective(1px);
+        transition: .6s ease all;
+
+        &.is-active {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0) perspective(1px);
+            transition: .6s ease all;
+        }
+
+        &--add, 
+        &--edit {
+            .modal__header {
+                background-color: $primary;
+            }
+        }
+    }
+
+    &__item {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+    &__close-btn {
+        content: '';
+        position: absolute;
+        top: get-vw-desktop(10px);
+        right: get-vw-desktop(10px);
+        display: inline-block;
+        width: get-vw-desktop(10px);
+        height: get-vw-desktop(10px);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/modal-close-button.svg');
+        cursor: pointer;
+        @include transitionOpacity;
+
+        &.white-icon {
+            background-image: url('./../images/common/modal-close-white-button.svg');
+        }
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+    &__header {
+        padding: get-vw-desktop(32px) get-vw-desktop(15px);
+        background: $primary;
+        height: auto;
+        text-align: center;
+        @include dFlex(center);
+        align-items: center;
+        width: 100%;
+        color: $white;
+
+        &-title {
+            font-size: get-vw-desktop(24px);
+            line-height: get-vw-desktop(35px);
+        }
+
+        p {
+            margin: get-vw-desktop(5px) auto 0;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+        }
+    }
+
+    &__content {
+        padding: get-vw-desktop(32px) get-vw-desktop(50px);
+        min-height: inherit;
+    }
+
+    &__subtext {
+        font-size: get-vw-desktop(14px);
+        line-height: get-vw-desktop(21px);
+        color: $navy;
+    }
+    
+    // ACTIVE
+    &.is-active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    // Modifier
+    &--free-vps {
+        .page-modal {
+            &__header {
+                padding: get-vw-desktop(20px);
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - PAGE MODAL
+@include mqMax($mq-max-mobile) {
+    .page-modal {
+        padding: get-vw-mobile(20px) 0 get-vw-mobile(40px);
+    
+        &__box {
+            border-radius: get-vw-mobile(5px);
+            width: get-vw-mobile(320px);
+            transform: translateY(4.444vw) perspective(1px);
+        }
+
+        &__close-btn {
+            top: get-vw-mobile(10px);
+            right: get-vw-mobile(10px);
+            width: get-vw-mobile(10px);
+            height: get-vw-mobile(10px);
+        }
+    
+        &__header {
+            padding: get-vw-mobile(26px) get-vw-mobile(15px);
+            height: initial;
+
+            &-title {
+                font-size: get-vw-mobile(18px);
+                line-height: get-vw-mobile(26px);
+            }
+
+            p {
+                margin: get-vw-mobile(4px) auto 0;
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
+            }
+        }
+    
+        &__content {
+            padding: get-vw-mobile(32px) get-vw-mobile(10px);
+            min-height: inherit;
+        }
+
+        &__subtext {
+            font-size: get-vw-mobile(12px);
+            line-height: get-vw-mobile(20px);
+        }
+        
+        // ACTIVE
+        &.is-active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        // Modifier
+        &--free-vps {
+            .page-modal {
+
+                &__header {
+                    padding: get-vw-mobile(20px);
+                }
+                
+                &__content {
+                    padding: get-vw-mobile(22px) get-vw-mobile(22px) get-vw-mobile(30px);
+                }
+
+            }
+        }
+    }
+}

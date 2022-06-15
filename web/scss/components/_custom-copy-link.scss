@@ -1,0 +1,103 @@
+// CUSTOM COPY LINK
+.custom-copy-link {
+    position: relative;
+
+    &__input {
+        padding: get-vw-desktop(8px) get-vw-desktop(42px) get-vw-desktop(8px) get-vw-desktop(18px);
+        width: 100%;
+        font-family: $Poppins;
+        font-weight: 400;
+        font-size: get-vw-desktop(12px);
+        line-height: get-vw-desktop(20px);
+        border: get-vw-desktop(1px) solid $sky_blue;
+        border-radius: get-vw-desktop(5px);
+        background-color: $sky_blue4;
+        color: $navy;
+    }
+
+    &__btn {
+        margin: auto;
+        position: absolute;
+        content: '';
+        top: 0;
+        right: get-vw-desktop(18px);
+        bottom: 0;
+        width: get-vw-desktop(18px);
+        height: get-vw-desktop(18px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/copy-icon.svg');
+        cursor: pointer;
+        @include transitionOpacity;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__tooltip {
+        &-text {
+            margin: 0 0 get-vw-desktop(5px);
+            padding: get-vw-desktop(4px);
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            font-size: get-vw-desktop(12px);
+            line-height: 1.2;
+            color: $white;
+            background-color: $primary;
+            opacity: 0;
+            border-radius: get-vw-desktop(4px);
+            @include transitionOpacity;
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: get-vw-desktop(-5px);
+                border-width: get-vw-desktop(5px);
+                border-style: solid;
+                border-color: $primary transparent transparent transparent;
+            }
+
+            &.is-active {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+// LIQUID MOBILE - // CUSTOM COPY LINK
+@include mqMax($mq-max-mobile) {
+    .custom-copy-link {
+    
+        &__input {
+            padding: get-vw-mobile(8px) get-vw-mobile(42px) get-vw-mobile(8px) get-vw-mobile(18px);
+            font-size: get-vw-mobile(12px);
+            line-height: get-vw-mobile(20px);
+            border: get-vw-mobile(1px) solid $sky_blue;
+            border-radius: get-vw-mobile(5px);
+        }
+    
+        &__btn {
+            right: get-vw-mobile(18px);
+            width: get-vw-mobile(18px);
+            height: get-vw-mobile(18px);
+        }
+    
+        &__tooltip {
+            &-text {
+                margin: 0 0 get-vw-mobile(5px);
+                padding: get-vw-mobile(4px);
+                font-size: get-vw-mobile(12px);
+    
+                &:after {
+                    margin-left: get-vw-mobile(-5px);
+                    border-width: get-vw-mobile(5px);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+// Notification Alert
+.notification {
+    margin: get-vw-desktop(14px) auto get-vw-desktop(24px);
+    padding: get-vw-desktop(17px) get-vw-desktop(32px) get-vw-desktop(17px) get-vw-desktop(52px);
+    position: relative;
+    background: $white;
+    border: 2px solid $green;
+    border-radius: 5px;
+    font-family: $Gilroy_b;
+    font-weight: 700;
+    font-size: get-vw-desktop(16px);
+    line-height: get-vw-desktop(20px);
+    color: $navy;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: get-vw-desktop(20px);
+        left: get-vw-desktop(17px);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    p {
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    &__close-btn {
+        position: absolute;
+        display: inline-block;
+        top: get-vw-desktop(20px);
+        right: get-vw-desktop(14px);
+        width: get-vw-desktop(10px);
+        height: get-vw-desktop(10px);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('./../images/common/notification-close-icon.svg');
+        cursor: pointer;
+    }
+
+    &--success {
+        &:before {
+            width: get-vw-desktop(16px);
+            height: get-vw-desktop(15px);
+            background-image: url('./../images/common/notification-success-icon.svg');
+        }
+    }
+}
+
+.dark-mode {
+    .notification {
+        background: $p_navy;
+        color: $white;
+
+        &__close-btn {
+            background-image: url('./../images/common/notification-close-white-icon.svg');
+        }
+    }
+}
+
+@include mqMax($mq-max-mobile) {
+    .notification {
+        margin: get-vw-mobile(14px) auto get-vw-mobile(24px);
+        padding: get-vw-mobile(17px) get-vw-mobile(32px) get-vw-mobile(17px) get-vw-mobile(52px);
+        font-size: get-vw-mobile(16px);
+        line-height: get-vw-mobile(20px);
+        color: $navy;
+    
+        &:before {
+            top: get-vw-mobile(20px);
+            left: get-vw-mobile(17px);
+        }
+    
+        p {
+            font-family: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+    
+        &__close-btn {
+            position: absolute;
+            display: inline-block;
+            top: get-vw-mobile(20px);
+            right: get-vw-mobile(14px);
+            width: get-vw-mobile(10px);
+            height: get-vw-mobile(10px);
+        }
+    
+        &--success {
+            &:before {
+                width: get-vw-mobile(16px);
+                height: get-vw-mobile(15px);
+            }
+        }
+    }
+}
