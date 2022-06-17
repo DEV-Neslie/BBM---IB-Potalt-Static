@@ -412,7 +412,7 @@
 
             &-col {
                 &--cta {
-                    background: url('./../images/common/table-cta-btn.svg') center/contain no-repeat;
+                    background: url('./../images/icons/common/table-cta-btn.svg') center/contain no-repeat;
                     position: absolute;
                     height: get-vw-desktop(17px);
                     width: get-vw-desktop(17px);
@@ -454,7 +454,7 @@
 
                 &-col {
                     &:nth-child(1) {
-                        width: 9%;
+                        width: 8%;
                     }
                     &:nth-child(2) {
                         width: 20%;
@@ -473,7 +473,7 @@
                         width: 10%;
                     }
                     &:nth-child(7) {
-                        width: 22%;
+                        width: 23%;
                     }
                 }
             }
@@ -616,7 +616,7 @@
             &__list {
                 &__item {
                     border-bottom: 1px solid $sky_blue;
-                    
+
                     &-col {
                         &:nth-child(1) {
                             width: 6%;
@@ -1071,7 +1071,7 @@
                         &:nth-child(5), 
                         &:nth-child(6),
                         &:nth-child(7) {
-                            width: 30%;
+                            width: 50%;
                         }
 
                         &:nth-child(5), 

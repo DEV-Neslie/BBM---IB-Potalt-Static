@@ -2637,7 +2637,7 @@ table .flag-content {
 .content__item--2cols .content__item-col {
   width: calc(50% - 0.625vw);
 }
-.content__item--withdrawals {
+.content__item--withdrawals, .content__item--bank {
   margin: 2.7777777778vw 0 0;
 }
 .content__inner-item {
@@ -2755,6 +2755,9 @@ table .flag-content {
   }
   .content__item--sm-reverse-direction.content__item:last-of-type {
     margin: 0 auto;
+  }
+  .content__item--withdrawals, .content__item--bank {
+    margin: 4.1666666667vw 0 0;
   }
   .content__inner-item {
     width: 100%;
@@ -5093,7 +5096,7 @@ table .flag-content {
 .btn--outline {
   background-color: transparent;
   border-color: #00CF80;
-  color: #fff;
+  color: #02194A;
 }
 .btn--outline:hover {
   background-color: #00CF80;
@@ -5167,7 +5170,7 @@ table .flag-content {
   background-image: url("./../images/common/funds.svg");
 }
 .btn__icon--add {
-  background-image: url("./../images/common/add-white.svg");
+  background-image: url("./../images/icons/common/add-navy.svg");
   margin: 0 0.6944444444vw 0.0694444444vw 0;
 }
 .btn__icon--csv {
@@ -5203,6 +5206,9 @@ table .flag-content {
   color: gray;
 }
 
+.dark-mode .btn--outline {
+  color: #fff;
+}
 .dark-mode .btn--blue-outline {
   color: #fff;
 }
@@ -5223,7 +5229,6 @@ table .flag-content {
   .btn--outline {
     background-color: transparent;
     border-color: #00CF80;
-    color: #fff;
   }
   .btn--outline:hover {
     background-color: #00CF80;
@@ -7624,7 +7629,7 @@ table .flag-content {
   color: #00CF80;
 }
 .data__list__item-col--cta {
-  background: url("./../images/common/table-cta-btn.svg") center/contain no-repeat;
+  background: url("./../images/icons/common/table-cta-btn.svg") center/contain no-repeat;
   position: absolute;
   height: 1.1805555556vw;
   width: 1.1805555556vw;
@@ -7653,7 +7658,7 @@ table .flag-content {
   padding-right: 4.5138888889vw;
 }
 .data__list--bank_accounts .data__list__item-col:nth-child(1) {
-  width: 9%;
+  width: 8%;
 }
 .data__list--bank_accounts .data__list__item-col:nth-child(2) {
   width: 20%;
@@ -7671,7 +7676,7 @@ table .flag-content {
   width: 10%;
 }
 .data__list--bank_accounts .data__list__item-col:nth-child(7) {
-  width: 22%;
+  width: 23%;
 }
 .data__list--history .data__list__item-col:nth-child(1) {
   width: 11%;
@@ -8118,7 +8123,7 @@ table .flag-content {
     display: none;
   }
   .data__list--bank_accounts .data__list__item-col:nth-child(2), .data__list--bank_accounts .data__list__item-col:nth-child(3), .data__list--bank_accounts .data__list__item-col:nth-child(4), .data__list--bank_accounts .data__list__item-col:nth-child(5), .data__list--bank_accounts .data__list__item-col:nth-child(6), .data__list--bank_accounts .data__list__item-col:nth-child(7) {
-    width: 30%;
+    width: 50%;
   }
   .data__list--bank_accounts .data__list__item-col:nth-child(5) .data__list__item-value, .data__list--bank_accounts .data__list__item-col:nth-child(6) .data__list__item-value, .data__list--bank_accounts .data__list__item-col:nth-child(7) .data__list__item-value {
     margin-bottom: 0;
@@ -10276,7 +10281,7 @@ table .flag-content {
   transition: 0.6s ease all;
 }
 .modal__box--add .modal__header, .modal__box--edit .modal__header {
-  background-color: #0E80E1;
+  background-color: #02194A;
 }
 .modal__close-btn {
   content: "";
@@ -10454,6 +10459,23 @@ table .flag-content {
 .modal--share-link .modal__content {
   padding: 2.2222222222vw 3.4722222222vw;
   min-height: inherit;
+}
+
+.dark-mode .modal__content {
+  background-color: #404A63;
+}
+.dark-mode .modal .form__field-label {
+  color: #fff;
+}
+.dark-mode .modal .form__field-input {
+  border: none;
+}
+.dark-mode .modal .custom-select {
+  border: none;
+  background-color: rgba(251, 253, 255, 0.05);
+}
+.dark-mode .modal .custom-select .select-selected {
+  color: #fff;
 }
 
 @media print, screen and (max-width: 768px) {

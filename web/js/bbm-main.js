@@ -295,7 +295,7 @@ function modal() {
 
         setTimeout(function () {
             modal_box.addClass('is-active modal__box--add');
-            modal_title.text('Add your Bank Account');
+            modal_title.text('Create bank account');
         }, 200);
     });
 
