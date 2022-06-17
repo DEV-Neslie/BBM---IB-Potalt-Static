@@ -99,6 +99,11 @@
                 line-height: get-vw-desktop(18px);
             }
         }
+
+        // Modifiers
+        &--fund {
+            padding: get-vw-desktop(20px) get-vw-desktop(50px);
+        }
     }
 
     // Page
@@ -208,6 +213,11 @@
                     font-size: get-vw-mobile(12px);
                     line-height: get-vw-mobile(18px);
                 }
+            }
+
+            // Modifiers
+            &--fund {
+                padding: get-vw-mobile(20px) get-vw-mobile(22px);
             }
         }
     }

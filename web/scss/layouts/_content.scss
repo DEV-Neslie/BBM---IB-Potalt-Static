@@ -47,6 +47,11 @@
                 }
             }
         }
+
+        // Modifier
+        &--withdrawals {
+            margin: get-vw-desktop(40px) 0 0;
+        }
     }
     // END Top item columns
 

@@ -16,6 +16,8 @@
         &-text {
             padding: get-vw-desktop(2px) 0 0;
             display: block;
+            font-size: inherit;
+            line-height: inherit;
         }
 
         input {
@@ -27,7 +29,7 @@
         }
 
         a {
-            color: $primary;
+            color: $navy;
         }
 
         &:hover {
