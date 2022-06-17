@@ -49,7 +49,8 @@
         }
 
         // Modifier
-        &--withdrawals {
+        &--withdrawals,
+        &--bank {
             margin: get-vw-desktop(40px) 0 0;
         }
     }
@@ -192,6 +193,12 @@
                         margin: 0 auto;
                     }
                 }
+            }
+
+            // Modifier
+            &--withdrawals,
+            &--bank {
+                margin: get-vw-mobile(15px) 0 0;
             }
         }
         // END Top item columns

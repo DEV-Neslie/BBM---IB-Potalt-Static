@@ -113,13 +113,13 @@
                             <ul class="sidebar__nav-list sidebar__nav-list--inner">
                                 <li class="sidebar__nav-list-item">
                                     <a href="#" class="sidebar__nav-list-link active">
-                                        <span class="sidebar__nav-icon sidebar__nav-icon--withdrawal is-active"></span>
+                                        <span class="sidebar__nav-icon sidebar__nav-icon--withdrawal"></span>
                                         <span Class="sidebar__nav-label">Withdrawals</span>
                                     </a>
                                 </li>
                                 <li class="sidebar__nav-list-item">
-                                    <a href="#" class="sidebar__nav-list-link">
-                                        <span class="sidebar__nav-icon sidebar__nav-icon--bank"></span>
+                                    <a href="#" class="sidebar__nav-list-link active">
+                                        <span class="sidebar__nav-icon sidebar__nav-icon--bank is-active"></span>
                                         <span Class="sidebar__nav-label">My Banks</span>
                                     </a>
                                 </li>
@@ -387,35 +387,34 @@
                             </div>
                         </div>
 
-                        <div class="content__item content__item--withdrawals">
+                        <div class="content__item content__item--bank">
 
                             <div class="tabular">
-                                <div class="tabular__header">
-                                    <h3 class="tabular__header__title">Withdrawals</h3>
-                                </div>
-
-                                <div class="tabular__tab">
-                                    <div class="tabular__tab-wrapper">
-                                        <div class="tabular__tab-wrapper-slider">
-                                            <a href="./funds.html" class="tabular__tab__item">Funds</a>
-                                            <span class="tabular__tab__item is-active">History</span>
-                                        </div>
-                                    </div>
-                                </div>
-
 
                                 <div class="tabular__content">
 
                                     <!-- item -->
                                     <div class="item">
+                                        <div class="item__header">
+                                            <h3 class="item__header-title">List of Bank Accounts</h3>
 
-                                        <div class="item__content">
+                                            <div class="item__header-cta">
+
+                                                <div class="btn btn--green btn--small modal_trigger--add">
+                                                    <i class="btn__icon btn__icon--add"></i>
+                                                    Create Bank
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="item__content p-0">
+
 
                                             <!-- data -->
-                                            <div class="data data--history">
+                                            <div class="data">
 
                                                 <div class="data__content">
-                                                    <div class="data__list">
+                                                    <div class="data__list data__list--bank_accounts">
 
                                                         <!-- Heading -->
                                                         <div class="data__list__item data__list__item--header">
@@ -423,22 +422,22 @@
                                                                 <h6 class="data__list__item-label">#</h6>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">Type</h6>
+                                                                <h6 class="data__list__item-label">Bank Name</h6>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">Account Details</h6>
+                                                                <h6 class="data__list__item-label">Account Number</h6>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">Bank</h6>
+                                                                <h6 class="data__list__item-label">Country</h6>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">Curreny</h6>
+                                                                <h6 class="data__list__item-label">Branch Name</h6>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">Amount</h6>
+                                                                <h6 class="data__list__item-label">SWIFT Code</h6>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">Date</h6>
+                                                                <h6 class="data__list__item-label">IBAN</h6>
                                                             </div>
                                                         </div>
 
@@ -446,70 +445,77 @@
                                                         <div class="data__list__item">
                                                             <div class="data__list__item-col">
                                                                 <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">01</span>
+                                                                <span class="data__list__item-value data__id">1</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Bank Wire Transfer</span>
+                                                                <span class="data__list__item-label">Bank Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Bank name 1</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">558601452202</span>
+                                                                <span class="data__list__item-label">Account Number</span>
+                                                                <span class="data__list__item-value data__account-number">26105001864709</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
+                                                                <span class="data__list__item-label">Country</span>
+                                                                <span class="data__list__item-value data__country">AU</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">AUD</span>
+                                                                <span class="data__list__item-label">Branch Name</span>
+                                                                <span class="data__list__item-value data__branch-name">Branch name 1</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">15,000.00</span>
+                                                                <span class="data__list__item-label">SWIFT Code</span>
+                                                                <span class="data__list__item-value data__swift-code">SWIFT code 1</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
+                                                                <span class="data__list__item-label">IBAN</span>
+                                                                <span class="data__list__item-value data__iban">IBANO0000000000261050018647</span>
                                                             </div>
 
-                                                            <!-- <div class="data__list__item-col data__list__item-col--cta">
+                                                            <div class="data__list__item-col data__list__item-col--cta">
                                                                 <div class="data__cta">
                                                                     <span class="data__cta-btn data__cta-btn--edit modal_trigger--edit">Edit</span>
                                                                     <span class="data__cta-btn data__cta-btn--delete">Delete</span>
                                                                 </div>
-                                                            </div> -->
+                                                            </div>
                                                         </div>
 
                                                         <!-- 2 -->
                                                         <div class="data__list__item">
                                                             <div class="data__list__item-col">
                                                                 <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">02</span>
+                                                                <span class="data__list__item-value data__id">2</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Online Payment Gateway</span>
+                                                                <span class="data__list__item-label">Bank Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Bank name 2</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">001470022234</span>
+                                                                <span class="data__list__item-label">Account Number</span>
+                                                                <span class="data__list__item-value data__account-number">26105001864709</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
+                                                                <span class="data__list__item-label">Country</span>
+                                                                <span class="data__list__item-value data__country">US</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">USD</span>
+                                                                <span class="data__list__item-label">Branch Name</span>
+                                                                <span class="data__list__item-value data__branch-name">Branch name 2</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">989.00</span>
+                                                                <span class="data__list__item-label">SWIFT Code</span>
+                                                                <span class="data__list__item-value data__swift-code">SWIFT code 2</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
+                                                                <span class="data__list__item-label">IBAN</span>
+                                                                <span class="data__list__item-value data__iban">IBANO0000000000261050018647</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                                <div class="data__cta">
+                                                                    <span class="data__cta-btn data__cta-btn--edit modal_trigger--edit">Edit</span>
+                                                                    <span class="data__cta-btn data__cta-btn--delete">Delete</span>
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -517,31 +523,38 @@
                                                         <div class="data__list__item">
                                                             <div class="data__list__item-col">
                                                                 <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">03</span>
+                                                                <span class="data__list__item-value data__id">3</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Bank Wire Transfer</span>
+                                                                <span class="data__list__item-label">Bank Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Bank name 3</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">0987855542</span>
+                                                                <span class="data__list__item-label">Account Number</span>
+                                                                <span class="data__list__item-value data__account-number">26105001864709</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
+                                                                <span class="data__list__item-label">Country</span>
+                                                                <span class="data__list__item-value data__country">US</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">AUD</span>
+                                                                <span class="data__list__item-label">Branch Name</span>
+                                                                <span class="data__list__item-value data__branch-name">Branch name 3</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">489.00</span>
+                                                                <span class="data__list__item-label">SWIFT Code</span>
+                                                                <span class="data__list__item-value data__swift-code">SWIFT code 3</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
+                                                                <span class="data__list__item-label">IBAN</span>
+                                                                <span class="data__list__item-value data__iban">IBANO0000000000261050018647</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                                <div class="data__cta">
+                                                                    <span class="data__cta-btn data__cta-btn--edit modal_trigger--edit">Edit</span>
+                                                                    <span class="data__cta-btn data__cta-btn--delete">Delete</span>
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -549,31 +562,38 @@
                                                         <div class="data__list__item">
                                                             <div class="data__list__item-col">
                                                                 <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">04</span>
+                                                                <span class="data__list__item-value data__id">4</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Bank Wire Transfer</span>
+                                                                <span class="data__list__item-label">Bank Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Bank name 4</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">0987855542</span>
+                                                                <span class="data__list__item-label">Account Number</span>
+                                                                <span class="data__list__item-value data__account-number">26105001864709</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
+                                                                <span class="data__list__item-label">Country</span>
+                                                                <span class="data__list__item-value data__country">AU</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">GBP</span>
+                                                                <span class="data__list__item-label">Branch Name</span>
+                                                                <span class="data__list__item-value data__branch-name">Branch name 4</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">7920.00</span>
+                                                                <span class="data__list__item-label">SWIFT Code</span>
+                                                                <span class="data__list__item-value data__swift-code">SWIFT code 4</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
+                                                                <span class="data__list__item-label">IBAN</span>
+                                                                <span class="data__list__item-value data__iban">IBANO0000000000261050018647</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                                <div class="data__cta">
+                                                                    <span class="data__cta-btn data__cta-btn--edit modal_trigger--edit">Edit</span>
+                                                                    <span class="data__cta-btn data__cta-btn--delete">Delete</span>
+                                                                </div>
                                                             </div>
                                                         </div>
 
@@ -581,161 +601,41 @@
                                                         <div class="data__list__item">
                                                             <div class="data__list__item-col">
                                                                 <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">05</span>
+                                                                <span class="data__list__item-value data__id">5</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Bank Wire Transfer</span>
+                                                                <span class="data__list__item-label">Bank Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Bank name 5</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">558601452202</span>
+                                                                <span class="data__list__item-label">Account Number</span>
+                                                                <span class="data__list__item-value data__account-number">26105001864709</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
+                                                                <span class="data__list__item-label">Country</span>
+                                                                <span class="data__list__item-value data__country">EUR</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">EUR</span>
+                                                                <span class="data__list__item-label">Branch Name</span>
+                                                                <span class="data__list__item-value data__branch-name">Branch name 5</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">6689.56</span>
+                                                                <span class="data__list__item-label">SWIFT Code</span>
+                                                                <span class="data__list__item-value data__swift-code">SWIFT code 5</span>
                                                             </div>
                                                             <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
+                                                                <span class="data__list__item-label">IBAN</span>
+                                                                <span class="data__list__item-value data__iban">IBANO0000000000261050018647</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                                <div class="data__cta">
+                                                                    <span class="data__cta-btn data__cta-btn--edit modal_trigger--edit">Edit</span>
+                                                                    <span class="data__cta-btn data__cta-btn--delete">Delete</span>
+                                                                </div>
                                                             </div>
                                                         </div>
 
-                                                        <!-- 6 -->
-                                                        <div class="data__list__item">
-                                                            <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">06</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Online Payment Gateway</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">558601452202</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">AUD</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">889.41</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- 7 -->
-                                                        <div class="data__list__item">
-                                                            <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">07</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Bank Wire Transfer</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">0987855542</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">GBP</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">7920.00</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- 8 -->
-                                                        <div class="data__list__item">
-                                                            <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">08</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Bank Wire Transfer</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">558601452202</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">EUR</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">6689.56</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
-                                                            </div>
-                                                        </div>
-
-                                                        <!-- 9 -->
-                                                        <div class="data__list__item">
-                                                            <div class="data__list__item-col">
-                                                                <h6 class="data__list__item-label">#</h6>
-                                                                <span class="data__list__item-value data__id">09</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Type</span>
-                                                                <span class="data__list__item-value data__bank-name">Online Payment Gateway</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Account Details</span>
-                                                                <span class="data__list__item-value data__account-number">558601452202</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Bank</span>
-                                                                <span class="data__list__item-value data__country">Bank name</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Currency</span>
-                                                                <span class="data__list__item-value data__branch-name">AUD</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Amount</span>
-                                                                <span class="data__list__item-value data__swift-code">889.41</span>
-                                                            </div>
-                                                            <div class="data__list__item-col">
-                                                                <span class="data__list__item-label">Date</span>
-                                                                <span class="data__list__item-value data__iban">4/13/2021</span>
-                                                            </div>
-                                                        </div>
 
                                                     </div>
                                                     <!-- /data__list -->
@@ -827,7 +727,86 @@
             </div>
             <!-- /main__content -->
 
+            <!-- Modal -->
+            <div class="modal">
 
+                <form id="add_bank" action="">
+
+                    <!-- ADD - Modal Box -->
+                    <div id="add_modal" class="modal__box">
+                        
+                        <div class="modal__header">
+                            <h3 class="modal__header-title">Add your Bank Account</h3>
+                        </div>
+
+                        <div class="modal__content">
+
+                            <div class="form">
+
+                                <div class="form__field">
+                                    <span class="form__field-label">Bank Name</span>
+                                    <div class="form__field-input">
+                                        <input id="m_bank_name" type="text" name="bank_name" placeholder="Enter bank name">
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">Account Number</span>
+                                    <div class="form__field-input">
+                                        <input id="m_account_number" type="text" name="account_number" placeholder="Enter Account Number">
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">Country</span>
+                                    <div class="custom-select">
+                                        <select id="m_country">
+                                            <option value="0">Country</option>
+                                            <option value="AU">AU</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="US">US</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">Branch Name</span>
+                                    <div class="form__field-input">
+                                        <input id="m_branch_name" type="text" name="branch_name" placeholder="Enter Branch Name">
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">SWIFT Code</span>
+                                    <div class="form__field-input">
+                                        <input id="m_swift_code" type="text" name="swift_code" placeholder="Enter SWIFT code">
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">IBAN</span>
+                                    <div class="form__field-input">
+                                        <input id="m_iban" type="text" name="iban" placeholder="Enter IBAN">
+                                    </div>
+                                </div>
+
+                                <div class="form__cta">
+                                    <button id="modal_btn--submit" class="btn btn--green">Save</button>
+                                    <span id="modal_btn--cancel" class="btn btn--outline">Cancel</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- /modal__content -->
+
+                    </div>
+                    <!-- /Modal Box -->
+
+                </form>
+
+            </div>
+            <!-- /Modal -->
             
         
         </div>

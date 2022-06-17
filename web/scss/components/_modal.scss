@@ -36,7 +36,7 @@
         &--add, 
         &--edit {
             .modal__header {
-                background-color: $primary;
+                background-color: $navy;
             }
         }
     }
@@ -253,6 +253,35 @@
             &__content {
                 padding: get-vw-desktop(32px) get-vw-desktop(50px);
                 min-height: inherit;
+            }
+        }
+    }
+}
+
+.dark-mode {
+    .modal {
+        &__content {
+            background-color: $light_blue2;
+        }
+
+        .form {
+            &__field {
+                &-label {
+                    color: $white;
+                }
+
+                &-input {
+                    border: none;
+                }
+            }
+        }
+
+        .custom-select {
+            border: none;
+            background-color: $opac_white_5;
+
+            .select-selected {
+                color: $white;
             }
         }
     }
