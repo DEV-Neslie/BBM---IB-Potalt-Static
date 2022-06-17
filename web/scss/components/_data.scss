@@ -646,6 +646,52 @@
             }
         }
     }
+
+    &--accounts {
+        .data {
+            &__list {
+                &__item {
+                    padding: 0 get-vw-desktop(50px) 0 0;
+                    border-bottom: 1px solid $sky_blue;
+
+                    &-col {
+                        &:nth-child(1) {
+                            width: 10%;
+                        }
+                        &:nth-child(2) {
+                            width: 15%;
+                        }
+                        &:nth-child(3) {
+                            width: 15%;
+                        }
+                        &:nth-child(4) {
+                            width: 10%;
+                        }
+                        &:nth-child(5) {
+                            width: 10%;
+                        }
+                        &:nth-child(6) {
+                            width: 10%;
+                        }
+                        &:nth-child(7) {
+                            width: 10%;
+                        }
+
+                        &:nth-child(8) {
+                            width: 20%;
+                        }
+
+                        &--cta {
+                            right: get-vw-desktop(15px);
+                            width: get-vw-desktop(18px);
+                            height: get-vw-desktop(18px);
+                            background: url('./../images/icons/common/eye.svg') center/contain no-repeat;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
