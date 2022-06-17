@@ -2637,6 +2637,9 @@ table .flag-content {
 .content__item--2cols .content__item-col {
   width: calc(50% - 0.625vw);
 }
+.content__item--withdrawals {
+  margin: 2.7777777778vw 0 0;
+}
 .content__inner-item {
   display: block;
   width: 100%;
@@ -6508,6 +6511,8 @@ table .flag-content {
 .custom-checkbox__label-text {
   padding: 0.1388888889vw 0 0;
   display: block;
+  font-size: inherit;
+  line-height: inherit;
 }
 .custom-checkbox__label input {
   position: absolute;
@@ -6517,7 +6522,7 @@ table .flag-content {
   cursor: pointer;
 }
 .custom-checkbox__label a {
-  color: #0E80E1;
+  color: #02194A;
 }
 .custom-checkbox__label:hover input ~ .custom-checkbox__mark {
   background-color: #fff;
@@ -6774,7 +6779,7 @@ table .flag-content {
   bottom: 0;
   width: 0.7638888889vw;
   height: 0.4166666667vw;
-  background-image: url("./../images/common/custom-select-arrow.svg");
+  background-image: url("./../images/icons/common/custom-select-arrow.svg");
   background-size: contain;
   background-repeat: no-repeat;
   transition: all 0.2s linear;
@@ -6848,6 +6853,10 @@ table .flag-content {
 }
 .has-error .select-items {
   border-color: #f1d5d5;
+}
+
+.dark-mode .custom-select .select-selected:after {
+  background-image: url("./../images/icons/common/custom-select-arrow-white.svg");
 }
 
 @media print, screen and (max-width: 768px) {
@@ -9301,6 +9310,9 @@ table .flag-content {
   font-size: 0.8333333333vw;
   line-height: 1.25vw;
 }
+.item__content--fund {
+  padding: 1.3888888889vw 3.4722222222vw;
+}
 .item__calendar-loader {
   padding: 28vh 0;
 }
@@ -9377,6 +9389,9 @@ table .flag-content {
   .item__content .noevent__text {
     font-size: 3.3333333333vw;
     line-height: 5vw;
+  }
+  .item__content--fund {
+    padding: 5.5555555556vw 6.1111111111vw;
   }
 
   .dark-mode .item__content-box {
@@ -20469,28 +20484,27 @@ table .flag-content {
     line-height: 5.5555555556vw;
   }
 }
-.inquiry {
-  margin: 1.5277777778vw auto 0;
-  padding: 1.5277777778vw 0;
+.fund {
+  margin: 0;
 }
-.inquiry__text {
+.fund__text {
   font-size: 0.9722222222vw;
   line-height: 1.4583333333vw;
 }
-.inquiry__field-input {
+.fund__field-input {
   width: 100%;
 }
-.inquiry__field-input--textarea {
+.fund__field-input--textarea {
   height: 8.125vw;
 }
-.inquiry__form {
-  margin: 1.8055555556vw 0 0;
+.fund__form {
+  margin: 0;
 }
-.inquiry__form-row {
-  margin: 0 0 1.6666666667vw;
+.fund__form-row {
+  margin: 0 0 1.1111111111vw;
   width: 100%;
 }
-.inquiry__form-row--2-cols {
+.fund__form-row--2-cols {
   display: -webkit-box;
   /* OLD - iOS 6-, Safari 3.1-6 */
   /* OLD - Firefox 19- (buggy but mostly works) */
@@ -20505,39 +20519,62 @@ table .flag-content {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.inquiry__form-row--2-cols .inquiry__form-col {
-  width: 30.5555555556vw;
+.fund__form-row--2-cols .fund__form-col {
+  width: 31.25vw;
 }
-.inquiry__form-row--2-cols .inquiry__form-col:not(:last-of-type) {
+.fund__form-row--2-cols .fund__form-col:not(:last-of-type) {
   margin: 0;
 }
-.inquiry__form-row--agree {
-  text-align: center;
+.fund__form-row--agree {
+  margin: 0;
 }
-.inquiry__form-row--submit {
-  margin: 0.6944444444vw 0;
-  text-align: center;
+.fund__form-row--agree .custom-checkbox__label {
+  display: inline-block;
 }
-.inquiry__form-col:not(:last-of-type) {
+.fund__form-row--agree .btn--link {
+  font-size: 0.6944444444vw;
+  line-height: 1.1111111111vw;
+}
+.fund__form-row--submit {
+  margin: 2.0833333333vw 0 0;
+}
+.fund__form-col:not(:last-of-type) {
   margin: 0 0 1.6666666667vw;
 }
-.inquiry__form-label {
+.fund__form-label {
   margin: 0 0 0.5555555556vw;
-  display: block;
+  display: inline-block;
   font-size: 0.6944444444vw;
   line-height: 1.2;
 }
-.inquiry__form-label .required {
+.fund__form-label .required {
   color: #FF0000;
 }
-.inquiry__form-input {
+.fund__form-label .plus-action {
+  margin: 0 0 0 0.3472222222vw;
+  display: inline-block;
+  width: 1.1111111111vw;
+  height: 1.1111111111vw;
+  background-image: url("./../images/icons/common/plus-circle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+}
+.fund__form-label .plus-action:hover {
+  opacity: 0.6;
+}
+.fund__form-input {
   padding: 0.6944444444vw 0.9722222222vw;
   font-family: "Poppins", sans-serif;
   font-size: 0.8333333333vw;
   line-height: 1.2;
   width: 100%;
 }
-.inquiry__form textarea {
+.fund__form textarea {
   padding: 0.6944444444vw 0.9722222222vw;
   width: 100%;
   height: 100%;
@@ -20545,53 +20582,91 @@ table .flag-content {
   font-size: 0.8333333333vw;
   line-height: 1.2;
 }
-.inquiry__form ::-webkit-input-placeholder {
+.fund__form ::-webkit-input-placeholder {
   font-size: 0.8333333333vw;
   line-height: 1.2;
   color: rgba(2, 25, 74, 0.8);
 }
-.inquiry__form ::placeholder,
-.inquiry__form ::-webkit-input-placeholder,
-.inquiry__form :-moz-placeholder,
-.inquiry__form ::-moz-placeholder,
-.inquiry__form :-ms-input-placeholder,
-.inquiry__form :-moz-placeholder {
+.fund__form ::placeholder,
+.fund__form ::-webkit-input-placeholder,
+.fund__form :-moz-placeholder,
+.fund__form ::-moz-placeholder,
+.fund__form :-ms-input-placeholder,
+.fund__form :-moz-placeholder {
   font-size: 0.8333333333vw;
   line-height: 1.2;
   color: rgba(2, 25, 74, 0.8);
 }
-.inquiry__form-submit {
+.fund__form-submit {
   padding: 0.7638888889vw 1.3888888889vw;
 }
-.inquiry__form .custom-checkbox {
+.fund__form .custom-checkbox {
   display: inline-block;
 }
-.inquiry__form .custom-select {
+.fund__form .custom-select {
   width: 100%;
 }
-.inquiry__form .custom-select .select-selected {
+.fund__form .custom-select .select-selected {
   padding: 0.6944444444vw 2.2222222222vw 0.6944444444vw 0.9722222222vw;
   font-size: 0.8333333333vw;
   line-height: 1.2;
 }
+.fund__note {
+  margin: 2.0833333333vw auto 0;
+  padding: 1.5277777778vw 1.3888888889vw;
+  width: 100%;
+  border: 1px solid #E7F2FC;
+  border-radius: 5px;
+}
+.fund__note-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 0.6944444444vw;
+  line-height: 1.5;
+}
+.fund__note-text {
+  margin: 0.4166666667vw 0 0;
+  font-size: 0.5555555556vw;
+  line-height: 1.1111111111vw;
+}
+
+.dark-mode .form__field-input {
+  background-color: rgba(251, 253, 255, 0.05);
+  color: #fff;
+}
+.dark-mode .form__field-input input {
+  color: #fff;
+}
+.dark-mode .form__field-input .custom-select {
+  background-color: transparent;
+}
+.dark-mode .form__field-input .custom-select .select-selected {
+  color: #fff;
+}
+.dark-mode .form__field-input ::-webkit-input-placeholder {
+  color: #fff;
+}
+.dark-mode .form__field-input ::placeholder,
+.dark-mode .form__field-input ::-webkit-input-placeholder,
+.dark-mode .form__field-input :-moz-placeholder,
+.dark-mode .form__field-input ::-moz-placeholder,
+.dark-mode .form__field-input :-ms-input-placeholder,
+.dark-mode .form__field-input :-moz-placeholder {
+  color: #fff;
+}
 
 @media print, screen and (max-width: 768px) {
-  .inquiry {
-    margin: 8.8888888889vw auto 0;
-    padding: 7.7777777778vw 6.1111111111vw 8.8888888889vw;
-    border-top: 2px solid #E7F2FC;
-  }
-  .inquiry__text {
+  .fund__text {
     font-size: 3.8888888889vw;
     line-height: 5.8333333333vw;
   }
-  .inquiry__form {
+  .fund__form {
     margin: 7.2222222222vw 0 0;
   }
-  .inquiry__form-row {
+  .fund__form-row {
     margin: 0 0 6.6666666667vw;
   }
-  .inquiry__form-row--2-cols {
+  .fund__form-row--2-cols {
     display: -webkit-box;
     /* OLD - iOS 6-, Safari 3.1-6 */
     /* OLD - Firefox 19- (buggy but mostly works) */
@@ -20608,54 +20683,76 @@ table .flag-content {
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
-  .inquiry__form-row--2-cols .inquiry__form-col {
+  .fund__form-row--2-cols .fund__form-col {
     width: 100%;
   }
-  .inquiry__form-row--2-cols .inquiry__form-col:not(:last-of-type) {
+  .fund__form-row--2-cols .fund__form-col:not(:last-of-type) {
     margin: 0 0 5vw;
   }
-  .inquiry__form-row--submit {
+  .fund__form-row--agree .btn--link {
+    font-size: 2.7777777778vw;
+    line-height: 4.4444444444vw;
+  }
+  .fund__form-row--submit {
     margin: 2.7777777778vw 0;
+    text-align: center;
   }
-  .inquiry__form-col:not(:last-of-type) {
+  .fund__form-col:not(:last-of-type) {
     margin: 0 0 5vw;
   }
-  .inquiry__form-label {
+  .fund__form-label {
     margin: 0 0 2.2222222222vw;
     font-size: 2.7777777778vw;
     line-height: 1.2;
   }
-  .inquiry__form-input {
+  .fund__form-label .plus-action {
+    margin: 0 0 0 1.3888888889vw;
+    width: 3.8888888889vw;
+    height: 3.8888888889vw;
+  }
+  .fund__form-input {
     padding: 2.7777777778vw 3.8888888889vw;
     font-size: 3.3333333333vw;
     line-height: 1.2;
   }
-  .inquiry__form textarea {
+  .fund__form textarea {
     padding: 2.7777777778vw 3.8888888889vw;
     height: 20.2777777778vw;
     font-size: 3.3333333333vw;
     line-height: 1.2;
   }
-  .inquiry__form ::-webkit-input-placeholder {
+  .fund__form ::-webkit-input-placeholder {
     font-size: 3.3333333333vw;
     line-height: 1.2;
   }
-  .inquiry__form ::placeholder,
-.inquiry__form ::-webkit-input-placeholder,
-.inquiry__form :-moz-placeholder,
-.inquiry__form ::-moz-placeholder,
-.inquiry__form :-ms-input-placeholder,
-.inquiry__form :-moz-placeholder {
+  .fund__form ::placeholder,
+.fund__form ::-webkit-input-placeholder,
+.fund__form :-moz-placeholder,
+.fund__form ::-moz-placeholder,
+.fund__form :-ms-input-placeholder,
+.fund__form :-moz-placeholder {
     font-size: 3.3333333333vw;
     line-height: 1.2;
   }
-  .inquiry__form-submit {
+  .fund__form-submit {
     padding: 3.0555555556vw 5.5555555556vw;
   }
-  .inquiry__form .custom-select .select-selected {
+  .fund__form .custom-select .select-selected {
     padding: 2.7777777778vw 8.8888888889vw 2.7777777778vw 3.8888888889vw;
     font-size: 3.3333333333vw;
     line-height: 1.2;
+  }
+  .fund__note {
+    margin: 8.3333333333vw auto 0;
+    padding: 5.5555555556vw 4.1666666667vw;
+  }
+  .fund__note-heading {
+    font-size: 2.7777777778vw;
+  }
+  .fund__note-text {
+    margin: 1.6666666667vw 0 0;
+    font-size: 2.2222222222vw;
+    line-height: 5vw;
   }
 }
 .daterangepicker {
