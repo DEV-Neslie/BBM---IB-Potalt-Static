@@ -109,9 +109,9 @@
         }
 
         &__content {
-            padding: get-vw-desktop(54px) 0 0;
             position: absolute;
-            top: 0;
+            padding-top: get-vw-desktop(24px);
+            top: get-vw-desktop(30px);
             right: 0;
             width: get-vw-desktop(300px);
             opacity: 0;

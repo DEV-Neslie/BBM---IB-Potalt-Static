@@ -1,0 +1,25 @@
+// FILTERS
+.filters {
+    width: auto;
+    @include dFlex(flex-start);
+    align-items: center;
+
+    &__item {
+        position: relative;
+        background-color: $white;
+        display: inline-block;
+        border: get-vw-desktop(1px) solid $sky_blue;
+        min-width: get-vw-desktop(100px);
+        border-radius: get-vw-desktop(5px);
+        margin-right: get-vw-desktop(10px);
+        padding: get-vw-desktop(8px) get-vw-desktop(35px) get-vw-desktop(8px) get-vw-desktop(14px);
+
+        &-label {
+            display: inline-block;
+            font-size: get-vw-desktop(10px);
+            line-height: get-vw-desktop(16px);
+        }
+
+
+    }
+}

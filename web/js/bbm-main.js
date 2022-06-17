@@ -266,9 +266,9 @@ function headerNav() {
 }
 
 function quickLinks() {
-    $('.quick-links__item').hover(function (e) {
-        var hoverIcon = $(this).find('.quick-links__item-icon--hover').attr('data-src');
-        $(this).find('.quick-links__item-icon--hover').attr('src', hoverIcon);
+    $('.quick-links__list__item').hover(function (e) {
+        var hoverIcon = $(this).find('.quick-links__list__item__icon-hover').attr('data-src');
+        $(this).find('.quick-links__list__item__icon-hover').attr('src', hoverIcon);
     });
 }
 

@@ -169,6 +169,10 @@ ul {
 	list-style-position: inside;
 }
 
+ul li {
+	list-style: none;
+}
+
 table {
 	border-collapse: collapse;
 	width: 100%;

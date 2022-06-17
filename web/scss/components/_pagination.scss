@@ -1,7 +1,7 @@
 // PAGINATION
 .pagination {
     display: block;
-    padding: get-vw-desktop(40px) 0;
+    padding: get-vw-desktop(15px) 0;
 
     ul {
         @include displayFlex;
@@ -84,13 +84,13 @@
 
     .arrow-prev a {
         &:before {
-            background-image: url('./../images/common/pagination-arrow-left.svg');
+            background-image: url('./../images/icons/common/pagination-arrow-left.svg');
         }
     }
 
     .arrow-next a {
         &:before {
-            background-image: url('./../images/common/pagination-arrow-right.svg');
+            background-image: url('./../images/icons/common/pagination-arrow-right.svg');
         }
     }
 
@@ -131,13 +131,13 @@
     
         .arrow-prev a {
             &:before {
-                background-image: url('./../images/common/pagination-arrow-left--white.svg');
+                background-image: url('./../images/icons/common/pagination-arrow-left--white.svg');
             }
         }
     
         .arrow-next a {
             &:before {
-                background-image: url('./../images/common/pagination-arrow-right--white.svg');
+                background-image: url('./../images/icons/common/pagination-arrow-right--white.svg');
             }
         }
     }

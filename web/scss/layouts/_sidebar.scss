@@ -72,7 +72,7 @@
                         position: absolute;
                         top: 0;
                         right: 0;
-                        height: 100%;
+                        height: get-vw-desktop(39px);
                         width: get-vw-desktop(5px);
                         background: $green;
                     }
@@ -102,7 +102,6 @@
                 }
         
                 &.is-open {
-        
                     .sidebar__nav-list-link--dropdown {
                         &:after {
                             @include transform(rotate(180deg));
@@ -149,7 +148,7 @@
 
             &--inner {
                 margin: 0 0 0 get-vw-desktop(30px);
-                padding: 0 0 get-vw-desktop(5px);
+                padding: 0 0 get-vw-desktop(10px);
                 display: none;
     
                 .sidebar {
@@ -159,7 +158,7 @@
                     }
     
                     &__nav-list-link {
-                        padding: get-vw-desktop(2px) 0;
+                        padding: get-vw-desktop(5px) 0;
                     }
     
                     &__nav-label {
@@ -556,7 +555,7 @@
             width: 100%;
             transform: perspective(1px);
             background: url('./../images/icons/common/icon_sidebar-arrow.svg') center/ contain no-repeat;
-            transition: 1s ease;
+            transition: .2s ease;
         }
     }
 

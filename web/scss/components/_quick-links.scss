@@ -6,111 +6,155 @@
     &__list {
         margin: get-vw-desktop(15px) auto;
         @include dFlex(space-between);
-    }
 
-    &__item {
-        padding: get-vw-desktop(5px);
-        width: calc(25% - 0.9375vw); //25% - 13.5px
-        height: get-vw-desktop(100px);
-        @include displayFlex;
-        flex-direction: row;
-        justify-content: space-between;
-        background: $white;
-        border-radius: get-vw-desktop(5px);
-        box-shadow: get-vw-desktop(5px) get-vw-desktop(5px) get-vw-desktop(20px) $sky_blue;
-        @include transitionOpacity;
-
-        &:hover {
-            .quick-links {
-                &__item-text {
-                    opacity: 0.8;
-                }
-
-                &__item-icon-wrapper {
-                    background: $green;
-                }
-
-                &__item-icon {
-                    &--initial {
-                        opacity: 0;
-                    }
-
-                    &--hover {
-                        opacity: 1;
-                        height: auto;
-                    }
-                }
-            }
-        }
-    }
-
-    &__item-text {
-        padding: 0 get-vw-desktop(5px) 0 0;
-        width: get-vw-desktop(154px);
-        height: 100%;
-        @include displayFlex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        @include transitionOpacity;
-    }
-
-    &__item-icon-wrapper {
-        position: relative;
-        width: get-vw-desktop(86px);
-        height: 100%;
-        background: $sky_blue;
-        border-radius: get-vw-desktop(5px);
-
-        &--marketing {
-            .quick-links__item-icon--initial {
-                width: get-vw-desktop(35px);
-            }
-        }
-
-        &--account {
-            .quick-links__item-icon--initial {
-                width: get-vw-desktop(29px);
-            }
-        }
-
-        &--commission {
-            .quick-links__item-icon--initial {
-                width: get-vw-desktop(27px);
-            }
-        }
-
-        &--withdrawal {
-            .quick-links__item-icon--initial {
-                width: get-vw-desktop(42px);
-            }
-        }
-    }
-
-    &__item-icon {
-        margin: auto;
-        content: '';
-        width: get-vw-desktop(50px);
-        height: get-vw-desktop(50px);
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        overflow: hidden;
-
-        &--initial {
-            z-index: 2;
-        }
-
-        &--hover {
-            width: 100%;
-            height: auto;
-            z-index: 1;
-            opacity: 0;
-        }
-    }
+        &__item {
+            padding: get-vw-desktop(5px);
+            width: calc(25% - 0.9375vw); //25% - 13.5px
+            height: get-vw-desktop(100px);
+            @include dFlex(space-between);
+            align-items: center;
+            background: $white;
+            border-radius: get-vw-desktop(5px);
+            box-shadow: get-vw-desktop(5px) get-vw-desktop(5px) get-vw-desktop(20px) $sky_blue;
+            @include transitionOpacity;
     
+            &-title {
+                width: calc(100% - 6.944vw); //100% - 100px
+                font-family: $Gilroy_b;
+                font-size: get-vw-desktop(14px);
+                line-height: get-vw-desktop(20px);
+                text-align: center;
+                @include transitionOpacity;
+            }
+
+            &__icon {
+                position: relative;
+                width: get-vw-desktop(90px);
+                height: 100%;
+                background: $sky_blue;
+                border-radius: get-vw-desktop(5px);
+                overflow: hidden;
+
+                &-initial, 
+                &-hover {
+                    margin: auto;
+                    width: get-vw-desktop(50px);
+                    height: get-vw-desktop(50px);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+
+                &-initial {
+                    z-index: 2;
+                }
+
+                &-hover {
+                    width: 100%;
+                    height: auto;
+                    z-index: 1;
+                    opacity: 0;
+                }
+        
+                &--marketing {
+                    .quick-links__list__item__icon-initial {
+                        width: get-vw-desktop(35px);
+                    }
+                }
+        
+                &--account {
+                    .quick-links__list__item__icon-initial {
+                        width: get-vw-desktop(29px);
+                    }
+                }
+        
+                &--commission {
+                    .quick-links__list__item__icon-initial {
+                        width: get-vw-desktop(27px);
+                    }
+                }
+        
+                &--withdrawal {
+                    .quick-links__list__item__icon-initial {
+                        width: get-vw-desktop(42px);
+                    }
+                }
+            }
+    
+            &:hover {
+                .quick-links {
+                    &__list {
+                        &__item {
+                            &-title {
+                                opacity: 0.8;
+                            }
+            
+                            &__icon {
+                                background: $green;
+    
+                                &-initial {
+                                    opacity: 0;
+                                }
+            
+                                &-hover {
+                                    opacity: 1;
+                                    height: auto;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+
+    // Versions
+    &--small {
+        margin-bottom: get-vw-desktop(40px);
+
+        .quick-links__list {
+            &__item {
+                height: get-vw-desktop(70px);
+                padding: get-vw-desktop(10px) get-vw-desktop(7px);
+
+                &-title {
+                    width: calc(100% - 4.167vw); //100% - 60px
+                }
+
+                &__icon {
+                    width: get-vw-desktop(50px);
+
+                    &--marketing {
+                        .quick-links__list__item__icon-initial {
+                            width: get-vw-desktop(29px);
+                        }
+                    }
+            
+                    &--account {
+                        .quick-links__list__item__icon-initial {
+                            width: get-vw-desktop(22px);
+                        }
+                    }
+            
+                    &--commission {
+                        .quick-links__list__item__icon-initial {
+                            width: get-vw-desktop(20px);
+                        }
+                    }
+            
+                    &--withdrawal {
+                        .quick-links__list__item__icon-initial {
+                            width: get-vw-desktop(31px);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -118,13 +162,15 @@
 .dark-mode {
     .quick-links {
         color: $white;
-    
-        &__item {
-            background-color: $opac_white_4;
-            box-shadow: get-vw-desktop(5px) get-vw-desktop(5px) get-vw-desktop(20px) #0A1533;
 
-            &-icon-wrapper {
-                background-color: $opac_skyblue_6;
+        &__list {
+            &__item {
+                background-color: $opac_white_4;
+                box-shadow: get-vw-desktop(5px) get-vw-desktop(5px) get-vw-desktop(20px) #0A1533;
+    
+                &__icon {
+                    background-color: $opac_skyblue_6;
+                }
             }
         }
     }
@@ -135,73 +181,105 @@
 // LIQUID MOBILE - Quick links
 @include mqMax($mq-max-mobile) {
     .quick-links {
-        width: 100%;
         margin-bottom: get-vw-mobile(15px);
     
         &__list {
             margin: get-vw-mobile(15px) auto 0;
             padding: 0 0 get-vw-mobile(6px);
-            @include displayFlex;
-            flex-direction: row;
-        }
-    
-        &__item {
-            padding: get-vw-mobile(5px) get-vw-mobile(5px) get-vw-mobile(5px) get-vw-mobile(15px);
-            width: calc(50% - 2.223vw); //50% - 8px
-            height: get-vw-mobile(60px);
-            border-radius: get-vw-mobile(5px);
-            box-shadow: get-vw-mobile(5px) get-vw-mobile(5px) get-vw-mobile(20px) $sky_blue;
-            margin-bottom: get-vw-mobile(10px);
-        }
-    
-        &__item-text {
-            padding: 0;
-            width: get-vw-mobile(70px);
-            text-align: left;
-        }
 
-        &__item-title {
-            font-size: get-vw-mobile(10px);
-		    line-height: get-vw-mobile(12px);
-        }
-    
-        &__item-icon-wrapper {
-            width: get-vw-mobile(52px);
-            height: 100%;
-            background: $sky_blue;
-            border-radius: get-vw-mobile(5px);
+            &__item {
+                padding: get-vw-mobile(5px) get-vw-mobile(5px) get-vw-mobile(5px) get-vw-mobile(18px);
+                width: calc(50% - 2.223vw); //50% - 8px
+                height: get-vw-mobile(60px);
+                border-radius: get-vw-mobile(5px);
+                box-shadow: get-vw-mobile(5px) get-vw-mobile(5px) get-vw-mobile(20px) $sky_blue;
+                margin-bottom: get-vw-mobile(10px);
 
-            &--marketing {
-                .quick-links__item-icon--initial {
-                    width: get-vw-mobile(29px);
+                &-title {
+                    width: calc(100% - 16.667vw); //100% - 60px
+                    font-size: get-vw-mobile(10px);
+                    line-height: get-vw-mobile(12px);
+                    text-align: left;
                 }
-            }
-    
-            &--account {
-                .quick-links__item-icon--initial {
-                    width: get-vw-mobile(22px);
-                }
-            }
-    
-            &--commission {
-                .quick-links__item-icon--initial {
-                    width: get-vw-mobile(20px);
-                }
-            }
-    
-            &--withdrawal {
-                .quick-links__item-icon--initial {
-                    width: get-vw-mobile(30px);
+
+                &__icon {
+                    width: get-vw-mobile(50px);
+                    border-radius: get-vw-mobile(5px);
+
+                    &-initial, 
+                    &-hover {
+                        width: get-vw-mobile(50px);
+                        height: get-vw-mobile(50px);
+                    }
+
+                    &--marketing {
+                        .quick-links__list__item__icon-initial {
+                            width: get-vw-mobile(29px);
+                        }
+                    }
+            
+                    &--account {
+                        .quick-links__list__item__icon-initial {
+                            width: get-vw-mobile(22px);
+                        }
+                    }
+            
+                    &--commission {
+                        .quick-links__list__item__icon-initial {
+                            width: get-vw-mobile(20px);
+                        }
+                    }
+            
+                    &--withdrawal {
+                        .quick-links__list__item__icon-initial {
+                            width: get-vw-mobile(30px);
+                        }
+                    }
                 }
             }
         }
 
-        &__item-icon {
-            width: get-vw-mobile(35px);
-            height: get-vw-mobile(35px);
+        // Versions
+        &--small {
+            margin-bottom: get-vw-mobile(15px);
 
-            &--hover {
-                width: 100%;
+            .quick-links__list {
+                &__item {
+                    height: get-vw-mobile(60px);
+                    padding: get-vw-mobile(5px) get-vw-mobile(5px) get-vw-mobile(5px) get-vw-mobile(18px);
+
+                    &-title {
+                        width: calc(100% - 16.667vw); //100% - 50px
+                    }
+
+                    &__icon {
+                        width: get-vw-mobile(50px);
+
+                        &--marketing {
+                            .quick-links__list__item__icon-initial {
+                                width: get-vw-mobile(29px);
+                            }
+                        }
+                
+                        &--account {
+                            .quick-links__list__item__icon-initial {
+                                width: get-vw-mobile(22px);
+                            }
+                        }
+                
+                        &--commission {
+                            .quick-links__list__item__icon-initial {
+                                width: get-vw-mobile(20px);
+                            }
+                        }
+                
+                        &--withdrawal {
+                            .quick-links__list__item__icon-initial {
+                                width: get-vw-mobile(31px);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

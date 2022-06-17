@@ -54,6 +54,12 @@
             line-height: get-vw-desktop(18px);
             margin-bottom: get-vw-desktop(30px);
         }
+
+        &-cta {
+            width: auto;
+            @include dFlex(flex-end);
+            align-items: center;
+        }
     }
 
     &__content {
@@ -61,7 +67,7 @@
         border-radius: get-vw-desktop(5px);
         width: 100%;
         min-height: get-vw-desktop(100px);
-        padding: get-vw-desktop(26px) get-vw-desktop(42px) get-vw-desktop(37px);
+        padding: get-vw-desktop(15px) get-vw-desktop(25px);
         overflow: hidden;
 
         &-box {
@@ -126,7 +132,7 @@
         }
     
         &__content {
-            background-color: $opac_white;
+            background-color: $opac_white_4;
     
             &-box {
                 box-shadow: 0px get-vw-desktop(4px) get-vw-desktop(15px) $opac_skyblue;
@@ -180,7 +186,7 @@
         }
     
         &__content {
-            padding: get-vw-mobile(20px) get-vw-mobile(2px) get-vw-mobile(2px);
+            padding: get-vw-mobile(20px) get-vw-mobile(8px) get-vw-mobile(2px);
             border-radius: get-vw-mobile(5px);
     
             &-box {

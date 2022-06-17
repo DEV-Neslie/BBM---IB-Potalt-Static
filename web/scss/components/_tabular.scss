@@ -10,7 +10,7 @@
     &__tab {
         position: relative;
         width: 100%;
-        margin-bottom: get-vw-desktop(38px);
+        margin-bottom: get-vw-desktop(20px);
 
         &::after {
             content: '';
@@ -34,16 +34,16 @@
         &__item {
             position: relative;
             display: inline-block;
-            font-family: $Gilroy_r;
-            font-weight: 600;
+            font-family: $Gilroy_b;
             font-size: get-vw-desktop(14px);
             line-height: get-vw-desktop(17px);
             margin-right: get-vw-desktop(40px);
             padding-bottom: get-vw-desktop(10px);
+            opacity: 0.8;
 
             &::after {
                 content: '';
-                background-color: $primary;
+                background-color: $green;
                 position: absolute;
                 bottom: get-vw-desktop(-1px);
                 left: 0;
@@ -54,16 +54,12 @@
                 display: none;
             }
 
-            &:hover {
-                color: $primary;
-            }
-
             &:last-child {
                 margin-right: 0;
             }
 
             &.is-active {
-                color: $primary;
+                opacity: 1;
 
                 &::after {
                     display: block;
