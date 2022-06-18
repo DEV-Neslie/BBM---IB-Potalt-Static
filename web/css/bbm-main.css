@@ -8244,6 +8244,39 @@ table .flag-content {
   font-size: 0.6944444444vw;
   line-height: 1.1111111111vw;
 }
+.filters__item--order .f-order {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0.6944444444vw;
+  margin: auto;
+  height: 0.7638888889vw;
+  width: 0.4166666667vw;
+}
+.filters__item--order .f-order__arrow {
+  position: absolute;
+  height: 0.3472222222vw;
+  width: 100%;
+  left: 0;
+  opacity: 0.2;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.filters__item--order .f-order__arrow--up {
+  top: 0;
+  background: url("./../images/icons/common/filter_arrow--up.svg") center/contain no-repeat;
+}
+.filters__item--order .f-order__arrow--down {
+  bottom: 0;
+  background: url("./../images/icons/common/filter_arrow--down.svg") center/contain no-repeat;
+}
+.filters__item--order .f-order__arrow.is-active, .filters__item--order .f-order__arrow:active {
+  opacity: 1;
+}
+.filters__item--sortby {
+  cursor: pointer;
+}
 .filters__item--sortby::after {
   content: "";
   position: absolute;
@@ -8259,6 +8292,12 @@ table .flag-content {
 .dark-mode .filters__item {
   background-color: rgba(231, 242, 252, 0.2);
   border-color: transparent;
+}
+.dark-mode .filters__item--order .f-order__arrow--up {
+  background: url("./../images/icons/common/filter_arrow--up_white.svg") center/contain no-repeat;
+}
+.dark-mode .filters__item--order .f-order__arrow--down {
+  background: url("./../images/icons/common/filter_arrow--down_white.svg") center/contain no-repeat;
 }
 .dark-mode .filters__item--sortby::after {
   background: url("./../images/icons/common/filter_panel--white.svg") center/contain no-repeat;
@@ -8276,6 +8315,14 @@ table .flag-content {
   .filters__item-label {
     font-size: 2.7777777778vw;
     line-height: 4.4444444444vw;
+  }
+  .filters__item--order .f-order {
+    right: 2.7777777778vw;
+    height: 3.0555555556vw;
+    width: 1.6666666667vw;
+  }
+  .filters__item--order .f-order__arrow {
+    height: 1.3888888889vw;
   }
   .filters__item--sortby::after {
     right: 2.7777777778vw;
