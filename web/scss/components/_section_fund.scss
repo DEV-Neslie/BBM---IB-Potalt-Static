@@ -1,7 +1,6 @@
-// INQUIRY
-.inquiry {
-    margin: get-vw-desktop(22px) auto 0;
-    padding: get-vw-desktop(22px) 0;
+// fund
+.fund {
+    margin: 0;
 
     &__text {
         font-size: get-vw-desktop(14px);
@@ -19,10 +18,10 @@
     }
 
     &__form {
-        margin: get-vw-desktop(26px) 0 0;
+        margin: 0;
 
         &-row {
-            margin: 0 0 get-vw-desktop(24px);
+            margin: 0 0 get-vw-desktop(16px);
             width: 100%;
 
             // Two columns
@@ -31,9 +30,9 @@
                 flex-wrap: wrap;
                 justify-content: space-between;
 
-                .inquiry__form {
+                .fund__form {
                     &-col {
-                        width: get-vw-desktop(440px);
+                        width: get-vw-desktop(450px);
 
                         &:not(:last-of-type) {
                             margin: 0;
@@ -43,12 +42,20 @@
             }
 
             &--agree {
-                text-align: center;
+                margin: 0;
+
+                .custom-checkbox__label {
+                    display: inline-block;
+                }
+
+                .btn--link {
+                    font-size: get-vw-desktop(10px);
+                    line-height: get-vw-desktop(16px);
+                }
             }
 
             &--submit {
-                margin: get-vw-desktop(10px) 0;
-                text-align: center;
+                margin: get-vw-desktop(30px) 0 0;
             }
         }
 
@@ -60,12 +67,29 @@
 
         &-label {
             margin: 0 0 get-vw-desktop(8px);
-            display: block;
+            display: inline-block;
             font-size: get-vw-desktop(10px);
             line-height: 1.2;
 
             .required {
                 color: $red;
+            }
+
+            .plus-action {
+                margin: 0 0 0 get-vw-desktop(5px);
+                display: inline-block;
+                width: get-vw-desktop(16px);
+                height: get-vw-desktop(16px);
+                background-image: url('./../images/icons/common/plus-circle.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                vertical-align: middle;
+                cursor: pointer;
+                @include transitionOpacity;
+
+                &:hover {
+                    opacity: 0.6;
+                }
             }
         }
 
@@ -124,15 +148,65 @@
             }
         }
     }
+
+    &__note {
+        margin: get-vw-desktop(30px) auto 0;
+        padding: get-vw-desktop(22px) get-vw-desktop(20px);
+        width: 100%;
+        border: 1px solid $sky_blue;
+        border-radius: 5px;
+
+        &-heading {
+            font-family: $Poppins;
+            font-weight: 600;
+            font-size: get-vw-desktop(10px);
+            line-height: 1.5;
+        }
+
+        &-text {
+            margin: get-vw-desktop(6px) 0 0;
+            font-size: get-vw-desktop(8px);
+            line-height: get-vw-desktop(16px);
+        }
+    }
+}
+
+.dark-mode {
+    .form {
+        &__field {
+            &-input {
+                background-color: $opac_white_5;
+                color: $white;
+
+                input {
+                    color: $white;
+                }
+
+                .custom-select {
+                    background-color: transparent;
+
+                    .select-selected {
+                        color: $white;
+                    }
+                }
+
+                ::placeholder,
+                ::-webkit-input-placeholder,
+                :-moz-placeholder,
+                ::-moz-placeholder,
+                :-ms-input-placeholder,
+                :-moz-placeholder {
+                    color: $white;
+                }
+            }
+        }
+    }
 }
 
 
-// LIQUID MOBILE - INQUIRY
+// LIQUID MOBILE - fund
 @include mqMax($mq-max-mobile) {
-    .inquiry {
-        margin: get-vw-mobile(32px) auto 0;
-        padding: get-vw-mobile(28px) get-vw-mobile(22px) get-vw-mobile(32px);
-        border-top: 2px solid $sky_blue;
+    .fund {
 
         &__text {
             font-size: get-vw-mobile(14px);
@@ -151,7 +225,7 @@
                     flex-direction: column;
                     justify-content: flex-start;
 
-                    .inquiry__form {
+                    .fund__form {
                         &-col {
                             width: 100%;
 
@@ -162,8 +236,16 @@
                     }
                 }
 
+                &--agree {
+                    .btn--link {
+                        font-size: get-vw-mobile(10px);
+                        line-height: get-vw-mobile(16px);
+                    }
+                }
+
                 &--submit {
                     margin: get-vw-mobile(10px) 0;
+                    text-align: center;
                 }
             }
 
@@ -177,6 +259,12 @@
                 margin: 0 0 get-vw-mobile(8px);
                 font-size: get-vw-mobile(10px);
                 line-height: 1.2;
+
+                .plus-action {
+                    margin: 0 0 0 get-vw-mobile(5px);
+                    width: get-vw-mobile(14px);
+                    height: get-vw-mobile(14px);
+                }
             }
 
             &-input {
@@ -212,6 +300,22 @@
                     font-size: get-vw-mobile(12px);
                     line-height: 1.2;
                 }
+            }
+        }
+
+        &__note {
+            margin: get-vw-mobile(30px) auto 0;
+            padding: get-vw-mobile(20px) get-vw-mobile(15px);
+
+    
+            &-heading {
+                font-size: get-vw-mobile(10px);
+            }
+    
+            &-text {
+                margin: get-vw-mobile(6px) 0 0;
+                font-size: get-vw-mobile(8px);
+                line-height: get-vw-mobile(18px);
             }
         }
     }

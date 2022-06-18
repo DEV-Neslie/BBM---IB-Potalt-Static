@@ -326,7 +326,7 @@
             &-label {
                 font-size: get-vw-desktop(12px);
                 line-height: get-vw-desktop(20px);
-                color: $purple;
+                color: $navy;
                 display: none;
             }
 
@@ -412,7 +412,7 @@
 
             &-col {
                 &--cta {
-                    background: url('./../images/common/table-cta-btn.svg') center/contain no-repeat;
+                    background: url('./../images/icons/common/table-cta-btn.svg') center/contain no-repeat;
                     position: absolute;
                     height: get-vw-desktop(17px);
                     width: get-vw-desktop(17px);
@@ -454,7 +454,7 @@
 
                 &-col {
                     &:nth-child(1) {
-                        width: 9%;
+                        width: 8%;
                     }
                     &:nth-child(2) {
                         width: 20%;
@@ -473,7 +473,7 @@
                         width: 10%;
                     }
                     &:nth-child(7) {
-                        width: 22%;
+                        width: 23%;
                     }
                 }
             }
@@ -604,6 +604,43 @@
                 &.data__cta-btn--delete {
                     &::before {
                         background: url('./../images/common/cta-delete-active.svg') center/contain no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    // Modifier
+    &--history {
+        .data {
+            &__list {
+                &__item {
+                    border-bottom: 1px solid $sky_blue;
+
+                    &-col {
+                        &:nth-child(1) {
+                            width: 6%;
+                        }
+                        &:nth-child(2) {
+                            padding: 0 0 0 get-vw-desktop(60px);
+                            width: 26%;
+                            text-align: left;
+                        }
+                        &:nth-child(3) {
+                            width: 16%;
+                        }
+                        &:nth-child(4) {
+                            width: 16%;
+                        }
+                        &:nth-child(5) {
+                            width: 12%;
+                        }
+                        &:nth-child(6) {
+                            width: 12%;
+                        }
+                        &:nth-child(7) {
+                            width: 12%;
+                        }
                     }
                 }
             }
@@ -1034,7 +1071,7 @@
                         &:nth-child(5), 
                         &:nth-child(6),
                         &:nth-child(7) {
-                            width: 30%;
+                            width: 50%;
                         }
 
                         &:nth-child(5), 
@@ -1122,6 +1159,53 @@
                     width: get-vw-mobile(17px);
                     left: get-vw-mobile(5px);
                     top: get-vw-mobile(3px);
+                }
+            }
+        }
+
+        // Modifier
+        &--history {
+            .data {
+                &__list {
+
+                    &:nth-child(2) {
+                        
+                    }
+
+                    &__item {
+                        padding: get-vw-mobile(30px) get-vw-mobile(14px);
+
+                        &:nth-of-type(2) {
+                            padding: get-vw-mobile(10px) get-vw-mobile(14px) get-vw-mobile(30px);
+                        }
+
+                        &-col {
+                            &:nth-child(1) {
+                                display: none;
+                            }
+                            
+                            &:nth-child(2), 
+                            &:nth-child(3), 
+                            &:nth-child(4), 
+                            &:nth-child(5), 
+                            &:nth-child(6),
+                            &:nth-child(7) {
+                                width: 50%;
+                            }
+
+                            &:nth-child(2) {
+                                padding: 0;
+                            }
+
+                            &:nth-child(5), 
+                            &:nth-child(6), 
+                            &:nth-child(7) {
+                                .data__list__item-value {
+                                    margin-bottom: 0;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

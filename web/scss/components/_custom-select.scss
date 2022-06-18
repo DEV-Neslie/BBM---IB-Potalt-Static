@@ -35,7 +35,7 @@
                 bottom: 0;
                 width: get-vw-desktop(11px);
                 height: get-vw-desktop(6px);
-                background-image: url('./../images/common/custom-select-arrow.svg');
+                background-image: url('./../images/icons/common/custom-select-arrow.svg');
                 background-size: contain;
                 background-repeat: no-repeat;
                 @include transitionAll;
@@ -119,6 +119,16 @@
     }
     .select-items {
         border-color: $peach;
+    }
+}
+
+.dark-mode {
+    .custom-select {
+        .select-selected {
+            &:after {
+                background-image: url('./../images/icons/common/custom-select-arrow-white.svg');
+            }
+        }
     }
 }
 
