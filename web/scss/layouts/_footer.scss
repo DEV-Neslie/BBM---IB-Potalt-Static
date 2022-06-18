@@ -7,6 +7,7 @@
 // LIQUID MOBILE - Footer
 @include mqMax($mq-max-mobile) {
     .footer {
+        position: relative;
         background-color: $white;
         position: fixed;
         left: 0;
@@ -31,6 +32,88 @@
                     background-position: center;
                     background-size: contain;
                     background-repeat: no-repeat;
+                }
+
+                &__referral {
+                    position: absolute;
+                    left: 0;
+                    bottom: get-vw-mobile(50px);
+                    width: 100%;
+                    height: get-vw-mobile(97px);
+                    background-color: $sky_blue;
+                    border-radius: get-vw-mobile(20px) get-vw-mobile(20px) 0 0;
+                    padding: get-vw-mobile(20px) get-vw-mobile(30px) get-vw-mobile(15px);
+                    box-shadow: 0px get-vw-mobile(-10px) get-vw-mobile(20px) rgba(2, 25, 74, 0.4);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: get-vw-mobile(1px);
+                        height: get-vw-mobile(1px);
+                        width: 100%;
+                        background-color: $sky_blue;
+                    }
+
+                    &-label {
+                        position: relative;
+                        display: block;
+                        font-family: $Poppins;
+                        font-size: get-vw-mobile(12px);
+                        line-height: get-vw-mobile(20px);
+                        padding-left: get-vw-mobile(30px);
+                        margin-bottom: get-vw-mobile(8px);
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: get-vw-mobile(-3px);
+                            left: 0;
+                            height: get-vw-mobile(25px);
+                            width: get-vw-mobile(25px);
+                            background: url('./../images/icons/footer/icon_referral-label.svg') center/contain no-repeat;
+                        }
+                    }
+
+                    &-input {
+                        position: relative;
+                        display: block;
+                        background-color: $white;
+                        height: get-vw-mobile(35px);
+                        width: 100%;
+                        border: get-vw-mobile(2px) solid $green;
+                        border-radius: get-vw-mobile(10px);
+                        padding-right: get-vw-mobile(40px);
+                
+                        input {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+                            padding: get-vw-mobile(9px) get-vw-mobile(40px) get-vw-mobile(9px) get-vw-mobile(12px);
+                            background-color: transparent;
+                            border: none;
+                            font-family: $Poppins;
+                            font-size: get-vw-mobile(12px);
+                            line-height: get-vw-mobile(20px);
+                            opacity: 0.8;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        .copy-item {
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            right: get-vw-mobile(8px);
+                            margin: auto;
+                            height: get-vw-mobile(20px);
+                            width: get-vw-mobile(20px);
+                            background: url('./../images/icons/common/icon_copy.svg') center/ contain no-repeat;
+                        }
+                    }
                 }
 
                 &--search {
@@ -141,6 +224,35 @@
 
             &__nav {
                 &__item {
+
+                    &__referral {
+                        background-color: $d_navy_2;
+                        box-shadow: 0px get-vw-mobile(-10px) get-vw-mobile(20px) rgba(0, 2, 6, 0.4);
+
+                        &::after {
+                            background-color: #030B1E;
+                        }
+
+                        &-label {
+                            color: $white;
+                        }
+    
+                        &-input {
+                            background-color: transparent;
+                    
+                            input {
+                                color: $white;
+                                opacity: 0.8;
+                            }
+
+                            .copy-item {
+                                background: url('./../images/icons/common/icon_copy--white.svg') center/ contain no-repeat;
+                            }
+                        }
+                    }
+
+
+
                     &--search {
                         .footer__nav__item-icon {
                             background-image: url('./../images/icons/footer/footer_nav-search--white.svg');

@@ -137,8 +137,8 @@
             &__item {
                 font-size: get-vw-mobile(12px);
                 line-height: get-vw-mobile(20px);
-                margin-right: get-vw-mobile(25px);
-                padding-bottom: get-vw-mobile(5px);
+                margin-right: get-vw-mobile(30px);
+                padding: 0 get-vw-mobile(10px) get-vw-mobile(5px);
     
                 &::after {
                     bottom: get-vw-mobile(-1px);
