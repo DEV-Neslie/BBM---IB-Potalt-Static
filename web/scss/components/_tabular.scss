@@ -38,7 +38,7 @@
             font-size: get-vw-desktop(14px);
             line-height: get-vw-desktop(17px);
             margin-right: get-vw-desktop(40px);
-            padding-bottom: get-vw-desktop(10px);
+            padding: 0 get-vw-desktop(15px) get-vw-desktop(10px);
             opacity: 0.8;
 
             &::after {

@@ -20,6 +20,64 @@
             line-height: get-vw-desktop(16px);
         }
 
+        &--sortby {
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: get-vw-desktop(10px);
+                margin: auto;
+                height: get-vw-desktop(15px);
+                width: get-vw-desktop(15px);
+                background: url('./../images/icons/common/filter_panel.svg') center/ contain no-repeat;
+            }
+        }
+    }
+}
 
+
+// DARK MODE
+.dark-mode {
+    .filters {
+        &__item {
+            background-color: $opac_skyblue_6;
+            border-color: transparent;
+    
+            &--sortby {
+                &::after {
+                    background: url('./../images/icons/common/filter_panel--white.svg') center/ contain no-repeat;
+                }
+            }
+        }
+    }
+}
+
+
+
+// LIQUID MOBILE - Filters
+@include mqMax($mq-max-mobile) {
+    .filters {
+        &__item {
+            border: get-vw-mobile(1px) solid $sky_blue;
+            min-width: get-vw-mobile(100px);
+            border-radius: get-vw-mobile(5px);
+            margin-right: 0;
+            margin-left: get-vw-mobile(10px);
+            padding: get-vw-mobile(5px) get-vw-mobile(35px) get-vw-mobile(5px) get-vw-mobile(15px);
+    
+            &-label {
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+            }
+    
+            &--sortby {
+                &::after {
+                    right: get-vw-mobile(10px);
+                    height: get-vw-mobile(15px);
+                    width: get-vw-mobile(15px);
+                }
+            }
+        }
     }
 }
