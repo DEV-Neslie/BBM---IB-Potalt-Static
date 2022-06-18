@@ -1,0 +1,244 @@
+// REFERRALS
+.referrals {
+    width: 100%;
+
+    &__header {
+        width: 100%;
+        padding-bottom: get-vw-desktop(8px);
+        border-bottom: get-vw-desktop(1px) solid $d_navy_2;
+
+        &__labels {
+            width: 100%;
+            @include dFlex(space-between);
+            align-items: center;
+            padding: 0 get-vw-desktop(15px);
+
+
+            &-item {
+                font-family: $Gilroy_b;
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(18px);
+                width: 35%;
+
+                .ref-order {
+                    position: relative;
+                    display: inline-block;
+                    height: get-vw-desktop(11px);
+                    width: get-vw-desktop(6px);
+                    margin-left: get-vw-desktop(5px);
+
+                    &__arrow {
+                        position: absolute;
+                        height: get-vw-desktop(5px);
+                        width: 100%;
+                        left: 0;
+                        opacity: 0.2;
+                        cursor: pointer;
+                        transition: 0.2s ease;
+                        transform: perspective(1px);
+    
+                        &--up {
+                            top: 0;
+                            background: url('./../images/icons/common/filter_arrow--up.svg') center/ contain no-repeat;
+                        }
+    
+                        &--down {
+                            bottom: 0;
+                            background: url('./../images/icons/common/filter_arrow--down.svg') center/ contain no-repeat;
+                        }
+    
+                        // On click display
+                        &.is-active, &:active {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    width: 30%;
+                }
+
+                &:last-child {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+
+        &__list {
+            width: 100%;
+
+            &__item {
+                width: 100%;
+                @include dFlex(space-between);
+                align-items: center;
+                padding: get-vw-desktop(20px) get-vw-desktop(15px);
+                border-bottom: get-vw-desktop(0.5px) solid $sky_blue;
+                text-align: left;
+                font-family: $Poppins;
+                font-size: get-vw-desktop(12px);
+                line-height: get-vw-desktop(20px);
+
+                &-id {
+                    width: 30%;
+                    opacity: 0.6;
+                }
+
+                &-name, &-link {
+                    width: 35%;
+                }
+
+                &-link {
+                    position: relative;
+                    padding-right: get-vw-desktop(40px);
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .copy-item {
+                    background: url('./../images/icons/common/icon_copy.svg') center/ contain no-repeat;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    margin: auto;
+                    height: get-vw-desktop(20px);
+                    width: get-vw-desktop(20px);
+                    cursor: pointer;
+                    transition: .2s ease;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .referrals {
+        &__header {
+            border-color: $sky_blue;
+
+            &__labels {
+    
+                &-item {
+                    .ref-order {
+                        &__arrow {
+                            &--up {
+                                background: url('./../images/icons/common/filter_arrow--up_white.svg') center/ contain no-repeat;
+                            }
+        
+                            &--down {
+                                background: url('./../images/icons/common/filter_arrow--down_white.svg') center/ contain no-repeat;
+                            }
+                        }
+                    }
+    
+                }
+            }
+        }
+    
+        &__body {
+            &__list {
+                &__item {
+                    // border-color: $sky_blue;
+                    
+                    .copy-item {
+                        background: url('./../images/icons/common/icon_copy--white.svg') center/ contain no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+// LIQUID MOBILE - Referrals
+@include mqMax($mq-max-mobile) {
+    .referrals {
+    
+        &__header {
+            padding-bottom: get-vw-mobile(8px);
+            border-bottom: get-vw-mobile(1px) solid $d_navy_2;
+    
+            &__labels {
+                padding: 0 get-vw-mobile(15px);
+    
+    
+                &-item {
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
+                    text-align: left;
+    
+                    .ref-order {
+                        height: get-vw-mobile(11px);
+                        width: get-vw-mobile(6px);
+                        margin-left: get-vw-mobile(5px);
+    
+                        &__arrow {
+                            height: get-vw-mobile(5px);
+                        }
+                    }
+    
+                    &:first-child {
+                        width: 20%;
+                    }
+
+                    &:nth-child(2) {
+                        width: 65%;
+                    }
+    
+                    &:last-child {
+                        width: 15%;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    
+        &__body {
+            &__list {
+                &__item {
+                    padding: get-vw-mobile(20px) get-vw-mobile(15px);
+                    border-bottom: get-vw-mobile(0.5px) solid $sky_blue;
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(20px);
+    
+                    &-id {
+                        width: 20%;
+                    }
+    
+                    &-name {
+                        width: 65%;
+                    }
+    
+                    &-link {
+                        width: 15%;
+                        height: get-vw-mobile(20px);
+                        padding-right: get-vw-mobile(40px);
+
+                        &-value {
+                            display: none;
+                        }
+                    }
+    
+                    .copy-item {
+                        height: get-vw-mobile(20px);
+                        width: get-vw-mobile(20px);
+                        right: get-vw-mobile(10px);
+                    }
+                }
+            }
+        }
+    }
+}
