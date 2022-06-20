@@ -1255,6 +1255,70 @@
                 }
             }
         }
+
+        &--accounts {
+            .data {
+                &__list {
+                    &__item {
+                        padding: get-vw-mobile(8px);
+                        @include displayFlex;
+                        flex-direction: column;
+                        border-bottom: 1px solid $sky_blue;
+
+                        &--header {
+                            display: none;
+                        }
+    
+                        &-col {
+                            @include displayFlex;
+                           
+                            &:nth-child(1) {
+                                width: 100%;
+                            }
+                            &:nth-child(2) {
+                                width: 100%;
+                            }
+                            &:nth-child(3) {
+                                width: 100%;
+                            }
+                            &:nth-child(4) {
+                                width: 100%;
+                            }
+                            &:nth-child(5) {
+                                width: 100%;
+                            }
+                            &:nth-child(6) {
+                                width: 100%;
+                            }
+                            &:nth-child(7) {
+                                width: 100%;
+                            }
+                            &:nth-child(8) {
+                                width: 100%;
+                            }
+
+                            &:not(:nth-last-child(2)) {
+                                border-bottom: 1px solid $sky_blue;
+                            }
+    
+                            &--cta {
+                                top: get-vw-mobile(17px);
+                                right: get-vw-mobile(15px);
+                                width: get-vw-mobile(18px);
+                                height: get-vw-mobile(18px);
+                            }
+                        }
+
+                        &-label,
+                        &-value {
+                            padding: get-vw-mobile(10px) get-vw-mobile(15px);
+                            margin-bottom: 0;
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // DARK MODE
