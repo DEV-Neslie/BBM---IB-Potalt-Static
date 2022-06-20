@@ -20,6 +20,129 @@
             line-height: get-vw-desktop(16px);
         }
 
+        &--order {
+            .f-order {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: get-vw-desktop(10px);
+                margin: auto;
+                height: get-vw-desktop(11px);
+                width: get-vw-desktop(6px);
 
+                &__arrow {
+                    position: absolute;
+                    height: get-vw-desktop(5px);
+                    width: 100%;
+                    left: 0;
+                    opacity: 0.2;
+                    cursor: pointer;
+                    transition: 0.2s ease;
+
+                    &--up {
+                        top: 0;
+                        background: url('./../images/icons/common/filter_arrow--up.svg') center/ contain no-repeat;
+                    }
+
+                    &--down {
+                        bottom: 0;
+                        background: url('./../images/icons/common/filter_arrow--down.svg') center/ contain no-repeat;
+                    }
+
+                    // On click display
+                    &.is-active, &:active {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &--sortby {
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: get-vw-desktop(10px);
+                margin: auto;
+                height: get-vw-desktop(15px);
+                width: get-vw-desktop(15px);
+                background: url('./../images/icons/common/filter_panel.svg') center/ contain no-repeat;
+            }
+        }
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .filters {
+        &__item {
+            background-color: $opac_skyblue_6;
+            border-color: transparent;
+
+            &--order {
+                .f-order {
+                    &__arrow {
+                        &--up {
+                            background: url('./../images/icons/common/filter_arrow--up_white.svg') center/ contain no-repeat;
+                        }
+    
+                        &--down {
+                            background: url('./../images/icons/common/filter_arrow--down_white.svg') center/ contain no-repeat;
+                        }
+                    }
+                }
+            }
+    
+            &--sortby {
+                &::after {
+                    background: url('./../images/icons/common/filter_panel--white.svg') center/ contain no-repeat;
+                }
+            }
+        }
+    }
+}
+
+
+
+// LIQUID MOBILE - Filters
+@include mqMax($mq-max-mobile) {
+    .filters {
+        &__item {
+            border: get-vw-mobile(1px) solid $sky_blue;
+            min-width: get-vw-mobile(100px);
+            border-radius: get-vw-mobile(5px);
+            margin-right: 0;
+            margin-left: get-vw-mobile(10px);
+            padding: get-vw-mobile(5px) get-vw-mobile(35px) get-vw-mobile(5px) get-vw-mobile(15px);
+    
+            &-label {
+                font-size: get-vw-mobile(10px);
+                line-height: get-vw-mobile(16px);
+            }
+
+            &--order {
+                .f-order {
+                    right: get-vw-mobile(10px);
+                    height: get-vw-mobile(11px);
+                    width: get-vw-mobile(6px);
+    
+                    &__arrow {
+                        height: get-vw-mobile(5px);
+                    }
+                }
+            }
+    
+            &--sortby {
+                &::after {
+                    right: get-vw-mobile(10px);
+                    height: get-vw-mobile(15px);
+                    width: get-vw-mobile(15px);
+                }
+            }
+        }
     }
 }

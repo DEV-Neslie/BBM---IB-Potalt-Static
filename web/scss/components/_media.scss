@@ -6,6 +6,7 @@
         width: 100%;
 
         &__item {
+            position: relative;
             width: 100%;
             @include dFlex(space-between);
             padding: get-vw-desktop(13px) get-vw-desktop(20px);
@@ -17,6 +18,7 @@
 
             &__thumbnail { 
                 position: relative;
+                background-color: $white;
                 height: get-vw-desktop(100px);
                 width: get-vw-desktop(150px);
                 border: get-vw-desktop(1px) solid $sky_blue;
@@ -63,6 +65,7 @@
 
                 &-item {
                     width: 100%;
+                    min-height: get-vw-desktop(16px);
                     margin-bottom: get-vw-desktop(6px);
                     @include dFlex(space-between);
 
@@ -125,27 +128,10 @@
 
                             .download_pdf {
                                 position: absolute;
-                                height: get-vw-desktop(14px);
-                                width: get-vw-desktop(30px);
+                                height: get-vw-desktop(12px);
+                                width: get-vw-desktop(12px);
+                                background: url('./../images/icons/common/icon_pdf.svg') center/contain no-repeat;
                                 cursor: pointer;
-
-                                &::before, &::after {
-                                    content: '';
-                                    position: absolute;
-                                    width: get-vw-desktop(12px);
-                                }
-
-                                &::before {
-                                    height: get-vw-desktop(14px);
-                                    background: url('./../images/icons/common/icon_pdf.svg') center/contain no-repeat;
-                                    left: 0;
-                                }
-
-                                &::after {
-                                    height: get-vw-desktop(12px);
-                                    background: url('./../images/icons/common/icon_download.svg') center/contain no-repeat;
-                                    right: 0;
-                                }
                             }
                         }
                     }
@@ -162,6 +148,35 @@
                             -webkit-line-clamp: 2;
                             -webkit-box-orient: vertical;
                             white-space: normal;
+                        }
+                    }
+
+                    &.v-cta {
+                        .media__list__item__detail-item-value {
+                            width: calc(100% - 9.722vw); //100% - 140px
+
+                            .download-item, 
+                            .favorite-item {
+                                display: inline-block;
+                                height: get-vw-desktop(20px);
+                                width: get-vw-desktop(20px);
+                                cursor: pointer;
+                                margin-right: get-vw-desktop(5px);
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+
+                                }
+                            }
+
+                            .download-item {
+                                background: url('./../images/icons/common/icon_download.svg') center/contain no-repeat;
+                            }
+
+                            .favorite-item {
+                                background: url('./../images/icons/common/icon_star.svg') center/contain no-repeat;
+                            }
                         }
                     }
                 }
@@ -259,6 +274,17 @@
                                     &::after {
                                         background: url('./../images/icons/common/icon_download--white.svg') center/contain no-repeat;
                                     }
+                                }
+                            }
+                        }
+
+                        &.v-cta {
+                            .media__list__item__detail-item-value {
+                                .download-item {
+                                    background: url('./../images/icons/common/icon_download--white.svg') center/contain no-repeat;
+                                }
+                                .favorite-item {
+                                    background: url('./../images/icons/common/icon_star--white.svg') center/contain no-repeat;
                                 }
                             }
                         }
@@ -372,6 +398,27 @@
                                 width: 50%;
                             }
                         }
+
+                        &.v-cta {
+                            position: absolute;
+                            top: get-vw-mobile(20px);
+                            right: get-vw-mobile(15px);
+                            width: get-vw-mobile(55px);
+
+                            .media__list__item__detail-item-label {
+                                display: none;
+                            }
+                            .media__list__item__detail-item-value {
+                                width: 100%;
+
+                                .download-item, 
+                                .favorite-item {
+                                    height: get-vw-mobile(20px);
+                                    width: get-vw-mobile(20px);
+                                    margin-right: get-vw-mobile(5px);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -410,6 +457,12 @@
                             &.v-details {
                                 .media__list__item__detail-item-value {
                                     width: 50%;
+                                }
+                            }
+
+                            &.v-cta {
+                                .media__list__item__detail-item-value {
+                                    width: 100%;
                                 }
                             }
                         }

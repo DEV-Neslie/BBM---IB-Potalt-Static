@@ -501,7 +501,7 @@
             position: relative;
             height: get-vw-desktop(35px);
             width: get-vw-desktop(218px);
-            border: 2px solid $green;
+            border: get-vw-desktop(2px) solid $green;
             border-radius: get-vw-desktop(10px);
             margin: get-vw-desktop(8px) 0 get-vw-desktop(5px);
     
