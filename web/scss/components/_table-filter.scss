@@ -1,0 +1,91 @@
+
+
+.table-filter {
+    padding: get-vw-desktop(10px) 0 get-vw-desktop(18px);
+
+    &__wrapper {
+        @include displayFlex;
+        justify-content: flex-start;
+    }
+
+    &__fields {
+        @include displayFlex;
+        justify-content: flex-start;
+    }
+
+    &__item {
+        margin: 0 get-vw-desktop(16px) 0 0;
+        padding: get-vw-desktop(10px) get-vw-desktop(18px) get-vw-desktop(10px) get-vw-desktop(10px);
+        position: relative;
+        width: get-vw-desktop(150px);
+        background-color: $white;
+        border-radius: 5px;
+        font-size: get-vw-desktop(10px);
+        line-height: get-vw-desktop(16px);
+
+        &-icon {
+            margin: 0 get-vw-desktop(10px) 0 0;
+            display: inline-block;
+            width: get-vw-desktop(16px);
+            height: get-vw-desktop(16px);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('./../images/icons/common/calendar-navy-icon.svg');
+            vertical-align: middle;
+        }
+
+        &:after {
+            margin: auto;
+            position: absolute;
+            content: '';
+            top: 0;
+            right: get-vw-desktop(10px);
+            bottom: 0;
+            width: get-vw-desktop(7px);
+            height: get-vw-desktop(6px);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url('./../images/icons/common/filter_arrow--down-green.svg');
+        }
+    }
+}
+
+.dark-mode {
+    .table-filter {
+        &__item {
+            background-color: $opac_skyblue_6;
+            color: $white;
+
+            &-icon {
+                background-image: url('./../images/icons/common/calendar-white-icon.svg');
+            }
+        }
+    }
+}
+
+
+@include mqMax($mq-max-mobile) {
+    .table-filter {
+        padding: 0 0 get-vw-mobile(20px);
+
+        &__item {
+            margin: 0 get-vw-mobile(8px) 0 0;
+            padding: get-vw-mobile(10px) get-vw-mobile(15px);
+            width: get-vw-mobile(90px);
+            font-size: get-vw-mobile(10px);
+            line-height: get-vw-mobile(16px);
+
+            &-icon {
+                margin: 0 get-vw-mobile(10px) 0 0;
+                width: get-vw-mobile(15px);
+                height: get-vw-mobile(15px);
+            }
+    
+            &:after {
+                right: get-vw-mobile(10px);
+                width: get-vw-mobile(7px);
+                height: get-vw-mobile(6px);
+            }
+        }
+    }
+}

@@ -34,6 +34,7 @@ $(function () {
     appSurvey();
     datePicker();
     dateRange();
+    dataRangeFrom();
     notifPage();
     copyToClipboard();
     snsButton();
@@ -805,6 +806,8 @@ function datePicker() {
 
 function dateRange() {
     var calendarRangePicker = $('.js--date-range-picker');
+    var currentDate = moment().format("DD-MM-YYYY");
+    
     if (calendarRangePicker.length) {
         calendarRangePicker.click(function (e) {
             e.preventDefault();
@@ -822,6 +825,53 @@ function dateRange() {
             $(this).find('.date-range-val').text('Date');
         });
     }
+}
+
+function dataRangeFrom() {
+    var currentDate = moment().format("DD-MM-YYYY");
+    var calendarRangePicker = $('.js--date-range-picker-from');
+
+    calendarRangePicker.daterangepicker({
+        locale: {
+                format: 'DD-MM-YYYY'
+        },
+        //"alwaysShowCalendars": true,
+        "minDate": currentDate,
+        //"maxDate": moment().add('months', 1),
+        singleDatePicker: true,
+        autoApply: true,
+        //autoUpdateInput: false
+    });
+
+    calendarRangePicker.on('apply.daterangepicker', function (ev, picker) {
+        $(this).find('.table-filter__item-val').text(picker.startDate.format('MMM DD'));
+        $('.js--date-range-picker-to').find('.table-filter__item-val').text('');
+        minDate = picker.startDate.format('DD-MM-YYYY');
+        dataRangeTo(minDate);
+    });
+
+    calendarRangePicker.on('cancel.daterangepicker', function (ev, picker) {
+        $(this).find('.table-filter__item-val').text('');
+    });
+}
+
+function dataRangeTo(minDate) {
+    var calendarRangePicker = $('.js--date-range-picker-to');
+    calendarRangePicker.daterangepicker({
+        locale: {
+                format: 'DD-MM-YYYY'
+        },
+        "minDate": minDate,
+        singleDatePicker: true,
+        autoApply: true,
+    });
+    calendarRangePicker.on('apply.daterangepicker', function (ev, picker) {
+        $(this).find('.table-filter__item-val').text(picker.startDate.format('MMM DD'));
+    });
+
+    calendarRangePicker.on('cancel.daterangepicker', function (ev, picker) {
+        $(this).find('.table-filter__item-val').text('');
+    });
 }
 
 function notifPage() {

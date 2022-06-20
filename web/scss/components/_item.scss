@@ -220,6 +220,15 @@
                 padding: get-vw-mobile(20px) get-vw-mobile(22px);
             }
         }
+
+        // Modifier
+        &--accounts {
+            .item {
+                &__content {
+                    padding: 0;
+                }
+            }
+        }
     }
 
     // DARK MODE

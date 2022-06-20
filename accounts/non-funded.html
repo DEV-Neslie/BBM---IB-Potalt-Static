@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta name="robots" content="noindex,nofollow"> -->
+    <meta charset="utf-8">
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=2.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="format-detection" content="telephone=no">
+    <title>Blueberry Markets | Client Portal</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" media="print,screen" href="./../web/css/bbm-main.css">
+    <link rel="shortcut icon" href="./../web/images/common/favicon/apple-icon.png">
+    <link rel="icon" href="./../web/images/common/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./../web/images/common/favicon/android-icon.png">
+    <link rel="icon" type="image/png"  href="./../web/images/common/favicon/apple-icon.png">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="preload" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/css3-mediaqueries/0.1/css3-mediaqueries.min.js"></script>
+    <![endif]-->
+    
+    <!-- Start of Google Tag Manager -->
+    <!-- End of Google Tag Manager -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- main -->
+    <main class="main">
+        <div class="main__wrapper">
+            
+            <!-- sidebar -->
+            <div class="sidebar">
+                <div class="sidebar__logo"></div>
+
+                <nav class="sidebar__nav">
+                    <div class="sidebar__nav-line"></div>
+
+                    <ul class="sidebar__nav-list">
+
+                        <!-- Referral -->
+                        <li class="sidebar__nav-list-item d-mobile-none">
+                            <div class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--referral"></span>
+                                <span Class="sidebar__nav-label">Referral link:</span>
+
+                                <div class="sidebar__nav-input">
+                                    <input type="text" value="https://www.example.com/?ref_id=1000">
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <!-- Home -->
+                        <li class="sidebar__nav-list-item d-mobile-none">
+                            <a href="./../" class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--home"></span>
+                                <span Class="sidebar__nav-label">Home</span>
+                            </a>
+                        </li>
+
+
+                        <!-- Marketing Materials -->
+                        <li class="sidebar__nav-list-item sidebar__nav-list-item--main">
+                            <a href="#" class="sidebar__nav-list-link sidebar__nav-list-link--dropdown">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--marketing"></span>
+                                <span Class="sidebar__nav-label">Marketing Materials</span>
+                            </a>
+                            
+                            <ul class="sidebar__nav-list sidebar__nav-list--inner">
+                                <li class="sidebar__nav-list-item">
+                                    <a href="#" class="sidebar__nav-list-link">
+                                        <span class="sidebar__nav-icon sidebar__nav-icon--bbmlogo"></span>
+                                        <span Class="sidebar__nav-label">Logos</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar__nav-list-item">
+                                    <a href="#" class="sidebar__nav-list-link">
+                                        <span class="sidebar__nav-icon sidebar__nav-icon--banner"></span>
+                                        <span Class="sidebar__nav-label">Banners</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar__nav-list-item">
+                                    <a href="#" class="sidebar__nav-list-link">
+                                        <span class="sidebar__nav-icon sidebar__nav-icon--referral"></span>
+                                        <span Class="sidebar__nav-label">Referral Links</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar__nav-list-item">
+                                    <a href="#" class="sidebar__nav-list-link">
+                                        <span class="sidebar__nav-icon sidebar__nav-icon--promotion"></span>
+                                        <span Class="sidebar__nav-label">Promotions</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <!-- Funds -->
+                        <li class="sidebar__nav-list-item sidebar__nav-list-item--main active">
+                            <a href="#" class="sidebar__nav-list-link sidebar__nav-list-link--dropdown">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--funds is-active"></span>
+                                <span Class="sidebar__nav-label">Funds</span>
+                            </a>
+
+                            <ul class="sidebar__nav-list sidebar__nav-list--inner">
+                                <li class="sidebar__nav-list-item">
+                                    <a href="#" class="sidebar__nav-list-link active">
+                                        <span class="sidebar__nav-icon sidebar__nav-icon--withdrawal"></span>
+                                        <span Class="sidebar__nav-label">Withdrawals</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar__nav-list-item">
+                                    <a href="#" class="sidebar__nav-list-link active">
+                                        <span class="sidebar__nav-icon sidebar__nav-icon--bank is-active"></span>
+                                        <span Class="sidebar__nav-label">My Banks</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <!-- Accounts -->
+                        <li class="sidebar__nav-list-item">
+                            <a href="#" class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--my-accounts"></span>
+                                <div Class="sidebar__nav-label">
+                                    Accounts
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <!-- Commisions -->
+                        <li class="sidebar__nav-list-item">
+                            <a href="#" class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--commissions"></span>
+                                <div Class="sidebar__nav-label">
+                                    Commisions
+                                </div>
+                            </a>
+                        </li>
+
+
+                        <!-- Website -->
+                        <li class="sidebar__nav-list-item">
+                            <a href="#" class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--homepage"></span>
+                                <span Class="sidebar__nav-label">Website</span>
+                            </a>
+                        </li>
+
+
+                        <!-- Profile -->
+                        <li class="sidebar__nav-list-item">
+                            <a href="#" class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--edit"></span>
+                                <span Class="sidebar__nav-label">Profile</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                    <ul class="sidebar__nav-list">
+
+                        <!-- Need help -->
+                        <li class="sidebar__nav-list-item">
+                            <a href="#" class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--help"></span>
+                                <span Class="sidebar__nav-label">Need Help</span>
+                            </a>
+                        </li>
+
+                        <!-- Notifications -->
+                        <li class="sidebar__nav-list-item">
+                            <a href="#" class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--notifications"></span>
+                                <span Class="sidebar__nav-label">Notifications</span>
+                            </a>
+                        </li>
+
+                        <!-- Log out -->
+                        <li class="sidebar__nav-list-item">
+                            <div class="sidebar__nav-list-link">
+                                <span class="sidebar__nav-icon sidebar__nav-icon--logout"></span>
+                                <form action="/en/site/logout" method="post">
+                                    <input type="hidden" name="_csrf-frontend" value="HefQhJnzdYnFKb3Ve315I18Iin624PjHoMV7Mm57-_cun7Ly17kX0KZv_J1NNApnM0vFNcaygLTErxkCFEqypw==">
+                                    <button type="submit" class="sidebar__nav-label sidebar__nav-label--logout">Log out</button>
+                                </form>            
+                            </div>
+                        </li>
+                    </ul>
+
+                </nav>
+                <span class="sidebar__close-btn"></span>
+            </div>
+            <!-- /sidebar -->
+
+            <div class="main__content">
+
+                <!-- header -->
+                <header class="header">
+                    <div class="header__wrapper">
+                        <div class="header__left">
+                            <div class="header__search">
+                                <form role="search" method="get" id="search__form" class="search__form" action="#">
+                                    <input type="search" value="" name="s" id="s" class="search__input" placeholder="Search Keywords..." autocomplete="off" aria-label="search-input">
+                                    <button type="submit" class="search__submit" aria-label="search-submit">
+                                        <span class="search__submit-icon"></span>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <!-- Mobile Display -->
+                            <img class="header__logo light_mode" src="./../web/images/icons/common/logo--dark.svg" alt="Blueberry Markets">
+                            <img class="header__logo dark_mode" src="./../web/images/icons/common/logo--light.svg" alt="Blueberry Markets">
+                        </div>
+                        <div class="header__right">
+                            
+                            <div class="header__lang">
+                                <div class="language language--arrow">
+                                    <div class="language__selected">
+                                        <span class="language__selected-id">EN</span>
+                                        <i class="language__selected-arrow"></i>
+                                    </div>
+                                    <div class="language__options">
+                                        <span class="language__options-item" data-id="ar" data-name="العربية">&rlm;العربية&rlm;</span>
+                                        <span class="language__options-item" data-id="bn" data-name="বাংলা">বাংলা</span>
+                                        <span class="language__options-item is-selected" data-id="en" data-name="English">English (UK)</span>
+                                        <span class="language__options-item" data-id="de" data-name="Deutsch">Deutsch</span>
+                                        <span class="language__options-item" data-id="es" data-name="Español">Español (España)</span>
+                                        <span class="language__options-item" data-id="it" data-name="Italiano">Italiano</span>
+                                        <span class="language__options-item" data-id="pl" data-name="Polski">Polski</span>
+                                        <span class="language__options-item" data-id="zh" data-name="中文(简体)">中文(简体)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- language Picker -->
+
+                            <div class="header__mode">
+                                <span class="header__mode-btn theme_mode"></span>
+                            </div>
+
+                            <div class="header__notification">
+                                <div class="header__notification__count-wrapper">
+                                    <span class="header__notification__count-val">1</span>
+                                </div>
+                                <div class="header__notification__content">
+                                    <div class="header__notification__content-wrapper">
+                                        <div class="header__notification__content-header">
+                                            <h5 class="header__notification__heading">Notifications <span class="notification-indicator">1</span></h5>
+                                            <a href="#" class="btn btn--link">Mark All as Read</a>
+                                        </div>
+                                        <ul class="header__notification__list">
+                                            <li class="header__notification__list-item">
+                                                <a href="#" class="header__notification__link">
+                                                    <p class="header__notification__info">
+                                                        <strong>Jacob</strong> Created new <strong>Bank Account</strong>
+                                                    </p>
+                                                    <span class="header__notification__time">a few seconds ago</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="header__notification__list-item">
+                                                <a href="#" class="header__notification__link">
+                                                    <p class="header__notification__info">
+                                                        <strong>Jacob</strong> started <strong>funding Live Account 1</strong>
+                                                    </p>
+                                                    <span class="header__notification__time">5 minutes ago</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="header__notification__list-item">
+                                                <a href="#" class="header__notification__link">
+                                                    <p class="header__notification__info">
+                                                        <strong>Jacob</strong> removed <strong>Demo 1</strong>
+                                                    </p>
+                                                    <span class="header__notification__time">1 hour ago</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="header__notification__list-item">
+                                                <a href="#" class="header__notification__link">
+                                                    <p class="header__notification__info">
+                                                        <strong>Jacob</strong> added an <strong>Authorized Person</strong> from his list
+                                                    </p>
+                                                    <span class="header__notification__time">2 days ago</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="header__notification__list-item">
+                                                <a href="#" class="header__notification__link">
+                                                    <p class="header__notification__info">
+                                                        <strong>Jacob</strong> added an <strong>Authorized Person</strong> from his list
+                                                    </p>
+                                                    <span class="header__notification__time">3 days ago</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="header__notification__list-item">
+                                                <a href="#" class="header__notification__link">
+                                                    <p class="header__notification__info">
+                                                        <strong>Jacob</strong> removed <strong>Demo 1</strong>
+                                                    </p>
+                                                    <span class="header__notification__time">5 days ago</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="header__notification__view-all">
+                                            <a href="#" class="btn btn--link">View All</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="header__account">
+                                <img src="./../web/images/header/account-user.png" alt="user image">
+                            </div>
+
+                            <!-- Menu toggler -->
+                            <div class="menuToggler">
+                                <div class="menuToggler__btn">
+                                    <div class="menuToggler__btn-line"></div>
+                                    <div class="menuToggler__btn-line"></div>
+                                    <div class="menuToggler__btn-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- /header -->
+
+                <!-- content -->
+                <div class="content">
+                    
+                    <div class="content__wrapper">
+                        <!-- Start Content Here -->
+
+                        <!-- QUICK Links -->
+                        <div class="content__item">
+                            <div class="quick-links">
+                                <h3 class="quick-links__heading">Quick Links</h3>
+
+                                <div class="quick-links__list">
+
+                                    <a href="#" class="quick-links__list__item">
+                                        <h5 class="quick-links__list__item-title">Marketing Materials</h5>
+                                        <div class="quick-links__list__item__icon quick-links__list__item__icon--marketing">
+                                            <img src="./../web/images/icons/quick-links/ql-icon_marketing.svg" alt="icon" class="quick-links__list__item__icon-initial">
+                                            <img src="./../web/images/icons/quick-links/hover-ql-icon_marketing.gif" data-src="./../web/images/icons/quick-links/hover-ql-icon_marketing.gif" alt="icon" class="quick-links__list__item__icon-hover">
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="quick-links__list__item">
+                                        <h5 class="quick-links__list__item-title">Accounts</h5>
+                                        <div class="quick-links__list__item__icon quick-links__list__item__icon--account">
+                                            <img src="./../web/images/icons/quick-links/ql-icon_accounts.svg" alt="icon" class="quick-links__list__item__icon-initial">
+                                            <img src="./../web/images/icons/quick-links/hover-ql-icon_accounts.gif" data-src="./../web/images/icons/quick-links/hover-ql-icon_accounts.gif" alt="icon" class="quick-links__list__item__icon-hover">
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="quick-links__list__item">
+                                        <h5 class="quick-links__list__item-title">Commissions</h5>
+                                        <div class="quick-links__list__item__icon quick-links__list__item__icon--commission">
+                                            <img src="./../web/images/icons/quick-links/ql-icon_commissions.svg" alt="icon" class="quick-links__list__item__icon-initial">
+                                            <img src="./../web/images/icons/quick-links/hover-ql-icon_commissions.gif" data-src="./../web/images/icons/quick-links/hover-ql-icon_commissions.gif" alt="icon" class="quick-links__list__item__icon-hover">
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="quick-links__list__item">
+                                        <h5 class="quick-links__list__item-title">Withdrawal</h5>
+                                        <div class="quick-links__list__item__icon quick-links__list__item__icon--withdrawal">
+                                            <img src="./../web/images/icons/quick-links/ql-icon_withdrawal.svg" alt="icon" class="quick-links__list__item__icon-initial">
+                                            <img src="./../web/images/icons/quick-links/hover-ql-icon_withdrawal.gif" data-src="./../web/images/icons/quick-links/hover-ql-icon_withdrawal.gif" alt="icon" class="quick-links__list__item__icon-hover">
+                                        </div>
+                                    </a>
+    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content__item content__item--accounts">
+
+                            <div class="tabular">
+
+                                <div class="tabular__header">
+                                    <h3 class="tabular__header__title">Accounts</h3>
+                                </div>
+
+                                <div class="tabular__tab">
+                                    <div class="tabular__tab-wrapper">
+                                        <div class="tabular__tab-wrapper-slider">
+                                            <a href="./" class="tabular__tab__item">All Accounts</a>
+                                            <a href="./funded.html" class="tabular__tab__item">Funded</a>
+                                            <span class="tabular__tab__item is-active">Non-funded</span>
+                                            <a href="./inactive.html" class="tabular__tab__item">Inactive</a>
+                                            <a href="./by-country.html" class="tabular__tab__item">By Country</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tabular__content">
+                                    
+                                    <div class="table-filter">
+                                        <div class="table-filter__wrapper">
+                                            <div class="table-filter__fields">
+                                                <a href="#" class="table-filter__item js--date-range-picker-from">
+                                                    <i class="table-filter__item-icon"></i>
+                                                    <span class="table-filter__item-title">From:</span>
+                                                    <span class="table-filter__item-val"></span>
+                                                </a>
+
+                                                <a href="#" class="table-filter__item js--date-range-picker-to">
+                                                    <i class="table-filter__item-icon"></i>
+                                                    <span class="table-filter__item-title">To:</span>
+                                                    <span class="table-filter__item-val"></span>
+                                                </a>
+                                            </div>
+                                            <div class="table-filter__cta">
+                                                <div class="btn btn--green btn--small">
+                                                    <i class="btn__icon btn__icon--filter"></i>
+                                                    Filter
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- item -->
+                                    <div class="item item--accounts">
+
+                                        <div class="item__content">
+
+
+                                            <!-- data -->
+                                            <div class="data data--accounts">
+
+                                                <div class="data__content">
+                                                    <div class="data__list">
+
+                                                        <!-- Heading -->
+                                                        <div class="data__list__item data__list__item--header">
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Login</h6>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Name</h6>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Withdrawals</h6>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Desposits</h6>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Equity</h6>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Balance</h6>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Credit</h6>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Registration</h6>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 1 -->
+                                                        <div class="data__list__item">
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Login</h6>
+                                                                <span class="data__list__item-value data__id">9879009</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Client Name</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Withdrawals</span>
+                                                                <span class="data__list__item-value data__account-number">-1400.00</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Deposits</span>
+                                                                <span class="data__list__item-value data__country">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Equity</span>
+                                                                <span class="data__list__item-value data__branch-name">0 1</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Balance</span>
+                                                                <span class="data__list__item-value data__swift-code">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Credit</span>
+                                                                <span class="data__list__item-value data__iban">0</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Registration</span>
+                                                                <span class="data__list__item-value data__iban">2022-04-07 06:32:49</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 2 -->
+                                                        <div class="data__list__item">
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Login</h6>
+                                                                <span class="data__list__item-value data__id">9879009</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Client Name</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Withdrawals</span>
+                                                                <span class="data__list__item-value data__account-number">-1400.00</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Deposits</span>
+                                                                <span class="data__list__item-value data__country">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Equity</span>
+                                                                <span class="data__list__item-value data__branch-name">0 1</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Balance</span>
+                                                                <span class="data__list__item-value data__swift-code">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Credit</span>
+                                                                <span class="data__list__item-value data__iban">0</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Registration</span>
+                                                                <span class="data__list__item-value data__iban">2022-04-07 06:32:49</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 3 -->
+                                                        <div class="data__list__item">
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Login</h6>
+                                                                <span class="data__list__item-value data__id">9879009</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Client Name</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Withdrawals</span>
+                                                                <span class="data__list__item-value data__account-number">-1400.00</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Deposits</span>
+                                                                <span class="data__list__item-value data__country">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Equity</span>
+                                                                <span class="data__list__item-value data__branch-name">0 1</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Balance</span>
+                                                                <span class="data__list__item-value data__swift-code">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Credit</span>
+                                                                <span class="data__list__item-value data__iban">0</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Registration</span>
+                                                                <span class="data__list__item-value data__iban">2022-04-07 06:32:49</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 4 -->
+                                                        <div class="data__list__item">
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Login</h6>
+                                                                <span class="data__list__item-value data__id">9879009</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Client Name</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Withdrawals</span>
+                                                                <span class="data__list__item-value data__account-number">-1400.00</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Deposits</span>
+                                                                <span class="data__list__item-value data__country">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Equity</span>
+                                                                <span class="data__list__item-value data__branch-name">0 1</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Balance</span>
+                                                                <span class="data__list__item-value data__swift-code">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Credit</span>
+                                                                <span class="data__list__item-value data__iban">0</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Registration</span>
+                                                                <span class="data__list__item-value data__iban">2022-04-07 06:32:49</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 5 -->
+                                                        <div class="data__list__item">
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Login</h6>
+                                                                <span class="data__list__item-value data__id">9879009</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Client Name</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Withdrawals</span>
+                                                                <span class="data__list__item-value data__account-number">-1400.00</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Deposits</span>
+                                                                <span class="data__list__item-value data__country">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Equity</span>
+                                                                <span class="data__list__item-value data__branch-name">0 1</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Balance</span>
+                                                                <span class="data__list__item-value data__swift-code">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Credit</span>
+                                                                <span class="data__list__item-value data__iban">0</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Registration</span>
+                                                                <span class="data__list__item-value data__iban">2022-04-07 06:32:49</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 7 -->
+                                                        <div class="data__list__item">
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Login</h6>
+                                                                <span class="data__list__item-value data__id">9879009</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Client Name</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Withdrawals</span>
+                                                                <span class="data__list__item-value data__account-number">-1400.00</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Deposits</span>
+                                                                <span class="data__list__item-value data__country">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Equity</span>
+                                                                <span class="data__list__item-value data__branch-name">0 1</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Balance</span>
+                                                                <span class="data__list__item-value data__swift-code">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Credit</span>
+                                                                <span class="data__list__item-value data__iban">0</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Registration</span>
+                                                                <span class="data__list__item-value data__iban">2022-04-07 06:32:49</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- 6 -->
+                                                        <div class="data__list__item">
+                                                            <div class="data__list__item-col">
+                                                                <h6 class="data__list__item-label">Login</h6>
+                                                                <span class="data__list__item-value data__id">9879009</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Name</span>
+                                                                <span class="data__list__item-value data__bank-name">Client Name</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Withdrawals</span>
+                                                                <span class="data__list__item-value data__account-number">-1400.00</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Deposits</span>
+                                                                <span class="data__list__item-value data__country">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Equity</span>
+                                                                <span class="data__list__item-value data__branch-name">0 1</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Balance</span>
+                                                                <span class="data__list__item-value data__swift-code">0</span>
+                                                            </div>
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Credit</span>
+                                                                <span class="data__list__item-value data__iban">0</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col">
+                                                                <span class="data__list__item-label">Registration</span>
+                                                                <span class="data__list__item-value data__iban">2022-04-07 06:32:49</span>
+                                                            </div>
+
+                                                            <div class="data__list__item-col data__list__item-col--cta">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <!-- /data__list -->
+
+                                                    <div class="pagination">
+                                                        <ul class="pagination__list">
+                                                            <li class="pagination__list__item arrow-prev">
+                                                                <a href="#" class="pagination__list__item-link"></a>
+                                                            </li>
+
+                                                            <li class="pagination__list__item active">
+                                                                <a href="#" class="pagination__list__item-link">1</a>
+                                                            </li>
+
+                                                            <li class="pagination__list__item">
+                                                                <a href="#" class="pagination__list__item-link">2</a>
+                                                            </li>
+
+                                                            <li class="pagination__list__item">
+                                                                <a href="#" class="pagination__list__item-link">3</a>
+                                                            </li>
+
+                                                            <li class="pagination__list__item ellipses">
+                                                                <a href="#" class="pagination__list__item-link">...</a>
+                                                            </li>
+
+                                                            <li class="pagination__list__item arrow-next">
+                                                                <a href="#" class="pagination__list__item-link"></a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <!-- /pagination -->
+
+                                                </div>
+                                                <!-- /data__content -->
+
+                                            </div>
+                                            <!-- /data -->
+
+                                        </div>
+                                        <!-- /item__content -->
+
+                                    </div>
+                                    <!-- /item -->
+
+                                </div>
+                                <!-- /tabular__content -->
+
+                            </div>
+                            <!-- /tabular -->
+                            
+                        </div>
+                        
+                        <!-- End Content Here -->
+                    </div>
+                    
+                </div>
+                <!-- /content -->
+
+                <!-- footer -->
+                <footer class="footer">
+                    <nav class="footer__nav">
+                        <div class="footer__nav__item footer__nav__item--search">
+                            <i class="footer__nav__item-icon"></i>
+                        </div>
+
+                        <a href="#" class="footer__nav__item footer__nav__item--referral">
+                            <i class="footer__nav__item-icon"></i>
+                        </a>
+
+                        <a href="#" class="footer__nav__item footer__nav__item--home active">
+                            <i class="footer__nav__item-icon footer__nav__item-icon--home"></i>
+                        </a>
+
+                        <a href="#" class="footer__nav__item footer__nav__item--commision">
+                            <i class="footer__nav__item-icon"></i>
+                        </a>
+
+                        <div class="footer__nav__item footer__nav__item--account">
+                            <div class="account">
+                                <img class="account__img" src="./../web/images/header/account-user.png" alt="Account User">
+                            </div>
+                        </div>
+                    </nav>
+
+                </footer>
+                <!-- /footer -->
+
+            </div>
+            <!-- /main__content -->
+
+            <!-- Modal -->
+            <div class="modal">
+
+                <form id="add_bank" action="">
+
+                    <!-- ADD - Modal Box -->
+                    <div id="add_modal" class="modal__box">
+                        
+                        <div class="modal__header">
+                            <h3 class="modal__header-title">Add your Bank Account</h3>
+                        </div>
+
+                        <div class="modal__content">
+
+                            <div class="form">
+
+                                <div class="form__field">
+                                    <span class="form__field-label">Bank Name</span>
+                                    <div class="form__field-input">
+                                        <input id="m_bank_name" type="text" name="bank_name" placeholder="Enter bank name">
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">Account Number</span>
+                                    <div class="form__field-input">
+                                        <input id="m_account_number" type="text" name="account_number" placeholder="Enter Account Number">
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">Country</span>
+                                    <div class="custom-select">
+                                        <select id="m_country">
+                                            <option value="0">Country</option>
+                                            <option value="AU">AU</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="US">US</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">Branch Name</span>
+                                    <div class="form__field-input">
+                                        <input id="m_branch_name" type="text" name="branch_name" placeholder="Enter Branch Name">
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">SWIFT Code</span>
+                                    <div class="form__field-input">
+                                        <input id="m_swift_code" type="text" name="swift_code" placeholder="Enter SWIFT code">
+                                    </div>
+                                </div>
+
+                                <div class="form__field">
+                                    <span class="form__field-label">IBAN</span>
+                                    <div class="form__field-input">
+                                        <input id="m_iban" type="text" name="iban" placeholder="Enter IBAN">
+                                    </div>
+                                </div>
+
+                                <div class="form__cta">
+                                    <button id="modal_btn--submit" class="btn btn--green">Save</button>
+                                    <span id="modal_btn--cancel" class="btn btn--outline">Cancel</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- /modal__content -->
+
+                    </div>
+                    <!-- /Modal Box -->
+
+                </form>
+
+            </div>
+            <!-- /Modal -->
+            
+        
+        </div>
+    </main>
+    <!-- /main -->
+    
+    
+    <!-- JS Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="./../web/js/daterangepicker.min.js"></script>
+    <script src="./../web/js/bbm-main.js"></script>
+
+
+</body>
+</html>
+        

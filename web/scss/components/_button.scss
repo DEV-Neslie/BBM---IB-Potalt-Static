@@ -130,28 +130,35 @@
         }
 
         &--csv {
-            background-image: url('./../images/common/cloud-download.svg');
+            background-image: url('./../images/icons/common/cloud-download.svg');
             margin: 0 get-vw-desktop(4px) get-vw-desktop(1px) 0;
         }
 
         &--white-plus {
             width: get-vw-desktop(10px);
             height: get-vw-desktop(10px);
-            background-image: url('./../images/common/white-plus.svg');
+            background-image: url('./../images/icons/common/white-plus.svg');
         }
 
         &--calendar {
             margin: 0 get-vw-desktop(5px) 0 0;
             width: get-vw-desktop(16px);
             height: get-vw-desktop(16px);
-            background-image: url('./../images/common/calendar-navy-icon.svg');
+            background-image: url('./../images/icons/common/calendar-navy-icon.svg');
         }
 
         &--export {
             margin: 0 get-vw-desktop(5px) 0 0;
             width: get-vw-desktop(15px);
             height: get-vw-desktop(14px);
-            background-image: url('./../images/common/export-navy-icon.svg');
+            background-image: url('./../images/icons/common/export-navy-icon.svg');
+        }
+
+        &--filter {
+            margin: 0 get-vw-desktop(5px) 0 0;
+            width: get-vw-desktop(14px);
+            height: get-vw-desktop(12px);
+            background-image: url('./../images/icons/common/filter.svg');
         }
     }
     // End Button icons
@@ -293,6 +300,12 @@
                 margin: 0 get-vw-mobile(5px) 0 0;
                 width: get-vw-mobile(15px);
                 height: get-vw-mobile(14px);
+            }
+
+            &--filter {
+                margin: 0 get-vw-mobile(5px) 0 0;
+                width: get-vw-mobile(14px);
+                height: get-vw-mobile(12px);
             }
         }
         // End Button icons
