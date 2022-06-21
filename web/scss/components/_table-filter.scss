@@ -13,9 +13,10 @@
         justify-content: flex-start;
     }
 
-    &__item {
+    &__input {
         margin: 0 get-vw-desktop(16px) 0 0;
         padding: get-vw-desktop(10px) get-vw-desktop(18px) get-vw-desktop(10px) get-vw-desktop(10px);
+        display: inline-block;
         position: relative;
         width: get-vw-desktop(150px);
         background-color: $white;
@@ -30,34 +31,52 @@
             height: get-vw-desktop(16px);
             background-repeat: no-repeat;
             background-size: contain;
-            background-image: url('./../images/icons/common/calendar-navy-icon.svg');
             vertical-align: middle;
+
+            &.calendar-icon {
+                background-image: url('./../images/icons/common/calendar-navy-icon.svg');
+            }
         }
 
-        &:after {
-            margin: auto;
-            position: absolute;
-            content: '';
-            top: 0;
-            right: get-vw-desktop(10px);
-            bottom: 0;
-            width: get-vw-desktop(7px);
-            height: get-vw-desktop(6px);
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-image: url('./../images/icons/common/filter_arrow--down-green.svg');
+        // Modifier
+        &--date {
+            &:after {
+                margin: auto;
+                position: absolute;
+                content: '';
+                top: 0;
+                right: get-vw-desktop(10px);
+                bottom: 0;
+                width: get-vw-desktop(7px);
+                height: get-vw-desktop(6px);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url('./../images/icons/common/filter_arrow--down-green.svg');
+            }
+        }
+
+        &--text {
+            width: get-vw-desktop(200px);
         }
     }
 }
 
 .dark-mode {
     .table-filter {
-        &__item {
+        &__input {
             background-color: $opac_skyblue_6;
             color: $white;
 
+            &::-webkit-input-placeholder,
+            &:-ms-input-placeholder,
+            &::placeholder {
+                color: inherit;
+            }
+
             &-icon {
-                background-image: url('./../images/icons/common/calendar-white-icon.svg');
+                &.calendar-icon {
+                    background-image: url('./../images/icons/common/calendar-white-icon.svg');
+                }
             }
         }
     }
@@ -68,7 +87,36 @@
     .table-filter {
         padding: 0 0 get-vw-mobile(20px);
 
-        &__item {
+        &__wrapper {
+            &.mobile-2-cols {
+                flex-direction: column;
+        
+                .table-filter {
+                    &__fields {
+                        flex-direction: row;
+                        align-content: flex-start;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                    }
+        
+                    &__item {
+                        margin: 0 0 get-vw-mobile(10px);
+                        width: get-vw-mobile(154px);
+                    }
+        
+                    &__input {
+                        margin: 0;
+                        width: 100%;
+                    }
+
+                    &__cta {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+
+        &__input {
             margin: 0 get-vw-mobile(8px) 0 0;
             padding: get-vw-mobile(10px) get-vw-mobile(15px);
             width: get-vw-mobile(90px);
@@ -80,11 +128,18 @@
                 width: get-vw-mobile(15px);
                 height: get-vw-mobile(15px);
             }
-    
-            &:after {
-                right: get-vw-mobile(10px);
-                width: get-vw-mobile(7px);
-                height: get-vw-mobile(6px);
+
+            // Modifier
+            &--date {
+                &:after {
+                    right: get-vw-mobile(10px);
+                    width: get-vw-mobile(7px);
+                    height: get-vw-mobile(6px);
+                }
+            }
+
+            &--text {
+                width: get-vw-desktop(200px);
             }
         }
     }
