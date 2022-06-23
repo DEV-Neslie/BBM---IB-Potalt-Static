@@ -48,24 +48,12 @@
                         background-image: url('./../images/profile/edit-navy-icon.svg');
                     }
 
-                    &--bank {
-                        background-image: url('./../images/profile/bank-navy-icon.svg');
+                    &--rebate {
+                        background-image: url('./../images/profile/lock-navy-icon.svg');
                     }
 
                     &--notification {
                         background-image: url('./../images/profile/notification-bell-navy-icon.svg');
-                    }
-
-                    &--authorization {
-                        background-image: url('./../images/profile/authorization-navy-icon.svg');
-                    }
-
-                    &--factor-auth {
-                        background-image: url('./../images/profile/factor-auth-navy-icon.svg');
-                    }
-
-                    &--legals {
-                        background-image: url('./../images/profile/legals-navy-icon.svg');
                     }
                 }
                 
@@ -87,7 +75,7 @@
                         height: get-vw-desktop(11px);
                         background-size: contain;
                         background-repeat: no-repeat;
-                        background-image: url('./../images/common/greater-than-blue-icon.svg');
+                        background-image: url('./../images/icons/common/greater-than-green-icon.svg');
                     }
 
                     &.is-active {
@@ -98,24 +86,12 @@
                                 background-image: url('./../images/profile/edit-green-icon.svg');
                             }
         
-                            &--bank {
-                                background-image: url('./../images/profile/bank-green-icon.svg');
+                            &--rebate {
+                                background-image: url('./../images/profile/lock-green-icon.svg');
                             }
         
                             &--notification {
                                 background-image: url('./../images/profile/notification-bell-green-icon.svg');
-                            }
-        
-                            &--authorization {
-                                background-image: url('./../images/profile/authorization-green-icon.svg');
-                            }
-
-                            &--factor-auth {
-                                background-image: url('./../images/profile/factor-auth-green-icon.svg');
-                            }
-
-                            &--legals {
-                                background-image: url('./../images/sidebar/active-legals.svg');
                             }
                         }
                     }
@@ -147,19 +123,17 @@
             justify-content: space-between;
 
             &__item {
-                max-width: get-vw-desktop(132px);
 
                 &-label {
-                    font-size: get-vw-desktop(10px);
-                    line-height: get-vw-desktop(12px);
-                    color: $purple;
+                    font-size: get-vw-desktop(14px);
+                    line-height: get-vw-desktop(20px);
                 }
 
                 &-value {
                     margin: get-vw-desktop(5px) 0 0;
                     position: relative;
-                    font-size: get-vw-desktop(14px);
-                    line-height: get-vw-desktop(21px);
+                    font-size: get-vw-desktop(10px);
+                    line-height: get-vw-desktop(16px);
 
                     &--verified {
                         padding: get-vw-desktop(3px) get-vw-desktop(6px) get-vw-desktop(3px) get-vw-desktop(26px);
@@ -211,7 +185,6 @@
                     padding: 0 0 0 get-vw-desktop(80px);
                     position: relative;
                     min-width: get-vw-desktop(88px);
-                    max-width: get-vw-desktop(212px);
 
                     img {
                         margin: auto;
@@ -312,6 +285,19 @@
         &-tel {
             padding: get-vw-desktop(10px) get-vw-desktop(8px) get-vw-desktop(9px) get-vw-desktop(48px);
         }
+
+        &-select {
+            margin: get-vw-desktop(5px) 0 0;
+            width: 100%;
+            background: $white;
+            border: 1px solid $sky_blue;
+            box-sizing: border-box;
+            border-radius: get-vw-desktop(5px);
+            font-family: $Poppins;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
+            color: $navy;
+        }
     }
 
     &__note {
@@ -319,9 +305,21 @@
         font-size: get-vw-desktop(10px);
         line-height: get-vw-desktop(16px);
 
+        &--rebate {
+            margin: get-vw-desktop(38px) 0 0;
+        }
+
         a {
             font-size: inherit;
             line-height: inherit;
+        }
+
+        .big {
+            margin: 0 0 get-vw-desktop(8px);
+            display: inline-block;
+            font-weight: 600;
+            font-size: get-vw-desktop(12px);
+            line-height: get-vw-desktop(18px);
         }
     }
 
@@ -361,16 +359,20 @@
             padding: 0;
         }
     }
+
+    &__submit {
+        margin: get-vw-desktop(30px) 0 0;
+    }
 }
 
 
 .dark-mode {
     .profile {
-        background: $opac_white;
+        background: $opac_white_4;
 
         &__nav {
             color: $opac_white_3;
-            background: $opac_navy_3;
+            background: $opac_skyblue_7;
 
             &:after {
                 background: $opac_skyblue_5;
@@ -384,30 +386,18 @@
                         &--edit {
                             background-image: url('./../images/profile/edit-white-icon.svg');
                         }
+
+                        &--rebate {
+                            background-image: url('./../images/profile/lock-white-icon.svg');
+                        }
     
                         &--notification {
                             background-image: url('./../images/profile/notification-bell-white-icon.svg');
-                        }
-    
-                        &--authorization {
-                            background-image: url('./../images/profile/authorization-white-icon.svg');
-                        }
-
-                        &--factor-auth {
-                            background-image: url('./../images/profile/factor-auth-white-icon.svg');
-                        }
-
-                        &--legals {
-                            background-image: url('./../images/profile/legals-white-icon.svg');
                         }
                     }
 
                     &-link {
                         border-color: $opac_skyblue_3;
-
-                        &:after {
-                            background-image: url('./../images/common/greater-than-white-icon.svg');
-                        }
 
                         &.is-active {
                             color: $white;
@@ -421,6 +411,7 @@
 
         &__content {
             color: $white;
+            background-color: $opac_white_4;
         }
 
         &__header {
@@ -443,27 +434,19 @@
         &__form {
 
             &-input,
+            &-select,
             &-tel {
-                background: $sky_blue4;
-                color: $navy;
+                background: $opac_skyblue_7;
+                color: $white;
+                border-color: transparent;
 
-                &:disabled {
-                    color: $navy;
+                &::placeholder {
+                    color: inherit;
                 }
-            }
 
-            &-input {
-                opacity: 0.8;
-
-                &--bday,
-                &--country,
-                &--citizenship {
-                    opacity: 0.5;
+                .select-selected {
+                    color: $white;
                 }
-            }
-
-            &-tel {
-                opacity: 0.8;
             }
         }
 
@@ -483,22 +466,22 @@
         &__mobile-top {
             padding: get-vw-mobile(35px) get-vw-mobile(26px) get-vw-mobile(30px);
             display: block;
-            border-bottom: 1px solid $sky_blue;
 
             &__item {
+                padding-left: get-vw-mobile(80px);
                 position: relative;
 
                 &-label {
                     margin: get-vw-mobile(2px) 0 0;
-                    font-size: get-vw-mobile(10px);
-                    line-height: get-vw-mobile(12px);
-                    color: $purple;
+                    font-size: get-vw-mobile(14px);
+                    line-height: get-vw-mobile(20px);
+                    color: $white;
                 }
 
                 &-value {
                     position: relative;
-                    font-size: get-vw-mobile(14px);
-                    line-height: get-vw-mobile(21px);
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(20px);
 
                     // Modifier
                     &--verified {
@@ -555,7 +538,7 @@
                         position: absolute;
                         top: 0;
                         bottom: 0;
-                        right: 0;
+                        left: 0;
                         width: get-vw-mobile(56px);
                         height: get-vw-mobile(56px);
                         border-radius: 50%;
@@ -705,7 +688,7 @@
         }
     
         &__detail {
-            margin: get-vw-mobile(32px) 0 0;
+            margin: 0;
         }
     
         &__form {
@@ -778,13 +761,18 @@
                 line-height: get-vw-mobile(18px);
                 color: $navy;
     
-                &:disabled {
-                    font-weight: normal;
-                    color: $opac_navy_2;
-                }
-    
                 &::placeholder {
                     font-weight: normal;
+                }
+            }
+
+            &-select {
+                margin: get-vw-mobile(5px) 0 0;
+                border-radius: get-vw-mobile(5px);
+
+                .select-selected {
+                    font-size: get-vw-mobile(12px);
+                    line-height: get-vw-mobile(18px);
                 }
             }
     
@@ -801,6 +789,12 @@
             a {
                 font-size: inherit;
                 line-height: inherit;
+            }
+
+            .big {
+                margin: 0 0 get-vw-mobile(8px);
+                font-size: get-vw-mobile(12px);
+                line-height: get-vw-mobile(18px);
             }
         }
     
@@ -833,6 +827,10 @@
             }
         }
 
+        &__submit {
+            margin: get-vw-mobile(30px) 0 0;
+        }
+
         .data--profile {
             margin: get-vw-mobile(45px) auto 0;
         }
@@ -852,9 +850,6 @@
                     }
     
                     &-value {
-                        position: relative;
-                        font-size: get-vw-mobile(14px);
-                        line-height: get-vw-mobile(21px);
     
                         // Modifier
                         &--verified,
