@@ -1,5 +1,8 @@
 // NOTIFICATIONS PAGE
 .notifications {
+    padding: get-vw-desktop(28px) get-vw-desktop(52px) get-vw-desktop(28px) get-vw-desktop(30px);
+    background-color: $white;
+    
 
     &__filter {
         &-header {
@@ -55,7 +58,7 @@
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
-                background-image: url('./../images/common/search-icon-navy.svg');
+                background-image: url('./../images/icons/common/search-icon-navy.svg');
                 cursor: pointer;
             }
         }
@@ -114,7 +117,7 @@
     }
 
     &__content {
-        padding: get-vw-desktop(30px) 0;
+        padding: get-vw-desktop(30px) get-vw-desktop(36px) get-vw-desktop(30px) get-vw-desktop(32px);
         position: relative;
 
         &-indicator {
@@ -133,11 +136,11 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('./../images/common/notif-fave-blue-icon.svg');
+        background-image: url('./../images/icons/common/notif-fave-blue-icon.svg');
         cursor: pointer;
 
         &.is-active {
-            background-image: url('./../images/common/notif-fave-blue-solid-icon.svg');
+            background-image: url('./../images/icons/common/notif-fave-blue-solid-icon.svg');
         }
     }
     
@@ -149,28 +152,40 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('./../images/common/notif-view-blue-icon.svg');
+        background-image: url('./../images/icons/common/notif-view-blue-icon.svg');
         cursor: pointer;
 
         &.hidden {
-            background-image: url('./../images/common/notif-view-blue-icon-slash.svg');
+            background-image: url('./../images/icons/common/notif-view-blue-icon-slash.svg');
         }
     }
 
     &__item {
         @include displayFlex;
-        flex-direction: row;
+        flex-direction: column;
+        position: relative;
+
+        &:before {
+            margin: auto;
+            content: '';
+            position: absolute;
+            top: get-vw-desktop(10px);
+            right: auto;
+            left: get-vw-desktop(56px);
+            width: 1px;
+            height: 100%;
+            background-color: $sky_blue;
+        }
 
         &:last-of-type {
-            .notifications__date {
-                &::before {
-                    height: calc(100% - 3.4722222222222223vw); //100% - 50px
-                }
+            &:before {
+                height: 50%;
             }
         }
     }
 
     &__date {
+        margin: 0 auto get-vw-desktop(20px) 0;
         position: relative;
 
         &-val {
@@ -181,29 +196,15 @@
             line-height: 1.2;
             text-align: center;
             color: $white;
-            background-color: $primary;
+            background-color: $d_navy_2;
             border-radius: get-vw-desktop(10px);
         }
-
-        &::before {
-            margin: auto;
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            width: 1px;
-            height: 100%;
-            background-color: $white;
-        }
-
     }
 
     &__inner {
-        margin: 0 0 0 get-vw-desktop(18px);
-        padding: get-vw-desktop(50px) 0 get-vw-desktop(20px);
-        //width: get-vw-desktop(923px);
-        width: calc(100% - 8.125vw); //100% - 117px
+        margin: 0;
+        padding: get-vw-desktop(10px) 0;
+        width: 100%;
         color: $navy;
 
         &-header {
@@ -226,8 +227,10 @@
         }
 
         &-item {
+            margin: 0 0 0 auto;
             padding: get-vw-desktop(10px) get-vw-desktop(14px) get-vw-desktop(10px) get-vw-desktop(20px);
             position: relative;
+            width: get-vw-desktop(750px); //100% - 117px
             font-size: get-vw-desktop(10px);
             line-height: get-vw-desktop(16px);
             background-color: $sky_blue;
@@ -244,21 +247,21 @@
                 position: absolute;
                 top: 0;
                 bottom: 0;
-                left: get-vw-desktop(-89px);
+                left: get-vw-desktop(-114px);
                 width: get-vw-desktop(23px);
                 height: get-vw-desktop(20px);
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
-                background-image: url('./../images/common/notif-red-eye.svg');
+                background-image: url('./../images/icons/common/notif-red-eye.svg');
                 background-color: $light_grey;
             }
 
             &.viewed {
-                background-color: $white;
+                background-color: $sky_blue4;
 
                 &::before {
-                    background-image: url('./../images/common/notif-green-eye.svg');
+                    background-image: url('./../images/icons/common/notif-green-eye.svg');
                 }
             }
         }
@@ -290,7 +293,7 @@
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
-                background-image: url('./../images/common/notif-check-status-icon.svg');
+                background-image: url('./../images/icons/common/notif-check-status-icon.svg');
             }
         }
 
@@ -314,8 +317,13 @@
 
 .dark-mode {
     .notifications {
+        background-color: $opac_white_4;
         &__inner {
             &-item {
+                color: $white;
+                background-color: $opac_skyblue_6;
+                border-color: transparent;
+
                 &:before {
                     background-color: $navy;
                 }
@@ -328,6 +336,9 @@
 // LIQUID MOBILE - NOTIFICATIONS PAGE
 @include mqMax($mq-max-mobile) {
     .notifications {
+        padding: 0;
+        background-color: transparent;
+
         &__filter {
             &-header {
                 &__left {
@@ -339,7 +350,7 @@
     
             &-content {
                 margin: get-vw-mobile(24px) 0 0;
-                padding: 0 0 get-vw-mobile(14px);
+                padding: 0 0 get-vw-mobile(28px);
                 border-bottom: none;
             }
     
@@ -406,7 +417,9 @@
         }
     
         &__content {
-            padding: get-vw-mobile(14px) 0;
+            padding: get-vw-mobile(14px);
+            background: $white;
+            border-radius: get-vw-mobile(5px);
     
             &-indicator {
                 display: none;
@@ -427,17 +440,15 @@
         &__item {
             @include displayFlex;
             flex-direction: row;
-    
-            &:last-of-type {
-                .notifications__date {
-                    &::before {
-                        height: calc(100% - 16.666666666666664vw); //100% - 60px
-                    }
-                }
+
+            &:before {
+                top: get-vw-mobile(20px);
+                left: get-vw-mobile(38px);
             }
         }
     
         &__date {
+            margin: 0 auto get-vw-mobile(20px) 0;
             width: get-vw-mobile(85px);
     
             &-val {
@@ -451,13 +462,12 @@
         }
     
         &__inner {
-            margin: 0;
-            padding: get-vw-mobile(50px) 0 get-vw-mobile(20px);
-            width: get-vw-mobile(235px);
+            padding: get-vw-mobile(10px) 0;
             color: $navy;
     
             &-item {
                 padding: get-vw-mobile(10px) get-vw-mobile(12px);
+                width: get-vw-mobile(220px);
                 font-size: get-vw-mobile(10px);
                 line-height: get-vw-mobile(16px);
                 border-radius: get-vw-mobile(5px);
@@ -467,7 +477,7 @@
                 // }
     
                 &:before {
-                    left: get-vw-mobile(-55px);
+                    left: get-vw-mobile(-46px);
                     width: get-vw-mobile(23px);
                     height: get-vw-mobile(20px);
                 }
