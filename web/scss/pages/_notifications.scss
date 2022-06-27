@@ -51,7 +51,7 @@
                 margin: auto;
                 position: absolute;
                 top: 0;
-                right: get-vw-desktop(11px);
+                left: get-vw-desktop(11px);
                 bottom: 0;
                 width: get-vw-desktop(13px);
                 height: get-vw-desktop(14px);
@@ -82,19 +82,15 @@
         }
 
         input[type="search"] {
-            padding: get-vw-desktop(10px) get-vw-desktop(32px) get-vw-desktop(10px) get-vw-desktop(14px);
+            padding: get-vw-desktop(10px) get-vw-desktop(14px) get-vw-desktop(10px) get-vw-desktop(32px);
         }
 
         .custom-select {
-            width: 100%;
-            border: 1px solid $sky_blue;
-            border-radius: 5px;
 
             .select-selected {
                 padding: get-vw-desktop(10px) get-vw-desktop(32px) get-vw-desktop(10px) get-vw-desktop(14px);
                 font-size: get-vw-desktop(10px);
                 line-height: 1.2;
-                background-color: $sky_blue4;
             }
         }
 
@@ -136,27 +132,27 @@
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('./../images/icons/common/notif-fave-blue-icon.svg');
+        background-image: url('./../images/icons/common/notif-fave-green-icon.svg');
         cursor: pointer;
 
         &.is-active {
-            background-image: url('./../images/icons/common/notif-fave-blue-solid-icon.svg');
+            background-image: url('./../images/icons/common/notif-fave-green-solid-icon.svg');
         }
     }
     
     .view-icon {
         display: inline-block;
         margin: 0 0 0 get-vw-desktop(6px);
-        width: get-vw-desktop(18px);
-        height: get-vw-desktop(13px);
+        width: get-vw-desktop(15px);
+        height: get-vw-desktop(15px);
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url('./../images/icons/common/notif-view-blue-icon.svg');
+        background-image: url('./../images/icons/common/notif-view-green-icon.svg');
         cursor: pointer;
 
         &.hidden {
-            background-image: url('./../images/icons/common/notif-view-blue-icon-slash.svg');
+            background-image: url('./../images/icons/common/notif-view-green-icon-slash.svg');
         }
     }
 
@@ -172,7 +168,7 @@
             top: get-vw-desktop(10px);
             right: auto;
             left: get-vw-desktop(56px);
-            width: 1px;
+            width: 2px;
             height: 100%;
             background-color: $sky_blue;
         }
@@ -230,16 +226,12 @@
             margin: 0 0 0 auto;
             padding: get-vw-desktop(10px) get-vw-desktop(14px) get-vw-desktop(10px) get-vw-desktop(20px);
             position: relative;
-            width: get-vw-desktop(750px); //100% - 117px
+            width: calc(100% - 10.972222222222221vw); //100% - 158px
             font-size: get-vw-desktop(10px);
             line-height: get-vw-desktop(16px);
             background-color: $sky_blue;
             border: 1px solid $white;
             border-radius: get-vw-desktop(8px);
-
-            // &:not(:first-of-type) {
-            //     margin: get-vw-desktop(18px) 0 0;
-            // }
 
             &:before {
                 margin: auto;
@@ -254,7 +246,6 @@
                 background-position: center;
                 background-repeat: no-repeat;
                 background-image: url('./../images/icons/common/notif-red-eye.svg');
-                background-color: $light_grey;
             }
 
             &.viewed {
@@ -267,9 +258,25 @@
         }
 
         &-date {
+            padding: 0 0 0 get-vw-desktop(12px);
+            display: inline-block;
             font-size: inherit;
             line-height: inherit;
             color: inherit;
+            position: relative;
+
+            &::before {
+                margin: auto;
+                position: absolute;
+                content: '';
+                top: get-vw-desktop(3px);
+                left: 0;
+                width: get-vw-desktop(8px);
+                height: get-vw-desktop(8px);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url('./../images/icons/common/clock-navy-icon.svg');
+            }
         }
 
         &-status {
@@ -325,8 +332,65 @@
                 border-color: transparent;
 
                 &:before {
-                    background-color: $navy;
+                    background-color: #16213d;
                 }
+
+                &.viewed {
+                    background-color: $opac_white_5;
+                }
+            }
+
+            &-date {
+                &:before {
+                    background-image: url('./../images/icons/common/clock-white-icon.svg');
+                }
+            }
+
+            &-status {
+                &:before {
+                    background-image: url('./../images/icons/common/notif-check-status-white-icon.svg');
+                }
+            }
+        }
+
+        &__content {
+            &-indicator {
+                color: $white;
+            }
+        }
+
+        &__filter {
+            color: $white;
+
+            label {
+                color: $white;
+            }
+
+            input {
+                background-color: $opac_skyblue_7;
+                border-color: transparent;
+                color: $white;
+            }
+
+            ::placeholder,
+            ::-webkit-input-placeholder,
+            :-moz-placeholder,
+            ::-moz-placeholder,
+            :-ms-input-placeholder,
+            :-moz-placeholder {
+                color: inherit;
+            }
+
+            &-form {
+                &__submit {
+                    background-image: url('./../images/icons/common/search-icon-white.svg');
+                }
+            }
+        }
+
+        .btn {
+            &--link {
+                color: $white;
             }
         }
     }
@@ -368,7 +432,7 @@
                 }
     
                 &__submit {
-                    right: get-vw-mobile(12px);
+                    left: get-vw-mobile(12px);
                     width: get-vw-mobile(13px);
                     height: get-vw-mobile(14px);
                 }
@@ -385,7 +449,7 @@
             }
     
             input[type="search"] {
-                padding: get-vw-mobile(10px) get-vw-mobile(32px) get-vw-mobile(10px) get-vw-mobile(14px);
+                padding: get-vw-mobile(10px) get-vw-mobile(14px) get-vw-mobile(10px) get-vw-mobile(32px);
             }
     
             .custom-select {
@@ -394,7 +458,6 @@
                     padding: get-vw-mobile(10px) get-vw-mobile(32px) get-vw-mobile(10px) get-vw-mobile(14px);
                     font-size: get-vw-mobile(10px);
                     line-height: 1.2;
-                    background-color: $sky_blue4;
                 }
             }
     
@@ -418,7 +481,7 @@
     
         &__content {
             padding: get-vw-mobile(14px);
-            background: $white;
+            background-color: $white;
             border-radius: get-vw-mobile(5px);
     
             &-indicator {
@@ -433,8 +496,8 @@
         
         .view-icon {
             margin: 0 0 0 get-vw-mobile(5px);
-            width: get-vw-mobile(14px);
-            height: get-vw-mobile(9px);
+            width: get-vw-mobile(15px);
+            height: get-vw-mobile(15px);
         }
     
         &__item {
@@ -442,7 +505,7 @@
             flex-direction: row;
 
             &:before {
-                top: get-vw-mobile(20px);
+                top: get-vw-mobile(10px);
                 left: get-vw-mobile(38px);
             }
         }
@@ -484,9 +547,16 @@
             }
     
             &-date {
+                padding: 0 0 0 get-vw-mobile(12px);
                 font-size: inherit;
                 line-height: inherit;
                 color: inherit;
+
+                &::before {
+                    top: get-vw-mobile(3px);
+                    width: get-vw-mobile(8px);
+                    height: get-vw-mobile(8px);
+                }
             }
     
             &-status {
@@ -513,6 +583,22 @@
                 font-size: inherit;
                 line-height: inherit;
                 color: inherit;
+            }
+        }
+    }
+
+    .dark-mode {
+        .notifications {
+            &__content {
+                background-color: $opac_white_4;
+            }
+
+            &__inner {
+                &-item {
+                    &:before {
+                        background-color: #222c47;
+                    }
+                }
             }
         }
     }

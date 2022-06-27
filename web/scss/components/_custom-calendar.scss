@@ -13,7 +13,7 @@
         height: get-vw-desktop(16px);
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url('./../images/common/calendar-navy-icon.svg');
+        background-image: url('./../images/icons/common/calendar-navy-icon.svg');
     }
 
     &:after {
@@ -27,13 +27,28 @@
         height: get-vw-desktop(6px);
         background-size: contain;
         background-repeat: no-repeat;
-        background-image: url('./../images/common/custom-select-arrow.svg');
+        background-image: url('./../images/icons/common/custom-select-arrow-green.svg');
         @include transitionAll;
         
     }
 
     &__input {
         padding: get-vw-desktop(10px) get-vw-desktop(34px) get-vw-desktop(10px) get-vw-desktop(42px);
+    }
+}
+
+.dark-mode {
+    .custom-calendar {
+
+        &:before {
+            background-image: url('./../images/icons/common/calendar-white-icon.svg');
+        }
+
+        &__input {
+            background-color: $opac_skyblue_7;
+            color: $white;
+            border-color: transparent;
+        }
     }
 }
 

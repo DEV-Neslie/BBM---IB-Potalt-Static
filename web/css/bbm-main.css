@@ -6576,7 +6576,7 @@ table .flag-content {
   height: 1.1111111111vw;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("./../images/common/calendar-navy-icon.svg");
+  background-image: url("./../images/icons/common/calendar-navy-icon.svg");
 }
 .custom-calendar:after {
   margin: auto;
@@ -6589,13 +6589,22 @@ table .flag-content {
   height: 0.4166666667vw;
   background-size: contain;
   background-repeat: no-repeat;
-  background-image: url("./../images/common/custom-select-arrow.svg");
+  background-image: url("./../images/icons/common/custom-select-arrow-green.svg");
   transition: all 0.2s linear;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
 }
 .custom-calendar__input {
   padding: 0.6944444444vw 2.3611111111vw 0.6944444444vw 2.9166666667vw;
+}
+
+.dark-mode .custom-calendar:before {
+  background-image: url("./../images/icons/common/calendar-white-icon.svg");
+}
+.dark-mode .custom-calendar__input {
+  background-color: rgba(251, 253, 255, 0.2);
+  color: #fff;
+  border-color: transparent;
 }
 
 @media print, screen and (max-width: 768px) {
@@ -6896,7 +6905,7 @@ table .flag-content {
   bottom: 0;
   width: 0.7638888889vw;
   height: 0.4166666667vw;
-  background-image: url("./../images/icons/common/custom-select-arrow.svg");
+  background-image: url("./../images/icons/common/custom-select-arrow-green.svg");
   background-size: contain;
   background-repeat: no-repeat;
   transition: all 0.2s linear;
@@ -6972,8 +6981,12 @@ table .flag-content {
   border-color: #f1d5d5;
 }
 
-.dark-mode .custom-select .select-selected:after {
-  background-image: url("./../images/icons/common/custom-select-arrow-white.svg");
+.dark-mode .custom-select {
+  background-color: rgba(251, 253, 255, 0.2);
+  border-color: transparent;
+}
+.dark-mode .custom-select .select-selected {
+  color: #fff;
 }
 
 @media print, screen and (max-width: 768px) {
@@ -26785,7 +26798,7 @@ table .flag-content {
   margin: auto;
   position: absolute;
   top: 0;
-  right: 0.7638888889vw;
+  left: 0.7638888889vw;
   bottom: 0;
   width: 0.9027777778vw;
   height: 0.9722222222vw;
@@ -26812,18 +26825,12 @@ table .flag-content {
   width: 100%;
 }
 .notifications__filter input[type=search] {
-  padding: 0.6944444444vw 2.2222222222vw 0.6944444444vw 0.9722222222vw;
-}
-.notifications__filter .custom-select {
-  width: 100%;
-  border: 1px solid #E7F2FC;
-  border-radius: 5px;
+  padding: 0.6944444444vw 0.9722222222vw 0.6944444444vw 2.2222222222vw;
 }
 .notifications__filter .custom-select .select-selected {
   padding: 0.6944444444vw 2.2222222222vw 0.6944444444vw 0.9722222222vw;
   font-size: 0.6944444444vw;
   line-height: 1.2;
-  background-color: #FBFDFF;
 }
 .notifications__filter .custom-calendar__input {
   padding: 0.6944444444vw 2.3611111111vw 0.6944444444vw 2.9166666667vw;
@@ -26861,25 +26868,25 @@ table .flag-content {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("./../images/icons/common/notif-fave-blue-icon.svg");
+  background-image: url("./../images/icons/common/notif-fave-green-icon.svg");
   cursor: pointer;
 }
 .notifications .fave-icon.is-active {
-  background-image: url("./../images/icons/common/notif-fave-blue-solid-icon.svg");
+  background-image: url("./../images/icons/common/notif-fave-green-solid-icon.svg");
 }
 .notifications .view-icon {
   display: inline-block;
   margin: 0 0 0 0.4166666667vw;
-  width: 1.25vw;
-  height: 0.9027777778vw;
+  width: 1.0416666667vw;
+  height: 1.0416666667vw;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url("./../images/icons/common/notif-view-blue-icon.svg");
+  background-image: url("./../images/icons/common/notif-view-green-icon.svg");
   cursor: pointer;
 }
 .notifications .view-icon.hidden {
-  background-image: url("./../images/icons/common/notif-view-blue-icon-slash.svg");
+  background-image: url("./../images/icons/common/notif-view-green-icon-slash.svg");
 }
 .notifications__item {
   display: -webkit-box;
@@ -26903,7 +26910,7 @@ table .flag-content {
   top: 0.6944444444vw;
   right: auto;
   left: 3.8888888889vw;
-  width: 1px;
+  width: 2px;
   height: 100%;
   background-color: #E7F2FC;
 }
@@ -26979,7 +26986,7 @@ table .flag-content {
   margin: 0 0 0 auto;
   padding: 0.6944444444vw 0.9722222222vw 0.6944444444vw 1.3888888889vw;
   position: relative;
-  width: 52.0833333333vw;
+  width: calc(100% - 10.9722222222vw);
   font-size: 0.6944444444vw;
   line-height: 1.1111111111vw;
   background-color: #E7F2FC;
@@ -26999,7 +27006,6 @@ table .flag-content {
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("./../images/icons/common/notif-red-eye.svg");
-  background-color: #EEF1F7;
 }
 .notifications__inner-item.viewed {
   background-color: #FBFDFF;
@@ -27008,9 +27014,24 @@ table .flag-content {
   background-image: url("./../images/icons/common/notif-green-eye.svg");
 }
 .notifications__inner-date {
+  padding: 0 0 0 0.8333333333vw;
+  display: inline-block;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
+  position: relative;
+}
+.notifications__inner-date::before {
+  margin: auto;
+  position: absolute;
+  content: "";
+  top: 0.2083333333vw;
+  left: 0;
+  width: 0.5555555556vw;
+  height: 0.5555555556vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("./../images/icons/common/clock-navy-icon.svg");
 }
 .notifications__inner-status {
   margin: 0 0 0 0.4166666667vw;
@@ -27058,7 +27079,47 @@ table .flag-content {
   border-color: transparent;
 }
 .dark-mode .notifications__inner-item:before {
-  background-color: #02194A;
+  background-color: #16213d;
+}
+.dark-mode .notifications__inner-item.viewed {
+  background-color: rgba(251, 253, 255, 0.05);
+}
+.dark-mode .notifications__inner-date:before {
+  background-image: url("./../images/icons/common/clock-white-icon.svg");
+}
+.dark-mode .notifications__inner-status:before {
+  background-image: url("./../images/icons/common/notif-check-status-white-icon.svg");
+}
+.dark-mode .notifications__content-indicator {
+  color: #fff;
+}
+.dark-mode .notifications__filter {
+  color: #fff;
+}
+.dark-mode .notifications__filter label {
+  color: #fff;
+}
+.dark-mode .notifications__filter input {
+  background-color: rgba(251, 253, 255, 0.2);
+  border-color: transparent;
+  color: #fff;
+}
+.dark-mode .notifications__filter ::-webkit-input-placeholder {
+  color: inherit;
+}
+.dark-mode .notifications__filter ::placeholder,
+.dark-mode .notifications__filter ::-webkit-input-placeholder,
+.dark-mode .notifications__filter :-moz-placeholder,
+.dark-mode .notifications__filter ::-moz-placeholder,
+.dark-mode .notifications__filter :-ms-input-placeholder,
+.dark-mode .notifications__filter :-moz-placeholder {
+  color: inherit;
+}
+.dark-mode .notifications__filter-form__submit {
+  background-image: url("./../images/icons/common/search-icon-white.svg");
+}
+.dark-mode .notifications .btn--link {
+  color: #fff;
 }
 
 @media print, screen and (max-width: 768px) {
@@ -27087,7 +27148,7 @@ table .flag-content {
     margin: 0 0 3.3333333333vw;
   }
   .notifications__filter-form__submit {
-    right: 3.3333333333vw;
+    left: 3.3333333333vw;
     width: 3.6111111111vw;
     height: 3.8888888889vw;
   }
@@ -27100,13 +27161,12 @@ table .flag-content {
     font-size: 2.7777777778vw;
   }
   .notifications__filter input[type=search] {
-    padding: 2.7777777778vw 8.8888888889vw 2.7777777778vw 3.8888888889vw;
+    padding: 2.7777777778vw 3.8888888889vw 2.7777777778vw 8.8888888889vw;
   }
   .notifications__filter .custom-select .select-selected {
     padding: 2.7777777778vw 8.8888888889vw 2.7777777778vw 3.8888888889vw;
     font-size: 2.7777777778vw;
     line-height: 1.2;
-    background-color: #FBFDFF;
   }
   .notifications__filter .custom-calendar__input {
     padding: 2.7777777778vw 9.4444444444vw 2.7777777778vw 11.6666666667vw;
@@ -27128,7 +27188,7 @@ table .flag-content {
   }
   .notifications__content {
     padding: 3.8888888889vw;
-    background: #fff;
+    background-color: #fff;
     border-radius: 1.3888888889vw;
   }
   .notifications__content-indicator {
@@ -27140,8 +27200,8 @@ table .flag-content {
   }
   .notifications .view-icon {
     margin: 0 0 0 1.3888888889vw;
-    width: 3.8888888889vw;
-    height: 2.5vw;
+    width: 4.1666666667vw;
+    height: 4.1666666667vw;
   }
   .notifications__item {
     display: -webkit-box;
@@ -27158,7 +27218,7 @@ table .flag-content {
             flex-direction: row;
   }
   .notifications__item:before {
-    top: 5.5555555556vw;
+    top: 2.7777777778vw;
     left: 10.5555555556vw;
   }
   .notifications__date {
@@ -27189,9 +27249,15 @@ table .flag-content {
     height: 5.5555555556vw;
   }
   .notifications__inner-date {
+    padding: 0 0 0 3.3333333333vw;
     font-size: inherit;
     line-height: inherit;
     color: inherit;
+  }
+  .notifications__inner-date::before {
+    top: 0.8333333333vw;
+    width: 2.2222222222vw;
+    height: 2.2222222222vw;
   }
   .notifications__inner-status {
     margin: 0 0 0 1.6666666667vw;
@@ -27214,6 +27280,13 @@ table .flag-content {
     font-size: inherit;
     line-height: inherit;
     color: inherit;
+  }
+
+  .dark-mode .notifications__content {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  .dark-mode .notifications__inner-item:before {
+    background-color: #222c47;
   }
 }
 .questionnaire {
