@@ -1884,8 +1884,21 @@ table .flag-content {
   color: #00CF80;
 }
 .sidebar__nav-list-item.is-open .sidebar__nav-list-link--dropdown:after {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.sidebar__nav-list-item--referral {
+  padding-bottom: 2.4305555556vw;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.sidebar__nav-list-item--referral .sidebar__nav-input {
+  position: absolute;
+  width: 15.2777777778vw;
+  -webkit-transform: translate(0, 2.431vw);
+          transform: translate(0, 2.431vw);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 .sidebar__nav-list-link {
   padding: 0.4861111111vw 0;
@@ -2240,6 +2253,22 @@ table .flag-content {
   font-size: 0.625vw;
   font-family: "Poppins", sans-serif;
   line-height: 1.1111111111vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.sidebar__nav-input-copy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0.2777777778vw;
+  height: 1.0416666667vw;
+  width: 1.0416666667vw;
+  margin: auto;
+  background: url("./../images/icons/common/icon_copy--white.svg") center/contain no-repeat;
+  cursor: pointer;
 }
 .sidebar__nav-line {
   display: none;
@@ -2318,6 +2347,17 @@ table .flag-content {
 }
 .sidebar.is-close .sidebar__nav-list-item {
   padding: 0 2.7083333333vw 0 2.5vw;
+}
+.sidebar.is-close .sidebar__nav-list-item--referral {
+  padding-bottom: 2.4305555556vw;
+}
+.sidebar.is-close .sidebar__nav-list-item--referral .sidebar__nav-input {
+  width: 5.5555555556vw;
+  -webkit-transform: translate(-1.806vw, 2.431vw);
+          transform: translate(-1.806vw, 2.431vw);
+}
+.sidebar.is-close .sidebar__nav-list-item--referral .sidebar__nav-input input {
+  padding: 0.625vw 1.7361111111vw 0.625vw 0.8333333333vw;
 }
 
 .dark-mode .sidebar {
@@ -9416,6 +9456,9 @@ table .flag-content {
   width: 100%;
   height: 100%;
   padding: 0.9722222222vw 1.0416666667vw 0.6944444444vw 3.125vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .help__body {
   width: 100%;
@@ -9482,6 +9525,9 @@ table .flag-content {
 .dark-mode .help__header__search {
   background-color: rgba(251, 253, 255, 0.2);
   border-color: transparent;
+}
+.dark-mode .help__header__search input {
+  color: #fff;
 }
 
 .imgBox {

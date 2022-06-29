@@ -46,6 +46,7 @@
                 width: 100%;
                 height: 100%;
                 padding: get-vw-desktop(14px) get-vw-desktop(15px) get-vw-desktop(10px) get-vw-desktop(45px);
+                @include textEllipsis;
             }
         }
     }
@@ -112,6 +113,10 @@
             &__search {
                 background-color: $opac_skyblue_7;
                 border-color: transparent;
+
+                input {
+                    color: $white;
+                }
             }
         }
     }

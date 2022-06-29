@@ -112,6 +112,12 @@ $opac_black4: rgba(0, 0, 0, 0.03);
 	letter-spacing: ($spacing / 1000) * 1em;
 }
 
+@mixin textEllipsis {
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
 @mixin transitionAll {
 	transition: all .2s linear;
 	-webkit-transition: all .2s linear;
