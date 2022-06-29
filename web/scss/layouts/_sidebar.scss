@@ -714,7 +714,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            max-height: get-vw-mobile(460px);
+            max-height: get-vw-mobile(502px);
             width: 100%;
             margin: 0;
             justify-content: flex-start;
@@ -754,7 +754,7 @@
                 }
 
                 &-item {
-                    padding: 0 get-vw-mobile(10px) 0 get-vw-mobile(17px);
+                    padding: 0 get-vw-mobile(25px) 0 get-vw-mobile(35px);
                     position: relative;
             
                     &:not(:first-of-type) {
@@ -762,10 +762,26 @@
                     }
             
                     &.active {
+                        background: none;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            right: 0;
+                            margin: auto;
+                            width: calc(100% - 10vw); // 100% - 36px
+                            height: 100%;
+                            border-radius: get-vw-mobile(16px);
+                            background-color: $sky_blue;
+                            opacity: 0.05;
+                        }
                                 
                         &:after {
-                            height: get-vw-mobile(32px);
-                            width: get-vw-mobile(5px);
+                            display: none;
+                            // height: get-vw-mobile(32px);
+                            // width: get-vw-mobile(5px);
                         }
                     }
                 }
@@ -780,6 +796,57 @@
                             right: get-vw-mobile(10px);
                             width: get-vw-mobile(10px);
                             height: get-vw-mobile(6px);
+                        }
+                    }
+
+                    .mode {
+                        position: absolute;
+                        right: 0;
+                        height: get-vw-mobile(20px);
+                        width: get-vw-mobile(40px);
+
+                        input {
+                            height: 0;
+                            width: 0;
+                            visibility: hidden;
+                        }
+
+                        input {
+                            &:checked + label {
+                                background-color: $green;
+                            }
+                
+                            &:checked + label:after {
+                                display: block;
+                                left: get-vw-mobile(22px);
+                            }
+                        }
+
+                        label {
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: $opac_skyblue_2;
+                            height: 100%;
+                            width: 100%;
+                            border-radius: get-vw-mobile(60px);
+                            z-index: 1;
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                left: get-vw-mobile(2px);
+                                margin: auto;
+                                width: get-vw-mobile(16px);
+                                height: get-vw-mobile(16px);
+                                background-color: $white;
+                                border-radius: 50%;
+                                -webkit-transition: .2s ease .1s;
+                                transition: .4s cubic-bezier(0.68, -0.55, 0.27, 01.55) .1s;
+                            }
                         }
                     }
                 }
@@ -812,10 +879,16 @@
                 width: get-vw-mobile(25px);
                 height: get-vw-mobile(25px);
                 background-repeat: no-repeat;
+                background-position: center;
                 background-size: get-vw-mobile(25px) get-vw-mobile(25px);
         
                 &.is-active {
                     margin: 0;
+                }
+
+                &--darkmode {
+                    background-image: url('./../images/icons/common/mode-dark.svg');
+                    background-size: get-vw-mobile(20px);
                 }
         
                 &--home {
