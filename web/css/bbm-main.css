@@ -1884,8 +1884,21 @@ table .flag-content {
   color: #00CF80;
 }
 .sidebar__nav-list-item.is-open .sidebar__nav-list-link--dropdown:after {
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.sidebar__nav-list-item--referral {
+  padding-bottom: 2.4305555556vw;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.sidebar__nav-list-item--referral .sidebar__nav-input {
+  position: absolute;
+  width: 15.2777777778vw;
+  -webkit-transform: translate(0, 2.431vw);
+          transform: translate(0, 2.431vw);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 .sidebar__nav-list-link {
   padding: 0.4861111111vw 0;
@@ -2240,6 +2253,22 @@ table .flag-content {
   font-size: 0.625vw;
   font-family: "Poppins", sans-serif;
   line-height: 1.1111111111vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+.sidebar__nav-input-copy {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0.2777777778vw;
+  height: 1.0416666667vw;
+  width: 1.0416666667vw;
+  margin: auto;
+  background: url("./../images/icons/common/icon_copy--white.svg") center/contain no-repeat;
+  cursor: pointer;
 }
 .sidebar__nav-line {
   display: none;
@@ -2318,6 +2347,17 @@ table .flag-content {
 }
 .sidebar.is-close .sidebar__nav-list-item {
   padding: 0 2.7083333333vw 0 2.5vw;
+}
+.sidebar.is-close .sidebar__nav-list-item--referral {
+  padding-bottom: 2.4305555556vw;
+}
+.sidebar.is-close .sidebar__nav-list-item--referral .sidebar__nav-input {
+  width: 5.5555555556vw;
+  -webkit-transform: translate(-1.806vw, 2.431vw);
+          transform: translate(-1.806vw, 2.431vw);
+}
+.sidebar.is-close .sidebar__nav-list-item--referral .sidebar__nav-input input {
+  padding: 0.625vw 1.7361111111vw 0.625vw 0.8333333333vw;
 }
 
 .dark-mode .sidebar {
@@ -5072,6 +5112,50 @@ table .flag-content {
   -webkit-transform: rotate(180deg) perspective(1px);
           transform: rotate(180deg) perspective(1px);
   top: 21px;
+}
+
+.article {
+  width: 100%;
+}
+.article__header {
+  width: 100%;
+  margin-bottom: 0.3472222222vw;
+}
+.article__header__title {
+  font-family: "Gilroy-Regular", sans-serif;
+  font-weight: 600;
+  font-size: 0.9722222222vw;
+  line-height: 1.3888888889vw;
+}
+.article__body {
+  width: 100%;
+}
+.article__body__list {
+  width: 100%;
+}
+.article__body__list__item {
+  width: 100%;
+  padding: 1.25vw 0 2.0833333333vw;
+  border-bottom: 0.0694444444vw solid #E7F2FC;
+}
+.article__body__list__item-title {
+  display: block;
+  font-size: 0.8333333333vw;
+  line-height: 1.25vw;
+  font-weight: 600;
+  margin-bottom: 1.0416666667vw;
+}
+.article__body__list__item-descript {
+  font-size: 0.8333333333vw;
+  line-height: 1.3888888889vw;
+}
+.article__footer {
+  width: 100%;
+  padding-top: 2.0833333333vw;
+}
+
+.dark-mode .article__body__list__item {
+  border-color: rgba(231, 242, 252, 0.5);
 }
 
 .breadcrumbs {
@@ -9339,6 +9423,126 @@ table .flag-content {
     margin-top: initial;
   }
 }
+.help {
+  background-color: #fff;
+  width: 100%;
+  padding: 2.2222222222vw 4.0277777778vw 2.0833333333vw 3.2638888889vw;
+  border-radius: 0.3472222222vw;
+  -webkit-box-shadow: 0.3472222222vw 0.3472222222vw 1.3888888889vw #E7F2FC;
+          box-shadow: 0.3472222222vw 0.3472222222vw 1.3888888889vw #E7F2FC;
+}
+.help__header {
+  width: 100%;
+  margin-bottom: 2.7777777778vw;
+}
+.help__header__title {
+  display: block;
+  text-align: center;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-size: 1.25vw;
+  line-height: 1.8055555556vw;
+  margin-bottom: 1.6666666667vw;
+}
+.help__header__search {
+  position: relative;
+  width: 41.6666666667vw;
+  height: 2.7777777778vw;
+  border: 0.1388888889vw solid #E7F2FC;
+  border-radius: 0.3472222222vw;
+  margin: auto;
+}
+.help__header__search::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.0416666667vw;
+  bottom: 0;
+  margin: auto;
+  height: 1.3888888889vw;
+  width: 1.3888888889vw;
+  background: url("./../images/icons/common/icon_search--green.svg") center/contain no-repeat;
+}
+.help__header__search input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.9722222222vw 1.0416666667vw 0.6944444444vw 3.125vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.help__body {
+  width: 100%;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.help__body__nav {
+  width: 20.8333333333vw;
+}
+.help__body__nav__list {
+  width: 100%;
+}
+.help__body__nav__list__item {
+  width: 100%;
+  padding-right: 1.3888888889vw;
+  margin-bottom: 1.6666666667vw;
+}
+.help__body__nav__list__item-link {
+  display: inline-block;
+  font-family: "Gilroy-Regular", sans-serif;
+  font-size: 0.9722222222vw;
+  font-weight: 600;
+  line-height: 1.3888888889vw;
+}
+.help__body__nav__list__item.active .help__body__nav__list__item-link {
+  font-family: "Gilroy-Bold", sans-serif;
+  font-weight: initial;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-thickness: 0.1388888889vw;
+  -webkit-text-decoration-color: #00CF80;
+          text-decoration-color: #00CF80;
+}
+.help__body__nav__list__item.active .help__body__nav__list__item-link:hover {
+  text-decoration: underline !important;
+  text-underline-position: under !important;
+  text-decoration-thickness: 0.1388888889vw !important;
+  -webkit-text-decoration-color: #00CF80 !important;
+          text-decoration-color: #00CF80 !important;
+}
+.help__body__content {
+  width: calc(100% - 20.833vw);
+}
+
+.dark-mode .help {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.dark-mode .help__header__search {
+  background-color: rgba(251, 253, 255, 0.2);
+  border-color: transparent;
+}
+.dark-mode .help__header__search input {
+  color: #fff;
+}
+
 .imgBox {
   width: 100%;
   display: -webkit-box;

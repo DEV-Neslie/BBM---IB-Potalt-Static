@@ -1,0 +1,62 @@
+// ARTICLE
+.article {
+    width: 100%;
+
+    &__header {
+        width: 100%;
+        margin-bottom: get-vw-desktop(5px);
+
+        &__title {
+            font-family: $Gilroy_r;
+            font-weight: 600;
+            font-size: get-vw-desktop(14px);
+            line-height: get-vw-desktop(20px);
+        }
+    }
+
+    &__body {
+        width: 100%;
+
+        &__list {
+            width: 100%;
+
+            &__item {
+                width: 100%;
+                padding: get-vw-desktop(18px) 0 get-vw-desktop(30px);
+                border-bottom: get-vw-desktop(1px) solid $sky_blue;
+
+                &-title {
+                    display: block;
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(18px);
+                    font-weight: 600;
+                    margin-bottom: get-vw-desktop(15px);
+                }
+
+                &-descript {
+                    font-size: get-vw-desktop(12px);
+                    line-height: get-vw-desktop(20px);
+                }
+            }
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        padding-top: get-vw-desktop(30px);
+    }
+}
+
+
+// DARK MODE
+.dark-mode {
+    .article {
+        &__body {
+            &__list {
+                &__item {
+                    border-color: $opac_skyblue_2;
+                }
+            }
+        }
+    }
+}
