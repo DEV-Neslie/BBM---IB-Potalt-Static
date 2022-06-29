@@ -32,9 +32,9 @@ $(function () {
     tabLink();
     customUploadInput();
     appSurvey();
-    datePicker();
-    dateRange();
-    dataRangeFrom();
+    // datePicker();
+    // dateRange();
+    // dataRangeFrom();
     notifPage();
     copyToClipboard();
     snsButton();
@@ -212,6 +212,7 @@ function closeAllSelect(elmnt) {
 
 function themeMode() {
     let mode = $('.theme_mode');
+    let mode_menu = $('#mode_switch');
     let main_content = $('body');
     let storageModeVal = localStorage.getItem('theme_mode');
 
@@ -220,9 +221,11 @@ function themeMode() {
         if (storageModeVal == 'dark') {
             mode.addClass('theme_mode--dark');
             main_content.addClass('dark-mode');
+            mode_menu.attr('checked', true);
         }
     }
 
+    // Mode header
     mode.click(function () {
         //set localstorage theme_mode
         if (storageModeVal !== null) {
@@ -234,7 +237,34 @@ function themeMode() {
         }
 
         $(this).toggleClass('theme_mode--dark');
-        $(this).hasClass('theme_mode--dark') ? main_content.addClass('dark-mode') : main_content.removeClass('dark-mode');
+
+        if ($(this).hasClass('theme_mode--dark')) {
+            main_content.addClass('dark-mode');
+            mode_menu.attr('checked', true);
+        } else {
+            main_content.removeClass('dark-mode');
+            mode_menu.attr('checked', false);
+        }
+
+        setTimeout(function () {
+            $('.menuToggler, .sidebar').removeClass('is-active');
+        }, 300);
+    })
+
+
+    // Mode Header menu
+    mode_menu.click(function () {
+        //set localstorage theme_mode
+        if (storageModeVal !== null) {
+            if (storageModeVal == 'dark') {
+                localStorage.removeItem("theme_mode");
+            }
+        } else {
+            localStorage.setItem("theme_mode", "dark");
+        }
+
+        mode.toggleClass('theme_mode--dark');
+        mode.hasClass('theme_mode--dark') ? main_content.addClass('dark-mode') : main_content.removeClass('dark-mode');
 
         setTimeout(function () {
             $('.menuToggler, .sidebar').removeClass('is-active');
