@@ -895,6 +895,22 @@ function notifPage() {
             $(this).toggleClass('is-active');
         });
     }
+
+    var heeaderFaveIcon =$('.notifications__filter-header__right .fave-icon');
+    if (heeaderFaveIcon.length) {
+        $(heeaderFaveIcon).click(function (e) {
+            e.preventDefault();
+            $(this).toggleClass('is-active');
+        });
+    }
+
+    var heeaderViewIcon =$('.notifications__filter-header__right .view-icon');
+    if (heeaderViewIcon.length) {
+        $(heeaderViewIcon).click(function (e) {
+            e.preventDefault();
+            $(this).toggleClass('hidden');
+        });
+    }
 }
 
 function copyToClipboard() {
