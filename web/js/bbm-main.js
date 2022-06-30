@@ -14,7 +14,10 @@ $(function () {
     sidebarNav();
     themeMode();
     customSelect();
+    
     headerNav();
+    footerNav_referral();
+
     quickLinks();
     modal();
     bankList();
@@ -32,9 +35,9 @@ $(function () {
     tabLink();
     customUploadInput();
     appSurvey();
-    // datePicker();
-    // dateRange();
-    // dataRangeFrom();
+    datePicker();
+    dateRange();
+    dataRangeFrom();
     notifPage();
     copyToClipboard();
     snsButton();
@@ -225,16 +228,24 @@ function themeMode() {
         }
     }
 
-    // Mode header
-    mode.click(function () {
-        //set localstorage theme_mode
+    //set localstorage theme_mode
+    function localTheme() {
         if (storageModeVal !== null) {
             if (storageModeVal == 'dark') {
                 localStorage.removeItem("theme_mode");
+            } else {
+                localStorage.setItem("theme_mode", "dark");
             }
         } else {
             localStorage.setItem("theme_mode", "dark");
         }
+    }
+
+
+    // Mode Header (Desktop)
+    mode.click(function () {
+        
+        localTheme();
 
         $(this).toggleClass('theme_mode--dark');
 
@@ -245,30 +256,20 @@ function themeMode() {
             main_content.removeClass('dark-mode');
             mode_menu.attr('checked', false);
         }
-
-        setTimeout(function () {
-            $('.menuToggler, .sidebar').removeClass('is-active');
-        }, 300);
     })
 
 
-    // Mode Header menu
+    // Mode Header Menu (Mobile)
     mode_menu.click(function () {
-        //set localstorage theme_mode
-        if (storageModeVal !== null) {
-            if (storageModeVal == 'dark') {
-                localStorage.removeItem("theme_mode");
-            }
-        } else {
-            localStorage.setItem("theme_mode", "dark");
-        }
+
+        localTheme();
 
         mode.toggleClass('theme_mode--dark');
         mode.hasClass('theme_mode--dark') ? main_content.addClass('dark-mode') : main_content.removeClass('dark-mode');
 
         setTimeout(function () {
             $('.menuToggler, .sidebar').removeClass('is-active');
-        }, 300);
+        }, 700);
     })
 }
 
@@ -295,6 +296,15 @@ function headerNav() {
         notice.removeClass('is-active');
     })
 }
+
+function footerNav_referral() {
+    let referral = $('.footer__nav__item--referral .footer__nav__item-icon');
+
+    referral.click(function() {
+        $(this).parent().toggleClass('active');
+    });
+}
+
 
 function quickLinks() {
     $('.quick-links__list__item').hover(function (e) {

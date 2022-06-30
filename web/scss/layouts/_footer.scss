@@ -26,12 +26,31 @@
             padding: get-vw-mobile(10px) get-vw-mobile(21px);
 
             &__item {
+                position: relative;
+                width: get-vw-mobile(30px);
+                height: get-vw-mobile(30px);
 
                 &-icon {
+                    position: relative;
+                    width: get-vw-mobile(30px);
+                    height: get-vw-mobile(30px);
                     display: inline-block;
                     background-position: center;
-                    background-size: contain;
+                    background-size: get-vw-mobile(16px) get-vw-mobile(16px);
                     background-repeat: no-repeat;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        width: 0;
+                        height: get-vw-mobile(1.5px);
+                        background-color: $green;
+                        transition: .4s ease .4s;
+                    }
                 }
 
                 &__referral {
@@ -44,6 +63,10 @@
                     border-radius: get-vw-mobile(20px) get-vw-mobile(20px) 0 0;
                     padding: get-vw-mobile(20px) get-vw-mobile(30px) get-vw-mobile(15px);
                     box-shadow: 0px get-vw-mobile(-10px) get-vw-mobile(20px) rgba(2, 25, 74, 0.4);
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(10px) perspective(1px);
+                    transition: .4s ease;
 
                     &::after {
                         content: '';
@@ -116,31 +139,54 @@
                     }
                 }
 
+                &.active {
+                    &::after {
+                        width: get-vw-mobile(24px);
+                    }
+
+                    .footer__nav__item-icon {
+                        &::after {
+                            width: get-vw-mobile(24px);
+                        }
+                    }
+                }
+
                 &--search {
                     .footer__nav__item-icon {
-                        width: get-vw-mobile(15px);
-                        height: get-vw-mobile(15px);
                         background-image: url('./../images/icons/footer/footer_nav-search.svg');
+                    }
+
+                    &.active {
+                        .footer__nav__item-icon {
+                            background-image: url('./../images/icons/footer/footer_nav-search--active.svg');
+                        }
                     }
                 }
 
                 &--referral {
+                    position: initial;
+
                     .footer__nav__item-icon {
-                        width: get-vw-mobile(30px);
-                        height: get-vw-mobile(30px);
                         background-image: url('./../images/icons/footer/footer_nav-referral.svg');
                     }
+                   
+
                     &.active {
                         .footer__nav__item-icon {
                             background-image: url('./../images/icons/footer/footer_nav-referral--active.svg');
+                        }
+
+                        .footer__nav__item__referral {
+                            visibility: visible;
+                            opacity: 1;
+                            transform: translateY(0) perspective(1px);
                         }
                     }
                 }
 
                 &--commision {
                     .footer__nav__item-icon {
-                        width: get-vw-mobile(30px);
-                        height: get-vw-mobile(30px);
+                        background-size: get-vw-mobile(15px) get-vw-mobile(17px);
                         background-image: url('./../images/icons/footer/footer_nav-commision.svg');
                     }
                     &.active {
@@ -152,8 +198,7 @@
 
                 &--home {
                     .footer__nav__item-icon {
-                        width: get-vw-mobile(30px);
-                        height: get-vw-mobile(30px);
+                        background-size: get-vw-mobile(19px) get-vw-mobile(18px);
                         background-image: url('./../images/icons/footer/footer_nav-home.svg');
                     }
                     &.active {
@@ -163,46 +208,25 @@
                     }
                 }
 
-                &--notif {
-                    width: get-vw-mobile(15px);
-
-                    .notif {
-                        position: relative;
-
-                        &__counter {
-                            background-color: $red;
-                            position: absolute;
-                            top: 0;
-                            right: get-vw-mobile(-6px);
-                            height: get-vw-mobile(10px);
-                            width: get-vw-mobile(10px);
-                            @include dFlex(center);
-                            align-items: center;
-                            color: $white;
-                            border-radius: 50%;
-                            z-index: 1;
-                            font-family: $DM;
-                            font-size: get-vw-mobile(6px);
-                            font-weight: 700;
-                        }
-
-                        &__icon {
-                            display: inline-block;
-                            width: get-vw-mobile(20px);
-                            height: get-vw-mobile(18px);
-                            background: url('./../images/icons/footer/footer_nav-notif.svg') center/contain no-repeat;
-                        }
-                    }
-                }
-
                 &--account {
-                    width: get-vw-mobile(19px);
-                    height: get-vw-mobile(19px);
-                    margin-bottom: get-vw-mobile(6px);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        width: 0;
+                        height: get-vw-mobile(1.5px);
+                        background-color: $green;
+                        transition: .4s ease .4s;
+                    }
 
                     .account {
                         width: get-vw-mobile(19px);
                         height: get-vw-mobile(19px);
+                        margin: get-vw-mobile(5px) auto 0;
                         overflow: hidden;
                         border-radius: 50%;
 
@@ -257,6 +281,12 @@
                         .footer__nav__item-icon {
                             background-image: url('./../images/icons/footer/footer_nav-search--white.svg');
                         }
+
+                        &.active {
+                            .footer__nav__item-icon {
+                                background-image: url('./../images/icons/footer/footer_nav-search--active.svg');
+                            }
+                        }
                     }
                     &--referral {
                         .footer__nav__item-icon {
@@ -278,16 +308,6 @@
                             }
                         }
                     }
-                    &--fund {
-                        .footer__nav__item-icon {
-                            background-image: url('./../images/icons/footer/footer_nav-fund--white.svg');
-                        }
-                        &.active {
-                            .footer__nav__item-icon {
-                                background-image: url('./../images/icons/footer/footer_nav-fund--active.svg');
-                            }
-                        }
-                    }
                     &--home {
                         .footer__nav__item-icon {
                             background-image: url('./../images/icons/footer/footer_nav-home--white.svg');
@@ -295,13 +315,6 @@
                         &.active {
                             .footer__nav__item-icon {
                                 background-image: url('./../images/icons/footer/footer_nav-home--active.svg');
-                            }
-                        }
-                    }
-                    &--notif {
-                        .notif {
-                            &__icon {
-                                background: url('./../images/icons/footer/footer_nav-notif--white.svg') center/contain no-repeat;
                             }
                         }
                     }

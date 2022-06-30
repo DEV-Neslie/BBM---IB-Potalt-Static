@@ -1481,6 +1481,7 @@ table .flag-content {
         -ms-flex-order: 1;
             order: 1;
     margin: 0 2.7777777778vw 0 0;
+    visibility: hidden;
   }
   .header__mode-btn {
     width: 6.9444444444vw;
@@ -1549,11 +1550,32 @@ table .flag-content {
             box-sizing: border-box;
     padding: 2.7777777778vw 5.8333333333vw;
   }
+  .footer__nav__item {
+    position: relative;
+    width: 8.3333333333vw;
+    height: 8.3333333333vw;
+  }
   .footer__nav__item-icon {
+    position: relative;
+    width: 8.3333333333vw;
+    height: 8.3333333333vw;
     display: inline-block;
     background-position: center;
-    background-size: contain;
+    background-size: 4.4444444444vw 4.4444444444vw;
     background-repeat: no-repeat;
+  }
+  .footer__nav__item-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 0;
+    height: 0.4166666667vw;
+    background-color: #00CF80;
+    -webkit-transition: 0.4s ease 0.4s;
+    transition: 0.4s ease 0.4s;
   }
   .footer__nav__item__referral {
     position: absolute;
@@ -1566,6 +1588,12 @@ table .flag-content {
     padding: 5.5555555556vw 8.3333333333vw 4.1666666667vw;
     -webkit-box-shadow: 0px -2.7777777778vw 5.5555555556vw rgba(2, 25, 74, 0.4);
             box-shadow: 0px -2.7777777778vw 5.5555555556vw rgba(2, 25, 74, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateY(10px) perspective(1px);
+            transform: translateY(10px) perspective(1px);
+    -webkit-transition: 0.4s ease;
+    transition: 0.4s ease;
   }
   .footer__nav__item__referral::after {
     content: "";
@@ -1631,87 +1659,64 @@ table .flag-content {
     width: 5.5555555556vw;
     background: url("./../images/icons/common/icon_copy.svg") center/contain no-repeat;
   }
+  .footer__nav__item.active::after {
+    width: 6.6666666667vw;
+  }
+  .footer__nav__item.active .footer__nav__item-icon::after {
+    width: 6.6666666667vw;
+  }
   .footer__nav__item--search .footer__nav__item-icon {
-    width: 4.1666666667vw;
-    height: 4.1666666667vw;
     background-image: url("./../images/icons/footer/footer_nav-search.svg");
   }
+  .footer__nav__item--search.active .footer__nav__item-icon {
+    background-image: url("./../images/icons/footer/footer_nav-search--active.svg");
+  }
+  .footer__nav__item--referral {
+    position: initial;
+  }
   .footer__nav__item--referral .footer__nav__item-icon {
-    width: 8.3333333333vw;
-    height: 8.3333333333vw;
     background-image: url("./../images/icons/footer/footer_nav-referral.svg");
   }
   .footer__nav__item--referral.active .footer__nav__item-icon {
     background-image: url("./../images/icons/footer/footer_nav-referral--active.svg");
   }
+  .footer__nav__item--referral.active .footer__nav__item__referral {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateY(0) perspective(1px);
+            transform: translateY(0) perspective(1px);
+  }
   .footer__nav__item--commision .footer__nav__item-icon {
-    width: 8.3333333333vw;
-    height: 8.3333333333vw;
+    background-size: 4.1666666667vw 4.7222222222vw;
     background-image: url("./../images/icons/footer/footer_nav-commision.svg");
   }
   .footer__nav__item--commision.active .footer__nav__item-icon {
     background-image: url("./../images/icons/footer/footer_nav-commision--active.svg");
   }
   .footer__nav__item--home .footer__nav__item-icon {
-    width: 8.3333333333vw;
-    height: 8.3333333333vw;
+    background-size: 5.2777777778vw 5vw;
     background-image: url("./../images/icons/footer/footer_nav-home.svg");
   }
   .footer__nav__item--home.active .footer__nav__item-icon {
     background-image: url("./../images/icons/footer/footer_nav-home--active.svg");
   }
-  .footer__nav__item--notif {
-    width: 4.1666666667vw;
-  }
-  .footer__nav__item--notif .notif {
-    position: relative;
-  }
-  .footer__nav__item--notif .notif__counter {
-    background-color: #FF0000;
+  .footer__nav__item--account::after {
+    content: "";
     position: absolute;
-    top: 0;
-    right: -1.6666666667vw;
-    height: 2.7777777778vw;
-    width: 2.7777777778vw;
-    display: -webkit-box;
-    /* OLD - iOS 6-, Safari 3.1-6 */
-    /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox;
-    /* TWEENER - IE 10 */
-    /* NEW - Chrome */
-    display: flex;
-    /* NEW, Spec - Opera 12.1, Firefox 20+ */
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    color: #fff;
-    border-radius: 50%;
-    z-index: 1;
-    font-family: "DM Sans", sans-serif;
-    font-size: 1.6666666667vw;
-    font-weight: 700;
-  }
-  .footer__nav__item--notif .notif__icon {
-    display: inline-block;
-    width: 5.5555555556vw;
-    height: 5vw;
-    background: url("./../images/icons/footer/footer_nav-notif.svg") center/contain no-repeat;
-  }
-  .footer__nav__item--account {
-    width: 5.2777777778vw;
-    height: 5.2777777778vw;
-    margin-bottom: 1.6666666667vw;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 0;
+    height: 0.4166666667vw;
+    background-color: #00CF80;
+    -webkit-transition: 0.4s ease 0.4s;
+    transition: 0.4s ease 0.4s;
   }
   .footer__nav__item--account .account {
     width: 5.2777777778vw;
     height: 5.2777777778vw;
+    margin: 1.3888888889vw auto 0;
     overflow: hidden;
     border-radius: 50%;
   }
@@ -1750,6 +1755,9 @@ table .flag-content {
   .dark-mode .footer__nav__item--search .footer__nav__item-icon {
     background-image: url("./../images/icons/footer/footer_nav-search--white.svg");
   }
+  .dark-mode .footer__nav__item--search.active .footer__nav__item-icon {
+    background-image: url("./../images/icons/footer/footer_nav-search--active.svg");
+  }
   .dark-mode .footer__nav__item--referral .footer__nav__item-icon {
     background-image: url("./../images/icons/footer/footer_nav-referral--white.svg");
   }
@@ -1762,20 +1770,11 @@ table .flag-content {
   .dark-mode .footer__nav__item--commision.active .footer__nav__item-icon {
     background-image: url("./../images/icons/footer/footer_nav-commision--active.svg");
   }
-  .dark-mode .footer__nav__item--fund .footer__nav__item-icon {
-    background-image: url("./../images/icons/footer/footer_nav-fund--white.svg");
-  }
-  .dark-mode .footer__nav__item--fund.active .footer__nav__item-icon {
-    background-image: url("./../images/icons/footer/footer_nav-fund--active.svg");
-  }
   .dark-mode .footer__nav__item--home .footer__nav__item-icon {
     background-image: url("./../images/icons/footer/footer_nav-home--white.svg");
   }
   .dark-mode .footer__nav__item--home.active .footer__nav__item-icon {
     background-image: url("./../images/icons/footer/footer_nav-home--active.svg");
-  }
-  .dark-mode .footer__nav__item--notif .notif__icon {
-    background: url("./../images/icons/footer/footer_nav-notif--white.svg") center/contain no-repeat;
   }
   .dark-mode .footer__nav__item--account .account {
     background-color: #fff;
