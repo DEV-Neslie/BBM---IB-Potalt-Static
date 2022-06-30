@@ -35,11 +35,13 @@ $(function () {
     tabLink();
     customUploadInput();
     appSurvey();
-    datePicker();
-    dateRange();
-    dataRangeFrom();
+
+    // datePicker();
+    // dateRange();
+    // dataRangeFrom();
+
     notifPage();
-    copyToClipboard();
+    // copyToClipboard();
     snsButton();
     accountForms();
     depositForms();
@@ -302,6 +304,16 @@ function footerNav_referral() {
 
     referral.click(function() {
         $(this).parent().toggleClass('active');
+    });
+
+    $('.footer__nav__item__referral .copy-item').click(function () {
+        var referral_input = document.getElementById("referral_input");
+
+        referral_input.select();
+        referral_input.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(referral_input.value);
+        // inputToolTip.addClass('is-active');
+        // setTimeout(function () { inputToolTip.removeClass('is-active'); }, 3000)
     });
 }
 
@@ -953,20 +965,20 @@ function notifPage() {
     }
 }
 
-function copyToClipboard() {
-    if ($('#copy-link-input').length) {
-        var inputText = $('#copy-link-input')[0];
-        var inputBtn = $('#copy-link-btn')[0];
-        var inputToolTip = $('#copy-link-tooltip');
-        $(inputBtn).on('click', function (e) {
-            inputText.select();
-            inputText.setSelectionRange(0, 99999);
-            document.execCommand("copy");
-            inputToolTip.addClass('is-active');
-            setTimeout(function () { inputToolTip.removeClass('is-active'); }, 3000)
-        });
-    }
-}
+// function copyToClipboard() {
+//     if ($('#copy-link-input').length) {
+//         var inputText = $('#copy-link-input');
+//         var inputBtn = $('#copy-link-btn')[0];
+//         var inputToolTip = $('#copy-link-tooltip');
+//         $(inputBtn).on('click', function (e) {
+//             inputText.select();
+//             inputText.setSelectionRange(0, 99999);
+//             document.execCommand("copy");
+//             inputToolTip.addClass('is-active');
+//             setTimeout(function () { inputToolTip.removeClass('is-active'); }, 3000)
+//         });
+//     }
+// }
 
 function snsButton() {
     var snsItem = $('.sns__item');
