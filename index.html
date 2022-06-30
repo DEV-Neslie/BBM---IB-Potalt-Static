@@ -524,7 +524,7 @@
                             <i class="footer__nav__item-icon"></i>
                         </div>
 
-                        <div class="footer__nav__item footer__nav__item--referral active">
+                        <div class="footer__nav__item footer__nav__item--referral">
                             <i class="footer__nav__item-icon"></i>
 
                             <div class="footer__nav__item__referral">
@@ -536,7 +536,7 @@
                             </div>
                         </div>
 
-                        <a href="#" class="footer__nav__item footer__nav__item--home">
+                        <a href="#" class="footer__nav__item footer__nav__item--home active">
                             <i class="footer__nav__item-icon footer__nav__item-icon--home"></i>
                         </a>
 
@@ -627,8 +627,9 @@
 
 
             // UPDATE CHART Colors
-            $('.theme_mode').bind('click', function() {
-                if ($(this).hasClass('theme_mode--dark')) {
+            $('.theme_mode, #mode_switch').bind('click', function() {
+
+                if ($('.theme_mode').hasClass('theme_mode--dark')) {
                     gridColor = '#E7F2FC20';
                     barColor = '#E7F2FC';
                 } else {

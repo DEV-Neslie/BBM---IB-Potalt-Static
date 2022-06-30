@@ -337,6 +337,7 @@
         &__mode {
             order: 1;
             margin: 0 get-vw-mobile(10px) 0 0;
+            visibility: hidden;
         }
     
         &__mode-btn {
